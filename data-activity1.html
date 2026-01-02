@@ -111,15 +111,38 @@
                     
                     <!-- Paste your R code here as pre-formatted text -->
                     <pre><code># Your R code goes here
-# For example:
-# Load required libraries
-library(readxl)
+#Viwe the Data 
+View(Covid19_India_Jan_20_Mar_20_)
+# Rename the Table 
+df <- Covid19_India_Jan_20_Mar_20_
+# Task 1.1 Basic Dataset Information
+#Total number of variables (columns) Answer 7
+ncol(df) 
+#Total number of observations (rows) Answer 270
+nrow(df)
+#Names of all variables
+names(df)
+#How many variables are numeric?
+sum(sapply(df, is.numeric))
+#How many variables are character/text?
+sum(sapply(df, is.character))
+#How many variables are in date format?
+sum(sapply(df, inherits, "Date"))
 
-# Load the dataset
-covid_data <- read_excel("Covid19 India Jan 20 Mar 20.csv.xls")
+#Task 1.2 Data Related information
+# Unique states
+length(unique(df$`State/UnionTerritory`))
 
-# Task 1.1
-# ... your code continues
+#  Date range first make sure to convert Date column to right format 
+head(df$Date)
+head(df$Date2)
+df$Date2 <- as.Date(df$Date, format = "%d-%m-%Y")
+# Date range
+min(df$Date2, na.rm = TRUE)
+max(df$Date2, na.rm = TRUE)
+
+# Most frequent state
+names(which.max(table(df$`State/UnionTerritory`)))
                     </code></pre>
 
                     <h3>Screenshots</h3>
