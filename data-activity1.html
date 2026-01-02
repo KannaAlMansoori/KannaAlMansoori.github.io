@@ -131,7 +131,7 @@ covid_data <- read_excel("Covid19 India Jan 20 Mar 20.csv.xls")
                         <span class="image fit">
                             <img src="images/NumericalAnalysis/ActivityUnit1.1.png" alt="Loading data and basic dataset information" />
                         </span>
-                        <p><em>Caption: Description of what this screenshot shows</em></p>
+                        <p><em>Caption: The code loads the dataset, renames it, and explores its structure by checking rows, columns, variable names, and data types. It also counts numeric, character, and date variables to understand how the data is organized.</em></p>
                     </div>
 
                     <!-- Image 2 -->
@@ -140,7 +140,7 @@ covid_data <- read_excel("Covid19 India Jan 20 Mar 20.csv.xls")
                         <span class="image fit">
                             <img src="images/NumericalAnalysis/ActivityUnit1.2.png" alt="Task results" />
                         </span>
-                        <p><em>Caption: Description of what this screenshot shows</em></p>
+                        <p><em>Caption: In Task 1.2, I identified the number of unique states (27), corrected the date format, and calculated the dataset’s date range. I also found the most frequent state in the data (Kerala). This part focused on understanding the dataset’s coverage and preparing it for further analysis.</em></p>
                     </div>
 
                     <!-- Add more images as needed -->
@@ -148,15 +148,15 @@ covid_data <- read_excel("Covid19 India Jan 20 Mar 20.csv.xls")
                     <h3>Key Findings</h3>
                     <p><em>Summary of your findings from the analysis:</em></p>
                     <ul>
-                        <li>Total variables: [Your answer]</li>
-                        <li>Total observations: [Your answer]</li>
-                        <li>Variable names: [Your answer]</li>
-                        <li>Numeric variables: [Your answer]</li>
-                        <li>Character variables: [Your answer]</li>
-                        <li>Date variables: [Your answer]</li>
-                        <li>Unique states: [Your answer]</li>
-                        <li>Date range: [Your answer]</li>
-                        <li>Most frequent state: [Your answer]</li>
+                        <li>Total variables: 7</li>
+                        <li>Total observations: 270 </li>
+                        <li>Variable names: Sno, Date, State/UnionTerritory, ConfirmedIndianNational, ConfirmedForeignNational, Cured, Deaths</li>
+                        <li>Numeric variables: 5 </li>
+                        <li>Character variables: 2 </li>
+                        <li>Date variables: 27 </li>
+                        <li>Unique states: 27 </li>
+                        <li>Date range: 30-01-2020 to 21-03-2020 </li>
+                        <li>Most frequent state:  Kerala </li>
                     </ul>
                 </div>
             </section>
@@ -170,7 +170,6 @@ covid_data <- read_excel("Covid19 India Jan 20 Mar 20.csv.xls")
                     <ul>
                         <li>Learned how to load and explore a dataset in R, including checking rows, columns, and variable types.</li>
                         <li>Practiced identifying numeric, text, and date variables.</li>
-                        <li>Gained skills in handling missing data, especially fixing and removing NA values in the Date column.</li>
                         <li>Successfully converted dates into the correct format and extracted the dataset's date range.</li>
                         <li>Used R functions such as <code>names()</code>, <code>nrow()</code>, <code>ncol()</code>, <code>unique()</code>, <code>as.Date()</code>, <code>min()</code>, and <code>max()</code> for basic data analysis.</li>
                         <li>Improved understanding of simple exploratory analysis, such as counting unique states and finding the most frequent category.</li>
@@ -185,7 +184,6 @@ covid_data <- read_excel("Covid19 India Jan 20 Mar 20.csv.xls")
                         <h2>Reflection</h2>
                     </header>
                     <p>This activity provided me with a solid foundation in exploratory data analysis using R. The main challenge I encountered was formatting the date column correctly to extract the date range. Initially, the dates were not in the proper format, which prevented me from using functions like <code>min()</code> and <code>max()</code> effectively.</p>
-                    <p>To overcome this, I had to first identify and remove any NA values in the Date column, then convert the dates using the <code>as.Date()</code> function with the appropriate format specification. Once the dates were properly formatted, I was able to successfully determine the date range covered by the dataset (January 2020 to March 2020).</p>
                     <p>This experience taught me the importance of data cleaning and proper data type conversion before performing any analysis. It also reinforced the need to carefully examine data structures and handle missing values appropriately in real-world datasets.</p>
                 </div>
             </section>
