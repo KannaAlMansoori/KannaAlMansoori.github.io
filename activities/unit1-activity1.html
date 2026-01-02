@@ -1,0 +1,261 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Data Activity 1 - Numerical Analysis - Kanna AlMansoori</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="../index.html" class="logo"><strong>Kanna AlMansoori</strong> <span>MSc Portfolio</span></a>
+            <nav>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <ul class="links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="../launch-module.html">Launch into Computing</a></li>
+                <li><a href="../induction.html">Induction Computing</a></li>
+                <li><a href="../ai-module.html">Understanding Artificial Intelligence</a></li>
+                <li><a href="../numerical-analysis.html">Numerical Analysis</a></li>
+                <li><a href="../project.html">Project</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div id="main" class="alt">
+
+            <!-- Breadcrumb Navigation -->
+            <section id="one">
+                <div class="inner">
+                    <p><a href="../numerical-analysis.html">← Back to Numerical Analysis</a></p>
+                    <header class="major">
+                        <h1>Unit 1: Data Activity 1</h1>
+                    </header>
+                    <p><strong>Deadline:</strong> End of Unit 1 | <strong>Type:</strong> Formative | <strong>Status:</strong> ✓ Complete</p>
+                </div>
+            </section>
+
+            <!-- Dataset Information -->
+            <section id="dataset">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Dataset</h2>
+                    </header>
+                    <h3>COVID-19 India Cases (January 2020 - March 2020)</h3>
+                    <p><strong>Source:</strong> This dataset contains early COVID-19 case data from India covering the initial months of the pandemic from January to March 2020. The data includes confirmed cases (both Indian and foreign nationals), recovered cases, and deaths across different states and union territories of India.</p>
+                </div>
+            </section>
+
+            <!-- Instructions -->
+            <section id="instructions">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Instructions</h2>
+                    </header>
+                    <ol>
+                        <li>Download and save the Covid19 India Jan 20 Mar 20.csv.xls file to your R working directory</li>
+                        <li>Load the dataset into RStudio using appropriate functions for Excel files</li>
+                        <li>Conduct an initial exploration of the dataset structure</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Tasks -->
+            <section id="tasks">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Tasks</h2>
+                    </header>
+                    
+                    <h3>Task 1.1: Basic Dataset Information</h3>
+                    <p>Using R commands, determine and record the following:</p>
+                    <ul>
+                        <li>How many total variables (columns) are in this dataset?</li>
+                        <li>How many total observations (rows) are in this dataset?</li>
+                        <li>What are the names of all variables in the dataset?</li>
+                        <li>How many variables are in numeric format?</li>
+                        <li>How many variables are in character/text format?</li>
+                        <li>How many variables are in date format?</li>
+                    </ul>
+
+                    <h3>Task 1.2: Data Related Information</h3>
+                    <ul>
+                        <li>How many unique states/union territories are represented in the dataset?</li>
+                        <li>What is the date range covered by this dataset?</li>
+                        <li>Which state appears most frequently in the dataset?</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- My Solution -->
+            <section id="solution">
+                <div class="inner">
+                    <header class="major">
+                        <h2>My Solution</h2>
+                    </header>
+                    
+                    <h3>R Code</h3>
+                    <p><em>Below is my R code implementation for this activity:</em></p>
+                    
+                    <pre><code># Load required libraries
+library(readxl)
+
+# Load the dataset
+covid_data <- read_excel("Covid19 India Jan 20 Mar 20.csv.xls")
+
+# Task 1.1: Basic Dataset Information
+# Number of variables (columns)
+ncol(covid_data)
+
+# Number of observations (rows)
+nrow(covid_data)
+
+# Names of all variables
+names(covid_data)
+
+# Check variable types
+str(covid_data)
+
+# Count numeric variables
+sum(sapply(covid_data, is.numeric))
+
+# Count character/text variables
+sum(sapply(covid_data, is.character))
+
+# Count date variables
+sum(sapply(covid_data, function(x) inherits(x, "Date")))
+
+# Task 1.2: Data Related Information
+# Number of unique states/union territories
+length(unique(covid_data$State))
+
+# Date range
+min(covid_data$Date, na.rm = TRUE)
+max(covid_data$Date, na.rm = TRUE)
+
+# Most frequent state
+table(covid_data$State)
+names(sort(table(covid_data$State), decreasing = TRUE)[1])
+                    </code></pre>
+
+                    <h3>Screenshots</h3>
+                    <p><em>Screenshots of my R code execution and results:</em></p>
+                    
+                    <!-- Image 1 -->
+                    <div class="box">
+                        <h4>Screenshot 1: Task 1.1 - Basic Dataset Information</h4>
+                        <span class="image fit">
+                            <img src="../images/NumericalAnalysis/ActivityUnit1.1.png" alt="Task 1.1 - Basic dataset information" />
+                        </span>
+                        <p><em>Loading the dataset and analyzing basic structure including total variables, observations, variable names, and data types (numeric, character, date)</em></p>
+                    </div>
+
+                    <!-- Image 2 -->
+                    <div class="box">
+                        <h4>Screenshot 2: Task 1.2 - Data Related Information</h4>
+                        <span class="image fit">
+                            <img src="../images/NumericalAnalysis/ActivityUnit1.2.png" alt="Task 1.2 - Data analysis results" />
+                        </span>
+                        <p><em>Analysis results showing unique states/territories, date range coverage, and the most frequently appearing state in the dataset</em></p>
+                    </div>
+                    
+                    <h3>Key Findings</h3>
+                    <p><em>Summary of findings from the analysis:</em></p>
+                    <ul>
+                        <li><strong>Total variables:</strong> [Your answer - e.g., 7 columns]</li>
+                        <li><strong>Total observations:</strong> [Your answer - e.g., 542 rows]</li>
+                        <li><strong>Variable names:</strong> [Your answer - e.g., Date, State, ConfirmedIndianNational, ConfirmedForeignNational, Cured, Deaths, Confirmed]</li>
+                        <li><strong>Numeric variables:</strong> [Your answer - e.g., 5 variables]</li>
+                        <li><strong>Character variables:</strong> [Your answer - e.g., 1 variable]</li>
+                        <li><strong>Date variables:</strong> [Your answer - e.g., 1 variable]</li>
+                        <li><strong>Unique states:</strong> [Your answer - e.g., 37 states/union territories]</li>
+                        <li><strong>Date range:</strong> [Your answer - e.g., January 30, 2020 to March 30, 2020]</li>
+                        <li><strong>Most frequent state:</strong> [Your answer - e.g., Kerala]</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Learning Outcomes -->
+            <section id="learning-outcomes">
+                <div class="inner">
+                    <header class="major">
+                        <h2>⭐ Learning Outcomes from This Activity</h2>
+                    </header>
+                    <ul>
+                        <li>Learned how to load and explore a dataset in R, including checking rows, columns, and variable types.</li>
+                        <li>Practiced identifying numeric, text, and date variables.</li>
+                        <li>Gained skills in handling missing data, especially fixing and removing NA values in the Date column.</li>
+                        <li>Successfully converted dates into the correct format and extracted the dataset's date range.</li>
+                        <li>Used R functions such as <code>names()</code>, <code>nrow()</code>, <code>ncol()</code>, <code>unique()</code>, <code>as.Date()</code>, <code>min()</code>, and <code>max()</code> for basic data analysis.</li>
+                        <li>Improved understanding of simple exploratory analysis, such as counting unique states and finding the most frequent category.</li>
+                    </ul>
+                    
+                    <h3>Module Learning Outcome Addressed</h3>
+                    <p><strong>LO1:</strong> Demonstrate systematic understanding of the key mathematical and statistical concepts and techniques which underpin mechanisms in Data Science and AI.</p>
+                </div>
+            </section>
+
+            <!-- Reflection -->
+            <section id="reflection">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Reflection</h2>
+                    </header>
+                    <p>This activity provided me with foundational experience in data exploration using R. The process of loading the COVID-19 dataset and systematically analyzing its structure taught me the importance of understanding your data before performing any complex analysis.</p>
+                    
+                    <p>One challenge I encountered was handling the date format conversion and dealing with NA values. This taught me to always check for data quality issues early in the analysis process. The activity reinforced the importance of using appropriate R functions for different data types and the value of exploratory data analysis in understanding dataset characteristics.</p>
+                    
+                    <p>Moving forward, I will apply these data exploration techniques to every new dataset I work with, as it provides crucial insights into data structure, quality, and potential analysis approaches.</p>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <section id="navigation">
+                <div class="inner">
+                    <ul class="actions">
+                        <li><a href="../numerical-analysis.html" class="button">← Back to Module Overview</a></li>
+                        <li><a href="unit2-seminar.html" class="button primary">Next Activity →</a></li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                <ul class="icons">
+                    <li><a href="https://github.com/KannaAlmansoori" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; 2025 Kanna AlMansoori</li>
+                    <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+</body>
+</html>
