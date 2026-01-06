@@ -81,63 +81,40 @@
                     <!-- Question 1 -->
                     <div class="box">
                         <h3>1. What is a probability distribution?</h3>
-                        <p>A probability distribution is essentially a mathematical function that shows all the possible values a variable can take and how likely each value is to occur. Think of it as a map that tells us the chances of different outcomes happening.</p>
-                        <p>For example, when we flip a coin, the probability distribution would show that heads has a 50% chance and tails has a 50% chance. In more complex situations, like measuring people's heights or test scores, the distribution helps us understand patterns in the data and make predictions about future observations.</p>
+                        <p>A probability distribution is a mathematical function that describes all possible values a variable can take and their likelihood of occurring. It maps out the pattern of how data is spread across different outcomes. For example, in a coin flip, it shows 50% probability for heads and 50% for tails, while for continuous data like height measurements, it reveals how frequently different values appear in the population.</p>
                     </div>
 
                     <!-- Question 2 -->
                     <div class="box">
                         <h3>2. What are the different types of distribution?</h3>
-                        <p>There are several key types of distributions, each suited for different kinds of data:</p>
+                        <p>Key distribution types include:</p>
                         <ul>
-                            <li><strong>Normal Distribution (Gaussian):</strong> The classic bell-shaped curve. Most natural phenomena like heights, weights, and test scores follow this pattern. Data clusters around the mean with values tapering off symmetrically on both sides.</li>
-                            <li><strong>Binomial Distribution:</strong> Used when we have a fixed number of yes/no trials, like counting how many heads appear in 10 coin flips.</li>
-                            <li><strong>Poisson Distribution:</strong> Useful for counting events that happen over time or space, such as the number of customer arrivals per hour or emails received per day.</li>
-                            <li><strong>Uniform Distribution:</strong> All outcomes have equal probability, like rolling a fair die where each number has a 1/6 chance.</li>
-                            <li><strong>Exponential Distribution:</strong> Often used to model waiting times, like how long until the next customer arrives or how long a machine part lasts before failing.</li>
+                            <li><strong>Normal Distribution:</strong> Bell-shaped curve where data clusters around the mean (e.g., heights, test scores)</li>
+                            <li><strong>Binomial Distribution:</strong> Used for fixed number of yes/no trials (e.g., coin flips)</li>
+                            <li><strong>Poisson Distribution:</strong> Counts events over time/space (e.g., customer arrivals per hour)</li>
+                            <li><strong>Uniform Distribution:</strong> All outcomes equally likely (e.g., fair die roll)</li>
+                            <li><strong>Exponential Distribution:</strong> Models waiting times or lifespans</li>
                         </ul>
                     </div>
 
                     <!-- Question 3 -->
                     <div class="box">
                         <h3>3. What are quantiles and how do they divide data?</h3>
-                        <p>Quantiles are cutoff points that divide our data into equal-sized groups. They help us understand how data is spread out across the range.</p>
-                        <p><strong>Common types include:</strong></p>
-                        <ul>
-                            <li><strong>Quartiles:</strong> Divide data into 4 equal parts (25% each). The first quartile (Q1) marks the 25th percentile, the second quartile (Q2) is the median at 50%, and the third quartile (Q3) is at the 75th percentile.</li>
-                            <li><strong>Percentiles:</strong> Divide data into 100 equal parts. For example, scoring in the 90th percentile means you performed better than 90% of others.</li>
-                            <li><strong>Deciles:</strong> Divide data into 10 equal parts (10% each).</li>
-                        </ul>
-                        <p>Quantiles are particularly useful because they're not affected by extreme values, making them reliable for understanding the overall distribution of data even when outliers are present.</p>
+                        <p>Quantiles are cutoff points that divide data into equal-sized groups. Common types include quartiles (4 parts at 25%, 50%, 75%), percentiles (100 parts), and deciles (10 parts). For instance, the 75th percentile means 75% of data falls below that value. Quantiles are useful because they're resistant to outliers and help us understand data spread without being skewed by extreme values.</p>
                     </div>
 
                     <!-- Question 4 -->
                     <div class="box">
                         <h3>4. What is the Central Limit Theorem (CLT)?</h3>
-                        <p>The Central Limit Theorem is one of the most important concepts in statistics. It states that when we take repeated samples from any population and calculate their means, those sample means will form a normal distribution, regardless of the original population's distribution—as long as the sample size is large enough (typically n ≥ 30).</p>
-                        <p><strong>Why this matters:</strong> This theorem is powerful because it allows us to make inferences about populations even when we don't know their exact distribution. It's the foundation for many statistical tests and confidence intervals. For example, if we're studying average income in a city, we can take multiple samples, and the CLT assures us that the distribution of those sample means will be normal, making our analysis and predictions more reliable.</p>
+                        <p>The CLT states that when we take multiple random samples from any population and calculate their means, those means will follow a normal distribution—regardless of the original population's shape—as long as sample size is large enough (typically n ≥ 30). This is crucial because it allows us to make statistical inferences and use normal distribution properties even when the underlying data isn't normally distributed, forming the basis for many hypothesis tests and confidence intervals.</p>
                     </div>
 
                     <!-- Question 5 -->
                     <div class="box">
                         <h3>5. What is the difference between Type I and Type II errors?</h3>
-                        <p>These are the two types of mistakes we can make when testing hypotheses:</p>
-                        
-                        <p><strong>Type I Error (False Positive):</strong></p>
-                        <ul>
-                            <li>This happens when we reject a true null hypothesis—essentially, we conclude something is happening when it actually isn't.</li>
-                            <li>Example: A medical test says you have a disease when you're actually healthy.</li>
-                            <li>The probability of making this error is denoted by α (alpha), often set at 0.05 or 5%.</li>
-                        </ul>
-
-                        <p><strong>Type II Error (False Negative):</strong></p>
-                        <ul>
-                            <li>This occurs when we fail to reject a false null hypothesis—we miss detecting something that's actually there.</li>
-                            <li>Example: A medical test says you're healthy when you actually have the disease.</li>
-                            <li>The probability of this error is denoted by β (beta).</li>
-                        </ul>
-
-                        <p><strong>The Trade-off:</strong> Unfortunately, reducing one type of error often increases the other. In practice, we need to decide which error is more critical to avoid based on the context. For medical diagnoses, we might prefer Type I errors (false alarms) over Type II errors (missed diagnoses), as it's safer to do additional testing than to miss a real condition.</p>
+                        <p><strong>Type I Error (False Positive):</strong> Rejecting a true null hypothesis—concluding something exists when it doesn't. Example: A test indicates disease in a healthy person. Probability = α (often 0.05).</p>
+                        <p><strong>Type II Error (False Negative):</strong> Failing to reject a false null hypothesis—missing something that actually exists. Example: A test shows healthy when disease is present. Probability = β.</p>
+                        <p>There's a trade-off between these errors: reducing one typically increases the other. The choice depends on context—in medical testing, we might prefer Type I errors (false alarms) over Type II errors (missed diagnoses).</p>
                     </div>
 
                 </div>
@@ -150,11 +127,11 @@
                         <h2>Key Takeaways</h2>
                     </header>
                     <ul>
-                        <li>Probability distributions provide a framework for understanding how data behaves and making informed predictions.</li>
-                        <li>Different types of distributions suit different data scenarios—choosing the right one is crucial for accurate analysis.</li>
-                        <li>Quantiles offer a robust way to understand data spread without being influenced by outliers.</li>
-                        <li>The Central Limit Theorem enables us to use normal distribution properties for inference, regardless of the original data distribution.</li>
-                        <li>Understanding Type I and Type II errors helps us make better decisions about hypothesis testing and manage the risks associated with statistical conclusions.</li>
+                        <li>Probability distributions provide frameworks for understanding data patterns and making predictions</li>
+                        <li>Different distributions suit different scenarios—selecting the right one is essential for accurate analysis</li>
+                        <li>Quantiles offer robust measures of data spread unaffected by outliers</li>
+                        <li>The CLT enables normal distribution-based inference regardless of original data distribution</li>
+                        <li>Understanding Type I and II errors helps manage risks in hypothesis testing decisions</li>
                     </ul>
                 </div>
             </section>
@@ -165,9 +142,9 @@
                     <header class="major">
                         <h2>Reflection</h2>
                     </header>
-                    <p>This seminar deepened my understanding of how probability underpins statistical analysis. The concept that struck me most was the Central Limit Theorem—it's fascinating how such a powerful tool allows us to work with samples and make reliable inferences about entire populations.</p>
-                    <p>Learning about Type I and Type II errors also gave me a more practical perspective on hypothesis testing. In real-world applications, especially in fields like healthcare or AI model validation, understanding these errors helps us make more thoughtful decisions about acceptable risk levels.</p>
-                    <p>Moving forward, I feel better equipped to choose appropriate probability distributions for different datasets and to interpret statistical results with greater confidence and awareness of potential errors.</p>
+                    <p>This seminar deepened my understanding of probability's role in statistical analysis. The Central Limit Theorem particularly stood out—it's remarkable how it enables reliable population inferences from samples regardless of the original distribution.</p>
+                    <p>Learning about Type I and Type II errors gave me practical insight into hypothesis testing. In real applications like healthcare or AI validation, understanding these errors helps balance acceptable risk levels.</p>
+                    <p>I now feel more confident choosing appropriate distributions for different datasets and interpreting statistical results with greater awareness of potential errors.</p>
                 </div>
             </section>
 
