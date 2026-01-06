@@ -395,7 +395,7 @@ html_content = """<!DOCTYPE HTML>
                 </div>
             </section>
 
-           <!-- Reflection -->
+     <!-- Reflection -->
 <section id="reflection">
     <div class="inner">
         <header class="major">
@@ -415,6 +415,7 @@ html_content = """<!DOCTYPE HTML>
         <p>These foundations will underpin everything in my AI career: Bayesian methods, confidence intervals, hypothesis testing, Monte Carlo simulations. This unit wasn't just about learning distributions—it was about developing the probabilistic mindset needed to work with real-world uncertainty.</p>
     </div>
 </section>
+
 
 
             <!-- Navigation -->
@@ -456,14 +457,3 @@ html_content = """<!DOCTYPE HTML>
 
 </body>
 </html>"""
-
-# Save the HTML file
-with open('unit4-probability-activities.html', 'w', encoding='utf-8') as f:
-    f.write(html_content)
-
-print("✓ Reorganized version created with activities grouped together!")
-print("File name: unit4-probability-activities.html")
-
-# Download the file
-from google.colab import files
-files.download('unit4-probability-activities.html')
