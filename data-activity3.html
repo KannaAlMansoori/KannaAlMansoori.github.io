@@ -1,0 +1,572 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Data Activity 3 - Numerical Analysis - Kanna AlMansoori</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo"><strong>Kanna AlMansoori</strong> <span>MSc Portfolio</span></a>
+            <nav>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <ul class="links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="launch-module.html">Launch into Computing</a></li>
+                <li><a href="induction.html">Induction Computing</a></li>
+                <li><a href="ai-module.html">Understanding Artificial Intelligence</a></li>
+                <li><a href="numerical-analysis.html">Numerical Analysis</a></li>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div id="main" class="alt">
+
+            <!-- Breadcrumb Navigation -->
+            <section id="one">
+                <div class="inner">
+                    <p><a href="numerical-analysis.html">← Back to Numerical Analysis</a></p>
+                    <header class="major">
+                        <h1>Unit 2: Data Activity 3</h1>
+                    </header>
+                    <p><strong>Title:</strong> Advanced Categorical Variables and State-Level Analysis | <strong>Deadline:</strong> End of Unit 2 | <strong>Type:</strong> Formative | <strong>Status:</strong> ✓ Complete</p>
+                </div>
+            </section>
+
+            <!-- Learning Objectives -->
+            <section id="objectives">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Learning Objectives</h2>
+                    </header>
+                    
+                    <div class="row">
+                        <div class="col-6 col-12-medium">
+                            <h3>Knowledge Objectives:</h3>
+                            <ul>
+                                <li>Understand binary and categorical variable creation techniques</li>
+                                <li>Learn factor variable conversion and labeling in R</li>
+                                <li>Demonstrate knowledge of multi-level categorical classification</li>
+                                <li>Analyze geographic distribution patterns in data</li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-12-medium">
+                            <h3>Skill Objectives:</h3>
+                            <ul>
+                                <li><strong>Technical Skills:</strong> Use R functions including ifelse(), cut(), factor(), and sort()</li>
+                                <li><strong>Data Transformation:</strong> Create derived variables from existing data</li>
+                                <li><strong>Analytical Skills:</strong> Identify patterns in state-level reporting and case severity</li>
+                                <li><strong>Communication:</strong> Present findings about death reporting and geographic distribution</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Task Overview -->
+            <section id="task-overview">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Task Overview</h2>
+                    </header>
+                    
+                    <p>This activity extends the frequency analysis from Data Activity 2 by creating more complex categorical variables and analyzing geographic patterns in the <strong>COVID-19 India Dataset (January 2020 - March 2020)</strong>.</p>
+                    
+                    <h3>Requirements:</h3>
+                    <ol>
+                        <li><strong>Create a binary variable</strong> called <code>has_deaths</code> that indicates whether any deaths were reported:
+                            <ul>
+                                <li>Value = 1 (or TRUE) if Deaths > 0</li>
+                                <li>Value = 0 (or FALSE) if Deaths = 0</li>
+                            </ul>
+                        </li>
+                        <li><strong>Create a frequency table</strong> using the table() command to analyze death reporting patterns</li>
+                        <li><strong>Convert to a factor variable</strong> with appropriate labels ("No Deaths", "Deaths Reported")</li>
+                        <li><strong>Create a categorical variable</strong> called <code>case_level</code> based on total confirmed cases (Indian + Foreign nationals):
+                            <ul>
+                                <li>No Cases = 0 cases</li>
+                                <li>Low Cases = 1-5 cases</li>
+                                <li>Medium Cases = 6-15 cases</li>
+                                <li>High Cases = 16+ cases</li>
+                            </ul>
+                        </li>
+                        <li><strong>Create a frequency table</strong> for the State/Union Territory variable to see which states had the most frequent reporting</li>
+                        <li><strong>Identify the top 10 states</strong> with the highest number of daily reports in the dataset</li>
+                    </ol>
+
+                    <div class="box">
+                        <h4>Learning Outcomes Targeted:</h4>
+                        <ul>
+                            <li>Systematic understanding of the key mathematical and statistical concepts and techniques which underpin mechanisms in Data Science and AI.</li>
+                            <li>Apply mathematical and statistical methods in these fields to help in the decision-making process.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Methodology -->
+            <section id="methodology">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Methodology</h2>
+                    </header>
+                    
+                    <h3>Data Preparation</h3>
+                    <p>Building upon the previous activities, this analysis creates multiple categorical variables to classify and understand the severity and geographic distribution of COVID-19 cases during the early pandemic period.</p>
+
+                    <h3>R Code Implementation</h3>
+                    <p><em>Below is my complete R code for this activity:</em></p>
+
+<pre><code># ============================================
+# COVID-19 India Categorical Variables Analysis
+# Data Activity 3 - Unit 2
+# ============================================
+
+# Load required library
+library(readr)
+
+# Load the COVID-19 India dataset
+Covid19_India_Jan_20_Mar_20_ <- read_csv("Numercial computer M3/Covid19 India (Jan 20 - Mar 20).csv")
+View(Covid19_India_Jan_20_Mar_20_)
+
+# Rename the dataset for easier handling
+df <- Covid19_India_Jan_20_Mar_20_
+
+# ============================================
+# Step 1: Binary variable - has_deaths
+# ============================================
+# Create binary indicator: 1 if Deaths > 0, 0 otherwise
+df$has_deaths <- ifelse(df$Deaths > 0, 1, 0)
+
+# ============================================
+# Step 2: Frequency table for deaths
+# ============================================
+# Generate frequency distribution
+table(df$has_deaths)
+
+# ============================================
+# Step 3: Convert to factor with labels
+# ============================================
+# Convert binary variable to labeled factor
+df$has_deaths <- factor(
+  df$has_deaths,
+  levels = c(0, 1),
+  labels = c("No Deaths", "Deaths Reported")
+)
+table(df$has_deaths)
+
+# ============================================
+# Step 4: Calculate total confirmed cases
+# ============================================
+# Sum Indian and Foreign national cases
+df$total_cases <- df$ConfirmedIndianNational +
+  df$ConfirmedForeignNational
+
+# ============================================
+# Step 5: Create categorical variable - case_level
+# ============================================
+# Classify cases into severity levels
+df$case_level <- cut(
+  df$total_cases,
+  breaks = c(-1, 0, 5, 15, Inf),
+  labels = c("No Cases", "Low Cases", "Medium Cases", "High Cases")
+)
+table(df$case_level)
+
+# ============================================
+# Step 6: Frequency table by State/Union Territory
+# ============================================
+# Count reports per state
+state_freq <- table(df$`State/UnionTerritory`)
+state_freq
+
+# ============================================
+# Step 7: Top 10 states with most daily reports
+# ============================================
+# Sort and extract top 10
+top_10_states <- sort(state_freq, decreasing = TRUE)[1:10]
+top_10_states
+</code></pre>
+
+                    <h3>Explanation of Key Functions</h3>
+                    <div class="box">
+                        <h4>1. ifelse() for Binary Classification</h4>
+                        <p><code>ifelse(df$Deaths > 0, 1, 0)</code></p>
+                        <p>Creates a binary indicator where 1 represents presence of deaths and 0 represents absence. This is the foundation for binary classification in data science.</p>
+                        
+                        <h4>2. factor() for Labeled Categories</h4>
+                        <p><code>factor(df$has_deaths, levels = c(0, 1), labels = c("No Deaths", "Deaths Reported"))</code></p>
+                        <p>Converts numeric values to meaningful categorical labels, making the data more interpretable and suitable for categorical analysis.</p>
+                        
+                        <h4>3. cut() for Multi-level Classification</h4>
+                        <p><code>cut(df$total_cases, breaks = c(-1, 0, 5, 15, Inf), labels = c(...))</code></p>
+                        <p>Divides continuous numeric data into discrete categories based on specified breakpoints. The breaks define the boundaries: -1 to 0 (No Cases), 0 to 5 (Low), 5 to 15 (Medium), 15+ (High).</p>
+                        
+                        <h4>4. sort() with Indexing</h4>
+                        <p><code>sort(state_freq, decreasing = TRUE)[1:10]</code></p>
+                        <p>Sorts the frequency table in descending order and extracts the top 10 entries, useful for identifying the most active reporting states.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results -->
+            <section id="results">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Results</h2>
+                    </header>
+
+                    <h3>1. Death Reporting Analysis</h3>
+                    
+                    <!-- Binary Death Variable Results -->
+                    <div class="box">
+                        <h4>Binary Death Indicator (0/1 Format):</h4>
+                        <span class="image fit">
+                            <img src="images/NumericalAnalysis/DataActivityUnit_2.png" alt="Binary Death Variable Output" />
+                        </span>
+                        <p><em>R output showing initial binary classification and frequency table creation</em></p>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Death Status</th>
+                                    <th>Frequency (Count)</th>
+                                    <th>Percentage (%)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>No Deaths</strong> (0 deaths)</td>
+                                    <td>261</td>
+                                    <td>96.67%</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Deaths Reported</strong> (1+ deaths)</td>
+                                    <td>9</td>
+                                    <td>3.33%</td>
+                                </tr>
+                                <tr style="background-color: #f5f5f5;">
+                                    <td><strong>Total</strong></td>
+                                    <td><strong>270</strong></td>
+                                    <td><strong>100.00%</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>2. Case Severity Distribution</h3>
+                    
+                    <!-- Case Level Results -->
+                    <div class="box">
+                        <h4>Case Level Classification Output:</h4>
+                        <span class="image fit">
+                            <img src="images/NumericalAnalysis/DataActivity3_2_Unit_2_.png" alt="Case Level Classification" />
+                        </span>
+                        <p><em>R output showing the categorical variable creation and frequency distribution by case severity</em></p>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Case Level</th>
+                                    <th>Case Range</th>
+                                    <th>Frequency (Count)</th>
+                                    <th>Percentage (%)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>No Cases</strong></td>
+                                    <td>0 cases</td>
+                                    <td>52</td>
+                                    <td>19.26%</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Low Cases</strong></td>
+                                    <td>1-5 cases</td>
+                                    <td>143</td>
+                                    <td>52.96%</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Medium Cases</strong></td>
+                                    <td>6-15 cases</td>
+                                    <td>57</td>
+                                    <td>21.11%</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>High Cases</strong></td>
+                                    <td>16+ cases</td>
+                                    <td>18</td>
+                                    <td>6.67%</td>
+                                </tr>
+                                <tr style="background-color: #f5f5f5;">
+                                    <td colspan="2"><strong>Total</strong></td>
+                                    <td><strong>270</strong></td>
+                                    <td><strong>100.00%</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>3. Geographic Distribution - State Analysis</h3>
+                    
+                    <!-- State Frequency Results -->
+                    <div class="box">
+                        <h4>State/Union Territory Frequency and Top 10 States:</h4>
+                        <span class="image fit">
+                            <img src="images/NumericalAnalysis/DataActivity3_3_Unit_2_.png" alt="State Frequency Analysis" />
+                        </span>
+                        <p><em>R output showing complete state frequency distribution and the top 10 states with most daily reports</em></p>
+                    </div>
+
+                    <h4>Top 10 States with Most Daily Reports:</h4>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>State/Union Territory</th>
+                                    <th>Number of Daily Reports</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Kerala</td>
+                                    <td>52</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Delhi</td>
+                                    <td>20</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Telengana</td>
+                                    <td>20</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Rajasthan</td>
+                                    <td>19</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Haryana</td>
+                                    <td>18</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Uttar Pradesh</td>
+                                    <td>18</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Tamil Nadu</td>
+                                    <td>15</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Union Territory of Ladakh</td>
+                                    <td>14</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Karnataka</td>
+                                    <td>13</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Maharashtra</td>
+                                    <td>13</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Punjab</td>
+                                    <td>13</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Analysis and Interpretation -->
+            <section id="analysis">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Analysis and Key Findings</h2>
+                    </header>
+
+                    <h3>1. Death Reporting Patterns</h3>
+                    <div class="box">
+                        <p><strong>Key Finding:</strong> Only <strong>3.33% (9 out of 270)</strong> of daily reports documented deaths, while <strong>96.67% (261 reports)</strong> showed no deaths.</p>
+                        
+                        <h4>Interpretation:</h4>
+                        <ul>
+                            <li><strong>Early Pandemic Phase:</strong> This extremely low death rate reflects the January-March 2020 timeframe when the outbreak was just beginning in India</li>
+                            <li><strong>Limited Fatalities:</strong> With most cases being recent infections, few patients had reached critical stages by this period</li>
+                            <li><strong>Healthcare Response:</strong> Early detection and treatment may have contributed to low mortality rates</li>
+                            <li><strong>Data Context:</strong> Death reporting may have been inconsistent or incomplete in the early stages of the pandemic</li>
+                        </ul>
+                    </div>
+
+                    <h3>2. Case Severity Distribution</h3>
+                    <div class="box">
+                        <p><strong>Distribution Pattern:</strong></p>
+                        <ul>
+                            <li><strong>Low Cases (1-5):</strong> 52.96% - The largest category, indicating most reporting days involved minimal cases</li>
+                            <li><strong>Medium Cases (6-15):</strong> 21.11% - Moderate case loads in about one-fifth of reports</li>
+                            <li><strong>No Cases:</strong> 19.26% - Nearly 20% of reports showed zero cases</li>
+                            <li><strong>High Cases (16+):</strong> 6.67% - Only a small fraction had significant case numbers</li>
+                        </ul>
+                        
+                        <h4>Key Insights:</h4>
+                        <ul>
+                            <li>The distribution is heavily skewed toward lower case counts, with <strong>72.22% of reports showing 5 or fewer cases</strong></li>
+                            <li>High-case scenarios (16+) were <strong>rare exceptions</strong> rather than the norm during this period</li>
+                            <li>This pattern indicates the pandemic was in its <strong>early containment phase</strong> rather than widespread community transmission</li>
+                            <li>The classification system effectively identifies severity levels for resource allocation and response planning</li>
+                        </ul>
+                    </div>
+
+                    <h3>3. Geographic Distribution Analysis</h3>
+                    <div class="box">
+                        <p><strong>Top Finding:</strong> Kerala led with <strong>52 daily reports</strong> - more than double any other state.</p>
+                        
+                        <h4>Geographic Patterns:</h4>
+                        <ul>
+                            <li><strong>Kerala's Dominance:</strong> With 52 reports (19.26% of all reports), Kerala had by far the most frequent reporting, reflecting its role as an early entry point for COVID-19 into India through international travel</li>
+                            <li><strong>Tier 2 States:</strong> Delhi and Telengana (20 reports each) formed the second tier, representing major urban centers with international connections</li>
+                            <li><strong>Distributed Spread:</strong> The top 10 states/UTs account for approximately 77% of all reports, showing concentration in specific regions while most states had minimal reporting</li>
+                            <li><strong>Urban Concentration:</strong> Most top-reporting states are major urban centers or have significant international airports</li>
+                        </ul>
+                        
+                        <h4>Why Kerala Led:</h4>
+                        <ul>
+                            <li>First state to report COVID-19 cases in India (from travelers returning from Wuhan)</li>
+                            <li>High international connectivity, especially with the Middle East</li>
+                            <li>Strong public health infrastructure and early detection systems</li>
+                            <li>Proactive testing and reporting compared to other states</li>
+                        </ul>
+                    </div>
+
+                    <h3>4. Statistical Methodology Insights</h3>
+                    <div class="box">
+                        <p>This activity demonstrated several important data science concepts:</p>
+                        <ul>
+                            <li><strong>Binary Classification:</strong> The has_deaths variable shows how continuous or count data can be simplified into yes/no categories for specific analytical purposes</li>
+                            <li><strong>Multi-level Categorization:</strong> The case_level variable demonstrates how cut() function creates meaningful severity categories from numeric data</li>
+                            <li><strong>Factor Variables:</strong> Converting to labeled factors makes data more interpretable and prepares it for categorical analysis</li>
+                            <li><strong>Frequency Analysis:</strong> Simple counting and sorting revealed clear geographic patterns that would be harder to see in raw data</li>
+                            <li><strong>Data Transformation:</strong> Creating derived variables (total_cases) from existing columns enabled more sophisticated classification</li>
+                        </ul>
+                    </div>
+
+                    <h3>5. Implications for Decision-Making</h3>
+                    <div class="box">
+                        <p>These analyses support evidence-based decisions:</p>
+                        <ul>
+                            <li><strong>Resource Allocation:</strong> The case_level classification helps identify which states need more intensive support</li>
+                            <li><strong>Risk Assessment:</strong> Understanding that 96.67% of reports had no deaths indicates low immediate mortality risk in early 2020</li>
+                            <li><strong>Geographic Focus:</strong> Kerala's dominance suggests the need for concentrated efforts in high-reporting states</li>
+                            <li><strong>Trend Monitoring:</strong> Baseline categories enable tracking of how severity patterns evolve over time</li>
+                            <li><strong>Public Health Strategy:</strong> The concentration of cases in urban centers informs containment strategies</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Learning Outcomes -->
+            <section id="learning-outcomes">
+                <div class="inner">
+                    <header class="major">
+                        <h2>⭐ Learning Outcomes from This Activity</h2>
+                    </header>
+                    <ul>
+                        <li>Systematic understanding of the key mathematical and statistical concepts and techniques which underpin mechanisms in Data Science and AI.</li>
+                        <li>Apply mathematical and statistical methods in these fields to help in the decision-making process.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Reflection -->
+            <section id="reflection">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Reflection</h2>
+                    </header>
+                    
+                    <p>This activity significantly expanded my understanding of categorical variable creation and manipulation in R. While Data Activity 2 introduced binary classification, this exercise demonstrated how to create more complex multi-level categories and conduct geographic analysis.</p>
+                    
+                    <p>The most impactful learning came from working with the <code>cut()</code> function to create the case_level variable. Understanding how to define meaningful breakpoints (-1, 0, 5, 15, Inf) and assign appropriate labels transformed continuous case counts into actionable categories. This skill is fundamental in data science—converting raw numbers into classifications that support decision-making.</p>
+                    
+                    <p>Converting the binary has_deaths variable into a labeled factor was particularly instructive. The transformation from numeric 0/1 to meaningful "No Deaths"/"Deaths Reported" labels demonstrates how proper data formatting improves interpretability. This is especially important when presenting findings to non-technical stakeholders who need to understand results quickly.</p>
+                    
+                    <p>The geographic analysis revealed Kerala's dominant position with 52 reports—nearly 20% of all observations. This finding makes sense given Kerala's role as India's early COVID-19 entry point, but seeing it quantified so clearly through simple frequency analysis was powerful. It demonstrated how straightforward statistical methods can uncover significant patterns when applied thoughtfully.</p>
+                    
+                    <p>The 96.67% "No Deaths" finding was striking but requires careful contextualization. Without understanding the January-March 2020 timeframe, this figure might be misinterpreted. This reinforced the importance of temporal context in data analysis—statistics alone don't tell the full story.</p>
+                    
+                    <p>From a technical perspective, I appreciated how R's functions build upon each other. The workflow—calculate total_cases, use cut() to categorize, then table() to summarize—represents a logical progression that's applicable to many data science problems. This modular approach to data transformation is something I can apply across different domains.</p>
+                    
+                    <p>The case severity distribution (52.96% Low Cases, 21.11% Medium, 6.67% High) perfectly illustrated the early pandemic phase. Most days saw minimal cases, with high-case days being rare exceptions. This pattern would change dramatically in later pandemic phases, making this baseline analysis valuable for understanding how the situation evolved.</p>
+                    
+                    <p>This activity reinforced that effective data analysis isn't just about applying functions—it's about choosing appropriate categorizations, understanding the context behind the numbers, and presenting findings in ways that support decision-making. These skills are essential for any data science role, particularly in public health where accurate interpretation can influence policy decisions affecting millions of people.</p>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <section id="navigation">
+                <div class="inner">
+                    <ul class="actions">
+                        <li><a href="data-activity2.html" class="button">← Previous: Data Activity 2</a></li>
+                        <li><a href="numerical-analysis.html" class="button">Back to Module Overview</a></li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                <ul class="icons">
+                    <li><a href="https://github.com/KannaAlmansoori" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; 2025 Kanna AlMansoori</li>
+                    <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
