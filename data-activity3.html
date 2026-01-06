@@ -392,96 +392,67 @@ top_10_states
             </section>
 
             <!-- Analysis and Interpretation -->
-            <section id="analysis">
-                <div class="inner">
-                    <header class="major">
-                        <h2>Analysis and Key Findings</h2>
-                    </header>
+           <!-- Analysis and Interpretation -->
+<section id="analysis">
+    <div class="inner">
+        <header class="major">
+            <h2>Analysis and Key Findings</h2>
+        </header>
 
-                    <h3>1. Death Reporting Patterns</h3>
-                    <div class="box">
-                        <p><strong>Key Finding:</strong> Only <strong>3.33% (9 out of 270)</strong> of daily reports documented deaths, while <strong>96.67% (261 reports)</strong> showed no deaths.</p>
-                        
-                        <h4>Interpretation:</h4>
-                        <ul>
-                            <li><strong>Early Pandemic Phase:</strong> This extremely low death rate reflects the January-March 2020 timeframe when the outbreak was just beginning in India</li>
-                            <li><strong>Limited Fatalities:</strong> With most cases being recent infections, few patients had reached critical stages by this period</li>
-                            <li><strong>Healthcare Response:</strong> Early detection and treatment may have contributed to low mortality rates</li>
-                            <li><strong>Data Context:</strong> Death reporting may have been inconsistent or incomplete in the early stages of the pandemic</li>
-                        </ul>
-                    </div>
+        <h3>1. Death Reporting Patterns</h3>
+        <div class="box">
+            <p><strong>What I Found:</strong> Only 9 out of 270 daily reports (3.33%) documented any deaths. The vast majority—261 reports (96.67%)—showed zero deaths.</p>
+            
+            <h4>What This Means:</h4>
+            <p>This extremely low death rate makes sense for January-March 2020. COVID-19 had just arrived in India, so most cases were recent infections. Patients hadn't reached critical stages yet, and healthcare systems were able to respond quickly to the limited number of cases. This data shows we're looking at the very beginning of the pandemic, not the widespread outbreak that came later.</p>
+        </div>
 
-                    <h3>2. Case Severity Distribution</h3>
-                    <div class="box">
-                        <p><strong>Distribution Pattern:</strong></p>
-                        <ul>
-                            <li><strong>Low Cases (1-5):</strong> 52.96% - The largest category, indicating most reporting days involved minimal cases</li>
-                            <li><strong>Medium Cases (6-15):</strong> 21.11% - Moderate case loads in about one-fifth of reports</li>
-                            <li><strong>No Cases:</strong> 19.26% - Nearly 20% of reports showed zero cases</li>
-                            <li><strong>High Cases (16+):</strong> 6.67% - Only a small fraction had significant case numbers</li>
-                        </ul>
-                        
-                        <h4>Key Insights:</h4>
-                        <ul>
-                            <li>The distribution is heavily skewed toward lower case counts, with <strong>72.22% of reports showing 5 or fewer cases</strong></li>
-                            <li>High-case scenarios (16+) were <strong>rare exceptions</strong> rather than the norm during this period</li>
-                            <li>This pattern indicates the pandemic was in its <strong>early containment phase</strong> rather than widespread community transmission</li>
-                            <li>The classification system effectively identifies severity levels for resource allocation and response planning</li>
-                        </ul>
-                    </div>
+        <h3>2. Case Severity Distribution</h3>
+        <div class="box">
+            <p><strong>What I Found:</strong> Most daily reports (52.96%) showed low case numbers (1-5 cases). Medium cases (6-15) made up 21.11%, while high cases (16+) were rare at only 6.67%. Nearly 20% of reports had no cases at all.</p>
+            
+            <h4>What This Means:</h4>
+            <p>The data clearly shows the pandemic was in its early containment phase. Over 72% of reports had 5 or fewer cases—this wasn't widespread community transmission yet. High-case days were exceptions, not the norm. This classification system effectively identifies which states needed immediate resources and which were still in the monitoring phase.</p>
+        </div>
 
-                    <h3>3. Geographic Distribution Analysis</h3>
-                    <div class="box">
-                        <p><strong>Top Finding:</strong> Kerala led with <strong>52 daily reports</strong> - more than double any other state.</p>
-                        
-                        <h4>Geographic Patterns:</h4>
-                        <ul>
-                            <li><strong>Kerala's Dominance:</strong> With 52 reports (19.26% of all reports), Kerala had by far the most frequent reporting, reflecting its role as an early entry point for COVID-19 into India through international travel</li>
-                            <li><strong>Tier 2 States:</strong> Delhi and Telengana (20 reports each) formed the second tier, representing major urban centers with international connections</li>
-                            <li><strong>Distributed Spread:</strong> The top 10 states/UTs account for approximately 77% of all reports, showing concentration in specific regions while most states had minimal reporting</li>
-                            <li><strong>Urban Concentration:</strong> Most top-reporting states are major urban centers or have significant international airports</li>
-                        </ul>
-                        
-                        <h4>Why Kerala Led:</h4>
-                        <ul>
-                            <li>First state to report COVID-19 cases in India (from travelers returning from Wuhan)</li>
-                            <li>High international connectivity, especially with the Middle East</li>
-                            <li>Strong public health infrastructure and early detection systems</li>
-                            <li>Proactive testing and reporting compared to other states</li>
-                        </ul>
-                    </div>
+        <h3>3. Geographic Patterns: Kerala's Story</h3>
+        <div class="box">
+            <p><strong>What I Found:</strong> Kerala dominated with 52 daily reports—more than double any other state. Delhi and Telengana tied for second place with 20 reports each. The top 10 states accounted for about 77% of all reports.</p>
+            
+            <h4>Why Kerala Led:</h4>
+            <p>Kerala was India's COVID-19 entry point. The state reported India's first cases from travelers returning from China, and it has strong international connections, especially with the Middle East. But Kerala's high numbers also reflect something positive: they had excellent public health infrastructure and were proactive about testing and reporting. While other states might have had undetected cases, Kerala was actively looking for them.</p>
+            
+            <p>The concentration in urban centers like Delhi, Mumbai (Maharashtra), and Bangalore (Karnataka) makes sense—these are major international hubs where the virus would naturally arrive first through travelers.</p>
+        </div>
 
-                    <h3>4. Statistical Methodology Insights</h3>
-                    <div class="box">
-                        <p>This activity demonstrated several important data science concepts:</p>
-                        <ul>
-                            <li><strong>Binary Classification:</strong> The has_deaths variable shows how continuous or count data can be simplified into yes/no categories for specific analytical purposes</li>
-                            <li><strong>Multi-level Categorization:</strong> The case_level variable demonstrates how cut() function creates meaningful severity categories from numeric data</li>
-                            <li><strong>Factor Variables:</strong> Converting to labeled factors makes data more interpretable and prepares it for categorical analysis</li>
-                            <li><strong>Frequency Analysis:</strong> Simple counting and sorting revealed clear geographic patterns that would be harder to see in raw data</li>
-                            <li><strong>Data Transformation:</strong> Creating derived variables (total_cases) from existing columns enabled more sophisticated classification</li>
-                        </ul>
-                    </div>
+        <h3>4. What I Learned About Data Analysis</h3>
+        <div class="box">
+            <p>This activity showed me how powerful simple categorization can be:</p>
+            <ul>
+                <li>Creating the <code>has_deaths</code> binary variable simplified a complex question into yes/no, making patterns immediately visible</li>
+                <li>The <code>case_level</code> categories transformed raw numbers into severity levels that anyone can understand</li>
+                <li>Converting numbers to labeled factors ("No Deaths" vs 0) made my analysis accessible to people without statistical backgrounds</li>
+                <li>Simple frequency tables revealed geographic patterns that would be hard to spot in raw data</li>
+            </ul>
+        </div>
 
-                    <h3>5. Implications for Decision-Making</h3>
-                    <div class="box">
-                        <p>These analyses support evidence-based decisions:</p>
-                        <ul>
-                            <li><strong>Resource Allocation:</strong> The case_level classification helps identify which states need more intensive support</li>
-                            <li><strong>Risk Assessment:</strong> Understanding that 96.67% of reports had no deaths indicates low immediate mortality risk in early 2020</li>
-                            <li><strong>Geographic Focus:</strong> Kerala's dominance suggests the need for concentrated efforts in high-reporting states</li>
-                            <li><strong>Trend Monitoring:</strong> Baseline categories enable tracking of how severity patterns evolve over time</li>
-                            <li><strong>Public Health Strategy:</strong> The concentration of cases in urban centers informs containment strategies</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
+        <h3>5. Real-World Applications</h3>
+        <div class="box">
+            <p>Understanding these patterns helps with practical decisions:</p>
+            <ul>
+                <li><strong>Resource Planning:</strong> States with high case counts need immediate medical supplies and personnel</li>
+                <li><strong>Risk Communication:</strong> The 96.67% "no deaths" figure helps explain that early 2020 was different from later pandemic waves</li>
+                <li><strong>Geographic Strategy:</strong> Focusing on Kerala and major urban centers made sense given the data</li>
+                <li><strong>Baseline Comparison:</strong> These early numbers provide a benchmark to measure how the pandemic evolved</li>
+            </ul>
+        </div>
+    </div>
+</section>
             <!-- Learning Outcomes -->
             <section id="learning-outcomes">
                 <div class="inner">
                     <header class="major">
-                        <h2>⭐ Learning Outcomes from This Activity</h2>
+                        <h2>Learning Outcomes from This Activity</h2>
                     </header>
                     <ul>
                         <li>Systematic understanding of the key mathematical and statistical concepts and techniques which underpin mechanisms in Data Science and AI.</li>
@@ -490,30 +461,20 @@ top_10_states
                 </div>
             </section>
 
-            <!-- Reflection -->
-            <section id="reflection">
-                <div class="inner">
-                    <header class="major">
-                        <h2>Reflection</h2>
-                    </header>
-                    
-                    <p>This activity significantly expanded my understanding of categorical variable creation and manipulation in R. While Data Activity 2 introduced binary classification, this exercise demonstrated how to create more complex multi-level categories and conduct geographic analysis.</p>
-                    
-                    <p>The most impactful learning came from working with the <code>cut()</code> function to create the case_level variable. Understanding how to define meaningful breakpoints (-1, 0, 5, 15, Inf) and assign appropriate labels transformed continuous case counts into actionable categories. This skill is fundamental in data science—converting raw numbers into classifications that support decision-making.</p>
-                    
-                    <p>Converting the binary has_deaths variable into a labeled factor was particularly instructive. The transformation from numeric 0/1 to meaningful "No Deaths"/"Deaths Reported" labels demonstrates how proper data formatting improves interpretability. This is especially important when presenting findings to non-technical stakeholders who need to understand results quickly.</p>
-                    
-                    <p>The geographic analysis revealed Kerala's dominant position with 52 reports—nearly 20% of all observations. This finding makes sense given Kerala's role as India's early COVID-19 entry point, but seeing it quantified so clearly through simple frequency analysis was powerful. It demonstrated how straightforward statistical methods can uncover significant patterns when applied thoughtfully.</p>
-                    
-                    <p>The 96.67% "No Deaths" finding was striking but requires careful contextualization. Without understanding the January-March 2020 timeframe, this figure might be misinterpreted. This reinforced the importance of temporal context in data analysis—statistics alone don't tell the full story.</p>
-                    
-                    <p>From a technical perspective, I appreciated how R's functions build upon each other. The workflow—calculate total_cases, use cut() to categorize, then table() to summarize—represents a logical progression that's applicable to many data science problems. This modular approach to data transformation is something I can apply across different domains.</p>
-                    
-                    <p>The case severity distribution (52.96% Low Cases, 21.11% Medium, 6.67% High) perfectly illustrated the early pandemic phase. Most days saw minimal cases, with high-case days being rare exceptions. This pattern would change dramatically in later pandemic phases, making this baseline analysis valuable for understanding how the situation evolved.</p>
-                    
-                    <p>This activity reinforced that effective data analysis isn't just about applying functions—it's about choosing appropriate categorizations, understanding the context behind the numbers, and presenting findings in ways that support decision-making. These skills are essential for any data science role, particularly in public health where accurate interpretation can influence policy decisions affecting millions of people.</p>
-                </div>
-            </section>
+     <!-- Reflection -->
+<section id="reflection">
+    <div class="inner">
+        <header class="major">
+            <h2>Reflection</h2>
+        </header>
+        
+        <p>This activity taught me how to create and use categorical variables effectively in R. The most valuable skill I gained was using the <code>cut()</code> function to transform continuous case numbers into meaningful severity levels (No Cases, Low, Medium, High). This technique makes raw data much easier to interpret and use for decision-making.</p>
+        
+        <p>Working with the binary <code>has_deaths</code> variable and converting it to labeled factors showed me the importance of clear data presentation. Using "No Deaths" and "Deaths Reported" instead of 0 and 1 makes results immediately understandable, especially when sharing findings with non-technical audiences.</p>
+        
+        <p>The geographic analysis was eye-opening—seeing Kerala with 52 reports (nearly 20% of all data) clearly demonstrated how simple frequency tables can reveal important patterns. The finding that 96.67% of reports had no deaths and 52.96% showed low case counts perfectly captured the early pandemic phase in India. These statistical methods proved that straightforward analysis, when applied correctly, can provide powerful insights for public health decision-making.</p>
+    </div>
+</section>
 
             <!-- Navigation -->
             <section id="navigation">
