@@ -211,77 +211,192 @@
                             </ul>
                         </li>
                     </ol>
+<h3>R Code</h3>
+<p><em>Below is my R code implementation for this activity:</em></p>
 
-                    <h3>R Code</h3>
-                    <p><em>Below is my R code implementation for this activity:</em></p>
-                    
-                    <pre><code># Load required libraries
+<pre><code># Load required libraries
 library(readxl)
 library(ggplot2)
 library(dplyr)
 
 # Load the dataset
-covid_data <- read_excel("Covid19 India Jan 20 Mar 20.csv.xls")
+df <- read_excel("Covid19 India (Jan 20 - Mar 20).csv.xls")
 
-# Calculate measures of central tendency and dispersion
-# ... your code here
+# View structure of the dataset
+str(df)
+names(df)
 
-# Create visualizations
-# Histograms with density curves
-# ... your code here
+# Create a custom function for descriptive statistics
+summary_stats <- function(x) {
+  c(
+    Mean = mean(x, na.rm = TRUE),
+    Median = median(x, na.rm = TRUE),
+    SD = sd(x, na.rm = TRUE),
+    Variance = var(x, na.rm = TRUE),
+    Min = min(x, na.rm = TRUE),
+    Max = max(x, na.rm = TRUE)
+  )
+}
 
-# Boxplots
-# ... your code here
+# Calculate descriptive statistics for all variables
+summary_stats(df$ConfirmedIndianNational)
+summary_stats(df$ConfirmedForeignNational)
+summary_stats(df$Cured)
+summary_stats(df$Deaths)
 
-# Violin plots
-# ... your code here
-                    </code></pre>
+# Create histograms with density curves
+# Histogram for Indian Nationals
+hist(df$ConfirmedIndianNational, probability = TRUE,
+     main = "Histogram: Indian Nationals",
+     xlab = "Confirmed Indian Nationals")
+lines(density(df$ConfirmedIndianNational, na.rm = TRUE), col = "red", lwd = 2)
 
-                    <h3>Screenshots</h3>
-                    <p><em>Screenshots of my R code execution and results:</em></p>
+# Histogram for Foreign Nationals
+hist(df$ConfirmedForeignNational, probability = TRUE,
+     main = "Histogram: Foreign Nationals",
+     xlab = "Confirmed Foreign Nationals")
+lines(density(df$ConfirmedForeignNational, na.rm = TRUE), col = "red", lwd = 2)
+
+# Histogram for Cured Cases
+hist(df$Cured, probability = TRUE,
+     main = "Histogram: Cured",
+     xlab = "Cured Cases")
+lines(density(df$Cured, na.rm = TRUE), col = "red", lwd = 2)
+
+# Histogram for Deaths
+hist(df$Deaths, probability = TRUE,
+     main = "Histogram: Deaths",
+     xlab = "Deaths")
+lines(density(df$Deaths, na.rm = TRUE), col = "red", lwd = 2)
+
+# Create boxplots to identify outliers
+boxplot(df$ConfirmedIndianNational,
+        df$ConfirmedForeignNational,
+        df$Cured,
+        df$Deaths,
+        names = c("Ind Nat", "For Nat", "Cured", "Deaths"),
+        main = "Boxplots of COVID-19 Variables",
+        ylab = "Values")
+
+# Install and load ggplot2 for violin plots
+install.packages("ggplot2")
+library(ggplot2)
+
+# Violin plot for Indian Nationals
+ggplot(df, aes(x = "", y = ConfirmedIndianNational)) +
+  geom_violin(fill = "lightblue") +
+  ggtitle("Violin Plot: Indian Nationals")
+
+# Violin plot for Foreign Nationals
+ggplot(df, aes(x = "", y = ConfirmedForeignNational)) +
+  geom_violin(fill = "lightgreen") +
+  ggtitle("Violin Plot: Foreign Nationals")
+</code></pre>
                     
-                    <!-- Image placeholders -->
-                    <div class="box">
-                        <h4>Screenshot 1: Measures of Central Tendency</h4>
-                        <span class="image fit">
-                            <img src="images/NumericalAnalysis/Unit2Seminar-screenshot1.png" alt="Central tendency calculations" />
-                        </span>
-                        <p><em>Caption: Calculating mean, median, mode, and standard deviation for COVID-19 cases</em></p>
-                    </div>
 
-                    <div class="box">
-                        <h4>Screenshot 2: Histograms with Density Curves</h4>
-                        <span class="image fit">
-                            <img src="images/NumericalAnalysis/Unit2Seminar-screenshot2.png" alt="Histograms" />
-                        </span>
-                        <p><em>Caption: Histograms showing distribution of confirmed cases with density overlay</em></p>
-                    </div>
+                    
 
-                    <div class="box">
-                        <h4>Screenshot 3: Boxplots</h4>
-                        <span class="image fit">
-                            <img src="images/NumericalAnalysis/Unit2Seminar-screenshot3.png" alt="Boxplots" />
-                        </span>
-                        <p><em>Caption: Boxplots identifying outliers in the COVID-19 dataset</em></p>
-                    </div>
+     <h3>Analysis Results and Visualizations</h3>
+<p><em>Below are the results from my statistical analysis and visualizations:</em></p>
 
-                    <div class="box">
-                        <h4>Screenshot 4: Violin Plots</h4>
-                        <span class="image fit">
-                            <img src="images/NumericalAnalysis/Unit2Seminar-screenshot4.png" alt="Violin plots" />
-                        </span>
-                        <p><em>Caption: Violin plots showing distribution shape across different variables</em></p>
-                    </div>
+<!-- Descriptive Statistics Summary -->
+<div class="box">
+    <h4>1. Descriptive Statistics Summary</h4>
+    <span class="image fit">
+        <img src="https://raw.githubusercontent.com/KannaAlMansoori/images/main/NumericalAnalysis/ActivityUnit_2Sem.png" alt="Descriptive Statistics" />
+    </span>
+    <p><em>Summary statistics showing mean, median, SD, variance, min, and max for all COVID-19 variables</em></p>
+</div>
+
+<!-- Histograms -->
+<div class="box">
+    <h4>2. Histogram: Indian Nationals</h4>
+    <span class="image fit">
+        <img src="https://raw.githubusercontent.com/KannaAlMansoori/images/main/NumericalAnalysis/ActivityUnit_2Sem_Indian_nationals.png" alt="Indian Nationals Histogram" />
+    </span>
+    <p><em>Histogram with density curve showing right-skewed distribution. Most values between 0-10, with outliers up to 60.</em></p>
+</div>
+
+<div class="box">
+    <h4>3. Histogram: Foreign Nationals</h4>
+    <span class="image fit">
+        <img src="https://raw.githubusercontent.com/KannaAlMansoori/images/main/NumericalAnalysis/ActivityUnit_2Sem_Foreign_nationals.png" alt="Foreign Nationals Histogram" />
+    </span>
+    <p><em>Distribution heavily concentrated at zero, with rare spikes extending to 14 cases.</em></p>
+</div>
+
+<div class="box">
+    <h4>4. Histogram: Cured Cases</h4
+                                     
+    <span class="image fit">
+        <img src="https://raw.githubusercontent.com/KannaAlMansoori/images/main/NumericalAnalysis/ActivityUnit_2Sem_Cured.png" alt="Cured Cases Histogram" />
+    </span>
+    <p><em>Majority of values at zero with small tail extending to 9 recoveries.</em></p>
+</div>
+
+<div class="box">
+    <h4>5. Histogram: Deaths</h4>
+    <span class="image fit">
+        <img src="https://raw.githubusercontent.com/KannaAlMansoori/images/main/NumericalAnalysis/ActivityUnit_2Sem_Death.png" alt="Deaths Histogram" />
+    </span>
+    <p><em>Nearly all values at zero, with minimal density at 1 death.</em></p>
+</div>
+
+<!-- Violin Plots -->
+<div class="box">
+    <h4>6. Violin Plot: Indian Nationals</h4>
+    <span class="image fit">
+        <img src="https://raw.githubusercontent.com/KannaAlMansoori/images/main/NumericalAnalysis/Violin_Indian_Nationals.png" alt="Violin Plot Indian" />
+    </span>
+    <p><em>Wide base showing concentration of low values, thin upper tail indicating rare high-case days.</em></p>
+</div>
+
+<div class="box">
+    <h4>7. Violin Plot: Foreign Nationals</h4>
+    <span class="image fit">
+        <img src="https://raw.githubusercontent.com/KannaAlMansoori/images/main/NumericalAnalysis/Violin_Foreign_Nationals.png" alt="Violin Plot Foreign" />
+    </span>
+    <p><em>Nearly flat at zero with thin vertical extension showing rare outliers.</em></p>
+</div>
+
 
                     <h3>Key Findings</h3>
-                    <p><em>Summary of findings from the dataset activity:</em></p>
-                    <ul>
-                        <li>Central tendency measures: [Your findings]</li>
-                        <li>Dispersion measures: [Your findings]</li>
-                        <li>Distribution patterns identified: [Your findings]</li>
-                        <li>Outliers detected: [Your findings]</li>
-                        <li>Key insights from visualizations: [Your findings]</li>
-                    </ul>
+<p><em>Summary of findings from the COVID-19 dataset activity:</em></p>
+
+<h4>1. Measures of Central Tendency and Dispersion:</h4>
+<ul>
+    <li><strong>Confirmed Indian Nationals:</strong> Mean = 5.55, Median = 3.00, SD = 8.34, Variance = 69.55, Range: 0-60</li>
+    <li><strong>Confirmed Foreign Nationals:</strong> Mean = 1.33, Median = 0.00, SD = 3.59, Variance = 12.87, Range: 0-14</li>
+    <li><strong>Cured Cases:</strong> Mean = 0.60, Median = 0.00, SD = 1.46, Variance = 2.14, Range: 0-9</li>
+    <li><strong>Deaths:</strong> Mean = 0.09, Median = 0.00, SD = 0.29, Variance = 0.08, Range: 0-1</li>
+</ul>
+
+<h4>2. Distribution Patterns Identified:</h4>
+<ul>
+    <li>All variables showed <strong>strong right-skewed distributions</strong> with most values concentrated near zero</li>
+    <li>Indian Nationals had the widest spread with significant variability (SD = 8.34)</li>
+    <li>Foreign Nationals, Cured, and Deaths were predominantly zero with occasional spikes</li>
+    <li>Median values of zero for three variables indicate that most observations had no cases</li>
+</ul>
+
+<h4>3. Outliers Detected:</h4>
+<ul>
+    <li><strong>Indian Nationals:</strong> Multiple outliers above 20 cases, maximum reaching 60</li>
+    <li><strong>Foreign Nationals:</strong> Outliers present beyond 5 cases, extending to 14</li>
+    <li><strong>Cured Cases:</strong> Outliers detected above 3 cases</li>
+    <li><strong>Deaths:</strong> Maximum value of 1 represented the upper limit</li>
+</ul>
+
+<h4>4. Key Insights from Visualizations:</h4>
+<ul>
+    <li><strong>Histograms</strong> revealed the extreme concentration of data near zero with long right tails, confirming the early-stage pandemic characteristics</li>
+    <li><strong>Violin plots</strong> clearly illustrated the distribution shapes: wide bases (high frequency of low values) with thin extensions (rare high values)</li>
+    <li><strong>Boxplots</strong> effectively identified outlier states/days that experienced significantly higher case numbers compared to the majority</li>
+</ul>
+
+<h4>5. Overall Interpretation:</h4>
+<p>The analysis reveals that during January-March 2020, COVID-19 spread in India was highly uneven and concentrated. Most states reported minimal or zero cases across all categories, while a few hotspots drove the overall statistics. This pattern is typical of early-stage epidemic spread before widespread community transmission. The low recovery and death numbers reflect both the early pandemic phase and the limited scale of infections during this period.</p>
+                    
                 </div>
             </section>
 
