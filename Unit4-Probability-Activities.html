@@ -68,41 +68,18 @@ html_content = """<!DOCTYPE HTML>
                         <h2>Task Overview</h2>
                     </header>
                     
-                    <p>This unit introduces foundational probability concepts essential for data science and AI applications. Through three interconnected activities, I explored basic probability calculations, examined real-world applications, and investigated both discrete and continuous probability distributions using interactive simulations.</p>
+                    <p>This unit introduced foundational probability concepts through three hands-on activities: basic probability calculations with marbles, real-world applications through videos, and interactive exploration of probability distributions.</p>
                     
                     <h3>Activity Components:</h3>
                     <ol>
-                        <li><strong>Activity 1: Marble Probability</strong>
-                            <ul>
-                                <li>Calculate basic probabilities using the marble example</li>
-                                <li>Understand probability as a ratio of favorable to total outcomes</li>
-                                <li>Verify that probabilities sum to 1</li>
-                            </ul>
-                        </li>
-                        <li><strong>Activity 2: Real-World Applications</strong>
-                            <ul>
-                                <li>Watch video on everyday uses of probability in society</li>
-                                <li>Understand different types of sampling methods</li>
-                                <li>Connect theoretical concepts to practical applications</li>
-                            </ul>
-                        </li>
-                        <li><strong>Activity 3: Probability Distributions</strong>
-                            <ul>
-                                <li>Explore discrete distributions: Binomial, Poisson, Hypergeometric</li>
-                                <li>Investigate continuous distributions: Normal, Uniform, Exponential, Gaussian</li>
-                                <li>Understand distribution parameters and their effects</li>
-                                <li>Visualize how distributions change with different parameters</li>
-                            </ul>
-                        </li>
+                        <li><strong>Activity 1: Marble Probability</strong> - Calculate probabilities for selecting colored marbles and verify they sum to 1</li>
+                        <li><strong>Activity 2: Real-World Applications</strong> - Watch videos on crime prediction and sampling methods</li>
+                        <li><strong>Activity 3: Probability Distributions</strong> - Explore discrete (Binomial, Poisson, Hypergeometric) and continuous (Normal, Exponential) distributions</li>
                     </ol>
 
                     <div class="box">
-                        <h4>Learning Outcomes Targeted:</h4>
-                        <ul>
-                            <li>Systematic understanding of key mathematical and statistical concepts and techniques which underpin mechanisms in Data Science and AI</li>
-                            <li>Apply mathematical and statistical methods in these fields to help in the decision-making process</li>
-                            <li>Critically evaluate the use of statistical analysis and the numeric interpretation of results as aids in the decision-making process</li>
-                        </ul>
+                        <h4>Key Focus:</h4>
+                        <p>Understanding how probability theory forms the mathematical foundation for uncertainty in data science and AI applications.</p>
                     </div>
                 </div>
             </section>
@@ -114,111 +91,31 @@ html_content = """<!DOCTYPE HTML>
                         <h2>Methodology</h2>
                     </header>
                     
-                    <h3>Activity 1: Marble Probability Calculations</h3>
-                    <p>Using an interactive marble probability simulator, I calculated basic probabilities for selecting colored marbles from a container. The scenario included:</p>
+                    <h3>Activity 1: Marble Probability</h3>
+                    <p>Using the Wolfram demonstration website, I calculated probabilities for a scenario with 1 red, 1 blue, and 1 yellow marble (3 total).</p>
+                    <p><strong>Formula:</strong> P(event) = Number of favorable outcomes / Total possible outcomes</p>
+
+                    <h3>Activity 2: Video Learning</h3>
                     <ul>
-                        <li>1 red marble</li>
-                        <li>1 blue marble</li>
-                        <li>1 yellow marble</li>
-                        <li>Total: 3 marbles</li>
+                        <li><strong>Crime Spotting:</strong> Explored how probability is used in predictive policing and resource allocation</li>
+                        <li><strong>Sampling Methods:</strong> Learned about stratified, systematic, and cluster sampling techniques</li>
                     </ul>
 
-                    <h4>Probability Formula Applied:</h4>
-                    <p><strong>P(event) = Number of favorable outcomes / Total number of possible outcomes</strong></p>
-
-                    <h3>Activity 2: Video Analysis</h3>
-                    <p>Watched two educational videos:</p>
+                    <h3>Activity 3: Distribution Exploration</h3>
+                    <p>Used interactive Jupyter notebooks to explore how changing parameters affects distribution shapes:</p>
+                    
+                    <h4>Discrete Distributions:</h4>
                     <ul>
-                        <li><strong>Video 1:</strong> "Crime spotting: Joy of Stats" - Demonstrating everyday applications of probability in society, including crime prediction and risk assessment</li>
-                        <li><strong>Video 2:</strong> "Types of Sampling Methods" - Explaining different statistical sampling techniques including stratified random sampling, systematic sampling, and cluster sampling</li>
+                        <li><strong>Binomial:</strong> Models successes in fixed trials (parameters: n, p)</li>
+                        <li><strong>Poisson:</strong> Models event counts over time (parameter: λ)</li>
+                        <li><strong>Hypergeometric:</strong> Models sampling without replacement (parameters: N, k, n)</li>
                     </ul>
 
-                    <h3>Activity 3: Interactive Distribution Exploration</h3>
-                    <p>Used interactive Jupyter notebook manipulatives to explore probability distributions by adjusting parameters and observing how distributions change. Each distribution was examined through visual representations and mathematical formulas.</p>
-
-                    <h4>Discrete Distributions Explored:</h4>
-                    <div class="box">
-                        <h5>1. Binomial Distribution</h5>
-                        <p>Models the number of successes in a fixed number of independent trials with constant probability.</p>
-                        <p><strong>Parameters explored:</strong></p>
-                        <ul>
-                            <li>n = number of trials (tosses)</li>
-                            <li>p = probability of success (heads) on each trial</li>
-                        </ul>
-                        <p><strong>Key observation:</strong> With n=10 and p=0.5, the distribution is symmetric and bell-shaped, centered around 5 (the expected value).</p>
-                    </div>
-
-                    <div class="box">
-                        <h5>2. Poisson Distribution</h5>
-                        <p>Models the number of events occurring in a fixed interval of time or space when events occur independently at a constant average rate.</p>
-                        <p><strong>Parameters explored:</strong></p>
-                        <ul>
-                            <li>λ (lambda) = mean number of events per unit time</li>
-                            <li>Steps and paths for simulation</li>
-                            <li>Confidence intervals (50%, 90%, 95%, 99%, 99.9%)</li>
-                        </ul>
-                        <p><strong>Key observation:</strong> The simulated paths show random jumps representing event occurrences, with confidence intervals widening over time.</p>
-                    </div>
-
-                    <div class="box">
-                        <h5>3. Hypergeometric Distribution</h5>
-                        <p>Models sampling without replacement from a finite population containing exactly two types of objects.</p>
-                        <p><strong>Parameters explored:</strong></p>
-                        <ul>
-                            <li>N = total number of balls (100)</li>
-                            <li>k = number of marked balls (25)</li>
-                            <li>n = sample size (20)</li>
-                        </ul>
-                        <p><strong>Formula observed:</strong> Mean = kn/N, Variance = kn(1-k/N)(-n+N)/[(-1+N)N]</p>
-                        <p><strong>Results:</strong> Mean = 5.00, Variance = 3.03</p>
-                    </div>
-
-                    <h4>Continuous Distributions Explored:</h4>
-                    <div class="box">
-                        <h5>1. Normal (Gaussian) Distribution</h5>
-                        <p>The most important continuous distribution, characterized by its bell-shaped curve.</p>
-                        <p><strong>Parameters explored:</strong></p>
-                        <ul>
-                            <li>μ (mu) = mean (center of distribution)</li>
-                            <li>σ (sigma) = standard deviation (spread)</li>
-                        </ul>
-                        <p><strong>Probability density function:</strong></p>
-                        <p>f(y) = (1/√(2πσ²)) × e^(-(y-μ)²/(2σ²))</p>
-                        <p><strong>Key observation:</strong> Adjusting μ shifts the curve horizontally; adjusting σ changes the spread (wider or narrower).</p>
-                    </div>
-
-                    <div class="box">
-                        <h5>2. Exponential Distribution</h5>
-                        <p>Models waiting times between events in a Poisson process.</p>
-                        <p><strong>Parameter explored:</strong></p>
-                        <ul>
-                            <li>λ (lambda) = rate parameter (must be positive)</li>
-                        </ul>
-                        <p><strong>Properties:</strong></p>
-                        <ul>
-                            <li>Mean = 1/λ</li>
-                            <li>Variance = 1/λ²</li>
-                            <li>Moment generating function = λ/(λ-t)</li>
-                        </ul>
-                        <p><strong>Key observation:</strong> The distribution is always right-skewed, with highest probability density near zero, decreasing exponentially.</p>
-                    </div>
-
-                    <div class="box">
-                        <h5>3. Newsvendor Model Application</h5>
-                        <p>Explored a practical application demonstrating capacity planning for short life cycle products using Gaussian distribution to model demand uncertainty.</p>
-                        <p><strong>Parameters:</strong></p>
-                        <ul>
-                            <li>μ = 350 (mean demand)</li>
-                            <li>σ = 100 (demand variability)</li>
-                            <li>Order quantity Q = 469 units</li>
-                        </ul>
-                        <p><strong>Results:</strong></p>
-                        <ul>
-                            <li>Expected profit with optimal Q: 49,147</li>
-                            <li>Expected understocking with Q: 6 units</li>
-                            <li>Expected overstocking with Q: 125 units</li>
-                        </ul>
-                    </div>
+                    <h4>Continuous Distributions:</h4>
+                    <ul>
+                        <li><strong>Normal:</strong> Bell curve shape (parameters: μ mean, σ standard deviation)</li>
+                        <li><strong>Exponential:</strong> Models waiting times (parameter: λ rate)</li>
+                    </ul>
                 </div>
             </section>
 
@@ -241,105 +138,82 @@ html_content = """<!DOCTYPE HTML>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Probability of getting a red marble</td>
-                                    <td>P(red) = 1/3</td>
+                                    <td>P(red marble)</td>
+                                    <td>1/3</td>
                                     <td>0.333 or 33.33%</td>
                                 </tr>
                                 <tr>
-                                    <td>Probability of getting a blue marble</td>
-                                    <td>P(blue) = 1/3</td>
+                                    <td>P(blue marble)</td>
+                                    <td>1/3</td>
                                     <td>0.333 or 33.33%</td>
                                 </tr>
                                 <tr>
-                                    <td>Probability of getting a yellow marble</td>
-                                    <td>P(yellow) = 1/3</td>
+                                    <td>P(yellow marble)</td>
+                                    <td>1/3</td>
                                     <td>0.333 or 33.33%</td>
                                 </tr>
                                 <tr style="background-color: #f5f5f5;">
-                                    <td><strong>Verification (sum of all probabilities)</strong></td>
+                                    <td><strong>Verification</strong></td>
                                     <td>1/3 + 1/3 + 1/3</td>
-                                    <td><strong>1.0 or 100% ✓</strong></td>
+                                    <td><strong>1.0 ✓</strong></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
 
-                    <h3>Activity 2: Key Insights from Videos</h3>
+                    <h3>Activity 2: Key Insights</h3>
                     <div class="box">
-                        <h4>Crime Spotting - Practical Applications:</h4>
-                        <ul>
-                            <li><strong>Predictive Policing:</strong> Using probability to forecast where crimes are most likely to occur</li>
-                            <li><strong>Resource Allocation:</strong> Deploying police resources based on probability distributions of crime locations</li>
-                            <li><strong>Risk Assessment:</strong> Calculating probabilities of different types of crimes in various areas</li>
-                            <li><strong>Pattern Recognition:</strong> Using historical data to identify probability patterns in criminal behavior</li>
-                        </ul>
+                        <p><strong>Crime Prediction:</strong> Demonstrated how probability helps predict where crimes are likely to occur, enabling better resource allocation.</p>
+                        <p><strong>Sampling Methods:</strong> Learned that different sampling techniques (stratified, systematic, cluster) affect data quality and representation.</p>
                     </div>
 
-                    <div class="box">
-                        <h4>Sampling Methods Understanding:</h4>
-                        <ul>
-                            <li><strong>Stratified Random Sampling:</strong> Dividing population into strata (groups) and randomly sampling from each</li>
-                            <li><strong>Systematic Sampling:</strong> Selecting every nth item from a list</li>
-                            <li><strong>Cluster Sampling:</strong> Dividing population into clusters and randomly selecting entire clusters</li>
-                            <li><strong>Simple Random Sampling:</strong> Every member has equal probability of selection</li>
-                        </ul>
-                    </div>
-
-                    <h3>Activity 3: Distribution Characteristics Summary</h3>
+                    <h3>Activity 3: Distribution Characteristics</h3>
                     <div class="table-wrapper">
                         <table>
                             <thead>
                                 <tr>
                                     <th>Distribution</th>
                                     <th>Type</th>
-                                    <th>Key Parameters</th>
-                                    <th>Common Applications</th>
+                                    <th>Common Use</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>Binomial</td>
                                     <td>Discrete</td>
-                                    <td>n (trials), p (success probability)</td>
-                                    <td>Quality control, success/failure scenarios</td>
+                                    <td>A/B testing, quality control</td>
                                 </tr>
                                 <tr>
                                     <td>Poisson</td>
                                     <td>Discrete</td>
-                                    <td>λ (rate)</td>
-                                    <td>Call center arrivals, website visits</td>
+                                    <td>Event counting, anomaly detection</td>
                                 </tr>
                                 <tr>
                                     <td>Hypergeometric</td>
                                     <td>Discrete</td>
-                                    <td>N (population), k (successes), n (sample)</td>
-                                    <td>Sampling without replacement, lottery</td>
+                                    <td>Sampling without replacement</td>
                                 </tr>
                                 <tr>
                                     <td>Normal</td>
                                     <td>Continuous</td>
-                                    <td>μ (mean), σ (std dev)</td>
-                                    <td>Heights, test scores, measurement errors</td>
+                                    <td>Most ML algorithms, test scores</td>
                                 </tr>
                                 <tr>
                                     <td>Exponential</td>
                                     <td>Continuous</td>
-                                    <td>λ (rate)</td>
-                                    <td>Time between events, reliability</td>
+                                    <td>Time between events, survival analysis</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
 
-                    <h3>Visual Summary</h3>
                     <div class="box">
-                        <h4>Key Findings:</h4>
+                        <h4>Key Observations:</h4>
                         <ul>
-                            <li><strong>Basic Probability:</strong> Successfully calculated equal probabilities (1/3) for uniformly distributed outcomes</li>
-                            <li><strong>Distribution Shapes:</strong> Observed characteristic shapes (bell curves, exponential decay, discrete bars)</li>
-                            <li><strong>Parameter Effects:</strong> Understood how adjusting parameters changes distribution properties</li>
-                            <li><strong>Real Applications:</strong> Connected mathematical concepts to practical decision-making scenarios</li>
-                            <li><strong>Discrete vs Continuous:</strong> Recognized fundamental differences in distribution types and their appropriate uses</li>
+                            <li>Normal distribution is symmetric when μ=0 and becomes wider as σ increases</li>
+                            <li>Binomial distribution is symmetric when p=0.5</li>
+                            <li>Poisson confidence intervals widen over time, showing accumulating uncertainty</li>
+                            <li>Exponential distribution has a "memoryless" property - past doesn't affect future probability</li>
                         </ul>
                     </div>
                 </div>
@@ -352,109 +226,41 @@ html_content = """<!DOCTYPE HTML>
                         <h2>Analysis and Key Findings</h2>
                     </header>
 
-                    <h3>1. Fundamental Probability Principles</h3>
+                    <h3>1. Why This Matters for AI and Data Science</h3>
                     <div class="box">
-                        <p>The marble activity reinforced core probability axioms:</p>
+                        <p>Probability isn't just math—it's the language machines use to handle uncertainty. Every time a model predicts something, it's calculating probabilities. Understanding these distributions helps me:</p>
                         <ul>
-                            <li><strong>Non-negativity:</strong> All probabilities are between 0 and 1</li>
-                            <li><strong>Normalization:</strong> Sum of all probabilities equals 1</li>
-                            <li><strong>Uniformity:</strong> When outcomes are equally likely, each has probability 1/n</li>
-                            <li><strong>Additivity:</strong> Probabilities of mutually exclusive events sum</li>
+                            <li>Choose the right model for the right problem</li>
+                            <li>Interpret what predictions actually mean</li>
+                            <li>Recognize when data doesn't fit expected patterns (anomaly detection)</li>
+                            <li>Understand why balanced datasets matter in classification</li>
                         </ul>
-                        <p>This simple exercise demonstrates why probability theory forms the mathematical foundation for uncertainty quantification in AI and machine learning.</p>
                     </div>
 
-                    <h3>2. Discrete Distributions in Data Science</h3>
+                    <h3>2. Real-World Connections</h3>
                     <div class="box">
-                        <p><strong>Binomial Distribution Applications:</strong></p>
-                        <ul>
-                            <li><strong>A/B Testing:</strong> Determining if conversion rate differences are statistically significant</li>
-                            <li><strong>Classification Metrics:</strong> Understanding true positive rates, false positive rates</li>
-                            <li><strong>Quality Control:</strong> Modeling defect rates in manufacturing</li>
-                            <li><strong>Monte Carlo Methods:</strong> Simulating binary outcome scenarios</li>
-                        </ul>
-                        <p>The symmetric shape when p=0.5 explains why balanced datasets are often preferred in machine learning—the distribution of outcomes is most predictable.</p>
+                        <p><strong>Binomial → A/B Testing:</strong> When comparing two website versions, we're counting successes (clicks/conversions) in n trials. The binomial distribution tells us if the difference is real or just luck.</p>
+                        
+                        <p><strong>Poisson → System Monitoring:</strong> How many errors per hour is normal? Poisson helps detect when something's wrong.</p>
+                        
+                        <p><strong>Normal → Everything:</strong> From test scores to measurement errors, the Central Limit Theorem explains why normal distribution appears everywhere. Most ML algorithms assume errors are normally distributed.</p>
+                        
+                        <p><strong>Exponential → Waiting Times:</strong> Time until next customer arrival, time until equipment fails. Its "memoryless" property means past waiting doesn't affect future waiting.</p>
                     </div>
 
+                    <h3>3. The Sampling Insight</h3>
                     <div class="box">
-                        <p><strong>Poisson Distribution Relevance:</strong></p>
-                        <ul>
-                            <li><strong>Anomaly Detection:</strong> Identifying unusual event frequencies (e.g., fraud detection)</li>
-                            <li><strong>Queue Modeling:</strong> Predicting system load in cloud computing</li>
-                            <li><strong>Rare Event Analysis:</strong> Modeling infrequent but important occurrences</li>
-                            <li><strong>Time Series:</strong> Analyzing count data over time periods</li>
-                        </ul>
-                        <p>The confidence intervals widening over time demonstrate accumulating uncertainty—a crucial concept for time series forecasting.</p>
+                        <p>The sampling methods video hit home: <strong>bad sampling = biased model</strong>. If training data isn't representative (because of poor sampling), the model will fail in production. Stratified sampling ensures all groups are represented—crucial for fair AI systems.</p>
                     </div>
 
+                    <h3>4. Parameter Sensitivity</h3>
                     <div class="box">
-                        <p><strong>Hypergeometric Distribution Insights:</strong></p>
+                        <p>Playing with the interactive simulations showed me how sensitive distributions are to their parameters. Small changes in λ, μ, or σ can dramatically change probabilities. This means:</p>
                         <ul>
-                            <li><strong>Sampling Without Replacement:</strong> Critical for understanding survey sampling and bootstrap methods</li>
-                            <li><strong>Finite Population Correction:</strong> When sample size is large relative to population</li>
-                            <li><strong>Stratified Sampling:</strong> Foundation for advanced sampling techniques</li>
+                            <li>Accurate parameter estimation is critical</li>
+                            <li>Understanding what parameters mean is essential</li>
+                            <li>Wrong distribution choice leads to wrong conclusions</li>
                         </ul>
-                        <p>This distribution bridges the gap between theoretical probability and practical statistical sampling used in real-world data collection.</p>
-                    </div>
-
-                    <h3>3. Continuous Distributions in AI/ML</h3>
-                    <div class="box">
-                        <p><strong>Normal Distribution Ubiquity:</strong></p>
-                        <ul>
-                            <li><strong>Central Limit Theorem:</strong> Explains why normal approximation is so powerful</li>
-                            <li><strong>Gaussian Processes:</strong> Used in Bayesian optimization and probabilistic ML</li>
-                            <li><strong>Noise Modeling:</strong> Assumption underlying many regression algorithms</li>
-                            <li><strong>Feature Standardization:</strong> Normalizing features to mean 0, std 1</li>
-                            <li><strong>Confidence Intervals:</strong> Basis for statistical inference and hypothesis testing</li>
-                        </ul>
-                        <p>The bell curve's prevalence in nature and data makes it the default assumption in many ML algorithms. Understanding how μ and σ affect the distribution is essential for interpreting model outputs and setting appropriate thresholds.</p>
-                    </div>
-
-                    <div class="box">
-                        <p><strong>Exponential Distribution Applications:</strong></p>
-                        <ul>
-                            <li><strong>Survival Analysis:</strong> Time until event occurrence (customer churn, equipment failure)</li>
-                            <li><strong>Queueing Theory:</strong> Time between arrivals in service systems</li>
-                            <li><strong>Reliability Engineering:</strong> Time to failure for systems without aging</li>
-                            <li><strong>Reinforcement Learning:</strong> Modeling time until next action or reward</li>
-                        </ul>
-                        <p>The memoryless property (P(T > s+t | T > s) = P(T > t)) is unique and powerful—past survival doesn't affect future probability. This simplifies many calculations but also limits applicability when aging effects matter.</p>
-                    </div>
-
-                    <h3>4. Real-World Application: Newsvendor Model</h3>
-                    <div class="box">
-                        <p>The newsvendor model demonstrates probability's role in operational decision-making:</p>
-                        <ul>
-                            <li><strong>Demand Uncertainty:</strong> Using normal distribution (μ=350, σ=100) to model unknown future demand</li>
-                            <li><strong>Trade-off Analysis:</strong> Balancing understocking costs (lost sales) vs overstocking costs (excess inventory)</li>
-                            <li><strong>Optimal Decision:</strong> Q=469 maximizes expected profit at 49,147</li>
-                            <li><strong>Expected Outcomes:</strong> Even with optimal Q, expect 6 units understocked and 125 overstocked</li>
-                        </ul>
-                        <p>This illustrates a fundamental AI concept: <strong>optimal decisions under uncertainty still yield imperfect outcomes</strong>. The goal isn't perfection but maximizing expected value.</p>
-                    </div>
-
-                    <h3>5. Sampling Methods and Data Quality</h3>
-                    <div class="box">
-                        <p>Understanding sampling is crucial for evaluating data quality in ML projects:</p>
-                        <ul>
-                            <li><strong>Simple Random Sampling:</strong> Baseline but can miss important subgroups</li>
-                            <li><strong>Stratified Sampling:</strong> Ensures representation of all subgroups—used when training data must reflect population diversity</li>
-                            <li><strong>Systematic Sampling:</strong> Efficient but vulnerable to periodic patterns in data</li>
-                            <li><strong>Cluster Sampling:</strong> Practical when complete population list unavailable</li>
-                        </ul>
-                        <p>Poor sampling leads to selection bias—a major cause of ML model failures in production. The crime prediction example shows how probability helps optimize resource allocation, but only if the underlying data is properly sampled.</p>
-                    </div>
-
-                    <h3>6. Parameter Sensitivity and Model Assumptions</h3>
-                    <div class="box">
-                        <p>Interactive exploration revealed how sensitive distributions are to parameters:</p>
-                        <ul>
-                            <li><strong>Small Parameter Changes:</strong> Can dramatically alter distribution shape and probabilities</li>
-                            <li><strong>Assumption Violations:</strong> Using wrong distribution type (e.g., normal when exponential is appropriate) leads to incorrect inference</li>
-                            <li><strong>Model Selection:</strong> Choosing appropriate distribution requires domain knowledge, not just statistical tests</li>
-                            <li><strong>Robustness:</strong> Some methods (e.g., bootstrap) work across distributions; others (e.g., t-tests) assume normality</li>
-                        </ul>
-                        <p>This sensitivity explains why data scientists spend significant time on exploratory data analysis—understanding data distributions informs model choice and interpretation.</p>
                     </div>
                 </div>
             </section>
@@ -463,66 +269,32 @@ html_content = """<!DOCTYPE HTML>
             <section id="learning-outcomes-achieved">
                 <div class="inner">
                     <header class="major">
-                        <h2>⭐ Learning Outcomes Achieved</h2>
+                        <h2>⭐ What I Learned</h2>
                     </header>
                     
-                    <h3>Technical Skills Developed:</h3>
+                    <h3>Technical Skills:</h3>
                     <ul>
-                        <li>Mastered <strong>basic probability calculations</strong> including ratios and verification that probabilities sum to 1</li>
-                        <li>Learned to <strong>identify appropriate distributions</strong> for different data types and scenarios</li>
-                        <li>Gained proficiency in <strong>interpreting distribution parameters</strong> (μ, σ, λ, n, p) and their effects</li>
-                        <li>Developed ability to <strong>visualize distributions</strong> and understand shape characteristics</li>
-                        <li>Understood <strong>discrete vs continuous distributions</strong> and when to apply each</li>
-                        <li>Explored <strong>interactive simulation tools</strong> for probability concepts</li>
+                        <li>Calculate basic probabilities and verify they sum to 1</li>
+                        <li>Identify which distribution fits different scenarios</li>
+                        <li>Understand what distribution parameters (μ, σ, λ, p, n) mean in practice</li>
+                        <li>Recognize discrete vs continuous distributions and when to use each</li>
                     </ul>
 
-                    <h3>Analytical Competencies:</h3>
+                    <h3>Practical Understanding:</h3>
                     <ul>
-                        <li><strong>Distribution Recognition:</strong> Ability to identify which distribution models a given scenario</li>
-                        <li><strong>Parameter Interpretation:</strong> Understanding what parameters mean in real-world context</li>
-                        <li><strong>Expected Value Thinking:</strong> Reasoning about outcomes probabilistically rather than deterministically</li>
-                        <li><strong>Uncertainty Quantification:</strong> Using probability to express and manage uncertainty</li>
-                        <li><strong>Sampling Evaluation:</strong> Assessing data quality and potential biases from sampling methods</li>
-                        <li><strong>Trade-off Analysis:</strong> Balancing competing objectives under uncertainty (newsvendor model)</li>
+                        <li><strong>Why balanced datasets matter:</strong> Binomial distribution is most predictable when p=0.5</li>
+                        <li><strong>Why normal distribution is everywhere:</strong> Central Limit Theorem + many natural phenomena</li>
+                        <li><strong>Why sampling matters:</strong> Poor sampling creates biased models</li>
+                        <li><strong>Why parameters matter:</strong> Small changes can dramatically affect predictions</li>
                     </ul>
 
-                    <h3>Statistical Understanding:</h3>
+                    <h3>AI/ML Applications:</h3>
                     <ul>
-                        <li>Deepened understanding of <strong>probability axioms</strong> (non-negativity, normalization, additivity)</li>
-                        <li>Recognized <strong>Central Limit Theorem</strong> implications for normal distribution prevalence</li>
-                        <li>Understood <strong>memoryless property</strong> of exponential distribution</li>
-                        <li>Learned <strong>moment concepts</strong> (mean, variance) across different distributions</li>
-                        <li>Appreciated <strong>confidence intervals</strong> for expressing uncertainty ranges</li>
-                        <li>Connected <strong>theoretical distributions</strong> to practical data patterns</li>
-                    </ul>
-
-                    <h3>Application to Data Science and AI:</h3>
-                    <ul>
-                        <li><strong>Machine Learning Foundations:</strong> Many ML algorithms assume specific probability distributions (e.g., Naive Bayes assumes independence, linear regression assumes normal errors)</li>
-                        <li><strong>Bayesian Methods:</strong> Prior and posterior distributions are fundamental to Bayesian ML approaches</li>
-                        <li><strong>Anomaly Detection:</strong> Identifying outliers requires understanding expected probability distributions</li>
-                        <li><strong>A/B Testing:</strong> Binomial distribution underpins conversion rate analysis</li>
-                        <li><strong>Time Series:</strong> Poisson processes model event counts; exponential distribution models inter-event times</li>
-                        <li><strong>Reinforcement Learning:</strong> Reward distributions and action selection involve probability</li>
-                        <li><strong>Monte Carlo Methods:</strong> Simulation-based approaches require sampling from distributions</li>
-                        <li><strong>Uncertainty Quantification:</strong> Confidence intervals and prediction intervals in ML models</li>
-                    </ul>
-
-                    <h3>Critical Evaluation Skills:</h3>
-                    <ul>
-                        <li><strong>Assumption Checking:</strong> Evaluating whether data meets distributional assumptions</li>
-                        <li><strong>Model Appropriateness:</strong> Determining if chosen probability model fits the scenario</li>
-                        <li><strong>Sampling Bias Recognition:</strong> Identifying potential biases from sampling methods</li>
-                        <li><strong>Parameter Sensitivity:</strong> Understanding how parameter estimates affect conclusions</li>
-                        <li><strong>Real-World Applicability:</strong> Connecting probability theory to practical decision-making</li>
-                    </ul>
-
-                    <h3>Broader Competencies:</h3>
-                    <ul>
-                        <li><strong>Visual Literacy:</strong> Interpreting graphs and distributions to extract insights</li>
-                        <li><strong>Interactive Learning:</strong> Using simulation tools to build intuition</li>
-                        <li><strong>Conceptual Integration:</strong> Connecting mathematical theory to practical applications</li>
-                        <li><strong>Decision-Making Under Uncertainty:</strong> Applying probability to optimize choices</li>
+                        <li><strong>Classification:</strong> Binomial for success/failure outcomes</li>
+                        <li><strong>Anomaly Detection:</strong> Poisson for unusual event frequencies</li>
+                        <li><strong>Regression:</strong> Normal distribution for error terms</li>
+                        <li><strong>Survival Analysis:</strong> Exponential for time-to-event modeling</li>
+                        <li><strong>Bayesian ML:</strong> Prior and posterior distributions</li>
                     </ul>
                 </div>
             </section>
@@ -534,35 +306,19 @@ html_content = """<!DOCTYPE HTML>
                         <h2>Reflection</h2>
                     </header>
                     
-                    <p>This unit provided essential grounding in probability theory—the mathematical language of uncertainty that underpins virtually all data science and AI applications. Moving from simple marble calculations to complex distribution analysis, I gained both theoretical understanding and practical intuition about how probability governs random phenomena.</p>
+                    <p>This unit transformed probability from abstract math into something practical. The marble activity seemed simple—just 1/3 for each color—but it demonstrates the core axioms that every probability model must follow. When ML models output probabilities that don't sum to 1, that's a red flag.</p>
                     
-                    <p>The marble activity, while elementary, reinforced fundamental principles that I'll use throughout my AI career. The equal probabilities (1/3 each) and their sum (1.0) aren't just arithmetic facts—they represent <strong>probability axioms</strong> that constrain all valid probability models. These simple rules, formalized by Kolmogorov, enable rigorous reasoning about uncertainty. In machine learning contexts, violating these axioms (e.g., predicted probabilities summing to more than 1) indicates model errors.</p>
+                    <p>The distribution exploration was eye-opening. Seeing how the normal curve shifts with μ and widens with σ built intuition I couldn't get from formulas alone. Now when I see "standardization" in ML preprocessing, I know it's about transforming data to mean=0 and std=1 (the standard normal distribution).</p>
                     
-                    <p>The video on crime prediction demonstrated probability's real-world impact. Using historical data to predict where crimes are likely to occur exemplifies <strong>predictive analytics</strong>—the same approach used in customer churn prediction, equipment failure forecasting, and medical diagnosis. However, the ethical considerations raised—potential for reinforcing biases through self-fulfilling prophecies—highlight why data scientists must think critically about how probability models influence decisions and society.</p>
+                    <p>The crime prediction video raised important ethical questions. Yes, probability helps optimize police deployment, but it can also reinforce biases if the historical data is biased. This taught me that data scientists can't just optimize metrics—we need to think critically about how our models affect society.</p>
                     
-                    <p>Understanding sampling methods proved crucial. The distinction between stratified, systematic, and cluster sampling isn't academic—it directly impacts data quality in ML projects. <strong>Selection bias</strong> from poor sampling is a leading cause of model failures in production. A model trained on systematically sampled data might miss patterns present in underrepresented subgroups. The stratified random sampling approach, ensuring representation across groups, directly parallels the need for diverse, representative training data in AI systems.</p>
+                    <p>Understanding sampling methods was crucial. The difference between stratified and simple random sampling isn't academic—it directly affects whether my training data represents reality. A model trained on biased samples will fail in production, no matter how sophisticated the algorithm.</p>
                     
-                    <p>Exploring discrete distributions revealed their AI applications. The <strong>binomial distribution</strong> underlies A/B testing—when comparing two variants, we're essentially modeling successes in n trials. The symmetry I observed when p=0.5 explains why balanced datasets (equal positive/negative examples) are often preferred in classification tasks—the distribution of outcomes is most predictable. The <strong>Poisson distribution's</strong> application to event counting is directly relevant to time series analysis and anomaly detection. Seeing the confidence intervals widen over time in the Poisson simulation illustrated <strong>accumulating uncertainty</strong>—a phenomenon critical to understand in forecasting applications.</p>
+                    <p>The exponential distribution's "memoryless property" fascinated me. The fact that past waiting doesn't affect future probability seems counterintuitive but simplifies many calculations. However, it only works when there's no aging effect—equipment that wears out needs a different distribution.</p>
                     
-                    <p>The <strong>hypergeometric distribution</strong> was particularly enlightening because it models sampling without replacement—the real-world scenario in most data collection. Unlike binomial (which assumes replacement), hypergeometric accounts for changing probabilities as items are drawn. This distinction matters in stratified sampling and bootstrap methods. The formula showing mean = kn/N elegantly captures how sample composition reflects population composition.</p>
+                    <p>What really clicked: probability isn't about predicting exactly what will happen—it's about quantifying uncertainty so we can make optimal decisions. The newsvendor model showed this perfectly: even with the best decision (Q=469), we still expect 6 units understocked and 125 overstocked. That's not failure; that's optimal decision-making under uncertainty.</p>
                     
-                    <p>The <strong>normal distribution</strong> exploration explained why it's so ubiquitous in statistics and ML. The Central Limit Theorem—stating that sums of random variables converge to normality—means many real-world phenomena follow approximately normal distributions. Understanding how μ shifts the curve and σ affects spread is fundamental to interpreting standardized test scores, confidence intervals, and feature scaling in ML. The interactive adjustment of these parameters built intuition about how distribution shape changes—knowledge directly applicable when diagnosing data or model behavior.</p>
-                    
-                    <p>The <strong>exponential distribution's</strong> memoryless property fascinated me. The fact that P(T > s+t | T > s) = P(T > t)—meaning past survival doesn't affect future probability—is counterintuitive but mathematically elegant. This property simplifies many calculations but also limits applicability. Real systems often exhibit aging (increasing failure rate), violating the exponential assumption. Recognizing when memorylessness applies versus when Weibull or other distributions are needed demonstrates the importance of <strong>model selection based on domain knowledge</strong>, not just statistical convenience.</p>
-                    
-                    <p>The <strong>newsvendor model</strong> application brilliantly illustrated probability's role in decision-making. Modeling demand with a normal distribution (μ=350, σ=100) and determining optimal order quantity (Q=469) exemplifies <strong>optimization under uncertainty</strong>—a core AI problem. The key insight: even with optimal decisions, we expect suboptimal outcomes (6 units understocked, 125 overstocked). This reframes success—the goal isn't perfection but maximizing expected value. This probabilistic thinking is essential in AI systems where perfect predictions are impossible but optimal decisions are achievable.</p>
-                    
-                    <p>The interactive nature of the distribution explorations proved invaluable. Adjusting parameters and immediately seeing distribution changes built intuition faster than reading formulas alone. For instance, watching the normal curve widen as σ increased made the concept of "spread" visceral rather than abstract. This experiential learning complements mathematical understanding—I now have both the equations and the intuition for how distributions behave.</p>
-                    
-                    <p>One revelation was recognizing how <strong>parameter sensitivity</strong> affects conclusions. Small changes in λ, μ, or σ can dramatically alter probability estimates. This sensitivity means accurate parameter estimation is critical—garbage in, garbage out applies doubly when parameters govern entire distributions. It also explains why robust methods (like bootstrap) that make fewer distributional assumptions are sometimes preferred over methods (like t-tests) that assume specific distributions.</p>
-                    
-                    <p>The distinction between <strong>discrete and continuous</strong> distributions became clearer through hands-on exploration. Discrete distributions (binomial, Poisson, hypergeometric) model countable outcomes—coin flips, event counts, sampled items. Continuous distributions (normal, exponential) model measured quantities—time, height, temperature. Choosing the wrong type is a fundamental error. Treating continuous data as discrete loses information; treating discrete data as continuous violates assumptions.</p>
-                    
-                    <p>Connecting these theoretical distributions to <strong>practical ML scenarios</strong> solidified understanding. Binomial for classification metrics (accuracy as successes in n trials), Poisson for anomaly detection (is event count unusual?), normal for regression residuals (are errors random?), exponential for survival analysis (time to customer churn)—these aren't arbitrary applications but natural fits based on distribution properties.</p>
-                    
-                    <p>This unit also highlighted the importance of <strong>probabilistic thinking</strong> in AI. Rather than reasoning deterministically ("X will happen"), probability enables reasoning about likelihoods ("X has 70% chance of happening"). This shift from certainty to quantified uncertainty is fundamental to modern AI, where Bayesian methods, probabilistic graphical models, and Monte Carlo techniques all rely on probability theory.</p>
-                    
-                    <p>Looking forward, these concepts will underpin more advanced topics. Gaussian processes, Bayesian neural networks, variational inference, and reinforcement learning all build on probability foundations laid here. The ability to recognize distributions, understand parameters, and reason probabilistically will be essential throughout my AI studies and career. This unit wasn't just about learning formulas—it was about developing a probabilistic worldview, the mindset needed to work with uncertain data and build robust AI systems.</p>
+                    <p>Looking forward, these foundations will support everything in AI: Bayesian methods, probabilistic graphical models, confidence intervals, hypothesis testing, and Monte Carlo simulations all build on what I learned here. This unit wasn't just about learning distributions—it was about developing probabilistic thinking, the mindset needed to work with real-world data and build robust AI systems.</p>
                 </div>
             </section>
 
@@ -606,13 +362,3 @@ html_content = """<!DOCTYPE HTML>
 </body>
 </html>"""
 
-# Save the HTML file
-with open('unit4-probability-activities.html', 'w', encoding='utf-8') as f:
-    f.write(html_content)
-
-print("✓ Unit 4 Probability Activities HTML file created successfully!")
-print("File name: unit4-probability-activities.html")
-
-# Download the file
-from google.colab import files
-files.download('unit4-probability-activities.html')
