@@ -1,0 +1,304 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Data Activity 4 - Numerical Analysis - Kanna AlMansoori</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo"><strong>Kanna AlMansoori</strong> <span>MSc Artificial Intelligence E-Portfolio</span></a>
+            <nav>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <ul class="links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="launch-module.html">Launch into Computing</a></li>
+                <li><a href="induction.html">Induction Computing</a></li>
+                <li><a href="ai-module.html">Understanding Artificial Intelligence</a></li>
+                <li><a href="numerical-analysis.html">Numerical Analysis</a></li>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div id="main" class="alt">
+
+            <!-- Breadcrumb Navigation -->
+            <section id="one">
+                <div class="inner">
+                    <p><a href="numerical-analysis.html">← Back to Numerical Analysis</a></p>
+                    <header class="major">
+                        <h1>Unit 3: Data Activity 4</h1>
+                    </header>
+                    <p><strong>Deadline:</strong> End of Unit 3 | <strong>Type:</strong> Formative | <strong>Status:</strong> ✓ Complete</p>
+                </div>
+            </section>
+
+            <!-- Learning Outcomes -->
+            <section id="learning-outcomes">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Learning Outcomes</h2>
+                    </header>
+                    <ul>
+                        <li>Systematic understanding of key mathematical and statistical concepts and techniques which underpin mechanisms in Data Science and AI.</li>
+                        <li>Apply mathematical and statistical methods in these fields to help in the decision-making process.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Dataset Information -->
+            <section id="dataset">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Dataset</h2>
+                    </header>
+                    <h3>COVID-19 India Cases (January 2020 - March 2020)</h3>
+                    <p><strong>Source:</strong> This dataset contains early COVID-19 case data from India covering the initial months of the pandemic from January to March 2020. The data includes confirmed cases (both Indian and foreign nationals), recovered cases, and deaths across different states and union territories of India.</p>
+                </div>
+            </section>
+
+            <!-- Instructions -->
+            <section id="instructions">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Instructions</h2>
+                    </header>
+                    <p>Using the COVID-19 India Dataset (January 2020 - March 2020), perform the following simple plotting activities to learn basic data visualization techniques.</p>
+                </div>
+            </section>
+
+            <!-- Tasks -->
+            <section id="tasks">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Tasks</h2>
+                    </header>
+                    
+                    <!-- Task 1 -->
+                    <h3>Task 1: Bar Chart of COVID-19 Report Frequency by State/Union Territory</h3>
+                    <p><strong>Objective:</strong> Visualize the frequency of COVID-19 reports across different states and union territories in India.</p>
+                    
+                    <h4>Method</h4>
+                    <p>I counted the number of daily reports for each state and union territory, then created a bar chart using ggplot2 with states reordered by frequency for better readability.</p>
+
+                    <h4>R Code</h4>
+                    <pre><code>library(ggplot2)
+
+# Count reports per state
+state_counts <- table(df$`State/UnionTerritory`)
+state_df <- as.data.frame(state_counts)
+colnames(state_df) <- c("State", "Frequency")
+
+# Create bar chart
+ggplot(state_df, aes(x = reorder(State, Frequency), y = Frequency)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(
+    title = "Frequency of COVID-19 Reports by State / Union Territory",
+    x = "State / Union Territory",
+    y = "Number of Reports"
+  )</code></pre>
+
+                    <div class="box">
+                        <h4>Visualization Output</h4>
+                        <span class="image fit">
+                            <img src="images/NumericalAnalysis/ActivityUnit3_Task1.png" alt="Bar chart of COVID-19 reports by state" />
+                        </span>
+                        <p><em>Caption: Bar chart showing clear variation in reporting frequency across states. Kerala recorded the highest number of reports, followed by states like Telangana and Delhi.</em></p>
+                    </div>
+
+                    <h4>Conclusion</h4>
+                    <p>This visualization highlights differences in reporting activity across regions and supports exploratory analysis of early COVID-19 reporting patterns. The variation suggests some states were more actively tracking and reporting cases during this initial period.</p>
+
+                    <hr />
+
+                    <!-- Task 2 -->
+                    <h3>Task 2: Pie Chart of Confirmed COVID-19 Cases by Nationality</h3>
+                    <p><strong>Objective:</strong> Show the distribution of total confirmed COVID-19 cases between Indian nationals and foreign nationals.</p>
+
+                    <h4>Method</h4>
+                    <p>I calculated total confirmed cases by summing ConfirmedIndianNational and ConfirmedForeignNational variables, then created a pie chart to display the proportional distribution.</p>
+
+                    <h4>R Code</h4>
+                    <pre><code>library(ggplot2)
+
+# Calculate totals by nationality
+total_indian <- sum(df$ConfirmedIndianNational, na.rm = TRUE)
+total_foreign <- sum(df$ConfirmedForeignNational, na.rm = TRUE)
+
+# Create data frame
+cases_df <- data.frame(
+  Category = c("Indian Nationals", "Foreign Nationals"),
+  TotalCases = c(total_indian, total_foreign)
+)
+
+# Create pie chart
+ggplot(cases_df, aes(x = "", y = TotalCases, fill = Category)) +
+  geom_bar(stat = "identity", width = 1) +
+  coord_polar("y") +
+  labs(title = "Distribution of Confirmed COVID-19 Cases") +
+  theme_void()</code></pre>
+
+                    <div class="box">
+                        <h4>Visualization Output</h4>
+                        <span class="image fit">
+                            <img src="images/NumericalAnalysis/ActivityUnit3_Task2.png" alt="Pie chart of cases by nationality" />
+                        </span>
+                        <p><em>Caption: Pie chart showing that the majority of confirmed cases were among Indian nationals, while foreign national cases formed a smaller proportion.</em></p>
+                    </div>
+
+                    <h4>Conclusion</h4>
+                    <p>The pie chart clearly shows that Indian nationals made up the majority of confirmed COVID-19 cases during this period. This makes sense given that the outbreak was transitioning from travel-related cases to community transmission within India.</p>
+
+                    <hr />
+
+                    <!-- Task 3 -->
+                    <h3>Task 3: Histogram of Recovery Numbers</h3>
+                    <p><strong>Objective:</strong> Examine the distribution of recovery (Cured) numbers reported in the dataset.</p>
+
+                    <h4>Method</h4>
+                    <p>I created a histogram using the Cured variable to show how frequently different recovery values occurred during the reporting period.</p>
+
+                    <h4>R Code</h4>
+                    <pre><code>library(ggplot2)
+
+# Create histogram of recoveries
+ggplot(df, aes(x = Cured)) +
+  geom_histogram(bins = 10) +
+  labs(
+    title = "Distribution of Recovery Numbers",
+    x = "Number of Recovered Cases",
+    y = "Frequency"
+  )</code></pre>
+
+                    <div class="box">
+                        <h4>Visualization Output</h4>
+                        <span class="image fit">
+                            <img src="images/NumericalAnalysis/ActivityUnit3_Task3.png" alt="Histogram of recovery numbers" />
+                        </span>
+                        <p><em>Caption: Most reports recorded low recovery numbers, with fewer observations showing higher recovery counts.</em></p>
+                    </div>
+
+                    <h4>Conclusion</h4>
+                    <p>The histogram shows that recoveries were limited during the early phase of the COVID-19 outbreak in India. Most reports had zero or very few recoveries, which is expected given the time lag between infection and recovery, and the early stage of the outbreak.</p>
+
+                    <hr />
+
+                    <!-- Task 4 -->
+                    <h3>Task 4: Line Chart Showing Trend of Total Cases Over Time</h3>
+                    <p><strong>Objective:</strong> Visualize the trend of total confirmed COVID-19 cases over time.</p>
+
+                    <h4>Method</h4>
+                    <p>I calculated total confirmed cases by summing ConfirmedIndianNational and ConfirmedForeignNational. Since the Date variable couldn't be reliably parsed, I used the report sequence number (Sno) as a proxy for time to show the progression of cases.</p>
+
+                    <h4>R Code</h4>
+                    <pre><code>library(ggplot2)
+
+# Calculate total cases
+df$TotalCases <- df$ConfirmedIndianNational + df$ConfirmedForeignNational
+
+# Create line chart
+ggplot(df, aes(x = Sno, y = TotalCases)) +
+  geom_line() +
+  labs(
+    title = "Trend of Total COVID-19 Cases Over Time",
+    x = "Report Sequence (Time)",
+    y = "Total Confirmed Cases"
+  )</code></pre>
+
+                    <div class="box">
+                        <h4>Visualization Output</h4>
+                        <span class="image fit">
+                            <img src="images/NumericalAnalysis/ActivityUnit3_Task4.png" alt="Line chart of total cases over time" />
+                        </span>
+                        <p><em>Caption: The line chart shows an overall increasing trend in total confirmed COVID-19 cases as the reporting sequence progresses, with visible fluctuations reflecting daily reporting differences.</em></p>
+                    </div>
+
+                    <h4>Conclusion</h4>
+                    <p>This visualization effectively demonstrates the growth trend of COVID-19 cases during the early phase of the pandemic in India. The upward trajectory confirms the exponential growth pattern typical of viral outbreaks, while fluctuations highlight the variability in daily reporting.</p>
+
+                </div>
+            </section>
+
+            <!-- Key Learnings -->
+            <section id="learning-outcomes-achieved">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Learning Outcomes Achieved</h2>
+                    </header>
+                    <ul>
+                        <li>Learned to create multiple types of visualizations (bar charts, pie charts, histograms, and line charts) using ggplot2 in R</li>
+                        <li>Understood how to choose appropriate visualization types for different data patterns and questions</li>
+                        <li>Practiced data transformation techniques, such as calculating totals and creating frequency tables</li>
+                        <li>Gained experience with the <code>coord_flip()</code> and <code>coord_polar()</code> functions for adjusting chart layouts</li>
+                        <li>Applied statistical visualization methods to support data-driven decision-making</li>
+                        <li>Developed skills in interpreting visual patterns and extracting meaningful insights from charts</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Reflection -->
+            <section id="reflection">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Reflection</h2>
+                    </header>
+                    <p>This activity strengthened my data visualization skills and reinforced the importance of choosing the right chart type for the story you want to tell. Each visualization revealed different aspects of the early pandemic data—from regional reporting patterns to the composition of cases and recovery trends.</p>
+                    <p>Working with ggplot2's layered approach to building charts was intuitive once I understood the logic. The ability to customize labels, flip coordinates, and transform bar charts into pie charts showed the flexibility of this visualization framework.</p>
+                    <p>One challenge was dealing with the date formatting issue, which led me to use the sequence number as a time proxy. This taught me the importance of data preparation and finding creative solutions when data isn't in the ideal format.</p>
+                    <p>Overall, this exercise demonstrated how visualization bridges the gap between raw data and actionable insights, making patterns immediately visible that would be hard to spot in tables of numbers.</p>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <section id="navigation">
+                <div class="inner">
+                    <ul class="actions">
+                        <li><a href="numerical-analysis.html" class="button">← Back to Module Overview</a></li>
+                        <li><a href="unit4-seminar.html" class="button primary">Next Activity →</a></li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                <ul class="icons">
+                    <li><a href="https://github.com/KannaAlmansoori" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; 2025 Kanna AlMansoori</li>
+                    <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
