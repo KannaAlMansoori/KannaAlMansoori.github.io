@@ -81,15 +81,15 @@
                 </div>
             </section>
 
-            <!-- Tasks -->
-            <section id="tasks">
+            <!-- Questions -->
+            <section id="questions">
                 <div class="inner">
                     <header class="major">
-                        <h2>Tasks</h2>
+                        <h2>Questions</h2>
                     </header>
                     
-                    <!-- Task 1 -->
-                    <h3>Task 1: Bar Chart of COVID-19 Report Frequency by State/Union Territory</h3>
+                    <!-- Question 1 -->
+                    <h3>Question 1: Bar Chart of COVID-19 Report Frequency by State/Union Territory</h3>
                     <p><strong>Objective:</strong> Visualize the frequency of COVID-19 reports across different states and union territories in India.</p>
                     
                     <h4>Method</h4>
@@ -114,9 +114,17 @@ ggplot(state_df, aes(x = reorder(State, Frequency), y = Frequency)) +
   )</code></pre>
 
                     <div class="box">
+                        <h4>R Code Screenshot</h4>
+                        <span class="image fit">
+                            <img src="images/NumericalAnalysis/DataActivity_4_task1.png" alt="R code for bar chart" />
+                        </span>
+                        <p><em>Caption: R code implementation for creating the bar chart showing COVID-19 report frequency by state.</em></p>
+                    </div>
+
+                    <div class="box">
                         <h4>Visualization Output</h4>
                         <span class="image fit">
-                            <img src="images/NumericalAnalysis/ActivityUnit3_Task1.png" alt="Bar chart of COVID-19 reports by state" />
+                            <img src="images/NumericalAnalysis/DataActivity_4_task1_1.png" alt="Bar chart of COVID-19 reports by state" />
                         </span>
                         <p><em>Caption: Bar chart showing clear variation in reporting frequency across states. Kerala recorded the highest number of reports, followed by states like Telangana and Delhi.</em></p>
                     </div>
@@ -126,8 +134,8 @@ ggplot(state_df, aes(x = reorder(State, Frequency), y = Frequency)) +
 
                     <hr />
 
-                    <!-- Task 2 -->
-                    <h3>Task 2: Pie Chart of Confirmed COVID-19 Cases by Nationality</h3>
+                    <!-- Question 2 -->
+                    <h3>Question 2: Pie Chart of Confirmed COVID-19 Cases by Nationality</h3>
                     <p><strong>Objective:</strong> Show the distribution of total confirmed COVID-19 cases between Indian nationals and foreign nationals.</p>
 
                     <h4>Method</h4>
@@ -154,11 +162,19 @@ ggplot(cases_df, aes(x = "", y = TotalCases, fill = Category)) +
   theme_void()</code></pre>
 
                     <div class="box">
+                        <h4>R Code Screenshot</h4>
+                        <span class="image fit">
+                            <img src="images/NumericalAnalysis/DataActivity_4_task_2.png" alt="R code for pie chart" />
+                        </span>
+                        <p><em>Caption: R code implementation for creating the pie chart of confirmed cases by nationality.</em></p>
+                    </div>
+
+                    <div class="box">
                         <h4>Visualization Output</h4>
                         <span class="image fit">
-                            <img src="images/NumericalAnalysis/ActivityUnit3_Task2.png" alt="Pie chart of cases by nationality" />
+                            <img src="images/NumericalAnalysis/DataActivity_4_task_2_1.png" alt="Pie chart of cases by nationality" />
                         </span>
-                        <p><em>Caption: Pie chart showing that the majority of confirmed cases were among Indian nationals, while foreign national cases formed a smaller proportion.</em></p>
+                        <p><em>Caption: Pie chart showing that the majority of confirmed cases were among Indian nationals (1499 cases), while foreign national cases formed a smaller proportion (359 cases).</em></p>
                     </div>
 
                     <h4>Conclusion</h4>
@@ -166,8 +182,8 @@ ggplot(cases_df, aes(x = "", y = TotalCases, fill = Category)) +
 
                     <hr />
 
-                    <!-- Task 3 -->
-                    <h3>Task 3: Histogram of Recovery Numbers</h3>
+                    <!-- Question 3 -->
+                    <h3>Question 3: Histogram of Recovery Numbers</h3>
                     <p><strong>Objective:</strong> Examine the distribution of recovery (Cured) numbers reported in the dataset.</p>
 
                     <h4>Method</h4>
@@ -186,11 +202,11 @@ ggplot(df, aes(x = Cured)) +
   )</code></pre>
 
                     <div class="box">
-                        <h4>Visualization Output</h4>
+                        <h4>R Code and Visualization Output</h4>
                         <span class="image fit">
-                            <img src="images/NumericalAnalysis/ActivityUnit3_Task3.png" alt="Histogram of recovery numbers" />
+                            <img src="images/NumericalAnalysis/DataActivity_4_task_3.png" alt="Histogram of recovery numbers" />
                         </span>
-                        <p><em>Caption: Most reports recorded low recovery numbers, with fewer observations showing higher recovery counts.</em></p>
+                        <p><em>Caption: R code and resulting histogram showing the distribution of recovery numbers. Most reports recorded low recovery numbers, with fewer observations showing higher recovery counts.</em></p>
                     </div>
 
                     <h4>Conclusion</h4>
@@ -198,8 +214,8 @@ ggplot(df, aes(x = Cured)) +
 
                     <hr />
 
-                    <!-- Task 4 -->
-                    <h3>Task 4: Line Chart Showing Trend of Total Cases Over Time</h3>
+                    <!-- Question 4 -->
+                    <h3>Question 4: Line Chart Showing Trend of Total Cases Over Time</h3>
                     <p><strong>Objective:</strong> Visualize the trend of total confirmed COVID-19 cases over time.</p>
 
                     <h4>Method</h4>
@@ -221,11 +237,11 @@ ggplot(df, aes(x = Sno, y = TotalCases)) +
   )</code></pre>
 
                     <div class="box">
-                        <h4>Visualization Output</h4>
+                        <h4>R Code and Visualization Output</h4>
                         <span class="image fit">
-                            <img src="images/NumericalAnalysis/ActivityUnit3_Task4.png" alt="Line chart of total cases over time" />
+                            <img src="images/NumericalAnalysis/DataActivity_4_task_4.png" alt="Line chart of total cases over time" />
                         </span>
-                        <p><em>Caption: The line chart shows an overall increasing trend in total confirmed COVID-19 cases as the reporting sequence progresses, with visible fluctuations reflecting daily reporting differences.</em></p>
+                        <p><em>Caption: R code and resulting line chart showing an overall increasing trend in total confirmed COVID-19 cases as the reporting sequence progresses, with visible fluctuations reflecting daily reporting differences.</em></p>
                     </div>
 
                     <h4>Conclusion</h4>
