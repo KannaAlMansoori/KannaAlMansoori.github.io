@@ -1,0 +1,237 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Unit 5 Seminar - Numerical Analysis - Kanna AlMansoori</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo"><strong>Kanna AlMansoori</strong> <span>MSc Artificial Intelligence E-Portfolio</span></a>
+            <nav>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <ul class="links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="launch-module.html">Launch into Computing</a></li>
+                <li><a href="induction.html">Induction Computing</a></li>
+                <li><a href="ai-module.html">Understanding Artificial Intelligence</a></li>
+                <li><a href="numerical-analysis.html">Numerical Analysis</a></li>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div id="main" class="alt">
+
+            <!-- Breadcrumb Navigation -->
+            <section id="one">
+                <div class="inner">
+                    <p><a href="numerical-analysis.html">← Back to Numerical Analysis</a></p>
+                    <header class="major">
+                        <h1>Unit 5 Seminar: The Role of Statistical Significance and Effect Size</h1>
+                    </header>
+                    <p><strong>Type:</strong> Seminar Discussion | <strong>Status:</strong> ✓ Complete</p>
+                </div>
+            </section>
+
+            <!-- Learning Outcomes -->
+            <section id="learning-outcomes">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Learning Outcomes</h2>
+                    </header>
+                    <ul>
+                        <li>Understand the role of statistical significance and effect size</li>
+                        <li>Demonstrate knowledge of statistical power</li>
+                        <li>Apply these concepts to statistical data analysis and interpretation</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Reading Material -->
+            <section id="reading">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Pre-Seminar Reading</h2>
+                    </header>
+                    <p><strong>Reference:</strong> Patrick, S., Bossers, S. M. and Schwarte, L. A. (2018) 'Statistical significance versus clinical importance of observed effect sizes: what do P values and confidence intervals really represent?', <em>Anesthesia & Analgesia</em>, 126(3), pp. 1068–1072.</p>
+                </div>
+            </section>
+
+            <!-- Seminar Questions and Answers -->
+            <section id="questions">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Seminar Questions and My Responses</h2>
+                    </header>
+
+                    <!-- Question 1 -->
+                    <div class="box">
+                        <h3>1. What is effect size and why does it matter?</h3>
+                        <p>Effect size measures the <strong>magnitude</strong> of the difference or relationship between variables—essentially, how large or meaningful an effect is. While a P value tells us whether an effect exists, effect size tells us <strong>how much</strong> it matters.</p>
+                        <p><strong>Why it matters:</strong> A study can find a statistically significant result (low P value) but have such a small effect size that it's clinically or practically meaningless. For example, a new drug might statistically reduce pain scores, but if the reduction is only 0.5 points on a 10-point scale, patients won't notice a real benefit. Effect size helps us distinguish between statistical significance and practical importance—which is crucial for making informed decisions in healthcare, business, or any field where we need to know if changes actually make a difference in the real world.</p>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="box">
+                        <h3>2. What does a P value actually tell us?</h3>
+                        <p>A P value tells us the <strong>probability of observing our data (or more extreme data) if the null hypothesis were true</strong>. In simpler terms, it answers: "If there really is no effect, how likely is it that we'd see results like ours just by chance?"</p>
+                        <p>For instance, a P value of 0.03 means there's a 3% chance of getting our results if the null hypothesis (no effect) is actually true. Conventionally, if P < 0.05, we reject the null hypothesis and conclude there's likely a real effect.</p>
+                        <p><strong>What it does NOT tell us:</strong></p>
+                        <ul>
+                            <li>It doesn't tell us how <em>large</em> or <em>important</em> the effect is</li>
+                            <li>It doesn't tell us the probability that the null hypothesis is true</li>
+                            <li>It doesn't tell us the probability that our alternative hypothesis is correct</li>
+                            <li>It's not a measure of effect size or clinical significance</li>
+                        </ul>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="box">
+                        <h3>3. What are the common P value misconceptions?</h3>
+                        <p>Several widespread misunderstandings plague P value interpretation:</p>
+                        
+                        <p><strong>Misconception 1: P value = probability the null hypothesis is true</strong><br>
+                        Reality: P value assumes the null hypothesis IS true and calculates probability of the data. It's backwards reasoning to think it tells us about the hypothesis itself.</p>
+
+                        <p><strong>Misconception 2: Smaller P values mean larger effects</strong><br>
+                        Reality: P values are heavily influenced by sample size. A tiny, meaningless effect can have a very small P value if the sample is large enough. Conversely, a large effect might have P > 0.05 with a small sample.</p>
+
+                        <p><strong>Misconception 3: P = 0.051 vs P = 0.049 represents a meaningful difference</strong><br>
+                        Reality: The arbitrary 0.05 threshold creates a false dichotomy. Results just above or below this cutoff are essentially the same—treating them drastically differently is not justified.</p>
+
+                        <p><strong>Misconception 4: Non-significant results prove no effect</strong><br>
+                        Reality: Failing to find significance doesn't prove the null hypothesis. It might just mean the study lacked power to detect a real effect (too small sample, too much variability, etc.).</p>
+
+                        <p><strong>Misconception 5: P values can be used in isolation</strong><br>
+                        Reality: P values should always be interpreted alongside effect sizes, confidence intervals, study design quality, and practical significance.</p>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="box">
+                        <h3>4. What is the role of confidence interval?</h3>
+                        <p>A confidence interval (CI) provides a <strong>range of plausible values</strong> for the true effect size in the population. For example, a 95% CI means we're 95% confident the true effect lies somewhere within that range.</p>
+                        
+                        <p><strong>Key roles:</strong></p>
+                        <ul>
+                            <li><strong>Shows precision:</strong> Narrow CIs indicate precise estimates (usually from large samples); wide CIs show uncertainty</li>
+                            <li><strong>Indicates effect size:</strong> Unlike P values, CIs directly show the magnitude and direction of effects</li>
+                            <li><strong>Reveals clinical significance:</strong> Even if significant, a CI can show the effect is too small to matter practically</li>
+                            <li><strong>Includes significance testing:</strong> If a 95% CI for a difference doesn't include zero, it's equivalent to P < 0.05</li>
+                        </ul>
+
+                        <p>For instance, if a new treatment's CI for mean improvement is [2.1, 5.8] points, we know: (1) the effect is positive, (2) likely between 2-6 points, and (3) clinically meaningful if >2 points matters. This tells us far more than just "P = 0.03."</p>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="box">
+                        <h3>5. Why is confidence interval a solution?</h3>
+                        <p>Confidence intervals address many limitations of P value-only reporting by providing richer, more actionable information:</p>
+
+                        <p><strong>1. Shows magnitude AND uncertainty together</strong><br>
+                        Rather than just "significant or not," CIs show both the estimated effect size and how precise that estimate is.</p>
+
+                        <p><strong>2. Enables practical decision-making</strong><br>
+                        Researchers and practitioners can see if the plausible effect range includes values that would be clinically or practically meaningful. A CI of [-0.5, 2.5] for a treatment effect tells us the true benefit might be near zero or modest—useful context for decision-making.</p>
+
+                        <p><strong>3. Avoids arbitrary thresholds</strong><br>
+                        Unlike the binary "significant/not significant" based on P = 0.05, CIs provide a continuous range. We can see if results are borderline, robust, or highly uncertain without artificial cutoffs.</p>
+
+                        <p><strong>4. Supports meta-analysis and comparison</strong><br>
+                        CIs from multiple studies can be compared and combined more easily than P values, facilitating evidence synthesis.</p>
+
+                        <p><strong>5. Reduces misinterpretation</strong><br>
+                        Because CIs present effect sizes and ranges directly, they're less prone to the misconceptions that plague P values. They naturally encourage thinking about "how much" rather than just "whether."</p>
+
+                        <p><strong>Example:</strong> Instead of reporting "Treatment A was significantly better than Treatment B (P = 0.02)," reporting "Treatment A improved outcomes by 3.2 points (95% CI: 1.1–5.3) compared to Treatment B" provides clearer, more useful information for making treatment decisions.</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Key Takeaways -->
+            <section id="takeaways">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Key Takeaways</h2>
+                    </header>
+                    <ul>
+                        <li>Statistical significance (P values) and practical significance (effect sizes) are distinct—both are needed for proper interpretation</li>
+                        <li>P values indicate evidence against the null hypothesis but don't measure effect magnitude or importance</li>
+                        <li>Common misconceptions about P values can lead to poor decision-making and misinterpretation of research</li>
+                        <li>Confidence intervals provide crucial information about both effect size and precision simultaneously</li>
+                        <li>Reporting CIs alongside or instead of P values leads to better understanding and more informed decisions</li>
+                        <li>In AI/ML contexts, these principles apply when evaluating model improvements, A/B tests, and performance metrics</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Reflection -->
+            <section id="reflection">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Reflection</h2>
+                    </header>
+                    <p>This seminar fundamentally changed how I think about statistical results. Before reading the Patrick et al. article, I—like many—focused primarily on whether P < 0.05, treating it as the deciding factor for whether results "mattered." The distinction between statistical significance and practical significance now seems obvious but was surprisingly overlooked in my previous understanding.</p>
+                    
+                    <p>The effect size concept is particularly relevant to my work in AI. When evaluating model improvements, it's tempting to celebrate any statistically significant gain in accuracy. But a model improving from 94.2% to 94.5% accuracy might be statistically significant with enough test data, yet offer no practical benefit if the computational cost doubles. Effect size helps quantify whether improvements justify implementation costs.</p>
+                    
+                    <p>Understanding P value misconceptions was eye-opening. The realization that P values are heavily sample-size dependent explains why some studies with massive datasets find "significant" but trivial effects, while smaller studies with large effects might not reach significance. This knowledge will make me more critical when reading research papers—I'll look beyond the P value to assess actual magnitude and confidence intervals.</p>
+                    
+                    <p>Confidence intervals now feel essential rather than supplementary. They answer the questions I actually care about: "How big is this effect likely to be?" and "How certain are we?" The example of a treatment with CI [2.1, 5.8] versus one with CI [0.1, 8.5]—both significant—illustrates why CIs matter. The first offers a more reliable, meaningful benefit despite similar P values.</p>
+                    
+                    <p>In data science projects, I'll now routinely report confidence intervals for performance metrics, A/B test results, and model comparisons. This will provide stakeholders with clearer information for decision-making than P values alone could offer, and help avoid the trap of chasing statistical significance at the expense of practical importance.</p>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <section id="navigation">
+                <div class="inner">
+                    <ul class="actions">
+                        <li><a href="numerical-analysis.html" class="button">← Back to Module Overview</a></li>
+                        <li><a href="unit6-seminar.html" class="button primary">Next Activity →</a></li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                <ul class="icons">
+                    <li><a href="https://github.com/KannaAlmansoori" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; 2025 Kanna AlMansoori</li>
+                    <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
