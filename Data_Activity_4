@@ -116,16 +116,16 @@ ggplot(state_df, aes(x = reorder(State, Frequency), y = Frequency)) +
                     <div class="box">
                         <h4>R Code Screenshot</h4>
                         <span class="image fit">
-                            <img src="images/NumericalAnalysis/DataActivity_4_task1.png" alt="R code for bar chart" />
-                        </span>
-                        <p><em>Caption: R code implementation for creating the bar chart showing COVID-19 report frequency by state.</em></p>
+<img src="images/NumericalAnalysis/DataActivity4task1.png" alt="R code for bar chart" />
+</span>
+                   <p><em>Caption: R code implementation for creating the bar chart showing COVID-19 report frequency by state.</em></p>
                     </div>
 
                     <div class="box">
                         <h4>Visualization Output</h4>
                         <span class="image fit">
-                            <img src="images/NumericalAnalysis/DataActivity_4_task1_1.png" alt="Bar chart of COVID-19 reports by state" />
-                        </span>
+<img src="images/NumericalAnalysis/DataActivity4task1.1.png" alt="Bar chart of COVID-19 reports by state" />
+</span>
                         <p><em>Caption: Bar chart showing clear variation in reporting frequency across states. Kerala recorded the highest number of reports, followed by states like Telangana and Delhi.</em></p>
                     </div>
 
@@ -164,16 +164,16 @@ ggplot(cases_df, aes(x = "", y = TotalCases, fill = Category)) +
                     <div class="box">
                         <h4>R Code Screenshot</h4>
                         <span class="image fit">
-                            <img src="images/NumericalAnalysis/DataActivity_4_task_2.png" alt="R code for pie chart" />
-                        </span>
+<img src="images/NumericalAnalysis/DataActivity4task2.png" alt="R code for pie chart" />
+</span>
                         <p><em>Caption: R code implementation for creating the pie chart of confirmed cases by nationality.</em></p>
                     </div>
 
                     <div class="box">
                         <h4>Visualization Output</h4>
                         <span class="image fit">
-                            <img src="images/NumericalAnalysis/DataActivity_4_task_2_1.png" alt="Pie chart of cases by nationality" />
-                        </span>
+<img src="images/NumericalAnalysis/DataActivity4task2.1.png" alt="Pie chart of cases by nationality" />
+</span>
                         <p><em>Caption: Pie chart showing that the majority of confirmed cases were among Indian nationals (1499 cases), while foreign national cases formed a smaller proportion (359 cases).</em></p>
                     </div>
 
@@ -204,8 +204,7 @@ ggplot(df, aes(x = Cured)) +
                     <div class="box">
                         <h4>R Code and Visualization Output</h4>
                         <span class="image fit">
-                            <img src="images/NumericalAnalysis/DataActivity_4_task_3.png" alt="Histogram of recovery numbers" />
-                        </span>
+<img src="images/NumericalAnalysis/DataActivity4task3.png" alt="Histogram of recovery numbers" />                        </span>
                         <p><em>Caption: R code and resulting histogram showing the distribution of recovery numbers. Most reports recorded low recovery numbers, with fewer observations showing higher recovery counts.</em></p>
                     </div>
 
@@ -239,8 +238,8 @@ ggplot(df, aes(x = Sno, y = TotalCases)) +
                     <div class="box">
                         <h4>R Code and Visualization Output</h4>
                         <span class="image fit">
-                            <img src="images/NumericalAnalysis/DataActivity_4_task_4.png" alt="Line chart of total cases over time" />
-                        </span>
+<img src="images/NumericalAnalysis/DataActivity4task4.png" alt="Line chart of total cases over time" />
+</span>
                         <p><em>Caption: R code and resulting line chart showing an overall increasing trend in total confirmed COVID-19 cases as the reporting sequence progresses, with visible fluctuations reflecting daily reporting differences.</em></p>
                     </div>
 
