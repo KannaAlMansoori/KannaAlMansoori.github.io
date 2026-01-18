@@ -1,0 +1,325 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Unit 7 Seminar - Numerical Analysis - Kanna AlMansoori</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo"><strong>Kanna AlMansoori</strong> <span>MSc Artificial Intelligence E-Portfolio</span></a>
+            <nav>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <ul class="links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="launch-module.html">Launch into Computing</a></li>
+                <li><a href="induction.html">Induction Computing</a></li>
+                <li><a href="ai-module.html">Understanding Artificial Intelligence</a></li>
+                <li><a href="numerical-analysis.html">Numerical Analysis</a></li>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div id="main" class="alt">
+
+            <!-- Breadcrumb Navigation -->
+            <section id="one">
+                <div class="inner">
+                    <p><a href="numerical-analysis.html">← Back to Numerical Analysis</a></p>
+                    <header class="major">
+                        <h1>Unit 7 Seminar: Hypothesis Testing</h1>
+                    </header>
+                    <p><strong>Type:</strong> Seminar Discussion | <strong>Status:</strong> ✓ Complete</p>
+                </div>
+            </section>
+
+            <!-- Learning Outcomes -->
+            <section id="learning-outcomes">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Learning Outcomes</h2>
+                    </header>
+                    <ul>
+                        <li>Understand the different hypotheses used in data analysis</li>
+                        <li>Evaluate hypothesis testing and statistical errors</li>
+                        <li>Demonstrate knowledge of formulating null and alternative hypotheses</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Reading Material -->
+            <section id="reading">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Pre-Seminar Reading</h2>
+                    </header>
+                    <p><strong>Reference:</strong> Bader, M. K. F. and Leuzinger, S. (2024) <em>R-ticulate: A Beginner's Guide to Data Analysis for Natural Scientists</em>, Chapters 1 & 5. Hoboken, NJ: Wiley.</p>
+                </div>
+            </section>
+
+            <!-- Seminar Questions and Answers -->
+            <section id="questions">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Seminar Questions and My Responses</h2>
+                    </header>
+
+                    <!-- Question 1 -->
+                    <div class="box">
+                        <h3>1. What is a statistical hypothesis?</h3>
+                        <p>A statistical hypothesis is a testable statement we make about a population parameter that we want to investigate using data. It's essentially an educated guess that can be verified through statistical methods.</p>
+                        <p>The key is that it must be about a population parameter—like a mean, proportion, or variance—not just our sample. For example, claiming "the average height of students in this university is 170 cm" is a statistical hypothesis because it's a quantifiable statement about the entire population that can be tested with sample data and probability theory.</p>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="box">
+                        <h3>2. Explain both null and alternative hypotheses with examples</h3>
+                        
+                        <h4>Null Hypothesis (H₀)</h4>
+                        <p>This is our starting assumption—the "nothing interesting is happening" position. It assumes no effect, no difference, or no relationship exists. The null hypothesis always includes an equals sign (=, ≤, or ≥) and represents the status quo.</p>
+                        
+                        <p><strong>Example 1 - Medical trial:</strong><br>
+                        Testing a new painkiller:<br>
+                        H₀: The new painkiller has the same effect as standard medication (μ_new = μ_standard)</p>
+                        
+                        <p><strong>Example 2 - Agricultural experiment:</strong><br>
+                        Testing a new fertilizer:<br>
+                        H₀: The new fertilizer doesn't increase yield (μ_new ≤ μ_standard)</p>
+
+                        <h4>Alternative Hypothesis (H₁ or Ha)</h4>
+                        <p>This is what we're trying to find evidence for—the "something interesting IS happening" claim. It contradicts the null hypothesis and uses inequality signs (≠, <, >).</p>
+                        
+                        <p><strong>Example 1 alternative:</strong><br>
+                        H₁: The new painkiller is more effective (μ_new > μ_standard)</p>
+                        
+                        <p><strong>Example 2 alternative:</strong><br>
+                        H₁: The new fertilizer increases yield (μ_new > μ_standard)</p>
+
+                        <p><strong>Important note:</strong> We never "prove" the alternative hypothesis. We either reject the null (supporting the alternative) or fail to reject it (insufficient evidence).</p>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="box">
+                        <h3>3. Explain the use of hypothesis in statistics</h3>
+                        <p>Hypotheses serve several crucial purposes:</p>
+                        
+                        <p><strong>1. Providing Structure:</strong> They give us a systematic framework for making objective decisions based on data, reducing bias.</p>
+                        
+                        <p><strong>2. Testing Scientific Claims:</strong> If a researcher claims something works, we can formulate testable hypotheses to verify the claim with data.</p>
+                        
+                        <p><strong>3. Quantifying Uncertainty:</strong> Hypothesis testing doesn't just give yes/no answers—it tells us how confident we can be through p-values and confidence intervals.</p>
+                        
+                        <p><strong>4. Enabling Comparisons:</strong> Hypotheses let us systematically compare groups (e.g., Does Treatment A work better than Treatment B?).</p>
+                        
+                        <p><strong>5. Supporting Decision-Making:</strong> Governments, companies, and doctors use hypothesis testing to make evidence-based decisions about policies, strategies, and treatments.</p>
+                        
+                        <p><strong>Real example:</strong> A pharmaceutical company uses hypotheses to test if a new drug is effective, safe, and better than existing treatments—providing evidence for regulatory approval.</p>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="box">
+                        <h3>4. Explain the statistical significance</h3>
+                        <p>Statistical significance determines whether what we observe in our data is likely a real pattern or just random chance.</p>
+                        
+                        <p>When a result is "statistically significant," we're saying: "This pattern is unlikely to have occurred by random chance if the null hypothesis were true."</p>
+
+                        <h4>The p-value is Key</h4>
+                        <p>The p-value tells us the probability of getting results as extreme as ours IF H₀ is true:</p>
+                        <ul>
+                            <li><strong>Small p-value (≤ 0.05):</strong> Strong evidence against H₀ → Result IS statistically significant</li>
+                            <li><strong>Large p-value (> 0.05):</strong> Results could easily happen by chance → Result is NOT statistically significant</li>
+                        </ul>
+
+                        <h4>Example</h4>
+                        <p>Testing if a fertilizer increases plant growth with α = 0.05. After analysis, p = 0.03.</p>
+                        <p><strong>Interpretation:</strong> Since 0.03 < 0.05, the result is statistically significant. There's only a 3% probability of seeing this growth difference if the fertilizer had no effect. We reject H₀ and conclude the fertilizer appears to work.</p>
+
+                        <h4>Critical Point</h4>
+                        <p><strong>Statistical ≠ Practical significance:</strong> A result can be statistically significant but not practically meaningful. With huge samples, even tiny, unimportant differences become statistically significant. Context and effect size matter!</p>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="box">
+                        <h3>5. Explain the differences between one-tailed and two-tailed tests</h3>
+                        
+                        <h4>Two-Tailed Test (Non-Directional)</h4>
+                        <p>Tests for ANY difference, regardless of direction.</p>
+                        <ul>
+                            <li><strong>Alternative hypothesis:</strong> H₁: μ ≠ μ₀</li>
+                            <li><strong>When to use:</strong> No directional expectation; interested in differences either way</li>
+                            <li><strong>How it works:</strong> Critical region split between both tails (0.025 in each for α = 0.05)</li>
+                        </ul>
+                        <p><strong>Example:</strong> Quality control checking if a bottling machine is working properly (bottles should be 500ml). We care if bottles are overfilled OR underfilled—both are problems.</p>
+
+                        <h4>One-Tailed Test (Directional)</h4>
+                        <p>Tests for effects in one specific direction only.</p>
+                        <ul>
+                            <li><strong>Alternative hypothesis:</strong> H₁: μ > μ₀ (right-tailed) OR H₁: μ < μ₀ (left-tailed)</li>
+                            <li><strong>When to use:</strong> Strong directional hypothesis; only one direction matters</li>
+                            <li><strong>How it works:</strong> Entire critical region in one tail (all 0.05 for α = 0.05)</li>
+                        </ul>
+                        <p><strong>Example:</strong> Testing if a new training program INCREASES strength. Only interested in increases, not decreases.</p>
+
+                        <h4>Key Differences</h4>
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Aspect</th>
+                                        <th>Two-Tailed</th>
+                                        <th>One-Tailed</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>What we're testing</td>
+                                        <td>Any difference</td>
+                                        <td>Specific direction</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Alternative hypothesis</td>
+                                        <td>μ ≠ μ₀</td>
+                                        <td>μ > μ₀ or μ < μ₀</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Critical region</td>
+                                        <td>Split between both tails</td>
+                                        <td>All in one tail</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Easier to reject H₀?</td>
+                                        <td>No (more conservative)</td>
+                                        <td>Yes (for specified direction)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p><strong>Important:</strong> You MUST choose between one-tailed and two-tailed BEFORE looking at your data. Two-tailed tests are generally preferred in research because they're more conservative and don't miss effects in the "wrong" direction.</p>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="box">
+                        <h3>6. What is the meaning of statistically significant?</h3>
+                        <p>When we say something is "statistically significant," we mean we've found enough evidence in our sample data to reasonably conclude the pattern we're seeing is probably not just random chance.</p>
+                        
+                        <p><strong>Formally:</strong> The p-value from our test is less than or equal to our predetermined significance level (α).</p>
+
+                        <h4>What We're Actually Saying</h4>
+                        <p>When reporting "the result is statistically significant at p = 0.03":</p>
+                        <ul>
+                            <li>There's strong evidence against H₀</li>
+                            <li>We reject the null hypothesis</li>
+                            <li>If H₀ were true, there's only a 3% chance we'd see data this extreme</li>
+                        </ul>
+
+                        <h4>What It Does NOT Mean (Critical!)</h4>
+                        <p><strong>1. Doesn't mean the effect is large or important:</strong> With large samples, tiny meaningless effects become statistically significant. Example: A weight loss drug reduces weight by 0.1 kg (p < 0.001)—statistically significant but not practically meaningful.</p>
+                        
+                        <p><strong>2. Doesn't prove the alternative is true:</strong> We accumulate evidence, we don't prove. Even with p = 0.001, there's still a 0.1% chance it happened by random chance.</p>
+                        
+                        <p><strong>3. Doesn't guarantee replication:</strong> With α = 0.05, we expect about 5% of tests to show significance by chance alone.</p>
+
+                        <h4>Best Practice</h4>
+                        <p>Don't just report "p < 0.05." Include:</p>
+                        <ul>
+                            <li>The actual p-value</li>
+                            <li>Effect size (how big is the difference?)</li>
+                            <li>Confidence intervals</li>
+                            <li>Practical significance (does this matter in the real world?)</li>
+                        </ul>
+
+                        <p><strong>Bottom line:</strong> Statistical significance is a tool for decision-making under uncertainty. It tells us whether data provides convincing evidence against H₀, but we always need to consider effect sizes, confidence intervals, and practical importance before drawing real-world conclusions.</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Key Takeaways -->
+            <section id="takeaways">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Key Takeaways</h2>
+                    </header>
+                    <ul>
+                        <li>Statistical hypotheses are testable statements about population parameters that guide data analysis</li>
+                        <li>Null hypothesis (H₀) represents no effect; alternative hypothesis (H₁) represents the effect we're testing for</li>
+                        <li>Hypothesis testing provides a systematic framework for making objective, evidence-based decisions</li>
+                        <li>Statistical significance (p ≤ α) indicates evidence against H₀, but doesn't guarantee practical importance</li>
+                        <li>Two-tailed tests detect differences in any direction; one-tailed tests focus on specific directional effects</li>
+                        <li>Always report effect sizes and confidence intervals alongside p-values for complete understanding</li>
+                        <li>Statistical significance ≠ practical significance—context and effect magnitude matter</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Reflection -->
+            <section id="reflection">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Reflection</h2>
+                    </header>
+                    <p>This seminar deepened my understanding of hypothesis testing—a fundamental tool in statistical inference. Before this, I understood the mechanics of p-values and significance levels, but I hadn't fully grasped the broader context and common misconceptions.</p>
+                    
+                    <p>The most valuable insight was distinguishing between statistical and practical significance. It's easy to get caught up in achieving p < 0.05 and forget to ask whether the effect actually matters in the real world. This is especially relevant in AI and data science, where large datasets can make trivial effects statistically significant. When evaluating model improvements, I now understand I need to assess both statistical significance and practical impact on performance.</p>
+                    
+                    <p>Learning about one-tailed versus two-tailed tests clarified when each approach is appropriate. In machine learning contexts, two-tailed tests are typically more suitable since we want to detect any changes in model performance, not just improvements. However, one-tailed tests make sense when testing specific directional hypotheses, like whether a new algorithm reduces error rates.</p>
+                    
+                    <p>The emphasis on formulating hypotheses before data analysis resonated strongly. This pre-commitment protects against data dredging and cherry-picking results—practices that undermine research credibility. In my future work, I'll ensure hypotheses are clearly stated upfront.</p>
+                    
+                    <p>Understanding what p-values actually represent (and don't represent) was crucial. They tell us about data extremeness assuming H₀ is true, not the probability that H₀ is true. This distinction seems subtle but has major implications for interpretation. Moving forward, I'll be more careful about how I interpret and communicate statistical test results, always including effect sizes and confidence intervals alongside p-values.</p>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <section id="navigation">
+                <div class="inner">
+                    <ul class="actions">
+                        <li><a href="numerical-analysis.html" class="button">← Back to Module Overview</a></li>
+                        <li><a href="unit8-activity.html" class="button primary">Next Activity →</a></li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                <ul class="icons">
+                    <li><a href="https://github.com/KannaAlmansoori" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; 2025 Kanna AlMansoori</li>
+                    <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
