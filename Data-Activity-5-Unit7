@@ -1,0 +1,280 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Data Activity 5 - Unit 7 - Kanna AlMansoori</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo"><strong>Kanna AlMansoori</strong> <span>MSc Artificial Intelligence E-Portfolio</span></a>
+            <nav>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <ul class="links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="launch-module.html">Launch into Computing</a></li>
+                <li><a href="induction.html">Induction Computing</a></li>
+                <li><a href="ai-module.html">Understanding Artificial Intelligence</a></li>
+                <li><a href="numerical-analysis.html">Numerical Analysis</a></li>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div id="main" class="alt">
+
+            <!-- Breadcrumb Navigation -->
+            <section id="one">
+                <div class="inner">
+                    <p><a href="numerical-analysis.html">← Back to Numerical Analysis</a></p>
+                    <header class="major">
+                        <h1>Unit 7: Data Activity 5</h1>
+                    </header>
+                    <p><strong>Deadline:</strong> End of Unit 7 | <strong>Type:</strong> Formative | <strong>Status:</strong> ✓ Complete</p>
+                </div>
+            </section>
+
+            <!-- Introduction -->
+            <section id="introduction">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Health Data Analysis in R</h2>
+                    </header>
+                    <p>For this activity, I analyzed the Health_Data dataset using R to explore relationships between various health indicators. The dataset contains 210 observations with 17 variables including blood pressure measurements, income data, and health conditions like peptic ulcers. I performed descriptive statistics, created visualizations, and ran hypothesis tests to understand the data better.</p>
+                    
+                    <span class="image fit">
+                        <img src="images/NumericalAnalysis/1768843335523_image.png" alt="Data Activity 5 Assignment" />
+                    </span>
+                </div>
+            </section>
+
+            <!-- Learning Outcomes -->
+            <section id="learning-outcomes">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Learning Outcomes</h2>
+                    </header>
+                    <p>Through this activity, I developed a systematic understanding of key statistical concepts including measures of central tendency, quartiles, and hypothesis testing. I also applied these methods to help analyze health data, which could support decision-making in a healthcare context. Working with R helped me understand how to translate statistical theory into practical analysis using real-world data.</p>
+                </div>
+            </section>
+
+            <!-- Analysis Tasks -->
+            <section id="analysis">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Analysis and Findings</h2>
+                    </header>
+                    
+                    <!-- Task 1: Descriptive Statistics -->
+                    <div class="box">
+                        <h3>Task 1: Descriptive Statistics - Mean, Median, and Mode</h3>
+                        <p>I started by calculating the mean, median, and mode for three key variables: systolic blood pressure (SBP), diastolic blood pressure (DBP), and income. Here's what I found:</p>
+                        
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Variable</th>
+                                        <th>Mean</th>
+                                        <th>Median</th>
+                                        <th>Mode</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>SBP</td>
+                                        <td>127.73</td>
+                                        <td>123.0</td>
+                                        <td>120</td>
+                                    </tr>
+                                    <tr>
+                                        <td>DBP</td>
+                                        <td>82.77</td>
+                                        <td>82.0</td>
+                                        <td>80</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Income</td>
+                                        <td>85,194.49</td>
+                                        <td>86,560.5</td>
+                                        <td>79,774</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <h4>What this tells us:</h4>
+                        <p>The blood pressure values look pretty typical for adults. The systolic pressure average is around 127.7, which is slightly elevated but not too concerning. What's interesting is that the median (123) is a bit lower than the mean, which suggests there might be some people with higher blood pressure pulling the average up.</p>
+                        
+                        <p>For diastolic pressure, the mean and median are very close (82.77 vs 82.0), which tells me the data is pretty evenly distributed without major outliers.</p>
+                        
+                        <p>Income shows a similar pattern - the mean and median are quite close to each other (about 85,000 and 86,500 respectively). This indicates the income distribution is fairly balanced, though there are probably a few higher earners in the dataset.</p>
+                        
+                        <span class="image fit">
+                            <img src="images/NumericalAnalysis/RCodeB.png" alt="R Code - Descriptive Statistics" />
+                        </span>
+                    </div>
+
+                    <!-- Task 2: Five-Number Summary and Boxplot -->
+                    <div class="box">
+                        <h3>Task 2: Five-Number Summary and Boxplot for Income</h3>
+                        <p>Next, I looked at the income variable more closely using a five-number summary:</p>
+                        
+                        <ul>
+                            <li><strong>Minimum:</strong> 52,933</li>
+                            <li><strong>First Quartile (Q1):</strong> 68,461</li>
+                            <li><strong>Median:</strong> 86,560.5</li>
+                            <li><strong>Third Quartile (Q3):</strong> 99,725</li>
+                            <li><strong>Maximum:</strong> 117,210</li>
+                        </ul>
+                        
+                        <h4>What the boxplot showed:</h4>
+                        <p>The boxplot gave me a nice visual representation of the income distribution. I could see that the middle 50% of people in the dataset earn between about 68,000 and 100,000. The distribution has a slight right skew, meaning there are a few people earning higher incomes that stretch the upper end. However, there weren't any extreme outliers that would really distort the data, which is good.</p>
+                        
+                        <p>The spread between Q1 and Q3 (the interquartile range) is around 31,000, which shows there's a reasonable amount of variation in income levels but nothing too extreme.</p>
+                        
+                        <span class="image fit">
+                            <img src="images/NumericalAnalysis/RCodeC.png" alt="R Code - Five-Number Summary and Boxplot" />
+                        </span>
+                        
+                        <span class="image fit">
+                            <img src="images/NumericalAnalysis/RCodeD.png" alt="Boxplot of Income" />
+                        </span>
+                    </div>
+
+                    <!-- Task 3: Hypothesis Test -->
+                    <div class="box">
+                        <h3>Task 3: Hypothesis Test - Systolic Blood Pressure and Peptic Ulcer</h3>
+                        <p>The main question I wanted to answer was: <strong>Is there an association between systolic blood pressure and whether someone has a peptic ulcer or not?</strong></p>
+                        
+                        <h4>Step 1: Checking the assumptions</h4>
+                        <p>Before jumping into the test, I checked whether the SBP data was normally distributed in each group (people with peptic ulcer vs. people without). I used the Shapiro-Wilk test for this:</p>
+                        
+                        <ul>
+                            <li>Group 1 (one peptic ulcer status): p-value = 0.0962 - This is approximately normal</li>
+                            <li>Group 2 (other peptic ulcer status): p-value = 0.000002 - This is definitely not normal</li>
+                        </ul>
+                        
+                        <p>Since one group wasn't normally distributed, the safest approach was to use a non-parametric test (Wilcoxon rank-sum test) rather than relying only on the t-test.</p>
+                        
+                        <span class="image fit">
+                            <img src="images/NumericalAnalysis/RCodeE.png" alt="R Code - Normality Check and T-test" />
+                        </span>
+                        
+                        <h4>Step 2: Running the tests</h4>
+                        <p>I ran both a Welch t-test and a Wilcoxon rank-sum test to be thorough:</p>
+                        
+                        <p><strong>Welch Two Sample t-test results:</strong></p>
+                        <ul>
+                            <li>t-statistic = 1.214</li>
+                            <li>p-value = 0.2296</li>
+                            <li>Mean SBP in Group 1: 131.32</li>
+                            <li>Mean SBP in Group 2: 126.86</li>
+                        </ul>
+                        
+                        <p><strong>Wilcoxon rank-sum test results:</strong></p>
+                        <ul>
+                            <li>p-value = 0.1434</li>
+                        </ul>
+                        
+                        <span class="image fit">
+                            <img src="images/NumericalAnalysis/RCodeF.png" alt="R Code - Wilcoxon Test" />
+                        </span>
+                        
+                        <h4>What this means:</h4>
+                        <p>Both tests gave me p-values greater than 0.05 (the standard threshold for significance). The t-test gave p = 0.23 and the Wilcoxon test gave p = 0.14. This means there's no statistically significant difference in systolic blood pressure between people with and without peptic ulcers.</p>
+                        
+                        <p>Even though Group 1 had a slightly higher average SBP (131 vs 127), this difference could easily be due to random chance rather than a real association. So based on this data, I can't say that having a peptic ulcer is related to having higher or lower blood pressure.</p>
+                    </div>
+
+                    <!-- R Code -->
+                    <div class="box">
+                        <h3>Complete R Code</h3>
+                        <span class="image fit">
+                            <img src="images/NumericalAnalysis/RCodeA.png" alt="R Code - Reading Data and Variable Names" />
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Findings -->
+            <section id="key-findings">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Key Findings</h2>
+                    </header>
+                    <ul>
+                        <li><strong>Blood Pressure Distribution:</strong> SBP and DBP averages are within common adult ranges, with SBP showing mild right skewness</li>
+                        <li><strong>Income Distribution:</strong> Income data is fairly balanced with mean (85,194) and median (86,560) close together, indicating no extreme outliers</li>
+                        <li><strong>Income Range:</strong> Middle 50% of individuals earn between 68,461 and 99,725, with an IQR of approximately 31,000</li>
+                        <li><strong>Normality Testing:</strong> SBP data was not normally distributed in one peptic ulcer group, requiring non-parametric testing</li>
+                        <li><strong>Hypothesis Test Result:</strong> No statistically significant association found between systolic blood pressure and peptic ulcer status (p = 0.14)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Reflection -->
+            <section id="reflection">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Reflection</h2>
+                    </header>
+                    <p>This analysis gave me some good practice working with real health data in R. The descriptive statistics showed that the blood pressure and income values in the dataset are fairly typical and well-distributed. The boxplot was helpful for visualizing the income spread.</p>
+                    
+                    <p>The hypothesis test was the most interesting part. Even though there was a small difference in average blood pressure between the two groups, it wasn't big enough to be statistically significant. This reinforces an important lesson: just because we see a difference in numbers doesn't mean it's meaningful - we need proper statistical tests to know if it's real or just random variation.</p>
+                    
+                    <p>Overall, there's no evidence in this dataset that systolic blood pressure is associated with peptic ulcer status. Working through this activity helped me understand how to properly apply statistical tests in real-world scenarios and interpret the results in a meaningful way.</p>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <section id="navigation">
+                <div class="inner">
+                    <ul class="actions">
+                        <li><a href="numerical-analysis.html" class="button">← Back to Module Overview</a></li>
+                        <li><a href="unit8-activity.html" class="button primary">Next Activity →</a></li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                <ul class="icons">
+                    <li><a href="https://github.com/KannaAlmansoori" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; 2025 Kanna AlMansoori</li>
+                    <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
