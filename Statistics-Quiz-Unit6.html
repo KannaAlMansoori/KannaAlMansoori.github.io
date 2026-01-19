@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics Quiz - Unit 6</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d4a5c 100%);
+            color: white;
+            padding: 30px 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-icon {
+            background-color: #d946a6;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 24px;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .header-info {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 20px;
+        }
+
+        .quiz-content {
+            background: white;
+        }
+
+        .back-button {
+            background-color: #5a3a7a;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 20px;
+            border-radius: 4px;
+        }
+
+        .back-button:hover {
+            background-color: #4a2a6a;
+        }
+
+        .question-block {
+            border: 1px solid #ddd;
+            margin: 20px;
+            padding: 30px;
+            background-color: #f0ebf4;
+            border-radius: 8px;
+        }
+
+        .question-sidebar {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .question-sidebar h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #5a3a7a;
+        }
+
+        .question-status {
+            color: #666;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        .flag-question {
+            color: #5a3a7a;
+            font-size: 14px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+        }
+
+        .option input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .option label {
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .clear-choice {
+            margin-top: 20px;
+            color: #5a3a7a;
+            font-weight: bold;
+            cursor: pointer;
+            background: white;
+            border: 1px solid #5a3a7a;
+            padding: 10px 20px;
+            border-radius: 4px;
+        }
+
+        .clear-choice:hover {
+            background-color: #f0ebf4;
+        }
+
+        .navigation-panel {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            position: sticky;
+            top: 20px;
+        }
+
+        .navigation-panel h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .student-info {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 0 auto 15px;
+            color: #333;
+        }
+
+        .student-name {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .question-numbers {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .question-number {
+            border: 2px solid #333;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .question-number:hover {
+            background-color: #f0ebf4;
+        }
+
+        .finish-button {
+            background-color: #5a3a7a;
+            color: white;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        .finish-button:hover {
+            background-color: #4a2a6a;
+        }
+
+        .finish-text {
+            text-align: center;
+            color: #5a3a7a;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-icon">📊</div>
+        <div>
+            <div class="header-info">NA_PCOM7E October 2025 / Unit 6 / Statistics Quiz</div>
+            <h1>Statistics Quiz</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="quiz-content">
+            <button class="back-button">Back</button>
+
+            <!-- Question 1 -->
+            <div class="question-sidebar">
+                <h3>Question 1</h3>
+                <div class="question-status">Not yet answered</div>
+                <div class="question-status">Marked out of 1.00</div>
+                <div class="flag-question">🚩 Flag question</div>
+            </div>
+            <div class="question-block">
+                <div class="question-text">What is the other name of the ANOVA test?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q1a" name="q1" checked>
+                        <label for="q1a">a. F-Statistics</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q1b" name="q1">
+                        <label for="q1b">b. Pearson Test</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q1c" name="q1">
+                        <label for="q1c">c. Correlation</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q1d" name="q1">
+                        <label for="q1d">d. P-value</label>
+                    </div>
+                </div>
+                <button class="clear-choice">Clear my choice</button>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question-sidebar">
+                <h3>Question 2</h3>
+                <div class="question-status">Not yet answered</div>
+                <div class="question-status">Marked out of 1.00</div>
+                <div class="flag-question">🚩 Flag question</div>
+            </div>
+            <div class="question-block">
+                <div class="question-text">Null hypothesis is rejected when p-value is less than 0.05. This statement is</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q2a" name="q2" checked>
+                        <label for="q2a">a. True</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q2b" name="q2">
+                        <label for="q2b">b. False</label>
+                    </div>
+                </div>
+                <button class="clear-choice">Clear my choice</button>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question-sidebar">
+                <h3>Question 3</h3>
+                <div class="question-status">Not yet answered</div>
+                <div class="question-status">Marked out of 1.00</div>
+                <div class="flag-question">🚩 Flag question</div>
+            </div>
+            <div class="question-block">
+                <div class="question-text">Confidence interval has following characteristics</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q3a" name="q3">
+                        <label for="q3a">a. It gives an indication of the certainty of the point estimate</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q3b" name="q3">
+                        <label for="q3b">b. It gives an indication of the likely magnitude of the true value</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q3c" name="q3" checked>
+                        <label for="q3c">c. All of the above</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q3d" name="q3">
+                        <label for="q3d">d. None of them</label>
+                    </div>
+                </div>
+                <button class="clear-choice">Clear my choice</button>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question-sidebar">
+                <h3>Question 4</h3>
+                <div class="question-status">Not yet answered</div>
+                <div class="question-status">Marked out of 1.00</div>
+                <div class="flag-question">🚩 Flag question</div>
+            </div>
+            <div class="question-block">
+                <div class="question-text">If we reject null hypothesis when it is actually true, it is known as</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q4a" name="q4">
+                        <label for="q4a">a. Type 2 error</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q4b" name="q4">
+                        <label for="q4b">b. Power</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q4c" name="q4" checked>
+                        <label for="q4c">c. Type 1 error</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q4d" name="q4">
+                        <label for="q4d">d. Effect Size</label>
+                    </div>
+                </div>
+                <button class="clear-choice">Clear my choice</button>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question-sidebar">
+                <h3>Question 5</h3>
+                <div class="question-status">Not yet answered</div>
+                <div class="question-status">Marked out of 1.00</div>
+                <div class="flag-question">🚩 Flag question</div>
+            </div>
+            <div class="question-block">
+                <div class="question-text">How null hypothesis is denoted?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" id="q5a" name="q5">
+                        <label for="q5a">a. H<sub>N</sub></label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q5b" name="q5">
+                        <label for="q5b">b. H<sub>S</sub></label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q5c" name="q5" checked>
+                        <label for="q5c">c. H<sub>0</sub></label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="q5d" name="q5">
+                        <label for="q5d">d. H<sub>A</sub></label>
+                    </div>
+                </div>
+                <button class="clear-choice">Clear my choice</button>
+            </div>
+        </div>
+
+        <div class="navigation-panel">
+            <h2>Quiz navigation</h2>
+            <div class="student-info">KA</div>
+            <div class="student-name">Kanna Ghanim Saeed Yaryou Almansoori</div>
+            <div class="question-numbers">
+                <div class="question-number">1</div>
+                <div class="question-number">2</div>
+                <div class="question-number">3</div>
+                <div class="question-number">4</div>
+                <div class="question-number">5</div>
+            </div>
+            <div class="finish-text">Finish attempt ...</div>
+            <button class="finish-button">Finish attempt ...</button>
+        </div>
+    </div>
+</body>
+</html>
