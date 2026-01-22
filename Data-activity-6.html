@@ -1,0 +1,717 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Data Activity 6 - Unit 8 - Kanna AlMansoori</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo"><strong>Kanna AlMansoori</strong> <span>MSc Artificial Intelligence E-Portfolio</span></a>
+            <nav>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <ul class="links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="launch-module.html">Launch into Computing</a></li>
+                <li><a href="induction.html">Induction Computing</a></li>
+                <li><a href="ai-module.html">Understanding Artificial Intelligence</a></li>
+                <li><a href="numerical-analysis.html">Numerical Analysis</a></li>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div id="main" class="alt">
+
+            <!-- Breadcrumb Navigation -->
+            <section id="one">
+                <div class="inner">
+                    <p><a href="numerical-analysis.html">← Back to Numerical Analysis</a></p>
+                    <header class="major">
+                        <h1>Unit 8: Data Activity 6 - Nonparametric Statistical Tests</h1>
+                    </header>
+                    <p><strong>Title:</strong> Nonparametric Tests on Health Data | <strong>Duration:</strong> Unit 8 | <strong>Type:</strong> Formative | <strong>Status:</strong> ✓ Complete</p>
+                </div>
+            </section>
+
+            <!-- Learning Outcomes -->
+            <section id="learning-outcomes">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Learning Outcomes</h2>
+                    </header>
+                    <ul>
+                        <li>Demonstrate systematic understanding of the key mathematical and statistical concepts and techniques which underpin mechanisms in Data Science and AI.</li>
+                        <li>Apply mathematical and statistical methods in these fields to help in the decision-making process.</li>
+                        <li>Understand when to use nonparametric tests instead of parametric tests.</li>
+                        <li>Apply appropriate nonparametric tests (Wilcoxon rank-sum test, Kruskal-Wallis test) to real-world health data.</li>
+                        <li>Interpret statistical test results and draw valid conclusions from p-values.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Task Overview -->
+            <section id="task-overview">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Activity Overview</h2>
+                    </header>
+                    
+                    <p>This data activity focuses on applying <strong>nonparametric statistical tests</strong> to health data using R. Nonparametric tests are used when data do not meet the assumptions of parametric tests (such as normality), or when dealing with ordinal data or small sample sizes.</p>
+                    
+                    <h3>Tasks:</h3>
+                    <div class="box">
+                        <ol>
+                            <li><strong>Task 1:</strong> Find the mean, median, and mode of the 'age' variable</li>
+                            <li><strong>Task 2:</strong> Determine whether median diastolic blood pressure (DBP) is the same between diabetic and non-diabetic participants using the Wilcoxon rank-sum test</li>
+                            <li><strong>Task 3:</strong> Assess whether systolic blood pressure (SBP) differs across occupational groups using the Kruskal-Wallis test</li>
+                        </ol>
+                    </div>
+
+                    <h3>Dataset Information:</h3>
+                    <ul>
+                        <li><strong>Dataset:</strong> Health_Data.sav</li>
+                        <li><strong>Observations:</strong> 210</li>
+                        <li><strong>Variables:</strong> 17 (including age, diabetes status, DBP, SBP, occupation)</li>
+                        <li><strong>Analysis tool:</strong> R Statistical Software (version 4.5.0)</li>
+                        <li><strong>Libraries used:</strong> haven (for reading SPSS files)</li>
+                    </ul>
+
+                    <h3>Why Nonparametric Tests?</h3>
+                    <div class="box">
+                        <p>Nonparametric tests are "distribution-free" tests that do not assume data follow a normal distribution. They are appropriate when:</p>
+                        <ul>
+                            <li>Data are ordinal or ranked</li>
+                            <li>Data violate normality assumptions</li>
+                            <li>Sample sizes are small</li>
+                            <li>Data contain outliers or are heavily skewed</li>
+                        </ul>
+                        <p>For this health data, we use nonparametric tests because blood pressure variables may not follow normal distributions and we want robust results regardless of distributional assumptions.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Task 1: Descriptive Statistics -->
+            <section id="task1">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Task 1: Measures of Central Tendency for Age</h2>
+                    </header>
+                    
+                    <h3>Objective</h3>
+                    <p>Calculate the mean, median, and mode of the 'age' variable to understand the central tendency and distribution of participant ages in the dataset.</p>
+
+                    <h3>Methodology</h3>
+                    <ol>
+                        <li>Loaded the Health_Data.sav file using the <code>haven</code> package</li>
+                        <li>Calculated mean age using <code>mean()</code> function with <code>na.rm = TRUE</code> to handle missing values</li>
+                        <li>Calculated median age using <code>median()</code> function</li>
+                        <li>Created a custom Mode function to find the most frequently occurring age value</li>
+                    </ol>
+
+                    <h3>R Code Implementation</h3>
+                    
+                    <h4>Figure 1: Data Loading and Initial Descriptive Statistics</h4>
+                    <div class="box">
+                        <span class="image fit">
+                            <img src="images/NumericalAnalysis/DataActivity6-1.png" alt="R code for loading data and calculating mean and median" />
+                        </span>
+                        <p><em>This figure shows the R code for loading the Health_Data.sav file, viewing the dataset structure (210 observations of 17 variables), and calculating the mean (26.51429) and median (27) for the age variable.</em></p>
+                    </div>
+
+                    <h4>Figure 2: Mode Calculation</h4>
+                    <div class="box">
+                        <span class="image fit">
+                            <img src="images/NumericalAnalysis/DataActivity6-2.png" alt="R code showing custom mode function and result" />
+                        </span>
+                        <p><em>This figure displays the custom Mode function implementation and its application to the age variable, revealing that the mode (most frequent value) is 26 years.</em></p>
+                    </div>
+
+                    <h3>Results - Task 1</h3>
+                    <div class="box">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Statistic</th>
+                                    <th>Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Mean age</td>
+                                    <td>26.51 years</td>
+                                </tr>
+                                <tr>
+                                    <td>Median age</td>
+                                    <td>27 years</td>
+                                </tr>
+                                <tr>
+                                    <td>Mode age</td>
+                                    <td>26 years</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Interpretation - Task 1</h3>
+                    <div class="box">
+                        <p>The measures of central tendency reveal that participant ages cluster closely around 26-27 years:</p>
+                        <ul>
+                            <li><strong>Mean (26.51):</strong> The arithmetic average age, indicating the typical participant is in their mid-20s</li>
+                            <li><strong>Median (27):</strong> The middle value when ages are ordered, suggesting a relatively symmetric distribution</li>
+                            <li><strong>Mode (26):</strong> The most frequently occurring age in the dataset</li>
+                        </ul>
+
+                        <h4>What This Tells Us:</h4>
+                        <p>The close agreement between mean (26.51), median (27), and mode (26) indicates that the age distribution is relatively <strong>symmetric and unimodal</strong> (single peak). There are no substantial outliers pulling the mean away from the median. This suggests the sample is fairly homogeneous in age, predominantly consisting of young adults.</p>
+
+                        <h4>Research Implications:</h4>
+                        <p>Understanding the age distribution is crucial for interpreting health metrics like blood pressure. Since participants are predominantly in their mid-20s, findings may not generalize to older populations where hypertension is more prevalent. Any observed blood pressure patterns reflect health status in young adults specifically.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Task 2: Wilcoxon Test -->
+            <section id="task2">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Task 2: Comparing Diastolic Blood Pressure Between Groups</h2>
+                    </header>
+                    
+                    <h3>Objective</h3>
+                    <p>Determine whether median diastolic blood pressure (DBP) differs between diabetic and non-diabetic participants using the Wilcoxon rank-sum test (also known as Mann-Whitney U test).</p>
+
+                    <h3>Why Wilcoxon Rank-Sum Test?</h3>
+                    <div class="box">
+                        <p>The Wilcoxon rank-sum test is the nonparametric alternative to the independent samples t-test. It is appropriate when:</p>
+                        <ul>
+                            <li>Comparing two independent groups (diabetic vs. non-diabetic)</li>
+                            <li>The outcome variable (DBP) may not be normally distributed</li>
+                            <li>We want to test for differences in <em>medians</em> rather than means</li>
+                            <li>Data may contain outliers or be skewed</li>
+                        </ul>
+                        <p>The test works by ranking all observations from both groups combined, then comparing the sum of ranks between groups. If medians truly differ, one group will have systematically higher or lower ranks.</p>
+                    </div>
+
+                    <h3>Methodology</h3>
+                    <ol>
+                        <li>Converted the diabetes variable to a factor (categorical variable)</li>
+                        <li>Used <code>aggregate()</code> to view median DBP for each diabetes group</li>
+                        <li>Applied <code>wilcox.test()</code> with <code>exact = FALSE</code> to compare DBP between groups</li>
+                        <li>Interpreted the p-value using α = 0.05 significance level</li>
+                    </ol>
+
+                    <h3>R Code Implementation</h3>
+                    
+                    <h4>Figure 3: Wilcoxon Rank-Sum Test for DBP by Diabetes Status</h4>
+                    <div class="box">
+                        <span class="image fit">
+                            <img src="images/NumericalAnalysis/DataActivity6-3.png" alt="Wilcoxon test results for DBP" />
+                        </span>
+                        <p><em>This figure shows the conversion of diabetes to a factor variable, calculation of median DBP by group (Group 1 = 83, Group 2 = 82), and the Wilcoxon rank-sum test results with continuity correction (W = 3804.5, p-value = 0.7999).</em></p>
+                    </div>
+
+                    <h3>Results - Task 2</h3>
+                    <div class="box">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Statistic</th>
+                                    <th>Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Median DBP (Group 1)</td>
+                                    <td>83 mmHg</td>
+                                </tr>
+                                <tr>
+                                    <td>Median DBP (Group 2)</td>
+                                    <td>82 mmHg</td>
+                                </tr>
+                                <tr>
+                                    <td>Difference</td>
+                                    <td>1 mmHg</td>
+                                </tr>
+                                <tr>
+                                    <td>Test statistic (W)</td>
+                                    <td>3804.5</td>
+                                </tr>
+                                <tr>
+                                    <td>p-value</td>
+                                    <td>0.7999</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Interpretation - Task 2</h3>
+                    <div class="box">
+                        <p><strong>Statistical Conclusion:</strong> Since the p-value (0.7999) is <strong>much greater than 0.05</strong>, we <strong>fail to reject the null hypothesis</strong>. There is <strong>no statistically significant difference</strong> in median diastolic blood pressure between diabetic and non-diabetic participants at the 5% significance level.</p>
+
+                        <h4>What This Means:</h4>
+                        <ul>
+                            <li>The 1 mmHg difference in median DBP (83 vs. 82) between groups is negligible and likely due to random variation</li>
+                            <li>We have no evidence that diabetes status affects diastolic blood pressure in this sample</li>
+                            <li>Both groups have similar DBP distributions</li>
+                        </ul>
+
+                        <h4>Clinical Context:</h4>
+                        <p>This finding might seem surprising since diabetes is often associated with hypertension. However, several factors could explain this result:</p>
+                        <ol>
+                            <li><strong>Young sample:</strong> Participants average 26-27 years old, an age when hypertension complications may not yet be evident</li>
+                            <li><strong>Early-stage diabetes:</strong> If participants have recently developed diabetes, vascular changes affecting blood pressure may not have manifested</li>
+                            <li><strong>Treatment effects:</strong> Diabetic participants might be on medication or lifestyle interventions controlling blood pressure</li>
+                            <li><strong>Sample size:</strong> With 210 participants, we may lack power to detect small differences</li>
+                        </ol>
+
+                        <h4>Important Note on Test Choice:</h4>
+                        <p>The Wilcoxon test is more appropriate than a t-test here because blood pressure data often show right-skewness (outliers on the high end) and may not meet normality assumptions. The Wilcoxon test provides valid inference regardless of distribution shape.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Task 3: Kruskal-Wallis Test -->
+            <section id="task3">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Task 3: Comparing Systolic Blood Pressure Across Occupations</h2>
+                    </header>
+                    
+                    <h3>Objective</h3>
+                    <p>Assess whether systolic blood pressure (SBP) differs across occupational groups using the Kruskal-Wallis test, the nonparametric alternative to one-way ANOVA.</p>
+
+                    <h3>Why Kruskal-Wallis Test?</h3>
+                    <div class="box">
+                        <p>The Kruskal-Wallis test extends the Wilcoxon test to compare <strong>three or more independent groups</strong>. It is appropriate when:</p>
+                        <ul>
+                            <li>Comparing more than two independent groups (multiple occupation categories)</li>
+                            <li>The outcome variable (SBP) may not be normally distributed within groups</li>
+                            <li>Group variances may not be equal (heteroscedasticity)</li>
+                            <li>We want a robust test that doesn't assume parametric distributions</li>
+                        </ul>
+                        <p>The test ranks all observations across all groups, then evaluates whether the average ranks differ significantly between groups. The test statistic follows a chi-square distribution under the null hypothesis.</p>
+                    </div>
+
+                    <h3>Methodology</h3>
+                    <ol>
+                        <li>Converted occupation to a factor variable</li>
+                        <li>Calculated median SBP for each occupational group using <code>aggregate()</code></li>
+                        <li>Applied <code>kruskal.test()</code> to compare SBP across occupations</li>
+                        <li>Prepared data for post-hoc pairwise comparisons (if needed) by removing missing values and groups with fewer than 2 observations</li>
+                        <li>Conducted pairwise Wilcoxon tests with Benjamini-Hochberg (BH) p-value adjustment</li>
+                    </ol>
+
+                    <h3>R Code Implementation</h3>
+                    
+                    <h4>Figure 4: Kruskal-Wallis Test for SBP by Occupation</h4>
+                    <div class="box">
+                        <span class="image fit">
+                            <img src="images/NumericalAnalysis/DataActivity6-4.png" alt="Kruskal-Wallis test results" />
+                        </span>
+                        <p><em>This figure displays the code for converting occupation to a factor, viewing median SBP by occupation (ranging from 120.0 to 125.5 mmHg), and the Kruskal-Wallis test results showing chi-squared = 0.77906, df = 3, p-value = 0.8545.</em></p>
+                    </div>
+
+                    <h4>Figure 5: Post-hoc Pairwise Wilcoxon Tests</h4>
+                    <div class="box">
+                        <span class="image fit">
+                            <img src="images/NumericalAnalysis/DataActivity6-5.png" alt="Pairwise Wilcoxon test results" />
+                        </span>
+                        <p><em>This figure shows the data preparation steps (removing missing values, dropping empty factor levels, checking group sizes) and the pairwise Wilcoxon test results comparing all occupational pairs. All adjusted p-values are approximately 0.95, indicating no significant pairwise differences.</em></p>
+                    </div>
+
+                    <h3>Results - Task 3</h3>
+                    <div class="box">
+                        <h4>Kruskal-Wallis Test Results:</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Statistic</th>
+                                    <th>Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Chi-squared (χ²)</td>
+                                    <td>0.77906</td>
+                                </tr>
+                                <tr>
+                                    <td>Degrees of freedom (df)</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <td>p-value</td>
+                                    <td>0.8545</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h4>Median SBP by Occupation:</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Occupation</th>
+                                    <th>Median SBP (mmHg)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Occupation 1</td>
+                                    <td>125.5</td>
+                                </tr>
+                                <tr>
+                                    <td>Occupation 2</td>
+                                    <td>120.0</td>
+                                </tr>
+                                <tr>
+                                    <td>Occupation 3</td>
+                                    <td>122.0</td>
+                                </tr>
+                                <tr>
+                                    <td>Occupation 4</td>
+                                    <td>123.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h4>Pairwise Comparisons:</h4>
+                        <p>All pairwise adjusted p-values ≈ 0.95 (no significant differences between any occupation pairs)</p>
+                    </div>
+
+                    <h3>Interpretation - Task 3</h3>
+                    <div class="box">
+                        <p><strong>Statistical Conclusion:</strong> Since the p-value (0.8545) is <strong>much greater than 0.05</strong>, we <strong>fail to reject the null hypothesis</strong>. There is <strong>no statistically significant difference</strong> in systolic blood pressure across occupational groups at the 5% significance level.</p>
+
+                        <h4>What This Means:</h4>
+                        <ul>
+                            <li>Although median SBP varies from 120.0 to 125.5 mmHg across occupations (5.5 mmHg range), this variation is within normal random fluctuation</li>
+                            <li>Occupation does not appear to be a significant predictor of systolic blood pressure in this sample</li>
+                            <li>All occupational groups have similar SBP distributions</li>
+                        </ul>
+
+                        <h4>Why Post-hoc Tests Are Not Required:</h4>
+                        <div class="box" style="background-color: #f0f8ff; padding: 15px; border-left: 4px solid #0066cc;">
+                            <p><strong>Important Statistical Principle:</strong> Because the Kruskal-Wallis test is <strong>not statistically significant (p = 0.8545 > 0.05)</strong>, post-hoc pairwise comparisons are <strong>not required for interpretation</strong>.</p>
+                            <p><strong>Rationale:</strong> Post-hoc tests are designed to identify <em>which specific pairs</em> differ after finding an overall significant difference. Since we found no overall difference, conducting post-hoc tests is statistically inappropriate and can lead to Type I errors (false positives) through multiple testing.</p>
+                            <p>The pairwise Wilcoxon results (all p ≈ 0.95) confirm what the Kruskal-Wallis test already told us: no occupational groups differ significantly in SBP. Including these results demonstrates thorough analysis but should not be used for inference.</p>
+                        </div>
+
+                        <h4>Occupational Health Context:</h4>
+                        <p>The absence of SBP differences across occupations suggests several possibilities:</p>
+                        <ol>
+                            <li><strong>Uniform working conditions:</strong> Participants may have similar stress levels, physical activity, or work environments across occupations</li>
+                            <li><strong>Young, healthy sample:</strong> At age ~26-27, occupational health effects may not yet manifest in measurable blood pressure differences</li>
+                            <li><strong>Broad occupation categories:</strong> If occupation groups are heterogeneous (e.g., "white collar" includes both executives and clerks), within-group variability may obscure between-group differences</li>
+                            <li><strong>Limited longitudinal exposure:</strong> Young workers haven't had prolonged occupational exposure to develop differential health outcomes</li>
+                        </ol>
+
+                        <h4>Statistical Power Consideration:</h4>
+                        <p>With median SBP ranging from 120-125.5 mmHg (coefficient of variation ~2.3%), we might lack statistical power to detect such small differences as clinically meaningful. A power analysis would determine the sample size needed to detect a 5 mmHg difference if it truly exists.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Overall Analysis -->
+            <section id="overall-analysis">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Overall Analysis and Key Findings</h2>
+                    </header>
+
+                    <h3>1. Homogeneity of Young Adult Sample</h3>
+                    <div class="box">
+                        <p><strong>What I Found:</strong> The age distribution (mean = 26.51, median = 27, mode = 26) reveals a homogeneous sample of young adults with minimal age variability.</p>
+                        
+                        <h4>What This Means:</h4>
+                        <p>The tight clustering around mid-20s has profound implications for interpreting blood pressure findings. Hypertension typically emerges in middle age (40s-60s), so this young cohort is at low baseline risk. The absence of differences in DBP by diabetes status and SBP by occupation may reflect this age-related protection rather than true absence of associations. Longitudinal studies tracking these participants into their 40s-50s might reveal associations invisible in young adulthood.</p>
+
+                        <h4>Generalizability Limitation:</h4>
+                        <p>Findings from this analysis apply specifically to young adults aged ~25-27. Results cannot be extrapolated to middle-aged or elderly populations where cardiovascular risk profiles differ dramatically.</p>
+                    </div>
+
+                    <h3>2. Methodological Appropriateness of Nonparametric Tests</h3>
+                    <div class="box">
+                        <p><strong>What I Found:</strong> Using nonparametric tests (Wilcoxon, Kruskal-Wallis) instead of parametric alternatives (t-test, ANOVA) provides robust inference without distributional assumptions.</p>
+                        
+                        <h4>What This Means:</h4>
+                        <p>Blood pressure data often violate normality assumptions due to right skewness (outliers on the high end representing hypertensive individuals). Nonparametric tests based on ranks are insensitive to outliers and distributional shape. This methodological choice ensures valid p-values and conclusions regardless of whether SBP/DBP are normally distributed within groups.</p>
+
+                        <h4>When Parametric Tests Fail:</h4>
+                        <p>Consider a scenario where one participant has severe hypertension (SBP = 180). A t-test would be heavily influenced by this outlier, potentially producing misleading results. The Wilcoxon test ranks this value highest but treats it equivalently whether it's 150 or 180—protecting against undue influence from extreme values.</p>
+
+                        <h4>Trade-off:</h4>
+                        <p>Nonparametric tests are slightly less powerful than parametric tests when normality holds (they use ranks, discarding some information), but they're much more robust when assumptions are violated. Given uncertainty about blood pressure distributions in this dataset, nonparametric tests were the safer, more defensible choice.</p>
+                    </div>
+
+                    <h3>3. Clinical vs. Statistical Significance</h3>
+                    <div class="box">
+                        <p><strong>What I Found:</strong> Small absolute differences exist (DBP: 1 mmHg difference; SBP: 5.5 mmHg range across occupations), but neither reaches statistical significance.</p>
+                        
+                        <h4>What This Means:</h4>
+                        <p>Statistical significance (p < 0.05) and clinical significance are distinct concepts. A 1 mmHg difference in DBP between diabetics and non-diabetics, even if statistically significant with a larger sample, would be clinically irrelevant—well within measurement error of blood pressure devices (±2-3 mmHg). Similarly, a 5.5 mmHg range in SBP across occupations is minor compared to clinical thresholds (hypertension = SBP ≥ 130).</p>
+
+                        <h4>Sample Size and Power:</h4>
+                        <p>With 210 participants, we have reasonable power to detect medium-to-large effects. The failure to find significance suggests either (1) true differences are small and unimportant, or (2) they don't exist in young adults. We're not missing large, clinically important differences due to inadequate sample size.</p>
+
+                        <h4>Practical Implication:</h4>
+                        <p>Healthcare resources should focus on established risk factors (age, obesity, family history) rather than diabetes status or occupation when screening young adults for hypertension. These null findings support resource allocation toward interventions with demonstrated effects in this age group.</p>
+                    </div>
+
+                    <h3>4. Post-hoc Testing Principles</h3>
+                    <div class="box">
+                        <p><strong>What I Found:</strong> After a non-significant Kruskal-Wallis test (p = 0.8545), I conducted post-hoc pairwise Wilcoxon tests that also showed no differences (all p ≈ 0.95).</p>
+                        
+                        <h4>What This Means:</h4>
+                        <p>Running post-hoc tests after a non-significant omnibus test is <strong>statistically inappropriate</strong>. The logic of hypothesis testing dictates: if the omnibus test (Kruskal-Wallis) finds no overall difference across groups, there's no justification to search for pairwise differences. Post-hoc tests are reserved for situations where the omnibus test <em>is</em> significant, prompting the question "which groups differ?"</p>
+
+                        <h4>Why I Included Them:</h4>
+                        <p>I included the post-hoc code and results to demonstrate comprehensive analytical skills and understanding of the full testing workflow. However, in a formal research report, I would state: "Because the Kruskal-Wallis test was not statistically significant (χ² = 0.779, p = 0.8545), post-hoc pairwise comparisons were not warranted and are not reported."</p>
+
+                        <h4>Multiple Testing Problem:</h4>
+                        <p>Conducting 6 pairwise tests (4 groups = 4 choose 2 = 6 comparisons) inflates Type I error rate. Even with Benjamini-Hochberg correction, searching for significance among non-significant results is methodologically questionable. This exercise taught me the importance of <strong>planned comparisons</strong> specified a priori versus post-hoc data mining.</p>
+                    </div>
+
+                    <h3>5. Effect of Data Preparation on Analysis Quality</h3>
+                    <div class="box">
+                        <p><strong>What I Found:</strong> Proper data preparation—removing missing values, converting variables to factors, dropping empty factor levels, checking group sizes—was essential for valid statistical testing.</p>
+                        
+                        <h4>What This Means:</h4>
+                        <p>Real-world datasets are messy. The <code>Health_Data.sav</code> file likely contained missing values (NA), inconsistent coding, or empty categories. My data cleaning steps ensured:</p>
+                        <ul>
+                            <li><strong>Complete case analysis:</strong> Removing NA values prevents errors in statistical functions</li>
+                            <li><strong>Factor conversion:</strong> Treating categorical variables (diabetes, occupation) as factors enables proper grouping in tests</li>
+                            <li><strong>Dropping empty levels:</strong> After filtering, some occupation categories might have zero observations; these must be removed to avoid computational errors</li>
+                            <li><strong>Minimum group size:</strong> Groups with <2 observations cannot compute meaningful statistics; removing them prevents spurious results</li>
+                        </ul>
+
+                        <h4>Lesson for Data Science:</h4>
+                        <p>Statistical analysis is 80% data preparation, 20% running tests. Failing to properly prepare data leads to errors, warnings, or—worse—incorrect results that appear valid. This activity reinforced that meticulous data cleaning is not optional but foundational to trustworthy analysis.</p>
+                    </div>
+
+                    <h3>6. Interpretation Within Clinical Context</h3>
+                    <div class="box">
+                        <p><strong>What I Found:</strong> Blood pressure values in this sample are relatively normal: DBP medians of 82-83 mmHg and SBP medians of 120-125.5 mmHg.</p>
+                        
+                        <h4>What This Means:</h4>
+                        <p>According to current hypertension guidelines, normal blood pressure is <120/80 mmHg, elevated is 120-129/<80, and Stage 1 hypertension is 130-139/80-89. Our sample's medians fall in the normal-to-borderline range, confirming they're generally healthy young adults without significant hypertension.</p>
+
+                        <h4>Why This Context Matters:</h4>
+                        <p>If this sample had median SBP of 140+ mmHg (hypertensive range), the absence of differences across groups would be more concerning—suggesting missed opportunities for targeted intervention. However, given that most participants have normal blood pressure, the null findings are reassuring: no subgroup (diabetics, specific occupations) shows elevated cardiovascular risk requiring immediate screening or treatment intensification.</p>
+
+                        <h4>Public Health Perspective:</h4>
+                        <p>These results suggest that in young adult populations, universal lifestyle interventions (healthy diet, regular exercise, stress management) are more appropriate than targeted screening based on diabetes status or occupation. Differential screening becomes important in older age groups where disease prevalence and effect sizes are larger.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Learning Outcomes Achieved -->
+            <section id="learning-outcomes-achieved">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Learning Outcomes Achieved</h2>
+                    </header>
+                    <ul>
+                        <li><strong>Mastered nonparametric test selection:</strong> Learned to choose appropriate nonparametric tests (Wilcoxon, Kruskal-Wallis) based on data characteristics and research questions</li>
+                        <li><strong>Applied statistical tests correctly:</strong> Successfully implemented nonparametric tests in R with proper syntax, parameters, and interpretation</li>
+                        <li><strong>Understood test assumptions:</strong> Recognized when nonparametric tests are preferable to parametric alternatives due to distributional concerns</li>
+                        <li><strong>Interpreted p-values appropriately:</strong> Evaluated statistical significance using α = 0.05 threshold and drew valid conclusions about null hypotheses</li>
+                        <li><strong>Calculated measures of central tendency:</strong> Computed mean, median, and mode, understanding their relationships and what they reveal about distributions</li>
+                        <li><strong>Performed data preparation:</strong> Cleaned data by handling missing values, converting data types, and ensuring valid group structures for analysis</li>
+                        <li><strong>Distinguished statistical from clinical significance:</strong> Recognized that p-values indicate statistical detectability, not clinical importance</li>
+                        <li><strong>Understood post-hoc testing logic:</strong> Learned that post-hoc comparisons are only appropriate following significant omnibus tests</li>
+                        <li><strong>Applied multiple testing corrections:</strong> Used Benjamini-Hochberg adjustment to control false discovery rate in pairwise comparisons</li>
+                        <li><strong>Interpreted results in context:</strong> Connected statistical findings to clinical knowledge about blood pressure, diabetes, and occupational health</li>
+                        <li><strong>Developed R programming skills:</strong> Gained proficiency in R functions for data manipulation, statistical testing, and results interpretation</li>
+                        <li><strong>Practiced academic communication:</strong> Presented methodology, results, and interpretations in clear, structured format following scientific reporting standards</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Reflection -->
+            <section id="reflection">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Reflection</h2>
+                    </header>
+                    
+                    <p>This data activity represented a significant milestone in my statistical learning journey—moving beyond descriptive statistics to inferential methods that allow me to draw conclusions about populations from sample data. Working with real health data made the abstract concepts of hypothesis testing tangible and meaningful.</p>
+                    
+                    <h3>Understanding When Parametric Assumptions Fail</h3>
+                    <p>Before this unit, I was primarily familiar with parametric tests like t-tests and ANOVA, which assume normally distributed data with equal variances. I assumed these were the "standard" tests to use unless something was obviously wrong with the data. This activity taught me that nonparametric tests aren't just fallback options—they're often <em>preferable</em> for real-world data.</p>
+                    
+                    <p>Blood pressure measurements, while continuous, often show right skewness because a small proportion of individuals have very high values (hypertension), while most cluster in the normal range. This creates a long right tail that violates normality assumptions. I learned that rather than trying to transform data to force normality (e.g., log transformation), nonparametric tests provide a robust solution that works regardless of distribution shape.</p>
+                    
+                    <p>What surprised me was discovering that nonparametric tests aren't dramatically less powerful than parametric tests, especially with reasonable sample sizes (N = 210). I'd internalized the idea that "rank-based tests throw away information," but I now understand the trade-off: yes, they use less information (ranks instead of exact values), but they're immune to outliers and distributional violations that can severely distort parametric test results. For applied data analysis, this robustness is often worth the minor power loss.</p>
+
+                    <h3>The Mechanics of Rank-Based Tests</h3>
+                    <p>Before running these tests, I struggled to understand <em>how</em> rank-based tests work conceptually. Reading about "ranking all observations and comparing rank sums" felt abstract. Working through this activity made it concrete:</p>
+                    
+                    <p>For the Wilcoxon test comparing DBP between diabetics and non-diabetics, imagine laying out all 210 participants' DBP values in order from lowest to highest. Each value gets a rank (1 = lowest, 210 = highest). If diabetics truly have higher DBP, their values should cluster toward higher ranks, giving them a larger rank sum. The Wilcoxon statistic (W = 3804.5) quantifies this rank sum, and the p-value (0.7999) tells us this rank sum is not unusual—diabetics and non-diabetics have similar rank distributions.</p>
+                    
+                    <p>This rank-based logic elegantly handles outliers. If one diabetic participant has DBP = 120 (very high), it gets the highest rank, but whether it's 120 or 140 doesn't matter—it's still just "the highest." Parametric t-tests would be heavily influenced by whether that outlier is 120 vs. 140, potentially leading to spurious significance.</p>
+                    
+                    <p>The Kruskal-Wallis test extends this same logic to multiple groups (four occupations). It's essentially asking: "Do the four occupation groups have systematically different rank distributions?" The chi-squared statistic (0.779) and high p-value (0.8545) indicate no—all occupations span similar ranks.</p>
+
+                    <h3>Statistical Significance vs. Clinical Importance</h3>
+                    <p>One of the most valuable lessons from this activity was distinguishing statistical significance from practical/clinical significance. Early in my learning, I conflated these concepts—if p < 0.05, I assumed it meant something important had been discovered. This activity, where all tests were non-significant <em>and</em> effect sizes were tiny, challenged that assumption.</p>
+                    
+                    <p>The 1 mmHg difference in median DBP between diabetics (83) and non-diabetics (82) is statistically non-significant, but even if we had a massive sample (N = 10,000) making it statistically significant, it would still be clinically meaningless. Blood pressure devices have ±2-3 mmHg measurement error, so a 1 mmHg true difference is below the threshold of reliable detection, let alone clinical relevance.</p>
+                    
+                    <p>This distinction is crucial for AI and machine learning work. When training classification or regression models, we often get statistically significant improvements by adding features or increasing complexity, but gains might be so small (e.g., 0.1% accuracy improvement) that they don't justify deployment costs or increased computational requirements. Statistical significance tells us an effect is real; domain knowledge tells us if it matters.</p>
+
+                    <h3>The Temptation of Post-hoc Data Mining</h3>
+                    <p>Running post-hoc tests after a non-significant Kruskal-Wallis result felt instinctively wrong, yet I did it to practice the technical workflow. This discomfort taught me an important lesson about hypothesis testing integrity.</p>
+                    
+                    <p>The logic of hypothesis testing demands we specify tests <em>a priori</em> (before seeing results). The omnibus Kruskal-Wallis test asks: "Do any groups differ?" Only if the answer is "yes" (p < 0.05) are we justified in asking the follow-up question: "Which specific pairs differ?" Running post-hoc tests after a non-significant omnibus result is <strong>p-hacking</strong>—searching for significance by running multiple tests hoping one will reach p < 0.05 by chance.</p>
+                    
+                    <p>With 6 pairwise comparisons (4 occupations = 4 choose 2 = 6 pairs), there's a ~26% chance that at least one comparison will show p < 0.05 purely by random chance, even if no true differences exist (1 - 0.95^6 ≈ 0.26). Multiple testing corrections (like Benjamini-Hochberg) help, but they don't fix the fundamental problem: we're searching for patterns in noise.</p>
+                    
+                    <p>This experience will make me a more rigorous researcher. In future analyses, I'll pre-specify hypotheses and analysis plans before examining data. If I conduct exploratory analyses (which are legitimate for generating hypotheses), I'll label them clearly and validate findings in independent datasets rather than claiming confirmatory evidence.</p>
+
+                    <h3>Data Preparation as Foundation of Valid Analysis</h3>
+                    <p>Initially, I was eager to jump straight to running statistical tests—the "exciting" part of analysis. But this activity showed me that data preparation is where quality is won or lost.</p>
+                    
+                    <p>Several preparation steps were critical:</p>
+                    <ul>
+                        <li><strong>Converting to factors:</strong> R treats numeric codes (diabetes = 1/2, occupation = 1/2/3/4) as continuous unless explicitly converted to factors. Running <code>wilcox.test(dbp ~ diabetes)</code> when diabetes is numeric would produce errors or nonsensical results. Converting to factors signals "these are categorical groups."</li>
+                        <li><strong>Dropping empty factor levels:</strong> After subsetting data, some factor levels might have zero observations but still exist as empty categories. These cause errors in statistical functions expecting all levels to have data. <code>droplevels()</code> cleans this up.</li>
+                        <li><strong>Removing small groups:</strong> Groups with <2 observations cannot compute meaningful medians or contribute to valid inference. Checking <code>table(tmp$occupation)</code> revealed this, preventing errors.</li>
+                        <li><strong>Handling missing values:</strong> Using <code>na.rm = TRUE</code> for descriptive statistics and <code>!is.na()</code> for subsetting ensures complete case analysis, preventing NA propagation through calculations.</li>
+                    </ul>
+                    
+                    <p>These seem like minor technical details, but I learned they're the difference between analyses that produce errors, give incorrect results, or yield valid, reproducible findings. This meticulous approach to data quality will serve me well in machine learning projects where data preprocessing (handling missing values, encoding categoricals, scaling features) is equally critical.</p>
+
+                    <h3>Connecting Statistical Theory to Clinical Reality</h3>
+                    <p>One aspect of this activity I found particularly enriching was interpreting statistical results through a clinical lens. It's easy to treat statistical analysis as pure mathematics—plug data into formulas, get p-values, report significance. But connecting findings to clinical knowledge about blood pressure, diabetes, and cardiovascular health made the analysis meaningful.</p>
+                    
+                    <p>For example, the null finding for Task 2 (no DBP difference between diabetics and non-diabetics) could be interpreted as "the test failed" or "we didn't find anything interesting." But considering clinical context—participants are young (26-27 years old), an age when diabetes complications haven't yet manifested—this null result is actually informative. It tells us that in young adults, diabetes status alone doesn't predict elevated blood pressure, suggesting screening protocols can remain universal rather than targeting diabetics specifically.</p>
+                    
+                    <p>Similarly, the SBP findings across occupations (Task 3) inform occupational health policy. If we'd found that certain occupations (e.g., high-stress jobs) had significantly elevated SBP, it would justify targeted workplace wellness interventions or stress reduction programs. The null finding suggests such targeted programs aren't necessary for blood pressure management in young workers—general wellness initiatives benefiting all employees are sufficient.</p>
+                    
+                    <p>This integration of statistical analysis with domain expertise is what transforms data analysis from mechanical formula application into decision-support science. In AI/ML, this same principle applies: understanding the business or scientific context determines which metrics matter, what performance thresholds are acceptable, and how to translate model outputs into actionable recommendations.</p>
+
+                    <h3>Technical Skills Gained</h3>
+                    <p>From a technical perspective, this activity significantly advanced my R programming competency. Before this unit, I was comfortable with basic R operations (reading data, descriptive statistics, simple plots), but nonparametric tests introduced new functions and concepts:</p>
+                    
+                    <ul>
+                        <li><strong><code>wilcox.test()</code>:</strong> Learned the syntax for unpaired Wilcoxon tests, including the formula notation <code>outcome ~ group</code> and the <code>exact = FALSE</code> parameter to use normal approximation rather than exact distribution (necessary for large samples)</li>
+                        <li><strong><code>kruskal.test()</code>:</strong> Applied one-way ANOVA's nonparametric alternative for comparing 3+ groups</li>
+                        <li><strong><code>pairwise.wilcox.test()</code>:</strong> Conducted post-hoc pairwise comparisons with p-value adjustment methods</li>
+                        <li><strong><code>aggregate()</code>:</strong> Calculated group-wise summary statistics (medians by group), essential for understanding data before testing</li>
+                        <li><strong><code>droplevels()</code>:</strong> Cleaned factor variables by removing unused levels</li>
+                        <li><strong>Custom functions:</strong> Wrote a Mode function, since R doesn't have a built-in mode calculator</li>
+                    </ul>
+                    
+                    <p>These technical skills are directly transferable to future work. In AI/ML projects, I'll need to compute group-wise performance metrics (accuracy by demographic group, precision by feature category), conduct statistical tests to validate improvements (McNemar's test for paired classification results), and prepare data meticulously (handling factors, missing values, edge cases).</p>
+
+                    <h3>Areas for Growth</h3>
+                    <p>While this activity was successful, several areas for improvement emerged:</p>
+                    
+                    <p><strong>1. Checking distributional assumptions explicitly:</strong> I ran nonparametric tests assuming they were appropriate for blood pressure data, but I didn't formally verify normality (or lack thereof) using Shapiro-Wilk tests or Q-Q plots. In future work, I should document assumption checking rather than assuming nonparametric tests are always safer.</p>
+                    
+                    <p><strong>2. Power analysis:</strong> With null findings across all tests, a natural question is: "Did I have adequate power to detect meaningful differences if they existed?" Conducting post-hoc power analysis would reveal whether N = 210 provides 80% power to detect clinically important effect sizes (e.g., 5 mmHg SBP difference). If power is low, null findings are uninformative; if power is adequate, null findings are evidence of true equivalence.</p>
+                    
+                    <p><strong>3. Effect size reporting:</strong> I reported p-values but not standardized effect sizes. For nonparametric tests, appropriate effect sizes include rank-biserial correlation (Wilcoxon) or epsilon-squared (Kruskal-Wallis). These quantify the magnitude of differences independent of sample size, providing context p-values alone cannot.</p>
+                    
+                    <p><strong>4. Visualization:</strong> I focused on numeric results but didn't create visualizations (boxplots, violin plots) to display distributions. Visualizing SBP distributions across occupations or DBP by diabetes status would make patterns (or their absence) immediately apparent to readers.</p>
+                    
+                    <p><strong>5. Sensitivity analysis:</strong> I made decisions during analysis (e.g., removing groups with <2 observations, using BH correction for multiple testing). Sensitivity analysis—repeating analyses with alternative decisions—would demonstrate robustness of conclusions to analytical choices.</p>
+
+                    <h3>Connecting to Broader Data Science Practice</h3>
+                    <p>This activity's lessons extend far beyond health data analysis. In machine learning and AI work, I'll frequently need to:</p>
+                    
+                    <ul>
+                        <li><strong>Choose appropriate statistical tests:</strong> When comparing model performance (e.g., Algorithm A vs. Algorithm B), I'll need to select paired tests (if evaluated on the same data) or unpaired tests (if evaluated on different samples), just as I chose Wilcoxon for paired groups vs. Kruskal-Wallis for multiple groups</li>
+                        <li><strong>Handle non-normal distributions:</strong> Many ML metrics (precision, recall, F1-score) aren't normally distributed, making nonparametric tests preferable for comparing models</li>
+                        <li><strong>Interpret p-values with skepticism:</strong> In ML, tiny performance improvements can be statistically significant with large datasets but practically meaningless. The clinical vs. statistical significance distinction applies equally to model evaluation</li>
+                        <li><strong>Resist p-hacking:</strong> When tuning hyperparameters, there's temptation to keep trying combinations until one "works" (low test error). This is analogous to post-hoc testing—searching for significance. Proper ML workflow involves train/validation/test splits or cross-validation to prevent overfitting to test data</li>
+                        <li><strong>Prepare data meticulously:</strong> ML models are sensitive to data quality issues (missing values, incorrect encodings, outliers). The data preparation discipline learned here—checking for missing values, validating group sizes, ensuring correct data types—is foundational for reliable ML pipelines</li>
+                    </ul>
+
+                    <h3>Personal Growth in Statistical Thinking</h3>
+                    <p>Beyond technical skills, this activity transformed my thinking about statistics' role in scientific inquiry. I previously viewed statistics as a tool for "finding significant differences"—as if the goal was to get p < 0.05. This activity taught me that statistics is about quantifying uncertainty and making valid inferences, whether those inferences are "groups differ" or "groups are equivalent."</p>
+                    
+                    <p>Null results aren't failures; they're information. Finding no DBP difference between diabetics and non-diabetics informs clinical practice (no need for differential screening in young adults) and resource allocation (focus prevention efforts elsewhere). This reframing—from hunting for significance to characterizing relationships—represents a maturation in statistical reasoning.</p>
+                    
+                    <p>I also gained appreciation for statistics as a safeguard against self-deception. Without formal hypothesis testing, it's easy to look at medians (DBP: 83 vs. 82, SBP range: 120-125.5) and construct narratives about differences: "Diabetics have slightly higher DBP" or "Occupation 1 has notably higher SBP than Occupation 2." Statistical tests impose discipline: these differences must exceed what random chance produces in samples from populations with equal medians. P-values quantify the probability we'd observe such differences by chance alone, protecting against narrative-driven cherry-picking of patterns.</p>
+
+                    <h3>Looking Forward</h3>
+                    <p>This data activity equips me with practical skills for both remaining coursework and professional data science practice. In upcoming units, I'll build on this foundation by learning additional tests (chi-square for categorical associations, regression for continuous predictors) and more advanced concepts (effect sizes, confidence intervals, power analysis).</p>
+                    
+                    <p>For my career in AI and machine learning, the statistical reasoning developed here—choosing appropriate tests, interpreting p-values critically, distinguishing significance from importance, preparing data rigorously—will be essential for building trustworthy models and communicating findings to stakeholders. Every ML project involves hypothesis testing (is Model B better than Model A?), comparison across groups (does the model perform equally across demographics?), and decision-making under uncertainty (should we deploy this model?)—all requiring the statistical foundations practiced in this activity.</p>
+                    
+                    <p>Most importantly, this activity reinforced that statistical analysis isn't about plugging numbers into formulas—it's about asking good questions, choosing appropriate methods, interpreting results thoughtfully, and connecting findings to real-world context. These principles transcend any specific test or technique, forming a framework for rigorous, reproducible, and impactful data science.</p>
+                </div>
+            </section>
+
+            <!-- References -->
+            <section id="references">
+                <div class="inner">
+                    <header class="major">
+                        <h2>References</h2>
+                    </header>
+                    <p>Conover, W. J. (1999) <em>Practical nonparametric statistics</em>. 3rd edn. New York: Wiley.</p>
+                    
+                    <p>Hollander, M., Wolfe, D. A. and Chicken, E. (2014) <em>Nonparametric statistical methods</em>. 3rd edn. Hoboken, NJ: Wiley.</p>
+                    
+                    <p>Kruskal, W. H. and Wallis, W. A. (1952) 'Use of ranks in one-criterion variance analysis', <em>Journal of the American Statistical Association</em>, 47(260), pp. 583-621. doi: 10.1080/01621459.1952.10483441.</p>
+                    
+                    <p>Mann, H. B. and Whitney, D. R. (1947) 'On a test of whether one of two random variables is stochastically larger than the other', <em>Annals of Mathematical Statistics</em>, 18(1), pp. 50-60.</p>
+                    
+                    <p>Ranganathan, P. (2021) 'An introduction to statistics: choosing the correct statistical test', <em>Indian Journal of Critical Care Medicine</em>, 25(Suppl 2), pp. S184–S186. doi: 10.5005/jp-journals-10071-23815.</p>
+                    
+                    <p>Wilcoxon, F. (1945) 'Individual comparisons by ranking methods', <em>Biometrics Bulletin</em>, 1(6), pp. 80-83. doi: 10.2307/3001968.</p>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <section id="navigation">
+                <div class="inner">
+                    <ul class="actions">
+                        <li><a href="numerical-analysis.html" class="button">← Back to Module Overview</a></li>
+                        <li><a href="unit8-seminar.html" class="button primary">View Unit 8 Seminar →</a></li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                <ul class="icons">
+                    <li><a href="https://github.com/KannaAlmansoori" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; 2025 Kanna AlMansoori</li>
+                    <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
