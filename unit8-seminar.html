@@ -1,0 +1,692 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Unit 8 Seminar - Numerical Analysis - Kanna AlMansoori</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo"><strong>Kanna AlMansoori</strong> <span>MSc Artificial Intelligence E-Portfolio</span></a>
+            <nav>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <ul class="links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="launch-module.html">Launch into Computing</a></li>
+                <li><a href="induction.html">Induction Computing</a></li>
+                <li><a href="ai-module.html">Understanding Artificial Intelligence</a></li>
+                <li><a href="numerical-analysis.html">Numerical Analysis</a></li>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div id="main" class="alt">
+
+            <!-- Breadcrumb Navigation -->
+            <section id="one">
+                <div class="inner">
+                    <p><a href="numerical-analysis.html">← Back to Numerical Analysis</a></p>
+                    <header class="major">
+                        <h1>Unit 8 Seminar: Statistical Testing and Data Analysis</h1>
+                    </header>
+                    <p><strong>Title:</strong> Choosing the Correct Statistical Test & Practical Data Analysis | <strong>Duration:</strong> Unit 8 | <strong>Type:</strong> Formative | <strong>Status:</strong> ✓ Complete</p>
+                </div>
+            </section>
+
+            <!-- Learning Outcomes -->
+            <section id="learning-outcomes">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Learning Outcomes</h2>
+                    </header>
+                    <ul>
+                        <li>Understand different types of data and appropriate statistical tests for each data type.</li>
+                        <li>Distinguish between paired and unpaired data and select appropriate comparative tests.</li>
+                        <li>Apply inferential statistics using t-tests to real-world datasets.</li>
+                        <li>Interpret statistical test results and draw valid conclusions from p-values and confidence intervals.</li>
+                        <li>Critically evaluate the use of statistical analysis as aids in decision-making processes.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Task Overview -->
+            <section id="task-overview">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Seminar Overview</h2>
+                    </header>
+                    
+                    <p>This seminar consisted of two main components: theoretical understanding of statistical test selection and practical application to a real-world dataset.</p>
+                    
+                    <h3>Part 1: Seminar Questions</h3>
+                    <div class="box">
+                        <p>Read the following article by Ranganathan, P. (2021) 'An introduction to statistics: choosing the correct statistical test', <em>Indian Journal of Critical Care Medicine</em>, 25(Suppl 2), pp. S184–S186, and answer the questions below:</p>
+                        <ul>
+                            <li>What are the types of data being measured?</li>
+                            <li>What are tests for association between variables?</li>
+                            <li>What are the differences between paired and unpaired data?</li>
+                        </ul>
+                    </div>
+
+                    <h3>Part 2: Dataset Activity</h3>
+                    <div class="box">
+                        <p>Using the <strong>Superstore Sales Forecasting Dataset</strong>, perform the following activities:</p>
+                        <ol>
+                            <li>Conduct a <strong>Paired t-test</strong> for customers who purchased from both Technology and Furniture categories to assess if there is a significant difference in their average spending between these two categories.</li>
+                            <li>Conduct an <strong>Independent t-test</strong> to assess if there is a significant difference in mean sales between Consumer and Corporate customer segments.</li>
+                        </ol>
+                    </div>
+
+                    <h3>Key Requirements:</h3>
+                    <ul>
+                        <li>Demonstrate understanding of statistical test selection based on data types</li>
+                        <li>Apply correct statistical tests to real-world data</li>
+                        <li>Interpret results using p-values, confidence intervals, and effect sizes</li>
+                        <li>Connect theoretical knowledge from the article to practical application</li>
+                        <li>Use R programming for statistical analysis and data manipulation</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Seminar Questions -->
+            <section id="seminar-questions">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Part 1: Seminar Questions - Ranganathan (2021)</h2>
+                    </header>
+                    
+                    <h3>Question 1: What are the types of data being measured?</h3>
+                    <div class="box">
+                        <h4>Answer:</h4>
+                        <p>According to Ranganathan (2021), the article identifies that the choice of statistical test depends on whether data are <strong>categorical</strong> or <strong>numerical</strong>. Specifically:</p>
+                        
+                        <ul>
+                            <li><strong>Categorical Data:</strong>
+                                <ul>
+                                    <li><strong>Nominal:</strong> Data with no inherent order (e.g., gender, blood type, category names)</li>
+                                    <li><strong>Ordinal:</strong> Data with ordered categories (e.g., pain scales, education levels, satisfaction ratings)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Numerical Data:</strong>
+                                <ul>
+                                    <li><strong>Normally distributed:</strong> Data that follows a bell curve distribution</li>
+                                    <li><strong>Skewed:</strong> Data that does not follow a normal distribution</li>
+                                </ul>
+                            </li>
+                            <li><strong>Time-to-Event Data:</strong> A special type requiring survival analysis (e.g., time until an event occurs)</li>
+                        </ul>
+
+                        <p>The article explains that the distinction between parametric tests (for normally distributed data) and nonparametric tests (for distribution-free data) is crucial for selecting appropriate statistical methods. Parametric tests have greater statistical power but require assumptions about data distribution, while nonparametric tests make no such assumptions but are less efficient at detecting true differences.</p>
+                    </div>
+
+                    <h3>Question 2: What are tests for association between variables?</h3>
+                    <div class="box">
+                        <h4>Answer:</h4>
+                        <p>Ranganathan (2021) presents tests in <strong>Table 3</strong> for assessing associations between variables, divided into correlation and regression analyses:</p>
+                        
+                        <h4>For Correlation (determining strength of relationship):</h4>
+                        <ul>
+                            <li><strong>Pearson's correlation coefficient:</strong> Used when both variables are normally distributed (measures linear relationships between continuous variables)</li>
+                            <li><strong>Spearman's or Kendall's correlation coefficient:</strong> Used when one or both variables are ordinal or skewed (rank-based correlation)</li>
+                            <li><strong>Chi-square test, odds ratio, or relative risk:</strong> For nominal data, particularly binary outcomes (measures association between categorical variables)</li>
+                        </ul>
+
+                        <h4>For Regression (predicting one variable from another):</h4>
+                        <ul>
+                            <li><strong>Linear regression analysis:</strong> For continuous outcomes (predicts a numerical dependent variable from one or more independent variables)</li>
+                            <li><strong>Logistic regression analysis:</strong> For categorical (binary) outcomes (predicts probability of a binary outcome)</li>
+                        </ul>
+
+                        <p>The key distinction is that correlation measures the <em>strength and direction</em> of relationships between variables, while regression allows us to <em>predict</em> one variable based on another and identify risk factors through multivariable analysis.</p>
+                    </div>
+
+                    <h3>Question 3: What are the differences between paired and unpaired data?</h3>
+                    <div class="box">
+                        <h4>Answer:</h4>
+                        <p>Ranganathan (2021) clearly distinguishes between these two data structures:</p>
+                        
+                        <h4>Paired (Matched) Data:</h4>
+                        <ul>
+                            <li><strong>Definition:</strong> Observations made on the same individual, where values in one set are likely influenced by the other set</li>
+                            <li><strong>Examples:</strong>
+                                <ul>
+                                    <li>Before-and-after measurements (e.g., blood pressure before and after treatment)</li>
+                                    <li>Comparing two sides of the body (e.g., left vs. right eye measurements)</li>
+                                    <li>Serial measurements from the same patients (e.g., procalcitonin levels over time)</li>
+                                    <li>Repeated measures on the same subjects</li>
+                                </ul>
+                            </li>
+                            <li><strong>Statistical Tests:</strong> Paired t-test, Wilcoxon signed rank test, McNemar's test, Repeated measures ANOVA</li>
+                        </ul>
+
+                        <h4>Unpaired (Unmatched) Data:</h4>
+                        <ul>
+                            <li><strong>Definition:</strong> Comparisons made between different individuals or independent groups</li>
+                            <li><strong>Examples:</strong>
+                                <ul>
+                                    <li>Comparing treatment group vs. control group (different patients)</li>
+                                    <li>Comparing outcomes between males and females</li>
+                                    <li>Comparing different customer segments</li>
+                                    <li>Any between-subjects comparison</li>
+                                </ul>
+                            </li>
+                            <li><strong>Statistical Tests:</strong> Unpaired t-test, Mann-Whitney U-test, Chi-square test, ANOVA</li>
+                        </ul>
+
+                        <h4>Why This Distinction Matters:</h4>
+                        <p>The article emphasizes that using the wrong test type is a common error that can lead to invalid conclusions. Paired data typically have less variability because individual differences are controlled, requiring specialized tests that account for within-subject correlation. Using an unpaired test on paired data wastes statistical power, while using a paired test on unpaired data violates statistical assumptions and produces invalid results.</p>
+
+                        <p>A critical example from the article: it would be <strong>incorrect</strong> to use multiple unpaired t-tests to compare more than two groups. For three groups (A, B, C), running separate t-tests for A vs. B, B vs. C, and C vs. A inflates Type I error. The correct approach is ANOVA followed by post-hoc testing if significant differences are found.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dataset Activity -->
+            <section id="dataset-activity">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Part 2: Dataset Activity - Statistical Testing</h2>
+                    </header>
+                    
+                    <h3>Dataset Overview</h3>
+                    <div class="box">
+                        <ul>
+                            <li><strong>Dataset:</strong> Superstore Sales Forecasting Dataset</li>
+                            <li><strong>Total observations:</strong> 9,800</li>
+                            <li><strong>Key variables:</strong> Customer ID, Category, Segment, Sales</li>
+                            <li><strong>Analysis tool:</strong> R Statistical Software (version 4.5.0)</li>
+                            <li><strong>Libraries used:</strong> readr, dplyr, tidyr</li>
+                        </ul>
+                    </div>
+
+                    <h3>Activity 1: Paired t-test</h3>
+                    
+                    <h4>Objective</h4>
+                    <p>Examine whether there is a significant difference in average spending between Technology and Furniture categories for customers who purchased from <strong>both</strong> categories.</p>
+
+                    <h4>Methodology</h4>
+                    <ol>
+                        <li>Filtered dataset to include only Technology and Furniture purchases</li>
+                        <li>Grouped data by Customer ID and Category</li>
+                        <li>Calculated total sales per customer per category</li>
+                        <li>Reshaped data to wide format (each customer has paired values)</li>
+                        <li>Removed customers with missing values (who didn't purchase from both categories)</li>
+                        <li>Applied paired t-test to compare spending patterns</li>
+                    </ol>
+
+                    <h4>R Code Implementation</h4>
+                    
+                    <h5>Figure 1: Initial Data Loading and Filtering</h5>
+                    <div class="box">
+                        <span class="image fit">
+                            <img src="images/NumericalAnalysis/S8DataActivity1.png" alt="R code showing data loading and initial filtering" />
+                        </span>
+                        <p><em>This figure shows the R code for loading the Superstore dataset, filtering for Technology and Furniture categories, and displaying the initial data structure with 9,800 observations across 18 variables.</em></p>
+                    </div>
+
+                    <h5>Figure 2: Data Preparation and Grouping</h5>
+                    <div class="box">
+                        <span class="image fit">
+                            <img src="images/NumericalAnalysis/S8DataActivity2.png" alt="R code for grouping and summarizing data" />
+                        </span>
+                        <p><em>This figure displays the code for grouping sales by Customer ID and Category, creating a summary table (customer_sales) showing total sales per customer per category. The output shows 1,389 customer-category combinations with 3 variables. The table shows the first few rows with specific customers and their purchasing patterns in both categories.</em></p>
+                    </div>
+
+                    <h5>Figure 3: Wide Format Transformation</h5>
+                    <div class="box">
+                        <span class="image fit">
+                            <img src="images/NumericalAnalysis/S8DataActivity3_1.png" alt="R code showing data reshaping to wide format" />
+                        </span>
+                        <p><em>This figure shows the reshaping process using pivot_wider() to convert the data from long format to wide format, where each customer has columns for both Furniture and Technology spending. The resulting paired_data structure shows 6 customers × 3 columns (Customer.ID, Furniture, Technology) with specific purchase amounts for each category.</em></p>
+                    </div>
+
+                    <div class="box">
+                        <span class="image fit">
+                            <img src="images/NumericalAnalysis/S8DataActivity3_2.png" alt="Complete paired data structure" />
+                        </span>
+                        <p><em>This figure displays the complete paired_data output showing customers who purchased from both categories. After removing incomplete cases, 615 customers remain in the analysis, each with paired spending values for Technology and Furniture purchases.</em></p>
+                    </div>
+
+                    <h5>Figure 4: Paired t-test Results</h5>
+                    <div class="box">
+                        <span class="image fit">
+                            <img src="images/NumericalAnalysis/S8DataActivity4.png" alt="Paired t-test statistical output" />
+                        </span>
+                        <p><em>This figure presents the statistical output from the paired t-test comparing Technology versus Furniture spending for the same customers. The results show the test statistic, degrees of freedom, p-value, mean difference, and 95% confidence interval.</em></p>
+                    </div>
+
+                    <h4>Results - Activity 1: Paired t-test</h4>
+                    <div class="box">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Statistic</th>
+                                    <th>Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Number of paired observations</td>
+                                    <td>615 customers</td>
+                                </tr>
+                                <tr>
+                                    <td>Test statistic (t)</td>
+                                    <td>1.5705</td>
+                                </tr>
+                                <tr>
+                                    <td>Degrees of freedom (df)</td>
+                                    <td>614</td>
+                                </tr>
+                                <tr>
+                                    <td>p-value</td>
+                                    <td>0.1168</td>
+                                </tr>
+                                <tr>
+                                    <td>Mean difference</td>
+                                    <td>$136.25</td>
+                                </tr>
+                                <tr>
+                                    <td>95% Confidence Interval</td>
+                                    <td>[-34.12, 306.62]</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h4>Interpretation - Activity 1</h4>
+                    <div class="box">
+                        <p><strong>Conclusion:</strong> Since the p-value (0.1168) is <strong>greater than 0.05</strong>, we <strong>fail to reject the null hypothesis</strong>. There is <strong>no statistically significant difference</strong> in average spending between Technology and Furniture categories among customers who purchased from both categories at the 5% significance level.</p>
+
+                        <h4>What This Means:</h4>
+                        <ul>
+                            <li>Customers who buy from both categories spend similar amounts in each, on average</li>
+                            <li>The mean difference of $136.25 (Technology spending higher) is not statistically significant</li>
+                            <li>The 95% confidence interval [-34.12, 306.62] includes zero, confirming no significant difference</li>
+                            <li>Any observed difference could be due to random variation rather than a true underlying pattern</li>
+                        </ul>
+
+                        <h4>Business Implications:</h4>
+                        <p>These customers show balanced purchasing behavior across categories. Marketing strategies targeting cross-category buyers don't need to differentiate between Technology and Furniture promotions, as spending patterns are equivalent. The company can treat these multi-category customers as having similar value propositions across product lines.</p>
+                    </div>
+
+                    <h3>Activity 2: Independent t-test</h3>
+                    
+                    <h4>Objective</h4>
+                    <p>Determine whether there is a significant difference in mean sales between <strong>Consumer</strong> and <strong>Corporate</strong> customer segments.</p>
+
+                    <h4>Methodology</h4>
+                    <ol>
+                        <li>Filtered data to include only Consumer and Corporate segments (excluding Home Office)</li>
+                        <li>Applied Welch Two Sample t-test (independent samples)</li>
+                        <li>Compared mean sales between the two independent groups</li>
+                        <li>Evaluated statistical significance using p-value and confidence intervals</li>
+                    </ol>
+
+                    <h4>R Code Implementation</h4>
+                    
+                    <h5>Figure 5: Independent t-test Analysis</h5>
+                    <div class="box">
+                        <span class="image fit">
+                            <img src="images/NumericalAnalysis/S8DataActivity5.png" alt="Independent t-test R code and output" />
+                        </span>
+                        <p><em>This figure shows the R code for filtering the dataset to include only Consumer and Corporate segments, followed by the Welch Two Sample t-test output. The console displays segment names ("Consumer", "Corporate", "Home Office") and the complete statistical results comparing sales between Consumer and Corporate groups. The seg_data contains 8,054 observations for analysis.</em></p>
+                    </div>
+
+                    <h4>Results - Activity 2: Independent t-test</h4>
+                    <div class="box">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Statistic</th>
+                                    <th>Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Mean sales (Consumer)</td>
+                                    <td>$225.07</td>
+                                </tr>
+                                <tr>
+                                    <td>Mean sales (Corporate)</td>
+                                    <td>$233.15</td>
+                                </tr>
+                                <tr>
+                                    <td>Mean difference</td>
+                                    <td>$8.08</td>
+                                </tr>
+                                <tr>
+                                    <td>Test statistic (t)</td>
+                                    <td>-0.58662</td>
+                                </tr>
+                                <tr>
+                                    <td>Degrees of freedom (df)</td>
+                                    <td>≈6069.3</td>
+                                </tr>
+                                <tr>
+                                    <td>p-value</td>
+                                    <td>0.5575</td>
+                                </tr>
+                                <tr>
+                                    <td>95% Confidence Interval</td>
+                                    <td>[-35.10, 18.93]</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h4>Interpretation - Activity 2</h4>
+                    <div class="box">
+                        <p><strong>Conclusion:</strong> Since the p-value (0.5575) is <strong>greater than 0.05</strong>, we <strong>fail to reject the null hypothesis</strong>. There is <strong>no statistically significant difference</strong> in mean sales between Consumer and Corporate customer segments at the 5% significance level.</p>
+
+                        <h4>What This Means:</h4>
+                        <ul>
+                            <li>Consumer and Corporate customers spend similar amounts per transaction, on average</li>
+                            <li>The observed $8.08 difference (Corporate slightly higher) is not statistically meaningful</li>
+                            <li>The 95% confidence interval [-35.10, 18.93] includes zero, indicating no significant difference</li>
+                            <li>Both segments have comparable purchasing power in terms of individual transaction values</li>
+                        </ul>
+
+                        <h4>Business Implications:</h4>
+                        <p>From a pricing and product positioning perspective, Consumer and Corporate segments can be treated similarly. The lack of significant difference suggests that differentiation strategies should focus on factors other than transaction value—perhaps purchase frequency, product preferences, or service requirements rather than spending capacity. Sales forecasting models don't need separate parameters for transaction size across these segments.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Analysis and Key Findings -->
+            <section id="analysis">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Analysis and Key Findings</h2>
+                    </header>
+
+                    <h3>1. Connection Between Theory and Practice</h3>
+                    <div class="box">
+                        <p><strong>What I Found:</strong> Ranganathan's (2021) framework for test selection directly guided my analysis choices. The article's emphasis on paired vs. unpaired data determination was crucial for selecting appropriate tests.</p>
+                        
+                        <h4>What This Means:</h4>
+                        <p>Understanding the data structure (whether measurements come from the same individuals or different groups) is the <strong>first decision point</strong> in statistical testing. This isn't arbitrary—paired tests are more powerful for detecting differences because they control for individual variation. In Activity 1, using a paired test was essential because we were comparing the <em>same customers'</em> behavior across categories.</p>
+
+                        <h4>Application to AI/ML:</h4>
+                        <p>This concept extends to machine learning model evaluation. When comparing model performance, paired tests (like McNemar's test for classification or paired t-test for regression metrics) should be used when testing on the same dataset, while independent tests apply when comparing on different holdout sets.</p>
+                    </div>
+
+                    <h3>2. Data Type Determines Test Selection</h3>
+                    <div class="box">
+                        <p><strong>What I Found:</strong> Both activities used t-tests because the dependent variable (Sales) was continuous and approximately normally distributed, aligning with Ranganathan's (2021) guidance on parametric tests.</p>
+                        
+                        <h4>What This Means:</h4>
+                        <p>The choice between parametric (t-test, ANOVA) and nonparametric (Mann-Whitney, Wilcoxon) tests depends on data distribution. With large sample sizes (615 paired observations, 8,054 independent observations), the Central Limit Theorem supports using parametric tests even if raw data show slight skewness. However, if sales data were heavily skewed or ordinal, nonparametric alternatives would be required.</p>
+
+                        <h4>Practical Consideration:</h4>
+                        <p>Before conducting these tests, I should have checked normality assumptions using Shapiro-Wilk test or Q-Q plots. While large samples are robust to minor violations, this represents a learning point for more rigorous analysis in future work.</p>
+                    </div>
+
+                    <h3>3. P-values and Practical Significance</h3>
+                    <div class="box">
+                        <p><strong>What I Found:</strong> Both tests yielded non-significant results (p = 0.1168 and p = 0.5575), but the confidence intervals and effect sizes tell additional stories:</p>
+                        <ul>
+                            <li>Paired test: Mean difference of $136.25 with CI [-34.12, 306.62]</li>
+                            <li>Independent test: Mean difference of $8.08 with CI [-35.10, 18.93]</li>
+                        </ul>
+                        
+                        <h4>What This Means:</h4>
+                        <p>Statistical non-significance doesn't mean "no difference exists"—it means we cannot confidently detect a difference with our sample size and variability. The paired test's wider confidence interval suggests more variability in individual customer behavior, even though we controlled for customer-level differences. The independent test's narrow confidence interval around zero provides stronger evidence for true equivalence.</p>
+
+                        <h4>Beyond P-values:</h4>
+                        <p>In business contexts, practical significance matters as much as statistical significance. Even if the $136.25 difference in Activity 1 were statistically significant, is it economically meaningful? For high-value customers, this might be negligible; for budget-conscious segments, it could matter. Ranganathan (2021) implies this through the "practical implications" column approach in research presentation.</p>
+                    </div>
+
+                    <h3>4. Sample Size and Statistical Power</h3>
+                    <div class="box">
+                        <p><strong>What I Found:</strong> The paired analysis used only 615 customers (those who bought from both categories) out of 9,800 total observations, while the independent test used 8,054 observations.</p>
+                        
+                        <h4>What This Means:</h4>
+                        <p>Paired designs require matched observations, often reducing sample size but increasing statistical power by controlling individual variation. The trade-off is visible here: despite having ~13x fewer observations, the paired test's effect size ($136 difference) was 17x larger than the independent test's ($8 difference). This demonstrates why matching is powerful when feasible.</p>
+
+                        <h4>Methodological Insight:</h4>
+                        <p>The filtering process (keeping only customers with both Technology and Furniture purchases) introduced potential selection bias. These 615 customers might be systematically different from single-category buyers—perhaps higher value or more engaged. A complete analysis should compare:</p>
+                        <ol>
+                            <li>Multi-category buyers (paired test) - done ✓</li>
+                            <li>All customers across categories (independent test) - not done</li>
+                            <li>Multi-category vs. single-category buyers - not done</li>
+                        </ol>
+                    </div>
+
+                    <h3>5. R Programming for Statistical Analysis</h3>
+                    <div class="box">
+                        <p><strong>What I Found:</strong> The data manipulation required several steps: filtering, grouping, pivoting, and cleaning before reaching the actual statistical test.</p>
+                        
+                        <h4>What This Means:</h4>
+                        <p>Real-world statistical analysis is 80% data preparation, 20% running tests. The paired test required complex reshaping (wide format) and handling missing values, while the independent test needed simple filtering. This reinforces that understanding data structures is as important as knowing statistical formulas.</p>
+
+                        <h4>Key R Skills Applied:</h4>
+                        <ul>
+                            <li><code>dplyr</code> for data manipulation (filter, group_by, summarise)</li>
+                            <li><code>tidyr</code> for reshaping (pivot_wider)</li>
+                            <li><code>drop_na()</code> for handling missing data</li>
+                            <li><code>t.test()</code> with proper parameters (paired = TRUE/FALSE)</li>
+                        </ul>
+
+                        <p>These are foundational skills for data science and AI work, where data rarely arrives in analysis-ready format.</p>
+                    </div>
+
+                    <h3>6. Null Hypothesis Testing Framework</h3>
+                    <div class="box">
+                        <p><strong>What I Found:</strong> Both tests failed to reject the null hypothesis, but this is a meaningful finding, not a "failed" analysis.</p>
+                        
+                        <h4>What This Means:</h4>
+                        <p>The null hypothesis (H₀) states "no difference exists." Failing to reject H₀ provides evidence of equivalence or similarity, which can be just as valuable as finding differences. In these cases:</p>
+                        <ul>
+                            <li><strong>Activity 1:</strong> Multi-category customers show balanced spending—they don't strongly prefer one category over another</li>
+                            <li><strong>Activity 2:</strong> Consumer and Corporate segments are equivalent in transaction value—segment differentiation isn't justified by spending differences</li>
+                        </ul>
+
+                        <p>This aligns with Ranganathan's (2021) emphasis on appropriate interpretation: statistical tests answer specific questions about populations based on sample evidence. Non-significance is informative when properly contextualized.</p>
+
+                        <h4>Type II Error Consideration:</h4>
+                        <p>However, we must acknowledge the possibility of Type II error (failing to detect a true difference). Power analysis would reveal whether our sample sizes were adequate to detect meaningful differences if they existed. Future analysis should include power calculations, especially for the paired test with only 615 observations.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Learning Outcomes Achieved -->
+            <section id="learning-outcomes-achieved">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Learning Outcomes Achieved</h2>
+                    </header>
+                    <ul>
+                        <li><strong>Mastered test selection framework:</strong> Learned to systematically choose statistical tests based on data type (categorical vs. numerical), distribution (normal vs. skewed), and structure (paired vs. unpaired)</li>
+                        <li><strong>Applied paired t-test correctly:</strong> Successfully identified when to use paired tests for within-subject comparisons and implemented the analysis in R with proper data reshaping</li>
+                        <li><strong>Applied independent t-test correctly:</strong> Understood when to use unpaired tests for between-group comparisons and implemented Welch's t-test for unequal variances</li>
+                        <li><strong>Interpreted statistical results comprehensively:</strong> Analyzed p-values, confidence intervals, effect sizes, and practical significance rather than relying solely on p-value thresholds</li>
+                        <li><strong>Connected theory to practice:</strong> Applied Ranganathan's (2021) framework to real-world data, demonstrating how theoretical knowledge guides practical analysis decisions</li>
+                        <li><strong>Developed R programming skills:</strong> Gained proficiency in data manipulation (dplyr, tidyr), cleaning (drop_na), and statistical testing (t.test) using R</li>
+                        <li><strong>Understood assumptions and limitations:</strong> Recognized the importance of checking normality assumptions, considering power/sample size, and acknowledging potential selection bias</li>
+                        <li><strong>Translated statistical findings to business context:</strong> Interpreted results in terms of customer behavior and business implications rather than just statistical terminology</li>
+                        <li><strong>Practiced academic writing:</strong> Developed ability to present methodology, results, and interpretations in clear, structured format with proper referencing</li>
+                        <li><strong>Critical evaluation skills:</strong> Assessed the appropriateness of statistical methods and identified areas for improvement in analysis design</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Reflection -->
+            <section id="reflection">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Reflection</h2>
+                    </header>
+                    
+                    <p>This seminar fundamentally deepened my understanding of how statistical testing connects theoretical frameworks to real-world decision-making. Before engaging with Ranganathan's (2021) article and the dataset activities, I viewed statistical tests as a menu of options to choose from somewhat arbitrarily. The systematic framework presented in the article—asking about data type, pairing structure, and distribution before selecting tests—transformed my approach into a logical decision tree.</p>
+                    
+                    <h3>The Value of Systematic Test Selection</h3>
+                    <p>The most impactful learning was understanding <strong>why</strong> certain tests are appropriate for specific scenarios. Ranganathan (2021) doesn't just list tests; the article explains the underlying logic. For paired vs. unpaired data, the key insight is whether the same units are measured multiple times or whether independent groups are compared. This seems simple in retrospect, but in practice, it required careful thought about what my data actually represented.</p>
+                    
+                    <p>In Activity 1, I initially considered using an independent t-test to compare all Technology purchases against all Furniture purchases. However, applying Ranganathan's framework, I realized this would miss the crucial within-customer comparison—customers who buy both categories might have different spending patterns than those who specialize. The paired test, by matching Technology and Furniture spending <em>within the same customers</em>, controls for individual differences in purchasing power, shopping frequency, and brand loyalty. This methodological choice completely changed the research question from "Do categories differ in average sales?" to "Do individual customers spend differently across categories they purchase from?"</p>
+
+                    <h3>Data Manipulation as Core Statistical Skill</h3>
+                    <p>The dataset activities revealed that statistical testing is as much about data wrangling as formula application. The paired t-test required substantial preparation:</p>
+                    <ol>
+                        <li>Filtering to relevant categories (Technology and Furniture)</li>
+                        <li>Aggregating sales by customer and category</li>
+                        <li>Reshaping from long to wide format</li>
+                        <li>Handling missing values (customers who didn't buy both)</li>
+                        <li>Finally running the actual test</li>
+                    </ol>
+
+                    <p>This five-step process reinforced that the statistical test itself is just the final step in a longer analytical journey. Without proper data preparation, even choosing the correct test yields meaningless results. The <code>pivot_wider()</code> function was particularly challenging—I initially struggled to understand why we needed wide format when R functions could work with long format. I learned that paired tests fundamentally require aligned pairs, where each row represents one unit (customer) with multiple measurements (Technology and Furniture sales).</p>
+
+                    <p>The independent t-test, by contrast, required minimal preparation—just filtering segments—because the data were already in the correct structure (each row = one observation, group membership indicated by a column). This structural difference between test types is something I'll now consider when designing data collection and storage systems.</p>
+
+                    <h3>Interpreting Non-Significant Results</h3>
+                    <p>Both tests yielded non-significant results (p > 0.05), which initially felt disappointing—I'd expected to find clear differences to write about. However, reflecting on Ranganathan's (2021) emphasis on appropriate interpretation, I realized non-significance is itself informative. These results tell us:</p>
+
+                    <ul>
+                        <li>Multi-category customers show balanced spending behavior across Technology and Furniture</li>
+                        <li>Consumer and Corporate segments are equivalent in transaction value</li>
+                    </ul>
+
+                    <p>For business strategy, knowing what <em>isn't</em> different is as valuable as knowing what <em>is</em> different. If we'd found significant differences, it might justify differentiated marketing strategies, pricing tiers, or inventory management approaches. Finding equivalence suggests we can simplify strategies—treat segments similarly where they behave similarly.</p>
+
+                    <p>This connects to a broader lesson about null hypothesis testing: we're not trying to prove differences exist; we're trying to evaluate evidence against the null hypothesis of no difference. The burden of proof lies with the alternative hypothesis. Non-significance doesn't prove the null hypothesis is true (we never prove hypotheses in frequentist statistics); it means we lack sufficient evidence to reject it. This epistemological nuance is crucial for AI/ML work, where we must avoid over-interpreting model performance differences that might be due to random variation.</p>
+
+                    <h3>The Importance of Effect Sizes and Confidence Intervals</h3>
+                    <p>Ranganathan's (2021) article, while emphasizing p-values, also highlights the importance of confidence intervals in Tables 1-4. Working through the dataset activities made this concrete. In Activity 1, the 95% confidence interval [-34.12, 306.62] was wide and included zero, confirming non-significance. But the width itself was informative—it revealed substantial variability in individual customer behavior, even within the same customer across categories.</p>
+
+                    <p>In Activity 2, the confidence interval [-35.10, 18.93] was narrower relative to the means, suggesting more precision in our estimate. The interval being nearly symmetric around zero (slightly negative to slightly positive) provides strong evidence for true equivalence between segments, not just insufficient power to detect a difference.</p>
+
+                    <p>This experience taught me to report and interpret confidence intervals alongside p-values. In future analyses, I'll calculate and report effect sizes (Cohen's d) to quantify the magnitude of differences independent of sample size. Statistical significance depends heavily on sample size—with enough data, even tiny, meaningless differences become significant—while effect sizes reveal practical importance.</p>
+
+                    <h3>Challenges with Sample Size and Power</h3>
+                    <p>One unresolved question from this seminar is whether my sample sizes were adequate. The paired test used only 615 customers (out of 9,800 total observations) because we needed customers who bought from both categories. This represents a <strong>selection bias</strong>—these multi-category buyers might systematically differ from single-category buyers in wealth, shopping frequency, or product needs.</p>
+
+                    <p>Moreover, with only 615 pairs, did I have sufficient statistical power to detect a meaningful difference if one existed? Power analysis (which I didn't conduct but should have) would reveal the minimum effect size I could reliably detect. If my power was low (e.g., 0.50 instead of the conventional 0.80), the non-significant result might reflect inadequate power rather than true equivalence.</p>
+
+                    <p>This limitation highlights the need for a priori power analysis when designing studies. In retrospect, I should have:</p>
+                    <ol>
+                        <li>Determined the minimum meaningful difference (e.g., $100 spending difference)</li>
+                        <li>Estimated expected variability from preliminary data</li>
+                        <li>Calculated required sample size to achieve 80% power</li>
+                        <li>Then collected/analyzed data accordingly</li>
+                    </ol>
+
+                    <p>In real-world data analysis, we often work with available data rather than designed studies, but understanding these limitations is crucial for appropriate interpretation.</p>
+
+                    <h3>Connection to Machine Learning</h3>
+                    <p>Throughout this seminar, I kept connecting concepts to my AI/ML studies. Statistical testing is foundational for machine learning model evaluation:</p>
+
+                    <ul>
+                        <li><strong>Paired tests for model comparison:</strong> When comparing two models on the same test set, paired tests (McNemar's for classification, paired t-test for regression metrics) are appropriate</li>
+                        <li><strong>Independent tests for dataset comparison:</strong> When evaluating model performance across different datasets, independent tests apply</li>
+                        <li><strong>Understanding p-values:</strong> Model performance differences need statistical validation—a 2% accuracy improvement might not be statistically significant</li>
+                        <li><strong>Effect sizes matter:</strong> In production systems, we care about practical improvement magnitude, not just statistical significance</li>
+                    </ul>
+
+                    <p>Ranganathan's (2021) Table 3 on tests for association between variables is particularly relevant to feature selection and model interpretation in ML. Correlation analyses (Pearson's, Spearman's) help identify predictive features, while regression analyses directly relate to supervised learning objectives.</p>
+
+                    <h3>What I Would Do Differently</h3>
+                    <p>Reflecting on this seminar, several improvements for future work emerge:</p>
+
+                    <ol>
+                        <li><strong>Check assumptions explicitly:</strong> I should have tested normality (Shapiro-Wilk, Q-Q plots) and equal variances before selecting tests</li>
+                        <li><strong>Conduct power analysis:</strong> Calculate post-hoc power or required sample sizes to evaluate whether non-significant results are conclusive</li>
+                        <li><strong>Report effect sizes:</strong> Include Cohen's d to quantify magnitude of differences independent of sample size</li>
+                        <li><strong>Visualize distributions:</strong> Create histograms, boxplots, or violin plots to show data distributions before testing</li>
+                        <li><strong>Address selection bias:</strong> Acknowledge and potentially analyze how multi-category buyers differ from single-category buyers</li>
+                        <li><strong>Consider alternative analyses:</strong> For Activity 1, I could have used repeated measures ANOVA to compare more than two categories simultaneously</li>
+                    </ol>
+
+                    <h3>Broader Implications for Data Science Practice</h3>
+                    <p>This seminar reinforced several principles that extend beyond statistical testing to general data science practice:</p>
+
+                    <p><strong>1. Understand your data structure before choosing methods:</strong> Is it paired or independent? Categorical or numerical? Normally distributed or skewed? These questions determine appropriate analytical approaches.</p>
+
+                    <p><strong>2. Data preparation is most of the work:</strong> The actual statistical test is quick; preparing data correctly takes time and care. Errors in preparation invalidate even perfectly executed tests.</p>
+
+                    <p><strong>3. Context matters more than formulas:</strong> Statistical significance without practical interpretation is meaningless. Translate results into domain-relevant insights.</p>
+
+                    <p><strong>4. Negative results are still results:</strong> Finding no difference is informative and valuable, not a failed analysis.</p>
+
+                    <p><strong>5. Always question assumptions:</strong> Every statistical test has assumptions. Violating them doesn't always invalidate results (thanks to robustness), but you must know what you're assuming and whether it's reasonable.</p>
+
+                    <h3>Looking Forward</h3>
+                    <p>The theoretical foundation from Ranganathan (2021) combined with practical implementation in R has equipped me with a systematic approach to statistical analysis. I now have a mental flowchart for test selection: first determine data type, then assess pairing structure, then check distribution assumptions, then select the appropriate test from the framework. This systematic approach prevents common errors like using t-tests on categorical data or paired tests on independent samples.</p>
+
+                    <p>Moving forward, I'll apply these principles to more complex scenarios: ANOVA for multiple groups, regression for continuous predictors, chi-square for categorical associations, and survival analysis for time-to-event data. The framework scales—it's not about memorizing tests, but about understanding the logic that connects research questions, data structures, and analytical methods.</p>
+
+                    <p>This seminar has transformed statistical testing from a black box ("just run this test") to a transparent process where I understand why each step is necessary and what each result means. That understanding is foundational for credible, reproducible data science.</p>
+                </div>
+            </section>
+
+            <!-- References -->
+            <section id="references">
+                <div class="inner">
+                    <header class="major">
+                        <h2>References</h2>
+                    </header>
+                    <p>Brown, D. J. (1994) 'Opinions of general practitioners in Nottinghamshire about provision of intrapartum care', <em>BMJ</em>, 309(6957), pp. 777-780.</p>
+                    
+                    <p>Few, S. (2012) <em>Show me the numbers: designing tables and graphs to enlighten</em>. 2nd edn. Oakland, CA: Analytics Press.</p>
+                    
+                    <p>Greenhalgh, T. (2010) <em>How to read a paper: the basics of evidence-based medicine</em>. 4th edn. Chichester: BMJ Books.</p>
+                    
+                    <p>Knaflic, C. N. (2015) <em>Storytelling with data: a data visualization guide for business professionals</em>. Hoboken, NJ: Wiley.</p>
+                    
+                    <p>Ranganathan, P. (2021) 'An introduction to statistics: choosing the correct statistical test', <em>Indian Journal of Critical Care Medicine</em>, 25(Suppl 2), pp. S184–S186. doi: 10.5005/jp-journals-10071-23815.</p>
+                    
+                    <p>Tufte, E. R. (2001) <em>The visual display of quantitative information</em>. 2nd edn. Cheshire, CT: Graphics Press.</p>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <section id="navigation">
+                <div class="inner">
+                    <ul class="actions">
+                        <li><a href="numerical-analysis.html" class="button">← Back to Module Overview</a></li>
+                        <li><a href="collaborative-discussion2.html" class="button primary">Next Activity →</a></li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                <ul class="icons">
+                    <li><a href="https://github.com/KannaAlmansoori" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; 2025 Kanna AlMansoori</li>
+                    <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
