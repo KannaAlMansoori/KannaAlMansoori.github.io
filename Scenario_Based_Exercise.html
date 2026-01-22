@@ -1,0 +1,292 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Data Activity 6 - Unit 7 - Kanna AlMansoori</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo"><strong>Kanna AlMansoori</strong> <span>MSc Artificial Intelligence E-Portfolio</span></a>
+            <nav>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <ul class="links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="launch-module.html">Launch into Computing</a></li>
+                <li><a href="induction.html">Induction Computing</a></li>
+                <li><a href="ai-module.html">Understanding Artificial Intelligence</a></li>
+                <li><a href="numerical-analysis.html">Numerical Analysis</a></li>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div id="main" class="alt">
+
+            <!-- Breadcrumb Navigation -->
+            <section id="one">
+                <div class="inner">
+                    <p><a href="numerical-analysis.html">← Back to Numerical Analysis</a></p>
+                    <header class="major">
+                        <h1>Unit 7: Data Activity 6</h1>
+                    </header>
+                    <p><strong>Deadline:</strong> End of Unit 7 | <strong>Type:</strong> Formative | <strong>Status:</strong> ✓ Complete</p>
+                </div>
+            </section>
+
+            <!-- Introduction -->
+            <section id="introduction">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Scenario-Based Exercise – 95% Confidence Interval</h2>
+                    </header>
+                    <p>This exercise focuses on using confidence intervals to evaluate the effectiveness of different training programs. An HR organisation hired three vendors to train employees and improve their work efficiency. By calculating 95% confidence intervals for each vendor's training outcomes, I was able to determine which vendor showed statistically significant improvements.</p>
+                </div>
+            </section>
+
+            <!-- Scenario Description -->
+            <section id="scenario">
+                <div class="inner">
+                    <header class="major">
+                        <h2>The Scenario</h2>
+                    </header>
+                    <p>An HR organisation wishes to introduce a new set of training programs to increase the work efficiency of their employees. To do this, the organisation hires 3 vendors such that each vendor will train a group of employees with a one-week program. It is assumed that the employees across the three groups have the same work efficiencies before the start of the program.</p>
+                    
+                    <p>The following table summarizes the scores obtained after the one-week training. Each group has 7 employees.</p>
+                    
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Group 1 (Vendor 1)</th>
+                                    <th>Group 2 (Vendor 2)</th>
+                                    <th>Group 3 (Vendor 3)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>45</td><td>61</td><td>35</td></tr>
+                                <tr><td>29</td><td>53</td><td>21</td></tr>
+                                <tr><td>56</td><td>41</td><td>33</td></tr>
+                                <tr><td>52</td><td>58</td><td>27</td></tr>
+                                <tr><td>45</td><td>53</td><td>22</td></tr>
+                                <tr><td>45</td><td>47</td><td>26</td></tr>
+                                <tr><td>41</td><td>44</td><td>30</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <p><strong>Task:</strong> Find out the mean efficiency of each vendor and determine which vendor shows a higher significance of improvement in employee efficiency statistically at the 95% level.</p>
+                </div>
+            </section>
+
+            <!-- Learning Outcomes -->
+            <section id="learning-outcomes">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Learning Outcomes</h2>
+                    </header>
+                    <ul>
+                        <li>Systematic understanding of the key mathematical and statistical concepts and techniques which underpin mechanisms in Data Science and AI</li>
+                        <li>Apply mathematical and statistical methods in these fields to help in the decision-making process</li>
+                        <li>Critically evaluate the use of statistical analysis and the numeric interpretation of results as aids in the decision-making process</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Analysis -->
+            <section id="analysis">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Analysis and Results</h2>
+                    </header>
+                    
+                    <!-- R Code Setup -->
+                    <div class="box">
+                        <h3>Step 1: Setting Up the Data in R</h3>
+                        <p>First, I created three vectors in R to represent the efficiency scores for each vendor group. Each vector contains 7 scores corresponding to the 7 employees trained by each vendor.</p>
+                        
+                        <span class="image fit">
+                            <img src="images/NumericalAnalysis/CI-Image1.png" alt="R Code - Data Setup" />
+                        </span>
+                    </div>
+
+                    <!-- Confidence Interval Calculation -->
+                    <div class="box">
+                        <h3>Step 2: Creating a Function for 95% Confidence Interval</h3>
+                        <p>Since the sample size for each group was small (n = 7) and the population standard deviation was unknown, I needed to use the t-distribution to calculate confidence intervals. I created a custom function called <code>ci95</code> that calculates the 95% confidence interval for any given dataset.</p>
+                        
+                        <p>The function does the following:</p>
+                        <ul>
+                            <li>Calculates the sample size (n)</li>
+                            <li>Computes the mean of the data</li>
+                            <li>Calculates the standard error</li>
+                            <li>Uses the t-distribution critical value (qt) with 95% confidence level</li>
+                            <li>Returns the lower and upper bounds of the confidence interval</li>
+                        </ul>
+                        
+                        <span class="image fit">
+                            <img src="images/NumericalAnalysis/CI-Image2.png" alt="R Code - Confidence Interval Function" />
+                        </span>
+                    </div>
+
+                    <!-- Results -->
+                    <div class="box">
+                        <h3>Step 3: Results and Interpretation</h3>
+                        
+                        <h4>Mean Efficiency Scores</h4>
+                        <p>After running the analysis, I calculated the average efficiency score for each vendor:</p>
+                        <ul>
+                            <li><strong>Vendor 1:</strong> 44.71</li>
+                            <li><strong>Vendor 2:</strong> 51.00</li>
+                            <li><strong>Vendor 3:</strong> 27.71</li>
+                        </ul>
+                        
+                        <h4>95% Confidence Intervals</h4>
+                        <p>The 95% confidence intervals for each vendor were calculated as follows:</p>
+                        
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Vendor</th>
+                                        <th>Mean Score</th>
+                                        <th>Lower Bound (95% CI)</th>
+                                        <th>Upper Bound (95% CI)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Vendor 1</td>
+                                        <td>44.71</td>
+                                        <td>36.78</td>
+                                        <td>52.65</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vendor 2</td>
+                                        <td>51.00</td>
+                                        <td>44.22</td>
+                                        <td>57.78</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vendor 3</td>
+                                        <td>27.71</td>
+                                        <td>22.83</td>
+                                        <td>32.60</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <h4>What This Means</h4>
+                        <p>The confidence intervals tell us the range where we can be 95% confident that the true mean efficiency score lies. Looking at the results:</p>
+                        
+                        <p><strong>Vendor 3 vs Others:</strong> The confidence interval for Vendor 3 [22.83, 32.60] doesn't overlap at all with Vendor 1 [36.78, 52.65] or Vendor 2 [44.22, 57.78]. This is a clear sign that Vendor 3's training program resulted in significantly lower efficiency improvements compared to the other two vendors. The lack of overlap means we can be statistically confident that Vendor 3's performance is genuinely worse.</p>
+                        
+                        <p><strong>Vendor 1 vs Vendor 2:</strong> The confidence intervals for these two vendors do overlap slightly. Vendor 1's interval goes up to 52.65, while Vendor 2's starts at 44.22, creating an overlap zone. However, Vendor 2 still has both a higher mean score (51.00 vs 44.71) and a confidence interval that's shifted higher overall. This suggests that while we can't say with absolute certainty that Vendor 2 is better than Vendor 1, the evidence leans in that direction.</p>
+                        
+                        <p><strong>Statistical Significance:</strong> At the 95% confidence level, Vendor 2 shows the strongest performance with the highest mean efficiency score and the highest lower bound. Vendor 1 performs reasonably well but falls short of Vendor 2. Vendor 3 clearly underperforms compared to both other vendors, with statistical significance.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Findings -->
+            <section id="key-findings">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Key Findings</h2>
+                    </header>
+                    <ul>
+                        <li><strong>Vendor 2 is the Most Effective:</strong> With a mean score of 51.00 and a 95% CI of [44.22, 57.78], Vendor 2 demonstrates the highest and most consistent improvement in employee efficiency</li>
+                        <li><strong>Vendor 1 Shows Moderate Effectiveness:</strong> Mean score of 44.71 with 95% CI [36.78, 52.65] indicates good performance, though slightly below Vendor 2</li>
+                        <li><strong>Vendor 3 Significantly Underperforms:</strong> Mean score of 27.71 with 95% CI [22.83, 32.60] shows statistically significant lower performance with no overlap with other vendors</li>
+                        <li><strong>Non-Overlapping Intervals:</strong> Vendor 3's confidence interval is completely separate from Vendors 1 and 2, confirming statistical significance of the performance difference</li>
+                        <li><strong>Evidence-Based Decision Making:</strong> The 95% confidence level provides strong statistical support for selecting Vendor 2 as the training provider</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Conclusion -->
+            <section id="conclusion">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Conclusion</h2>
+                    </header>
+                    <p>To evaluate the effectiveness of three training vendors, an HR organisation compared the work efficiency scores of employees after completing a one-week training program. Each vendor trained a group of seven employees, and it was assumed that all employees had a similar level of efficiency before the training began.</p>
+                    
+                    <p>After the training, the average efficiency score was 44.71 for Vendor 1, 51.00 for Vendor 2, and 27.71 for Vendor 3. Since the sample size for each group was small and the population standard deviation was not known, 95% confidence intervals were calculated using the t-distribution to assess the statistical significance of the results.</p>
+                    
+                    <p>The 95% confidence interval for Vendor 1 was [36.78, 52.65], for Vendor 2 was [44.22, 57.78], and for Vendor 3 was [22.83, 32.60]. The confidence interval for Vendor 3 does not overlap with those of the other two vendors, which suggests that Vendor 3's training program led to noticeably lower efficiency improvements. Although the confidence intervals for Vendor 1 and Vendor 2 slightly overlap, Vendor 2 achieved the highest average efficiency score and showed stronger overall improvement.</p>
+                    
+                    <p>Based on the 95% confidence level, Vendor 2 appears to be the most effective training provider, while Vendor 3 shows the weakest performance. This analysis helps support a clear and evidence-based decision when selecting a training vendor.</p>
+                </div>
+            </section>
+
+            <!-- Reflection -->
+            <section id="reflection">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Reflection</h2>
+                    </header>
+                    <p>This exercise really helped me understand how confidence intervals work in practice and why they're so valuable for making business decisions. Before this, I knew the theory behind confidence intervals, but actually applying them to a real scenario made everything click.</p>
+                    
+                    <p>What stood out to me was how the confidence intervals gave us a way to quantify uncertainty. Instead of just looking at the mean scores and saying "Vendor 2 has a higher average," the confidence intervals let me say with statistical confidence which vendor genuinely performed better. The fact that Vendor 3's interval didn't overlap at all with the others was a clear red flag that their training wasn't effective.</p>
+                    
+                    <p>I also learned that overlapping confidence intervals don't necessarily mean there's no difference between groups - it just means we need to be more careful about making strong claims. Vendor 1 and Vendor 2's intervals overlapped, but Vendor 2 still showed stronger overall performance. This taught me to look at the whole picture, not just whether intervals overlap or not.</p>
+                    
+                    <p>Using R to create a custom function for calculating confidence intervals was a good practical exercise too. It made me think about what actually goes into these calculations - the sample size, standard error, and t-distribution critical values. Understanding the mechanics behind it makes me more confident in interpreting the results.</p>
+                    
+                    <p>Overall, this activity showed me how statistical methods can support real-world decision-making in HR and business contexts. If I were actually advising this organisation, I'd confidently recommend Vendor 2 based on this analysis, and I'd strongly advise against using Vendor 3. That's the power of using proper statistical analysis instead of just gut feeling.</p>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <section id="navigation">
+                <div class="inner">
+                    <ul class="actions">
+                        <li><a href="numerical-analysis.html" class="button">← Back to Module Overview</a></li>
+                        <li><a href="unit8-activity.html" class="button primary">Next Activity →</a></li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                <ul class="icons">
+                    <li><a href="https://github.com/KannaAlmansoori" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; 2025 Kanna AlMansoori</li>
+                    <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
