@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Unit 6 Seminar Preparation - Working Together - Kanna AlMansoori</title>   
+    <title>Unit 6 Seminar Preparation - Working Together - Kanna AlMansoori</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -45,7 +45,7 @@
                         <h1>Unit 6 Seminar Preparation</h1>
                         <p>Working Together: KQML Dialogues</p>
                     </header>
-                    <p><strong>Type:</strong> Interactive Seminar (Non-Assessed) | <strong>Duration:</strong> 30–60 minutes preparation | <strong>Status:</strong> ✓ Complete</p>
+                    <p><strong>Type:</strong> Interactive Seminar (Non-Assessed) | <strong>Duration:</strong> 30–60 minutes preparation | <strong>Status:</strong> ✓ Prepared</p>
                 </div>
             </section>
 
@@ -56,15 +56,12 @@
                         <h2>Preparation for Understanding Before Attending the Unit 6 Seminar</h2>
                     </header>
 
-                    <p>Before attending the Unit 6 seminar on "Working Together: KQML Dialogues," I am preparing by studying the key concepts that form the foundation of agent communication languages. This preparation document outlines what I am learning and understanding to be ready for the seminar discussion.</p>
+                    <p>I'm getting ready for the Unit 6 seminar on "Working Together: KQML Dialogues." This isn't just about learning facts—it's about understanding how agents actually talk to each other. In my Collaborative Discussion 2, I already explored KQML's benefits and challenges. Now I want to see real examples and understand the practical side.</p>
 
                     <div class="box">
-                        <p><strong>Status:</strong> Preparation in progress | <strong>Seminar attendance:</strong> Not yet attended</p>
+                        <p><strong>Status:</strong> Preparing now | <strong>Seminar:</strong> Haven't attended yet</p>
+                        <p><strong>Goal:</strong> Understand KQML through worked examples so I can see why it matters</p>
                     </div>
-
-                    <p>To fully understand KQML and agent communication, I need to grasp its building blocks: performatives (the "actions" of messages), ontologies (shared meaning), and autonomous agent behavior. I am also learning about the differences between KQML and traditional programming methods, which are crucial concepts for understanding how intelligent agents communicate differently from conventional function calls. This preparation covers those foundational concepts with practical examples drawn from real-world scenarios.</p>
-
-                    <p>From my previous Collaborative Discussion 2 on Agent Communication Languages, I already have a strong theoretical foundation. This preparation builds on that knowledge and bridges it to the practical examples the seminar will cover.</p>
                 </div>
             </section>
 
@@ -72,484 +69,336 @@
             <section id="prior-knowledge">
                 <div class="inner">
                     <header class="major">
-                        <h2>What I Already Know (from Collaborative Discussion 2)</h2>
+                        <h2>What I Already Understand (from CD2)</h2>
                     </header>
 
-                    <h3>Foundation from CD2</h3>
-                    <p>From my recent collaborative discussion on Agent Communication Languages, I have already developed a strong foundation in KQML and ACLs:</p>
+                    <p>From my discussion about Agent Communication Languages, I already know some important things. Let me remind myself of what I learned:</p>
 
-                    <h4>Key Understanding from Discussion:</h4>
-                    <ul>
-                        <li><strong>Agent Autonomy:</strong> I understand that agents using ACLs can decide whether to accept, refuse, or negotiate a request, unlike traditional method invocation which simply executes a command.</li>
-                        <li><strong>Speech Act Theory:</strong> I recognise that ACLs are grounded in speech act theory, where messages carry intention through performatives such as ask and tell.</li>
-                        <li><strong>Semantic Consistency:</strong> Through peer feedback, I learned that KQML's lack of formal semantics was a limitation—different implementations could interpret the same performative differently, leading to communication failures.</li>
-                        <li><strong>Ontology Importance:</strong> I understand that maintaining shared ontologies is critical for agents to interpret messages consistently across distributed systems.</li>
-                        <li><strong>FIPA-ACL Evolution:</strong> I know that FIPA-ACL was developed to overcome KQML's limitations by providing more formally defined semantics and standardised performative definitions.</li>
-                    </ul>
-
-                    <p>This prior knowledge positions me well to engage deeply with the seminar's real-world examples and understand not just what KQML does, but why semantic consistency and formal standards matter.</p>
-                </div>
-            </section>
-
-            <!-- KQML Fundamentals -->
-            <section id="kqml-fundamentals">
-                <div class="inner">
-                    <header class="major">
-                        <h2>KQML Fundamentals</h2>
-                    </header>
-
-                    <h3>1. What is KQML?</h3>
+                    <h3>Key Points From My Discussion:</h3>
                     <div class="box">
-                        <p><strong>KQML</strong> stands for <em>Knowledge Query and Manipulation Language</em>. It is an Agent Communication Language that allows intelligent agents to exchange information and requests using structured messages.</p>
-
-                        <p><strong>Simple Definition:</strong> KQML is a language that enables agents to send messages with clear intentions (performatives) to other agents, allowing them to communicate across different platforms and programming languages.</p>
+                        <h4>1. Agents Can Say "No"</h4>
+                        <p>In my CD2, I learned that when you send a KQML message, the agent receiving it can refuse, delay, or negotiate. This is different from a method call in Java, which just executes immediately. That's autonomy—the agent gets to decide.</p>
                     </div>
 
-                    <h3>2. Why Was KQML Created?</h3>
-                    <p>KQML was created to solve the problem of how autonomous agents in distributed systems could communicate effectively when they:</p>
-                    <ul>
-                        <li>Are built using different programming languages</li>
-                        <li>Operate on different platforms</li>
-                        <li>Need to work together toward common goals</li>
-                        <li>Must maintain autonomy in decision-making</li>
-                    </ul>
+                    <div class="box">
+                        <h4>2. Messages Have Intention (Not Just Commands)</h4>
+                        <p>I understood that KQML uses performatives like "ask" and "tell." These aren't just technical terms—they carry meaning. When I ask something, I'm asking someone to consider my request, not ordering them to do it.</p>
+                    </div>
 
-                    <h3>3. What Problem Does KQML Solve?</h3>
-                    <p>Traditional method invocation (like function calls in Java or Python) assumes:</p>
-                    <ul>
-                        <li>Direct communication within the same application</li>
-                        <li>Immediate execution of commands</li>
-                        <li>No negotiation or refusal capability</li>
-                        <li>Tight coupling between components</li>
-                    </ul>
+                    <div class="box">
+                        <h4>3. The Ontology Problem</h4>
+                        <p>My peers pointed out something crucial: if two agents don't share the same understanding of words and concepts (ontology), they'll misunderstand each other. This was identified as "one of the biggest limitations." I noted that maintaining shared ontologies across systems is really difficult.</p>
+                    </div>
 
-                    <p>KQML solves this by enabling:</p>
-                    <ul>
-                        <li><strong>Autonomy:</strong> Agents can refuse, delay, or negotiate requests</li>
-                        <li><strong>Platform Independence:</strong> Communication across heterogeneous systems</li>
-                        <li><strong>Intent-Based Communication:</strong> Messages carry meaning, not just commands</li>
-                        <li><strong>Distributed Problem-Solving:</strong> Multiple agents can cooperate without tight coupling</li>
-                    </ul>
+                    <div class="box">
+                        <h4>4. Why FIPA-ACL Exists</h4>
+                        <p>KQML was good, but it lacked formal semantics. This meant different systems could interpret the same message differently. FIPA-ACL fixed this by being more formal and clear about what each performative means. This makes communication more reliable.</p>
+                    </div>
+
+                    <p><strong>Now the seminar will show me real examples of this in action.</strong></p>
                 </div>
             </section>
 
-            <!-- KQML Performatives -->
+            <!-- KQML Basics -->
+            <section id="kqml-basics">
+                <div class="inner">
+                    <header class="major">
+                        <h2>KQML Basics: The Simple Parts</h2>
+                    </header>
+
+                    <h3>What is KQML, Really?</h3>
+                    <div class="box">
+                        <p>KQML = Knowledge Query and Manipulation Language</p>
+                        <p>Simple explanation: <strong>It's a way for agents to send messages that have clear purpose.</strong> Instead of just sending data, KQML says "here's what I want you to do with this information."</p>
+                    </div>
+
+                    <h3>Why Was It Created?</h3>
+                    <div class="box">
+                        <p>The problem KQML solves:</p>
+                        <ul>
+                            <li>Agents are independent programs running in different places</li>
+                            <li>They might be written in different languages (Python, Java, etc.)</li>
+                            <li>They need to understand each other despite these differences</li>
+                            <li>They need to be able to refuse requests if they can't help</li>
+                        </ul>
+                        <p><strong>KQML's solution:</strong> A common language for sending messages with clear intentions.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Performatives -->
             <section id="performatives">
                 <div class="inner">
                     <header class="major">
-                        <h2>KQML Performatives: The "Actions" of Messages</h2>
+                        <h2>Performatives: The "Actions" Agents Use</h2>
                     </header>
 
-                    <p>Performatives are the core of KQML. They represent the intention or action of a message, telling the receiving agent what the sender wants them to do.</p>
+                    <p>A performative is basically the "verb" of an agent message. It tells the other agent what you want them to do.</p>
 
-                    <h3>Common KQML Performatives</h3>
+                    <h3>The Main Ones You Need to Know:</h3>
 
-                    <div class="table-wrapper">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Performative</th>
-                                    <th>Meaning</th>
-                                    <th>Example</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>ask</strong></td>
-                                    <td>Request information from another agent</td>
-                                    <td>"What is today's weather?"</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>tell</strong></td>
-                                    <td>Provide information to another agent</td>
-                                    <td>"The temperature is 35°C"</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>reply</strong></td>
-                                    <td>Respond to a previous request</td>
-                                    <td>"Yes, I have processed your request"</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>achieve</strong></td>
-                                    <td>Ask another agent to perform a task or achieve a goal</td>
-                                    <td>"Please reserve Product A for me"</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>subscribe</strong></td>
-                                    <td>Request future updates or notifications</td>
-                                    <td>"Notify me when Product A is available"</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="box">
+                        <h4>ask</h4>
+                        <p><strong>Meaning:</strong> "Can you give me information about something?"</p>
+                        <p><strong>Example:</strong> "What is the weather today?"</p>
+                        <p><strong>What happens:</strong> The other agent can say yes or no. They might need more information first.</p>
                     </div>
 
-                    <h3>Why Performatives Matter</h3>
-                    <p>From my CD2 discussion, I learned that performatives are more than just commands. They embody <strong>speech act theory</strong>—each performative carries an implicit intention that the receiving agent must understand and can choose to respond to appropriately. This is fundamentally different from a method call, which simply executes.</p>
+                    <div class="box">
+                        <h4>tell</h4>
+                        <p><strong>Meaning:</strong> "Here's some information I want you to know"</p>
+                        <p><strong>Example:</strong> "The weather is sunny, 25°C"</p>
+                        <p><strong>What happens:</strong> The other agent receives this fact. They accept it as information.</p>
+                    </div>
+
+                    <div class="box">
+                        <h4>reply</h4>
+                        <p><strong>Meaning:</strong> "This is my answer to your question"</p>
+                        <p><strong>Example:</strong> "Yes, we have that product in stock"</p>
+                        <p><strong>What happens:</strong> This responds to an earlier ask. It's how agents finish conversations.</p>
+                    </div>
+
+                    <div class="box">
+                        <h4>achieve</h4>
+                        <p><strong>Meaning:</strong> "Can you do this task for me?"</p>
+                        <p><strong>Example:</strong> "Reserve this item for me"</p>
+                        <p><strong>What happens:</strong> The agent decides if they can do it. They might refuse or ask for more details.</p>
+                    </div>
+
+                    <div class="box">
+                        <h4>subscribe</h4>
+                        <p><strong>Meaning:</strong> "Keep me updated about this thing"</p>
+                        <p><strong>Example:</strong> "Tell me whenever the price drops"</p>
+                        <p><strong>What happens:</strong> The agent sends regular updates instead of you asking repeatedly.</p>
+                    </div>
+
+                    <p><strong>From my CD2:</strong> I noted that performatives are grounded in speech act theory. Each one carries intention beyond just the words.</p>
                 </div>
             </section>
 
-            <!-- Simple Dialogue Examples -->
-            <section id="dialogue-examples">
+            <!-- Real Dialogues -->
+            <section id="real-dialogues">
                 <div class="inner">
                     <header class="major">
-                        <h2>Understanding Simple KQML Dialogues</h2>
+                        <h2>Seeing Conversations Happen</h2>
                     </header>
 
-                    <h3>Example 1: Basic Information Exchange</h3>
+                    <p>Here's what real KQML conversations look like. Nothing fancy—just agents talking to each other.</p>
+
+                    <h3>Example 1: Shopping Online</h3>
                     <div class="box">
-                        <p><strong>Scenario:</strong> Customer Agent asks Store Agent about product availability</p>
+                        <pre style="background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto;">
+<code>Customer Agent → ask → Store Agent
+"Do you have the blue shirt in size M?"
 
-                        <p><strong>Exchange:</strong></p>
+Store Agent → tell → Customer Agent
+"Yes, we have it in stock"
+
+Customer Agent → achieve → Store Agent
+"Reserve one for me"
+
+Store Agent → reply → Customer Agent
+"Reservation confirmed. Ref: #12345"</code>
+                        </pre>
+
+                        <p><strong>What's happening here:</strong></p>
                         <ul>
-                            <li><strong>Customer Agent:</strong> <em>ask</em> "Do you have Product A in stock?"</li>
-                            <li style="margin-top: 10px;"><strong>Store Agent:</strong> <em>tell</em> "Yes, Product A is available"</li>
-                            <li style="margin-top: 10px;"><strong>Customer Agent:</strong> <em>achieve</em> "Reserve one unit of Product A for me"</li>
-                            <li style="margin-top: 10px;"><strong>Store Agent:</strong> <em>reply</em> "Reservation completed. Reference #12345"</li>
+                            <li>The customer asks a question (ask)</li>
+                            <li>The store answers (tell)</li>
+                            <li>The customer asks for action (achieve)</li>
+                            <li>The store confirms (reply)</li>
                         </ul>
 
-                        <p><strong>Key Points:</strong></p>
-                        <ul>
-                            <li>Each message has a clear performative indicating the sender's intention</li>
-                            <li>The receiving agent understands what is being asked and can respond appropriately</li>
-                            <li>The store agent could have refused the reservation (e.g., "Product unavailable")—this is autonomy</li>
-                        </ul>
+                        <p><strong>Important:</strong> At any point, the store could have said "no" or "we need more information." That's agent autonomy.</p>
                     </div>
 
-                    <h3>Example 2: Weather Information for Traffic Management</h3>
+                    <h3>Example 2: Smart City Traffic (From My CD2)</h3>
                     <div class="box">
-                        <p><strong>Scenario:</strong> Smart city traffic system (from my CD2 discussion)</p>
+                        <p>In my discussion, I mentioned a smart city example. Here's how it works with KQML:</p>
 
-                        <p><strong>Exchange:</strong></p>
-                        <ul>
-                            <li><strong>Traffic Agent:</strong> <em>ask</em> "What are current weather conditions on Main Street?"</li>
-                            <li style="margin-top: 10px;"><strong>Weather Agent:</strong> <em>reply</em> "Heavy rain detected, visibility reduced"</li>
-                            <li style="margin-top: 10px;"><strong>Traffic Agent:</strong> <em>achieve</em> "Increase green-light duration on Main Street by 30 seconds"</li>
-                            <li style="margin-top: 10px;"><strong>Signal Agent:</strong> <em>tell</em> "Green-light duration adjusted. New timing: 90 seconds"</li>
-                        </ul>
+                        <pre style="background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto;">
+<code>Traffic Agent → ask → Weather Agent
+"What's the weather on Main Street?"
 
-                        <p><strong>Key Points:</strong></p>
-                        <ul>
-                            <li>Multiple agents coordinate through message exchange</li>
-                            <li>Each agent makes autonomous decisions based on its role</li>
-                            <li>The dialogue demonstrates distributed problem-solving</li>
-                            <li>Unlike a method call, each agent understands the context and intention</li>
-                        </ul>
-                    </div>
+Weather Agent → tell → Traffic Agent
+"Heavy rain, visibility is low"
 
-                    <h3>Example 3: Subscription-Based Updates</h3>
-                    <div class="box">
-                        <p><strong>Scenario:</strong> Logistics Agent subscribes to shipment updates</p>
+Traffic Agent → achieve → Signal Agent
+"Increase green light time by 30 seconds"
 
-                        <p><strong>Exchange:</strong></p>
-                        <ul>
-                            <li><strong>Logistics Agent:</strong> <em>subscribe</em> "Notify me of all updates for Shipment #SH789"</li>
-                            <li style="margin-top: 10px;"><strong>Warehouse Agent:</strong> <em>tell</em> "Subscription confirmed. Updates will be sent to your queue"</li>
-                            <li style="margin-top: 10px;"><strong>Warehouse Agent:</strong> <em>tell</em> "Shipment #SH789 has been packed"</li>
-                            <li style="margin-top: 10px;"><strong>Warehouse Agent:</strong> <em>tell</em> "Shipment #SH789 has been dispatched"</li>
-                        </ul>
+Signal Agent → tell → Traffic Agent
+"Green light adjusted to 90 seconds"</code>
+                        </pre>
 
-                        <p><strong>Key Points:</strong></p>
-                        <ul>
-                            <li>The <em>subscribe</em> performative enables ongoing communication</li>
-                            <li>The warehouse agent proactively sends updates without being asked repeatedly</li>
-                            <li>This is more efficient than the logistics agent repeatedly asking for status</li>
-                        </ul>
+                        <p><strong>Why this matters:</strong> Different agents work together without one central controller. Each makes decisions based on what they know.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- KQML vs Method Invocation -->
-            <section id="kqml-vs-method">
+            <!-- Java vs KQML -->
+            <section id="java-vs-kqml">
                 <div class="inner">
                     <header class="major">
-                        <h2>KQML vs Method Invocation: Key Differences</h2>
+                        <h2>Why KQML Is Different From Java Method Calls</h2>
                     </header>
 
-                    <h3>Method Invocation (Traditional Programming)</h3>
-                    <div class="box">
-                        <p><strong>Example in Java:</strong></p>
-                        <p style="font-family: monospace; background: #f4f4f4; padding: 10px;">result = payrollAgent.calculateSalary(employeeID);</p>
+                    <p>This is the key difference I explored in my CD2. Let me show what I mean:</p>
 
-                        <p><strong>Characteristics:</strong></p>
+                    <h3>Java: Direct Command</h3>
+                    <div class="box">
+                        <pre style="background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto;">
+<code>result = payrollAgent.calculateSalary(employeeID);</code>
+                        </pre>
+
+                        <p><strong>What happens:</strong></p>
                         <ul>
-                            <li>Direct function call within the same application</li>
-                            <li>The function must execute immediately</li>
-                            <li>No negotiation or refusal possible</li>
-                            <li>Tight coupling between components</li>
-                            <li>Synchronous execution</li>
+                            <li>You call a method directly</li>
+                            <li>It runs immediately, no questions asked</li>
+                            <li>The payroll agent has no choice—it must calculate</li>
+                            <li>Both need to be in the same program</li>
                         </ul>
                     </div>
 
-                    <h3>KQML Communication (Agent-Based)</h3>
+                    <h3>KQML: Agent Conversation</h3>
                     <div class="box">
-                        <p><strong>Example using KQML:</strong></p>
-                        <p style="font-family: monospace; background: #f4f4f4; padding: 10px;">
-                            Employee Agent → (ask) → Payroll Agent<br/>
-                            "What is my salary?"<br/>
-                            ↓<br/>
-                            Payroll Agent → (reply) → Employee Agent<br/>
-                            "Your salary is $50,000"
-                        </p>
+                        <pre style="background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto;">
+<code>Employee Agent → ask → Payroll Agent
+"What is my salary?"
 
-                        <p><strong>Characteristics:</strong></p>
+Payroll Agent → reply → Employee Agent
+"Your salary is $50,000"</code>
+                        </pre>
+
+                        <p><strong>What happens:</strong></p>
                         <ul>
-                            <li>Message-based communication between autonomous agents</li>
-                            <li>The receiving agent can refuse, delay, or negotiate</li>
-                            <li>Loose coupling—agents can be on different systems</li>
-                            <li>Asynchronous execution possible</li>
-                            <li>Agents retain autonomy and decision-making capability</li>
+                            <li>You send a message asking a question</li>
+                            <li>The payroll agent can refuse, delay, or ask clarifying questions</li>
+                            <li>They're independent programs (could be on different servers)</li>
+                            <li>The agent decides how to respond based on its own logic</li>
                         </ul>
                     </div>
 
-                    <h3>Comparison Table</h3>
-                    <div class="table-wrapper">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Aspect</th>
-                                    <th>Method Invocation</th>
-                                    <th>KQML Communication</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Type</strong></td>
-                                    <td>Direct function call</td>
-                                    <td>Message exchange</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Coupling</strong></td>
-                                    <td>Tightly coupled</td>
-                                    <td>Loosely coupled</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Autonomy</strong></td>
-                                    <td>No autonomy (must execute)</td>
-                                    <td>Full autonomy (can refuse)</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Execution</strong></td>
-                                    <td>Synchronous, immediate</td>
-                                    <td>Can be asynchronous</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Platform</strong></td>
-                                    <td>Same application required</td>
-                                    <td>Works across platforms</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Negotiation</strong></td>
-                                    <td>Not possible</td>
-                                    <td>Possible (agent can counter-offer)</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h3>Why This Distinction Matters</h3>
-                    <p>From my CD2 discussion, I understand that this difference is fundamental. When I asked "Why use KQML instead of normal programming?", the answer is: <strong>because autonomous agents need to make their own decisions, not just execute commands.</strong> KQML enables this through message-based communication where agents interpret intentions rather than blindly following function calls.</p>
-                </div>
-            </section>
-
-            <!-- Advantages and Disadvantages -->
-            <section id="advantages-disadvantages">
-                <div class="inner">
-                    <header class="major">
-                        <h2>KQML Advantages and Disadvantages</h2>
-                    </header>
-
-                    <h3>Advantages of KQML</h3>
+                    <h3>The Bottom Line</h3>
                     <div class="box">
-                        <h4>1. Supports Communication Between Different Agents</h4>
-                        <p>KQML allows agents built with different technologies to communicate effectively. Whether an agent is written in Python, Java, or another language, it can exchange KQML messages with other agents.</p>
-
-                        <h4>2. Works Across Heterogeneous Systems</h4>
-                        <p>Unlike method invocation which requires the same platform, KQML enables communication across distributed systems. Agents can be on different servers, networks, or even continents.</p>
-
-                        <h4>3. Enables Distributed Problem-Solving</h4>
-                        <p>Multiple autonomous agents can cooperate through message exchange. Each agent maintains its autonomy while contributing to a larger goal. This is essential for complex problems that no single agent can solve alone.</p>
-
-                        <p><strong>Additional Advantage (from my learning):</strong> KQML enables agent autonomy. Agents can refuse requests, negotiate, or delay responses—they are not just passive function executors.</p>
-                    </div>
-
-                    <h3>Disadvantages of KQML</h3>
-                    <div class="box">
-                        <h4>1. Requires Shared Ontologies</h4>
-                        <p>For KQML messages to be understood correctly, all participating agents must share a common understanding of concepts and terms (ontology). If agents use different ontologies, semantic misalignment occurs—the same word might mean different things to different agents.</p>
-
-                        <p><strong>From my CD2 discussion:</strong> This was identified as "one of the biggest limitations." When agents interpret the same message differently, communication fails silently, making errors difficult to detect.</p>
-
-                        <h4>2. More Communication Overhead</h4>
-                        <p>KQML messaging introduces overhead compared to direct method calls. Encoding messages, transmitting them, and decoding them takes time and resources. In large-scale systems with many agents, this overhead can be significant.</p>
-
-                        <h4>3. Early KQML Lacked Formal Semantics</h4>
-                        <p>KQML's original specification did not clearly define how performatives should be interpreted. Different implementations could interpret the same performative differently, reducing interoperability.</p>
-
-                        <p><strong>From my CD2 discussion:</strong> This was a critical limitation. Kakde et al. (2025) noted that FIPA-ACL addressed this by providing more formally defined semantics and standardised performative definitions.</p>
+                        <p><strong>Java method:</strong> "Do this now" (command)</p>
+                        <p><strong>KQML message:</strong> "Can you do this?" (request with intention)</p>
+                        <p>This is why autonomous agents need KQML. They're not just function executors—they're independent decision-makers.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Preparation Questions -->
-            <section id="preparation-questions">
+            <!-- Advantages and Problems -->
+            <section id="advantages-problems">
                 <div class="inner">
                     <header class="major">
-                        <h2>Key Questions to Address in the Seminar</h2>
+                        <h2>The Good Side and The Hard Side</h2>
                     </header>
 
-                    <p>The tutor may ask these questions during the seminar. Below are prepared answers based on my understanding from CD2 and the preparation material:</p>
+                    <h3>What's Great About KQML</h3>
 
-                    <h3>1. What does KQML stand for?</h3>
                     <div class="box">
-                        <p><strong>Answer:</strong> KQML stands for Knowledge Query and Manipulation Language. It is an Agent Communication Language designed to enable intelligent agents to exchange information and requests using structured messages with clear intentions (performatives).</p>
+                        <h4>✓ Works Across Different Systems</h4>
+                        <p>An agent written in Python can talk to one in Java. They just use KQML as a common language. From my CD2, I noted this is one of the biggest advantages.</p>
                     </div>
 
-                    <h3>2. What is a performative?</h3>
                     <div class="box">
-                        <p><strong>Answer:</strong> A performative is the intention or action of a KQML message. It tells the receiving agent what the sender wants them to do. Common performatives include ask (request information), tell (provide information), reply (respond to a request), achieve (perform a task), and subscribe (request future updates).</p>
-                        <p><strong>Key insight:</strong> Performatives are grounded in speech act theory—they carry meaning beyond just the words. An "ask" is not just requesting data; it's asking the other agent to consider a question.</p>
+                        <h4>✓ Agents Keep Their Independence</h4>
+                        <p>Each agent makes its own decisions. They're not controlled by a central system. This is what I called "agent autonomy" in my discussion.</p>
                     </div>
 
-                    <h3>3. What is the difference between ask and tell?</h3>
                     <div class="box">
-                        <p><strong>Answer:</strong> Ask is a request performative where one agent asks another for information or action. Tell is an informative performative where one agent provides information to another.</p>
-                        <ul>
-                            <li><strong>ask:</strong> "Do you have this information?" (request)</li>
-                            <li><strong>tell:</strong> "Here is the information" (provision)</li>
-                        </ul>
+                        <h4>✓ Solves Complex Problems</h4>
+                        <p>Multiple agents working together can solve problems that no single agent could handle alone. Traffic management is a good example.</p>
                     </div>
 
-                    <h3>4. Why are ontologies important?</h3>
+                    <h3>What's Difficult About KQML</h3>
+
                     <div class="box">
-                        <p><strong>Answer:</strong> Ontologies are important because they define the shared meaning of concepts and terms. If two agents have different ontologies, they may interpret the same word or message differently, leading to communication failures. From my CD2 discussion, I learned that maintaining shared ontologies across distributed systems is challenging but essential for semantic consistency.</p>
+                        <h4>✗ The Ontology Problem (Big One!)</h4>
+                        <p>This is what my peers emphasized in the discussion. If two agents use different meanings for the same word, they'll misunderstand each other. For example, one agent might use "available" to mean "in stock" while another means "already paid for." Silent failures happen—no one notices the mistake until something breaks.</p>
                     </div>
 
-                    <h3>5. How is KQML different from method invocation?</h3>
                     <div class="box">
-                        <p><strong>Answer:</strong> KQML is message-based communication between autonomous agents, while method invocation is a direct function call within the same application. Key differences:</p>
-                        <ul>
-                            <li>KQML allows agents to refuse or negotiate; method calls must execute immediately</li>
-                            <li>KQML works across heterogeneous systems; method calls require the same platform</li>
-                            <li>KQML enables agent autonomy; method calls are tightly coupled</li>
-                        </ul>
+                        <h4>✗ More Overhead Than Direct Calls</h4>
+                        <p>Sending messages takes more time and resources than a direct function call. You have to encode, send, receive, and decode. With many agents, this adds up.</p>
                     </div>
 
-                    <h3>6. What are the strengths and weaknesses of KQML?</h3>
                     <div class="box">
-                        <p><strong>Answer:</strong></p>
-                        <p><strong>Strengths:</strong></p>
-                        <ul>
-                            <li>Supports communication between heterogeneous systems</li>
-                            <li>Enables distributed problem-solving with autonomous agents</li>
-                            <li>Agents can maintain autonomy and make decisions</li>
-                        </ul>
-                        <p><strong>Weaknesses:</strong></p>
-                        <ul>
-                            <li>Requires shared ontologies (challenging to maintain at scale)</li>
-                            <li>Communication overhead compared to method calls</li>
-                            <li>Original KQML lacked formal semantics (FIPA-ACL addressed this)</li>
-                        </ul>
-                    </div>
-
-                    <h3>7. Can you describe a simple KQML conversation?</h3>
-                    <div class="box">
-                        <p><strong>Answer:</strong> A simple KQML conversation between a Customer Agent and a Store Agent:</p>
-                        <ul>
-                            <li>Customer: ask "Do you have Product A?"</li>
-                            <li>Store: tell "Yes, it is in stock"</li>
-                            <li>Customer: achieve "Reserve one unit"</li>
-                            <li>Store: reply "Reservation confirmed"</li>
-                        </ul>
-                        <p>This dialogue shows each agent understanding the performative and responding appropriately. The store agent could have refused the reservation if the product was unavailable—this is agent autonomy.</p>
+                        <h4>✗ Original KQML Was Unclear (Formal Semantics)</h4>
+                        <p>From my discussion, I learned that early KQML didn't clearly define what each performative meant. This is why FIPA-ACL was created—it fixed this by being more formal and precise.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Real-World Application -->
-            <section id="real-world-application">
+            <!-- Expected Learning -->
+            <section id="expected-learning">
                 <div class="inner">
                     <header class="major">
-                        <h2>Real-World Application: Smart City Coordination</h2>
+                        <h2>What I Hope to Learn From the Seminar</h2>
                     </header>
 
-                    <p>A practical example demonstrating how KQML enables distributed problem-solving in a modern system:</p>
+                    <p>After attending the seminar, I want to be able to:</p>
 
-                    <h3>Scenario: Smart City Traffic Management</h3>
                     <div class="box">
-                        <p><strong>Agents involved:</strong> Traffic Agent, Weather Agent, Signal Agent, Public Transport Agent</p>
-
-                        <p><strong>KQML Dialogue Flow:</strong></p>
-
-                        <h4>Step 1: Information Gathering</h4>
-                        <ul>
-                            <li><strong>Traffic Agent:</strong> ask "What are current weather conditions on Main Street?"</li>
-                            <li><strong>Weather Agent:</strong> reply "Heavy rain detected, visibility 100m, wind speed 40 km/h"</li>
-                        </ul>
-
-                        <h4>Step 2: Analysis and Planning</h4>
-                        <ul>
-                            <li><strong>Traffic Agent:</strong> (internally analyzes) "Heavy rain + low visibility = increased accident risk + slower traffic flow"</li>
-                        </ul>
-
-                        <h4>Step 3: Coordinated Action</h4>
-                        <ul>
-                            <li><strong>Traffic Agent:</strong> achieve "Increase green-light duration on Main Street by 30 seconds"</li>
-                            <li><strong>Signal Agent:</strong> reply "Green-light duration adjusted. New timing: 90 seconds"</li>
-                        </ul>
-
-                        <h4>Step 4: Public Transport Notification</h4>
-                        <ul>
-                            <li><strong>Traffic Agent:</strong> tell "Weather alert: Heavy rain on Main Street. Increased travel time expected"</li>
-                            <li><strong>Public Transport Agent:</strong> achieve "Dispatch additional buses to Main Street routes"</li>
-                            <li><strong>Public Transport Agent:</strong> tell "3 additional buses dispatched to Main Street"</li>
-                        </ul>
-
-                        <h4>Step 5: Continuous Monitoring</h4>
-                        <ul>
-                            <li><strong>Traffic Agent:</strong> subscribe "Notify me of all weather changes on Main Street"</li>
-                            <li><strong>Weather Agent:</strong> tell "Subscription confirmed. Updates will be sent every 5 minutes"</li>
-                        </ul>
-
-                        <p><strong>Key insights from this example:</strong></p>
-                        <ul>
-                            <li>Multiple agents coordinate autonomously without a central controller</li>
-                            <li>Each agent understands its role and responds appropriately to messages</li>
-                            <li>Messages carry intention (performatives) that agents interpret and act upon</li>
-                            <li>The system can adapt dynamically as conditions change</li>
-                            <li>Agents maintain autonomy while working toward a common goal (safe, efficient traffic)</li>
-                        </ul>
+                        <h4>See Real KQML in Action</h4>
+                        <p>The seminar will show actual worked examples. I want to watch conversations happen step-by-step and understand why each agent responded the way it did.</p>
                     </div>
 
-                    <h3>Why This Example Matters</h3>
-                    <p>From my CD2 discussion, I recognise this example demonstrates why KQML and agent-based systems are valuable for modern problems. Traffic management is too complex for a single centralized system to handle effectively. By using KQML, multiple autonomous agents can coordinate intelligently, making local decisions based on current information. This is the kind of distributed problem-solving that KQML enables.</p>
+                    <div class="box">
+                        <h4>Spot Ontology Problems</h4>
+                        <p>I want to get better at recognizing when semantic misalignment could happen. My peers made this clear in CD2—it's a critical issue.</p>
+                    </div>
+
+                    <div class="box">
+                        <h4>Understand the Trade-offs</h4>
+                        <p>I want to really feel the difference between "I could use KQML" and "I should use KQML." When does it make sense? When doesn't it?</p>
+                    </div>
+
+                    <div class="box">
+                        <h4>See How FIPA-ACL Improves Things</h4>
+                        <p>I've read that FIPA-ACL fixes KQML's problems. I want to see concrete examples of how formal semantics actually help.</p>
+                    </div>
+
+                    <div class="box">
+                        <h4>Think About Real Systems</h4>
+                        <p>Beyond the textbook examples, I want to think about what it would take to actually build a multi-agent system that works reliably.</p>
+                    </div>
                 </div>
             </section>
 
-            <!-- Connection to CD2 -->
-            <section id="cd2-connection">
+            <!-- Questions for Seminar -->
+            <section id="seminar-questions">
                 <div class="inner">
                     <header class="major">
-                        <h2>Connection to Collaborative Discussion 2</h2>
+                        <h2>Questions I Want to Ask</h2>
                     </header>
 
-                    <h3>How This Seminar Builds on My CD2 Learning</h3>
+                    <p>If the seminar allows questions, these are things I'm curious about:</p>
 
-                    <p>This seminar preparation reinforces several key insights from my CD2 discussion:</p>
+                    <div class="box">
+                        <h4>1. How Do You Fix the Ontology Problem?</h4>
+                        <p>I know it's a problem (from my peers' feedback). But in a real system, what do you actually do? How do you ensure all agents understand the same thing?</p>
+                    </div>
 
-                    <h4>1. Speech Act Theory Grounding</h4>
-                    <p>In my CD2, I noted that agents can "decide how to interpret and respond to a message instead of simply executing a command." This seminar's focus on performatives (ask, tell, achieve) demonstrates exactly this principle. Each performative carries intentionality, grounded in speech act theory.</p>
+                    <div class="box">
+                        <h4>2. What Happens When Communication Fails Silently?</h4>
+                        <p>My CD2 discussion mentioned this—agents don't notice they misunderstood each other. How do you detect and fix this?</p>
+                    </div>
 
-                    <h4>2. Semantic Consistency Challenge</h4>
-                    <p>My peer feedback highlighted that KQML's lack of formal semantics was a limitation. Through this seminar, I expect to see real examples of how subtle semantic differences can lead to communication failures—and why FIPA-ACL's more formal approach is necessary.</p>
+                    <div class="box">
+                        <h4>3. Can KQML Handle Thousands of Agents?</h4>
+                        <p>The examples use 2-3 agents. Does the system still work with hundreds or thousands of agents communicating?</p>
+                    </div>
 
-                    <h4>3. Ontology Alignment</h4>
-                    <p>From my discussion, I identified ontology management as "one of the biggest limitations." This seminar's worked examples will likely illustrate what happens when agents with different ontologies try to communicate, and how to design shared ontologies effectively.</p>
+                    <div class="box">
+                        <h4>4. How Much Better Is FIPA-ACL Really?</h4>
+                        <p>I know it has formal semantics. But does this actually solve the problems, or just reduce them?</p>
+                    </div>
 
-                    <h4>4. Autonomy vs Control</h4>
-                    <p>In my CD2, I discussed how KQML gives agents more autonomy than method invocation. This seminar will show how that autonomy is expressed through agents choosing to accept, refuse, or negotiate requests based on their local state and goals.</p>
-
-                    <h4>5. From Theory to Practice</h4>
-                    <p>My CD2 discussion was largely theoretical. This seminar brings theory to practice through worked examples, showing how real KQML dialogues would unfold in systems like smart cities, e-commerce, and supply chain management.</p>
+                    <div class="box">
+                        <h4>5. How Does This Compare to Modern Approaches?</h4>
+                        <p>Today we have REST APIs, microservices, etc. Is KQML still relevant, or is it mostly historical?</p>
+                    </div>
                 </div>
             </section>
 
