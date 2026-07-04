@@ -25,7 +25,6 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="intelligent-agents.html">Intelligent Agents</a></li>
                 <li><a href="collaborative-discussion-2.html">CD2: Agent Communication</a></li>
-                <li><a href="unit-6-seminar-preparation-short.html">Unit 6 Seminar Prep</a></li>
             </ul>
         </nav>
 
@@ -39,36 +38,22 @@
                         <h1>Creating Agent Dialogues</h1>
                         <p>Alice and Bob: KQML and KIF Communication</p>
                     </header>
-                    <p><strong>Activity:</strong> Formative | <strong>Type:</strong> Agent Dialogue Creation | <strong>Status:</strong> ✓ Complete</p>
+                    <p><strong>Activity:</strong> Agent Dialogue Creation | <strong>Status:</strong> ✓ Complete</p>
                 </div>
             </section>
 
-            <!-- Activity Overview -->
+            <!-- Task Overview -->
             <section id="overview">
                 <div class="inner">
                     <header class="major">
-                        <h2>Activity Overview</h2>
+                        <h2>The Task</h2>
                     </header>
 
-                    <div class="box">
-                        <h4>Task</h4>
-                        <p>Create a KQML dialogue between two agents:</p>
-                        <ul>
-                            <li><strong>Alice:</strong> Stock procurement agent (buyer)</li>
-                            <li><strong>Bob:</strong> Warehouse stock control agent (supplier)</li>
-                        </ul>
-
-                        <h4>Dialogue Requirements</h4>
-                        <ul>
-                            <li>Alice asks Bob about available stock of 50 inch televisions</li>
-                            <li>Alice queries the number of HDMI slots on the televisions</li>
-                            <li>Use KQML performatives for communication</li>
-                            <li>Use KIF (Knowledge Interchange Format) for knowledge representation</li>
-                        </ul>
-
-                        <h4>Learning Connection</h4>
-                        <p>This activity brings together concepts from my Collaborative Discussion 2 where I explored how agents communicate using structured messages with clear intentions. Now I'm creating an actual dialogue to demonstrate this understanding.</p>
-                    </div>
+                    <p>Create a KQML dialogue between Alice (stock procurement agent) and Bob (warehouse stock control agent).</p>
+                    <ul>
+                        <li>Alice asks Bob about available stock of 50 inch televisions</li>
+                        <li>Alice queries the number of HDMI slots on the televisions</li>
+                    </ul>
                 </div>
             </section>
 
@@ -79,19 +64,9 @@
                         <h2>Alice and Bob Dialogue</h2>
                     </header>
 
-                    <h3>The Scenario</h3>
-                    <p>Alice is a procurement agent who needs to check if the warehouse has 50 inch TVs in stock. She has two questions:</p>
-                    <ul>
-                        <li>Are there 50 inch TVs available?</li>
-                        <li>How many HDMI slots do they have?</li>
-                    </ul>
-                    <p>So Alice reaches out to Bob, who manages the warehouse inventory, to get these answers.</p>
-
-                    <h3>How Alice and Bob Communicate</h3>
-
                     <div class="box">
-                        <h4>Step 1: Alice Asks Bob About Stock</h4>
-                        <p>Alice sends Bob a message asking: "How many 50 inch televisions do you have in stock?"</p>
+                        <h4>Step 1: Alice Asks About Stock</h4>
+                        <p>Alice: "How many 50 inch televisions do you have in stock?"</p>
 
                         <pre style="background: #e8f4f8; padding: 15px; border-radius: 5px; border-left: 4px solid #0066cc; color: #000000; font-size: 16px; line-height: 1.6;">
 <code>(ask
@@ -101,13 +76,11 @@
   :reply-with stock-query-1
 )</code>
                         </pre>
-
-                        <p><strong>What's happening:</strong> Alice uses the KQML performative "ask" to request information. The KIF content says "I want to know the quantity (?qty) of 50 inch televisions in stock." The :reply-with tag helps track this conversation.</p>
                     </div>
 
                     <div class="box">
-                        <h4>Step 2: Bob Answers with the Stock Level</h4>
-                        <p>Bob checks his inventory system and responds: "I have 24 of those 50 inch TVs available."</p>
+                        <h4>Step 2: Bob Replies with Stock Level</h4>
+                        <p>Bob: "I have 24 of those 50 inch TVs in stock."</p>
 
                         <pre style="background: #e8f8e8; padding: 15px; border-radius: 5px; border-left: 4px solid #00cc33; color: #000000; font-size: 16px; line-height: 1.6;">
 <code>(reply
@@ -117,13 +90,11 @@
   :content (quantity-in-stock 24 Television-50inch)
 )</code>
                         </pre>
-
-                        <p><strong>What's happening:</strong> Bob uses "reply" to answer Alice's question. Instead of the variable ?qty, Bob provides the actual number: 24. The :in-reply-to tag connects this message to Alice's original ask.</p>
                     </div>
 
                     <div class="box">
-                        <h4>Step 3: Alice Asks About the HDMI Specifications</h4>
-                        <p>Now Alice needs to know technical details: "By the way, how many HDMI slots do those TVs have?"</p>
+                        <h4>Step 3: Alice Asks About HDMI Specifications</h4>
+                        <p>Alice: "How many HDMI slots do those TVs have?"</p>
 
                         <pre style="background: #e8f4f8; padding: 15px; border-radius: 5px; border-left: 4px solid #0066cc; color: #000000; font-size: 16px; line-height: 1.6;">
 <code>(ask
@@ -133,13 +104,11 @@
   :reply-with hdmi-query-1
 )</code>
                         </pre>
-
-                        <p><strong>What's happening:</strong> Alice asks another question using "ask" again. This time the variable ?slots represents the number of HDMI ports. It's a new query, so it has a different :reply-with tag (hdmi-query-1).</p>
                     </div>
 
                     <div class="box">
-                        <h4>Step 4: Bob Provides the HDMI Information</h4>
-                        <p>Bob responds: "The 50 inch TVs have 3 HDMI slots each."</p>
+                        <h4>Step 4: Bob Provides HDMI Information</h4>
+                        <p>Bob: "The 50 inch TVs have 3 HDMI slots each."</p>
 
                         <pre style="background: #e8f8e8; padding: 15px; border-radius: 5px; border-left: 4px solid #00cc33; color: #000000; font-size: 16px; line-height: 1.6;">
 <code>(reply
@@ -149,152 +118,93 @@
   :content (hdmi-slots 3 Television-50inch)
 )</code>
                         </pre>
-
-                        <p><strong>What's happening:</strong> Bob replies with the concrete answer. He replaces the variable ?slots with the actual number 3, giving Alice the information she needs.</p>
                     </div>
-
                 </div>
             </section>
 
-            <!-- Analysis -->
-            <section id="analysis">
+            <!-- How It Works -->
+            <section id="explanation">
                 <div class="inner">
                     <header class="major">
-                        <h2>Why This Works: Breaking It Down</h2>
+                        <h2>How This Works</h2>
                     </header>
 
                     <div class="box">
-                        <h4>Why Use KQML Here?</h4>
-                        <p>In my CD2 discussion, I learned that performatives are about intention. Notice what happens in this dialogue:</p>
+                        <h4>KQML (How They Communicate)</h4>
+                        <p>KQML provides the structure:</p>
                         <ul>
-                            <li><strong>Alice uses "ask":</strong> She's not commanding Bob. She's asking politely, and Bob could refuse if he wanted to.</li>
-                            <li><strong>Bob uses "reply":</strong> Bob chooses to answer. He's not forced—he decides to cooperate.</li>
-                        </ul>
-                        <p>This is very different from a Java method call where you just order something to happen. Here, Alice and Bob are agents with autonomy.</p>
-                    </div>
-
-                    <div class="box">
-                        <h4>Why Use KIF for the Content?</h4>
-                        <p>KIF is a formal way to write what the agents know. Why does this matter?</p>
-                        <ul>
-                            <li><strong>Variables like ?qty:</strong> These represent unknowns. Alice says "I want to know ?qty" and Bob responds with the actual value "24".</li>
-                            <li><strong>Clear meaning:</strong> Instead of ambiguous text, KIF says exactly what we're talking about: "Television-50inch" not just "TV" or "50 inch" (which could mean different things).</li>
-                            <li><strong>No confusion:</strong> Both agents understand that "Television-50inch" means the same thing. This solves the ontology problem I discussed in my CD2.</li>
+                            <li><strong>ask:</strong> Alice requests information politely (Bob can choose to answer)</li>
+                            <li><strong>reply:</strong> Bob responds with the answer</li>
+                            <li><strong>:reply-with and :in-reply-to:</strong> Tags track which answers match which questions</li>
                         </ul>
                     </div>
 
                     <div class="box">
-                        <h4>Agent Autonomy in Practice</h4>
-                        <p>Here's what makes this realistic: Bob didn't have to answer!</p>
+                        <h4>KIF (What They Communicate)</h4>
+                        <p>KIF provides the meaning:</p>
                         <ul>
-                            <li>Bob could have said: "I don't have time to answer questions right now."</li>
-                            <li>Bob could have asked: "Why do you need this information?"</li>
-                            <li>Bob could have negotiated: "I'll tell you the stock if you agree to minimum order quantities."</li>
+                            <li><strong>?qty and ?slots:</strong> Variables representing unknowns Alice wants to discover</li>
+                            <li><strong>Television-50inch:</strong> Precise name so both agents understand exactly what product is being discussed</li>
+                            <li>Removes ambiguity - both agents understand the same thing</li>
                         </ul>
-                        <p>But Bob chose to cooperate. That's agent autonomy—the ability to make decisions, not just execute commands.</p>
                     </div>
 
                     <div class="box">
-                        <h4>Real-World Example</h4>
-                        <p>Imagine this is actually happening:</p>
+                        <h4>Why This Matters</h4>
+                        <p>This dialogue shows:</p>
                         <ul>
-                            <li>Alice could be a procurement software system for a retail store</li>
-                            <li>Bob could be an inventory management system in a warehouse</li>
-                            <li>They communicate through KQML to keep stock levels optimal</li>
-                            <li>If stock drops below a threshold, Alice automatically asks Bob for more information</li>
-                            <li>Bob checks his database and replies with accurate information</li>
-                            <li>Alice uses this info to decide whether to place an order</li>
+                            <li><strong>Agent Autonomy:</strong> Bob could have refused or asked questions, but he chose to cooperate</li>
+                            <li><strong>Clear Communication:</strong> KQML + KIF ensures no misunderstandings</li>
+                            <li><strong>Modularity:</strong> Alice and Bob are independent systems that work together</li>
                         </ul>
-                        <p>All of this happens without human intervention. That's the power of agent-based systems.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Key Learning Points -->
+            <!-- Learning Outcomes -->
             <section id="learning">
                 <div class="inner">
                     <header class="major">
-                        <h2>What This Shows About Agent Computing</h2>
+                        <h2>Learning Outcomes</h2>
                     </header>
 
                     <div class="box">
-                        <h4>Why Use Agents? (The Motivation)</h4>
-                        <p>This dialogue with Alice and Bob shows why agent-based systems are actually useful:</p>
+                        <h4>1. Motivations for Agent-Based Computing</h4>
+                        <p>This dialogue shows why agents are useful:</p>
                         <ul>
-                            <li><strong>Modularity:</strong> Alice and Bob can be built, updated, and maintained separately. You don't need one giant program.</li>
-                            <li><strong>Autonomy:</strong> Each agent makes its own decisions. Alice decides when to ask questions. Bob decides what to answer.</li>
-                            <li><strong>Scalability:</strong> This pattern works for 2 agents (Alice and Bob) or 2,000 agents in a huge corporation. You just add more agents.</li>
-                            <li><strong>Real Intelligence:</strong> Unlike a simple function call, agents can negotiate, refuse, prioritize, and adapt. They're not just robots.</li>
+                            <li>Independent agents can be built and updated separately</li>
+                            <li>Agents maintain autonomy - they decide how to respond</li>
+                            <li>Multiple agents working together solves complex problems</li>
+                            <li>Scales from 2 agents to thousands</li>
                         </ul>
                     </div>
 
                     <div class="box">
-                        <h4>What Kind of Agents Are Alice and Bob?</h4>
-                        <p>From studying agent models, I can see both types in action:</p>
+                        <h4>2. Agent Models and AI Grounding</h4>
+                        <p>Both types of agents shown here:</p>
                         <ul>
-                            <li><strong>Bob is Reactive:</strong> Someone asks, Bob checks his database and replies. Simple stimulus-response. It's fast and doesn't require complex reasoning.</li>
-                            <li><strong>Alice is Deliberative:</strong> Alice has a goal (find out TV stock) and thinks about how to achieve it. She decided to ask Bob. She could ask other agents. She's reasoning about her actions.</li>
-                            <li><strong>They Communicate with Standards:</strong> KQML is grounded in AI research on how humans communicate (speech act theory). Using formal standards (KQML + KIF) means systems from different companies can work together.</li>
+                            <li><strong>Bob (Reactive):</strong> Asked a question, responds with answer - simple stimulus-response</li>
+                            <li><strong>Alice (Deliberative):</strong> Has a goal (get TV info) and decides how to achieve it</li>
+                            <li><strong>Standards (KQML + KIF):</strong> Grounded in AI research on communication and knowledge representation</li>
                         </ul>
-                    </div>
-
-                    <div class="box">
-                        <h4>How My Discussion Connected to This Activity</h4>
-                        <p>Creating this dialogue brought together everything from my CD2:</p>
-                        <ul>
-                            <li><strong>I understood "ask" and "tell":</strong> Now I've used them in a real dialogue. I see how Alice uses "ask" because she respects Bob's autonomy.</li>
-                            <li><strong>I knew about the ontology problem:</strong> Now I've seen how KIF solves it. By saying "Television-50inch" explicitly, there's no confusion about what we mean.</li>
-                            <li><strong>I read about KQML performatives:</strong> Now I've written them. I understand why the :sender, :receiver, and :reply-with tags matter.</li>
-                            <li><strong>I studied agent autonomy:</strong> Creating this dialogue forced me to think about: What if Bob said no? What would that look like? (It would still be valid!)</li>
-                        </ul>
-                    </div>
-
-                    <div class="box">
-                        <h4>The Big Picture</h4>
-                        <p>This activity makes clear why agent-based computing matters in the real world:</p>
-                        <p>Modern systems are too complex for one program to handle. You need independent agents (Alice, Bob, and others) that can communicate reliably, maintain autonomy, and work together. KQML gives them a language. KIF makes sure they understand each other. Together, they solve real problems—like managing warehouse inventory without human intervention.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Enhanced Understanding -->
-            <section id="enhanced">
+            <!-- Connection to Learning -->
+            <section id="connection">
                 <div class="inner">
                     <header class="major">
-                        <h2>What Creating This Dialogue Taught Me</h2>
+                        <h2>What I Learned From This</h2>
                     </header>
 
-                    <div class="box">
-                        <h4>From Reading About KQML to Actually Using It</h4>
-                        <p>In seminar prep, I studied examples. But actually creating one is different. I had to think about:</p>
-                        <ul>
-                            <li>How do I structure a message so Bob understands exactly what Alice wants?</li>
-                            <li>Why does :reply-with matter? (Because with multiple questions, you need to track which reply goes with which ask.)</li>
-                            <li>How do I use KIF variables to represent unknowns? (Alice asks about ?qty, Bob fills in 24.)</li>
-                        </ul>
-                        <p>Just reading examples doesn't make this clear. Creating one forced me to understand the mechanics.</p>
-                    </div>
-
-                    <div class="box">
-                        <h4>Real-World Thinking</h4>
-                        <p>While writing this, I started thinking about edge cases:</p>
-                        <ul>
-                            <li>What if Bob didn't have that model of TV in stock? (His reply would be different.)</li>
-                            <li>What if "50 inch" is ambiguous? (That's why KIF defines it precisely—Television-50inch is unambiguous.)</li>
-                            <li>What if Bob wanted to negotiate? ("I'll tell you the stock if you commit to buying at least 10 units.")</li>
-                        </ul>
-                        <p>This made me realize that real agent systems need to handle these complexities, not just the happy path.</p>
-                    </div>
-
-                    <div class="box">
-                        <h4>Why KQML and KIF Matter Together</h4>
-                        <p>I finally understand why you need both:</p>
-                        <ul>
-                            <li><strong>KQML (the structure):</strong> Tells you how agents talk—with clear sender, receiver, and intention.</li>
-                            <li><strong>KIF (the content):</strong> Tells you what they're talking about with precision and no ambiguity.</li>
-                        </ul>
-                        <p>KQML without KIF would be like having a conversation where you know the grammar but can't understand the words. KIF without KQML would be like having detailed information with no way to request it.</p>
-                    </div>
+                    <p>From my CD2 discussion, I knew about KQML performatives. Creating this dialogue made it real:</p>
+                    <ul>
+                        <li>I understood that agents can refuse - now I see how ask/reply actually works</li>
+                        <li>I knew about the ontology problem - KIF fixes it by being precise about what we're talking about</li>
+                        <li>I studied agent autonomy - Bob choosing to answer shows this in action</li>
+                        <li>I read about distributed systems - Alice and Bob solving a problem together demonstrates this</li>
+                    </ul>
                 </div>
             </section>
 
@@ -302,8 +212,7 @@
             <section id="navigation">
                 <div class="inner">
                     <ul class="actions">
-                        <li><a href="unit-6-seminar-preparation-short.html" class="button">← Seminar Preparation</a></li>
-                        <li><a href="collaborative-discussion-2.html" class="button">CD2: Agent Communication →</a></li>
+                        <li><a href="collaborative-discussion-2.html" class="button">← CD2: Agent Communication</a></li>
                         <li><a href="intelligent-agents.html" class="button primary">Intelligent Agents Module →</a></li>
                     </ul>
                 </div>
