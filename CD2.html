@@ -129,10 +129,46 @@
                     </div>
 
                     <!-- Peer Response 1 -->
-                    <h3>Unit 6 – Peer Response 1: Mosweu</h3>
+                    <h3>Unit 6 – Peer Response 1: Vinod Jadhav</h3>
                     <div class="box">
                         <h4>Peer's Key Argument</h4>
-                        <p>Mosweu explained the connection between speech act theory and ACLs clearly, highlighting how agents can decide whether to accept or refuse a request. He discussed KQML's limitations regarding formal semantics and the challenges of maintaining shared ontologies across distributed systems. He also drew parallels with contemporary LLM-based multi-agent systems.</p>
+                        <p>Vinod explained the connection between speech act theory and ACLs, emphasizing how agents can decide whether to accept or refuse a request through performatives such as ask and tell. He discussed how shared ontologies are crucial for agent communication and highlighted the challenges of maintaining semantic consistency across distributed systems.</p>
+
+                        <h4>My Response</h4>
+                        <p>Hi Vinod,</p>
+
+                        <p>I enjoyed reading your post. I liked how you focused on the intention behind a message rather than just the information being exchanged. Your explanation of performatives such as ask and tell clearly shows what makes KQML different from a simple function call. I also found your point about the similarities between KQML and today's AI agent frameworks interesting, as many of these communication concepts are still relevant in modern multi-agent systems.</p>
+
+                        <p>I agree that the challenge of using shared ontologies is one of the biggest limitations. When agents interpret the same message differently, communication can fail without anyone immediately noticing, making these issues difficult to detect and resolve. Since the discussion also asks us to consider ways to reduce these risks, I think it is worth mentioning a few possible solutions.</p>
+
+                        <p>For example, using a well-defined shared ontology from the beginning can help ensure that all agents interpret messages consistently. If agents are developed independently, ontology alignment or mapping techniques can improve compatibility between them. In addition, adopting a more formal communication standard, such as FIPA-ACL, provides clearer definitions for message performatives and helps improve interoperability between agents (Wooldridge, 2009). FIPA-ACL has been applied effectively in robotics coordination tasks, where heterogeneous robots must interpret commands consistently across different manufacturers and platforms—demonstrating how formal standards can reduce semantic misunderstandings in real-world distributed systems. Such standardization is particularly valuable when organizations must collaborate across institutional boundaries without extensive prior coordination.</p>
+
+                        <p>Overall, I thought your discussion was clear and well balanced. I am curious to hear your thoughts on whether these approaches would still work effectively as the number of agents and application domains continues to grow.</p>
+
+                        <h4>Peer Response 1 Screenshot</h4>
+                        <span class="image fit">
+                            <img src="https://raw.githubusercontent.com/KannaAlmansoori/KannaAlmansoori.github.io/main/images/PR2-ACL-1.png" alt="Screenshot of peer response to Vinod Jadhav" />
+                        </span>
+                        <p><em>Figure 2: Peer response 1 addressing speech act theory, shared ontologies, and FIPA-ACL standardisation</em></p>
+
+                        <h4>Key Themes Addressed</h4>
+                        <ul>
+                            <li>Acknowledged peer's focus on message intention and performative design in ACLs</li>
+                            <li>Recognized connection between KQML concepts and contemporary multi-agent systems</li>
+                            <li>Identified shared ontologies as critical for semantic consistency</li>
+                            <li>Proposed preventive measures: ontology alignment, formal standards (FIPA-ACL), and standardized semantics</li>
+                            <li>Discussed practical application in robotics and cross-institutional collaboration</li>
+                        </ul>
+
+                        <h4>Reference</h4>
+                        <p>Wooldridge, M. (2009) <em>An Introduction to MultiAgent Systems</em>. 2nd edn. Chichester: John Wiley & Sons.</p>
+                    </div>
+
+                    <!-- Peer Response 2 -->
+                    <h3>Unit 6 – Peer Response 2: Mosweu</h3>
+                    <div class="box">
+                        <h4>Peer's Key Argument</h4>
+                        <p>Mosweu explained the connection between speech act theory and ACLs clearly, emphasizing how agents can decide whether to accept or refuse a request. He discussed KQML's lack of formal semantics and the challenges of maintaining shared ontologies. He also compared these challenges with contemporary LLM-based multi-agent systems.</p>
 
                         <h4>My Response</h4>
                         <p>Hi Mosweu,</p>
@@ -145,13 +181,13 @@
 
                         <p>I also liked your comparison with today's LLM-based multi-agent systems. As Guo et al. (2024) note, many of the same coordination challenges still exist. This made me wonder whether modern web-based protocols truly solve these problems or simply approach them in a different way.</p>
 
-                        <p>Overall, your post helped me better understand why both technical design and standardization are essential for effective agent communication.</p>
+                        <p>Overall, your post helped me better understand why both technical design and standardisation are essential for effective agent communication.</p>
 
-                        <h4>Peer Response 1 Screenshot</h4>
+                        <h4>Peer Response 2 Screenshot</h4>
                         <span class="image fit">
-                            <img src="https://raw.githubusercontent.com/KannaAlmansoori/KannaAlmansoori.github.io/main/images/PR2-ACL-1.png" alt="Screenshot of peer response to Mosweu" />
+                            <img src="https://raw.githubusercontent.com/KannaAlmansoori/KannaAlmansoori.github.io/main/images/PR2-ACL-3.png" alt="Screenshot of peer response to Mosweu" />
                         </span>
-                        <p><em>Figure 2: Peer response 1 addressing speech act theory, formal semantics, and ontology management</em></p>
+                        <p><em>Figure 3: Peer response 2 addressing speech act theory, formal semantics, and ontology management</em></p>
 
                         <h4>Key Themes Addressed</h4>
                         <ul>
@@ -168,74 +204,42 @@
                         <p>Kakde, A.P., Bhoyar, K.M., Shad, M.A. and Bachwani, S.A. (2025) 'Advancing agentic AI through communication protocols', <em>International Journal of Scientific Research in Science and Technology</em>, 12(5), pp. 299–308.</p>
                     </div>
 
-                    <!-- Peer Response 2 -->
-                    <h3>Unit 6 – Peer Response 2: Vinod Jadhav</h3>
-                    <div class="box">
-                        <h4>Peer's Key Argument</h4>
-                        <p>Vinod explored the technical complexity of implementing ACLs and highlighted the challenges of semantic alignment and interoperability between agents. He discussed how different agents may interpret the same performatives differently, leading to communication failures and the importance of formal semantics frameworks.</p>
-
-                        <h4>My Response</h4>
-                        <p>Hi Vinod,</p>
-
-                        <p>Thank you for your thoughtful discussion on agent communication languages. Your explanation of the semantic challenges in ACLs was particularly insightful, especially regarding how different agent implementations may interpret the same performatives differently.</p>
-
-                        <p>I agree with your point that standardisation is critical for effective ACL implementation. One measure that could have been put in place to prevent semantic misalignment is the development of more rigorous formal semantics frameworks from the beginning. KQML's lack of clear formal semantics was indeed a limitation. Kakde et al. (2025) emphasise that FIPA-ACL addressed this weakness by providing more explicitly defined semantics and standardised performative definitions, which improved consistency across different implementations.</p>
-
-                        <p>Another preventive measure could involve establishing shared ontology repositories and validation mechanisms. Organisations could have implemented centralised ontology management systems that allow developers to register, version, and validate ontologies before deploying agents. This would reduce the risk of agents operating with incompatible semantic models.</p>
-
-                        <p>Your discussion also made me reflect on how modern approaches like protocol buffers and REST APIs attempt to address similar challenges. However, they may introduce different constraints around autonomy and agent reasoning. I think your emphasis on standardisation highlights why frameworks like FIPA-ACL remain relevant despite being older technologies.</p>
-
-                        <p>Overall, your post provided a strong analysis of the technical barriers to ACL adoption.</p>
-
-                        <h4>Peer Response 2 Screenshot</h4>
-                        <span class="image fit">
-                            <img src="https://raw.githubusercontent.com/KannaAlmansoori/KannaAlmansoori.github.io/main/images/PR2-ACL-2.png" alt="Screenshot of peer response to Vinod Jadhav" />
-                        </span>
-                        <p><em>Figure 3: Peer response 2 addressing semantic alignment, formal semantics, and ontology management</em></p>
-
-                        <h4>Key Themes Addressed</h4>
-                        <ul>
-                            <li>Acknowledged peer's clear explanation of semantic challenges and performative interpretation issues</li>
-                            <li>Identified need for formal semantics frameworks to prevent misalignment</li>
-                            <li>Proposed preventive measure: centralised ontology management systems and validation mechanisms</li>
-                            <li>Connected to evolution from KQML to FIPA-ACL and standardisation improvements</li>
-                            <li>Compared with modern communication protocols and their trade-offs</li>
-                        </ul>
-                    </div>
-
                     <!-- Peer Response 3 -->
                     <h3>Unit 6 – Peer Response 3: Olusegun Frank Ademoye</h3>
                     <div class="box">
                         <h4>Peer's Key Argument</h4>
-                        <p>Olusegun provided a comprehensive technical analysis of KQML performatives and discussed how ACLs offer greater flexibility than traditional method invocation. He raised important questions about scalability and performance overhead in large-scale distributed systems.</p>
+                        <p>Olusegun presented a clear and balanced discussion of ACLs, highlighting both strengths and limitations. He emphasized that the choice between ACLs and direct method invocation depends on system architecture and project requirements. He raised important questions about semantic consistency and autonomy in agent communication.</p>
 
                         <h4>My Response</h4>
-                        <p>Hi Olusegun,</p>
+                        <p>Hi Olusegun Frank,</p>
 
-                        <p>I really enjoyed reading your post. Your explanation of KQML performatives and the distinction between ask and tell actions clearly demonstrates the reasoning-based nature of agent communication. I found your comparison with traditional method invocation particularly useful for understanding why ACLs are better suited for autonomous systems.</p>
+                        <p>I enjoyed reading your discussion. It is clear, balanced, and presents both the strengths and limitations of Agent Communication Languages (ACLs). I also liked your conclusion that the choice between ACLs and direct method invocation depends on the system architecture and project requirements. The reference to Wooldridge's view that agents act because they "want to" effectively highlights the autonomy that makes ACLs valuable despite their additional communication overhead.</p>
 
-                        <p>Your concern about scalability and performance overhead is an important practical consideration that I had not fully explored. As systems grow and the number of agents increases, the communication complexity can become significant. To prevent this from becoming a bottleneck, organisations could implement several preventive measures. First, implementing intelligent message filtering and caching mechanisms would reduce unnecessary communication overhead. Second, using hierarchical agent architectures with broker agents to manage inter-agent communication could help maintain scalability as system complexity increases.</p>
+                        <p>One point that could be explored further is the potential risk associated with that autonomy. While you mention communication overhead and implementation complexity, another important challenge is that KQML does not define its semantics formally. As a result, different agents may interpret the same performative differently, which can lead to misunderstandings or inconsistent behaviour in distributed systems (Wooldridge, 2009).</p>
 
-                        <p>Another preventive measure could involve designing agents with communication efficiency in mind from the outset. This might include batch processing of non-urgent messages and prioritising critical communications, as discussed in modern multi-agent frameworks (Guo et al., 2024).</p>
+                        <p>Since the discussion also considers preventive measures, it would be useful to mention a few approaches that can reduce these risks.</p>
 
-                        <p>Your discussion also made me think about how asynchronous communication patterns in ACLs, despite their overhead, provide resilience advantages over synchronous method invocation. This trade-off between efficiency and robustness is worth considering carefully in system design.</p>
+                        <p>For example, adopting a shared ontology can help ensure that all agents interpret messages consistently. Using message authentication can protect against spoofed or modified communications, while adopting a more formally specified standard such as FIPA-ACL provides clearer definitions for message performatives and helps improve interoperability between agents. FIPA-ACL has been applied effectively in robotics coordination tasks, where heterogeneous robots must interpret commands consistently across different manufacturers and platforms—demonstrating how formal standards can reduce semantic misunderstandings in real-world distributed systems. Such standardization is particularly valuable when organizations must collaborate across institutional boundaries without extensive prior coordination.</p>
 
-                        <p>Overall, your post provided a strong technical foundation for understanding both the benefits and practical challenges of agent communication languages.</p>
+                        <p>Overall, I think your discussion provides a strong overview of ACLs.</p>
 
                         <h4>Peer Response 3 Screenshot</h4>
                         <span class="image fit">
-                            <img src="https://raw.githubusercontent.com/KannaAlmansoori/KannaAlmansoori.github.io/main/images/PR2-ACL-3.png" alt="Screenshot of peer response to Olusegun Frank Ademoye" />
+                            <img src="https://raw.githubusercontent.com/KannaAlmansoori/KannaAlmansoori.github.io/main/images/PR2-ACL-2.png" alt="Screenshot of peer response to Olusegun Frank Ademoye" />
                         </span>
-                        <p><em>Figure 4: Peer response 3 discussing scalability, performance, and hierarchical agent architectures</em></p>
+                        <p><em>Figure 4: Peer response 3 addressing autonomy, semantic consistency, and preventive measures</em></p>
 
                         <h4>Key Themes Addressed</h4>
                         <ul>
-                            <li>Acknowledged peer's clear explanation of KQML performatives and reasoning-based communication</li>
-                            <li>Addressed scalability concerns and performance overhead in large-scale systems</li>
-                            <li>Proposed preventive measures: intelligent filtering, hierarchical agent architectures, and batch processing</li>
-                            <li>Discussed asynchronous communication advantages and efficiency-robustness trade-offs</li>
-                            <li>Connected to contemporary multi-agent system design practices</li>
+                            <li>Acknowledged peer's balanced analysis of ACL strengths and limitations</li>
+                            <li>Recognised the context-dependent choice between ACLs and method invocation</li>
+                            <li>Addressed semantic consistency risks in KQML and agent interpretation</li>
+                            <li>Proposed preventive measures: shared ontologies, message authentication, and FIPA-ACL standardisation</li>
+                            <li>Discussed practical application in robotics and cross-institutional collaboration</li>
                         </ul>
+
+                        <h4>Reference</h4>
+                        <p>Wooldridge, M. (2009) <em>An Introduction to MultiAgent Systems</em>. 2nd edn. Chichester: John Wiley & Sons.</p>
                     </div>
 
                     <!-- Summary Post -->
