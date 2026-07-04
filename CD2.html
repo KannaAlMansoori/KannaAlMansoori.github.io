@@ -135,7 +135,6 @@
                         <p>Vinod explained the connection between speech act theory and ACLs, emphasizing how agents can decide whether to accept or refuse a request through performatives such as ask and tell. He discussed how shared ontologies are crucial for agent communication and highlighted the challenges of maintaining semantic consistency across distributed systems.</p>
 
                         <h4>My Response</h4>
-                        <p>Hi Vinod,</p>
 
                         <p>I enjoyed reading your post. I liked how you focused on the intention behind a message rather than just the information being exchanged. Your explanation of performatives such as ask and tell clearly shows what makes KQML different from a simple function call. I also found your point about the similarities between KQML and today's AI agent frameworks interesting, as many of these communication concepts are still relevant in modern multi-agent systems.</p>
 
@@ -242,21 +241,26 @@
                         <p>Wooldridge, M. (2009) <em>An Introduction to MultiAgent Systems</em>. 2nd edn. Chichester: John Wiley & Sons.</p>
                     </div>
 
-                    <!-- Summary Post -->
+                   <!-- Summary Post -->
                     <h3>Unit 7 – Summary Post</h3>
                     <div class="box">
                         <h4>Synthesis of Initial Post, Peer Feedback, and Units 5-7 Learning</h4>
                         <p><strong>Word Count:</strong> 308 words</p>
 
-                        <p>Reflecting on my initial post and the feedback received from peers, my understanding of agent communication languages has developed considerably. I originally focused on the fundamental advantages of KQML in enabling platform-independent communication and providing agents with interpretive autonomy, alongside its limitations regarding semantic clarity and implementation overhead (Wooldridge, 2009; Kakde et al., 2025). However, the peer feedback revealed critical practical dimensions that required deeper consideration.</p>
+                        <p>This discussion helped me understand agent communication languages in more depth. Before taking part, I mainly focused on the benefits of KQML, especially its ability to allow autonomous agents to communicate even when they are built using different technologies. I thought this was one of its biggest strengths because it supports cooperation between independent agents in distributed systems.</p>
 
-                        <p>Vinod's emphasis on formal semantics and standardisation highlighted that ACLs' technical challenges extend beyond conceptual design to implementation rigour. His analysis reinforced the importance of frameworks like FIPA-ACL that explicitly define semantics to improve interoperability. Olusegun's discussion of scalability and performance overhead introduced the practical constraint that as agent systems grow, communication efficiency becomes as critical as semantic correctness. This made me realise that successful ACL adoption requires concurrent attention to both technical standardisation and architectural design for scalability (Guo et al., 2024).</p>
+                        <p>After reading my peers' posts, I realised there is another important issue that I had not considered enough. Although KQML defines performatives such as ask and tell, it does not clearly define how agents should interpret them. This means that two agents could understand the same message in different ways, which could lead to communication problems. I had mentioned that maintaining shared ontologies could be difficult, but I now see that having clear semantics is just as important.</p>
 
-                        <p>Both peers also prompted me to consider preventive measures more systematically. The idea of implementing centralised ontology management, intelligent message filtering, and hierarchical agent architectures represents a more mature approach to ACL deployment than I initially presented. These measures address the gap between theoretical benefits and practical feasibility.</p>
+                        <p>One idea that I found particularly interesting was how FIPA-ACL was developed to overcome this limitation. By providing more formally defined communication acts, it helps improve consistency and interoperability between agents. This showed me that successful communication is not only about exchanging messages but also about making sure every agent understands those messages in the same way.</p>
 
-                        <p>This discussion has reinforced that agent communication languages remain essential for distributed agent systems despite being older technologies. Their value lies not in replacing traditional method invocation but in providing the flexibility and autonomy that decentralised systems require. However, realising this value depends on thoughtful system design, clear standardisation, and practical measures to manage complexity and overhead.</p>
+                        <p>My comparison between ACLs and method invocation in Python or Java still makes sense to me. Method invocation is a simple and efficient way for components within the same application to communicate, while ACLs are more suitable when independent agents need to cooperate across distributed systems. The discussion helped me understand that each approach has its own purpose depending on the system being developed.</p>
 
-                        <p>In conclusion, ACLs represent a foundational technology for intelligent agent systems, but their successful implementation requires balancing autonomy, standardisation, and practical engineering considerations.</p>
+                        <p>Overall, this discussion expanded my understanding of intelligent agents. It reminded me that designing multi-agent systems is not only about making agents communicate, but also about ensuring that communication is reliable, consistent, and meaningful. This is something I will keep in mind as I learn more about intelligent agent systems.</p>
+
+                        <h4>References</h4>
+                        <p>Finin, T., Labrou, Y. and Mayfield, J. (1997) 'KQML as an agent communication language', in Bradshaw, J.M. (ed.) <em>Software Agents</em>. Menlo Park, CA: AAAI Press, pp. 291–316.</p>
+
+                        <p>Kakde, A.P., Bhoyar, K.M., Shad, M.A. and Bachwani, S.A. (2025) 'Advancing agentic AI through communication protocols', <em>International Journal of Scientific Research in Science and Technology</em>, 12(5), pp. 299–308. Available at: https://doi.org/10.32628/IJSRST25125127.</p>
 
                         <h4>Summary Post Screenshot</h4>
                         <span class="image fit">
@@ -272,11 +276,6 @@
                             <li><strong>Refined Answer:</strong> Successful ACL implementation requires concurrent development of standardised semantics, scalable architectures, and formal frameworks</li>
                         </ul>
                     </div>
-
-                    <h4>Forum Link</h4>
-                    <p><a href="https://www.my-course.co.uk/mod/forum/view.php?id=1344253" target="_blank">View Discussion on Course Forum</a></p>
-                </div>
-            </section>
 
             <!-- Learning Outcomes Achieved Summary -->
             <section id="learning-outcomes-summary">
