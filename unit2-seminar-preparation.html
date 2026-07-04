@@ -1,0 +1,277 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Unit 2 Seminar Preparation - First Order Logic - Kanna AlMansoori</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo"><strong>Kanna AlMansoori</strong> <span>MSc Artificial Intelligence E-Portfolio</span></a>
+            <nav>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <ul class="links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="launch-module.html">Launch into Computing</a></li>
+                <li><a href="induction.html">Induction Computing</a></li>
+                <li><a href="ai-module.html">Understanding Artificial Intelligence</a></li>
+                <li><a href="numerical-analysis.html">Numerical Analysis</a></li>
+                <li><a href="intelligent-agents.html">Intelligent Agents</a></li>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div id="main" class="alt">
+
+            <!-- Breadcrumb Navigation -->
+            <section id="one">
+                <div class="inner">
+                    <p><a href="intelligent-agents.html">← Back to Intelligent Agents Module</a></p>
+                    <header class="major">
+                        <h1>Unit 2 Seminar Preparation</h1>
+                        <p>Introducing First Order Logic</p>
+                    </header>
+                    <p><strong>Type:</strong> Seminar Preparation | <strong>Status:</strong> ✓ Complete</p>
+                </div>
+            </section>
+
+            <!-- Overview -->
+            <section id="overview">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Seminar Overview</h2>
+                    </header>
+                    <p><strong>Reference:</strong> Russell and Norvig (2021) - Chapter 8: Knowledge Representation and Reasoning</p>
+                    <p>This seminar introduces First Order Logic (FOL), an extension of propositional logic that allows us to represent knowledge about individual objects, their properties, and relationships. FOL is fundamental to AI knowledge representation and enables more expressive and scalable reasoning systems.</p>
+                </div>
+            </section>
+
+            <!-- Key Concepts -->
+            <section id="concepts">
+                <div class="inner">
+                    <header class="major">
+                        <h2>The 4 Main Building Blocks of First Order Logic</h2>
+                    </header>
+
+                    <div class="box">
+                        <h3>1. Constants</h3>
+                        <p>Specific objects or names that refer to definite things in the world. Examples: John, Mary, 5, Paris.</p>
+                    </div>
+
+                    <div class="box">
+                        <h3>2. Variables</h3>
+                        <p>Placeholders or blank spaces representing unspecified objects. Examples: x, y, z. Variables allow us to write general statements that apply to any object.</p>
+                    </div>
+
+                    <div class="box">
+                        <h3>3. Predicates</h3>
+                        <p>Describe properties of objects or relationships between objects. Examples: "is mortal," "loves," "is tall," "is a student." Used in statements like "John is tall" or "Mary loves John."</p>
+                    </div>
+
+                    <div class="box">
+                        <h3>4. Functions</h3>
+                        <p>Connect objects to other objects. Examples: "the father of," "the age of," "the mother of." So "the father of John" would give us another object.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quantifiers -->
+            <section id="quantifiers">
+                <div class="inner">
+                    <header class="major">
+                        <h2>The Two Quantifiers (Most Important!)</h2>
+                    </header>
+
+                    <div class="box">
+                        <h3>The Universal Quantifier: "For All" (∀)</h3>
+                        <p>Expresses that something is true about ALL objects in a group.</p>
+                        <p><strong>Example:</strong> "All men are mortal"</p>
+                        <p>In First Order Logic: "For every person x, if x is a man, then x is mortal."</p>
+                        <p><strong>Other examples:</strong></p>
+                        <ul>
+                            <li>All students are intelligent</li>
+                            <li>Every dog is an animal</li>
+                            <li>All cats have four legs</li>
+                        </ul>
+                    </div>
+
+                    <div class="box">
+                        <h3>The Existential Quantifier: "There Exists" (∃)</h3>
+                        <p>Expresses that something is true about AT LEAST ONE object.</p>
+                        <p><strong>Example:</strong> "Some people like ice cream" or "There exists someone who likes ice cream"</p>
+                        <p>In First Order Logic: "There is at least one person x who likes ice cream."</p>
+                        <p><strong>Other examples:</strong></p>
+                        <ul>
+                            <li>There is a student who failed the exam</li>
+                            <li>Someone is the richest person in the world</li>
+                            <li>There exists a white alligator</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Core Example -->
+            <section id="core-example">
+                <div class="inner">
+                    <header class="major">
+                        <h2>The Classic Example: Deductive Reasoning</h2>
+                    </header>
+                    <p>This example is fundamental to understanding how First Order Logic enables reasoning:</p>
+                    <div class="box">
+                        <p><strong>Statement 1:</strong> Every person is mortal</p>
+                        <p><strong>Statement 2:</strong> Confucius is a person</p>
+                        <p><strong>Conclusion:</strong> Therefore, Confucius is mortal</p>
+                    </div>
+                    <p>This demonstrates how First Order Logic allows us to make general statements (all persons are mortal) and apply them to specific individuals (Confucius). This is the power of FOL over propositional logic.</p>
+                </div>
+            </section>
+
+            <!-- Patterns -->
+            <section id="patterns">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Converting English to Logic Patterns</h2>
+                    </header>
+
+                    <div class="box">
+                        <h3>Pattern 1: "All X are Y"</h3>
+                        <ul>
+                            <li>All students are intelligent</li>
+                            <li>All dogs are animals</li>
+                            <li>All men are mortal</li>
+                        </ul>
+                    </div>
+
+                    <div class="box">
+                        <h3>Pattern 2: "Some X are Y" or "There is/are"</h3>
+                        <ul>
+                            <li>Some students are intelligent</li>
+                            <li>There is a dog in the park</li>
+                            <li>Some people like coffee</li>
+                        </ul>
+                    </div>
+
+                    <div class="box">
+                        <h3>Pattern 3: "Everyone loves someone"</h3>
+                        <p>Means each person loves at least one other person (∀x ∃y Loves(x, y))</p>
+                    </div>
+
+                    <div class="box">
+                        <h3>Pattern 4: "Someone loves everyone"</h3>
+                        <p>Means there is one person who loves all other people (∃x ∀y Loves(x, y))</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why FOL Matters -->
+            <section id="why-fol">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Why First Order Logic is More Powerful</h2>
+                    </header>
+                    <p>With basic propositional logic, if you wanted to say "pits cause breezes in adjacent squares," you'd have to write one sentence for EVERY square in a game. That's hundreds or thousands of sentences!</p>
+                    <p>With First Order Logic, you can write ONE general rule using quantifiers, and it applies to all squares automatically. This scalability and expressiveness is why FOL is fundamental to AI knowledge representation.</p>
+                </div>
+            </section>
+
+            <!-- Seminar Preparation -->
+            <section id="preparation">
+                <div class="inner">
+                    <header class="major">
+                        <h2>What to Be Ready for in the Seminar</h2>
+                    </header>
+                    <ul>
+                        <li><strong>Translate English to Logic:</strong> Convert normal sentences into logical form</li>
+                        <li><strong>Choose the Right Quantifier:</strong> Know when to use "for all" versus "there exists"</li>
+                        <li><strong>Identify Components:</strong> Distinguish between constants, variables, predicates, and functions</li>
+                        <li><strong>Apply to New Examples:</strong> Use FOL concepts to represent knowledge about unfamiliar scenarios</li>
+                        <li><strong>Reason Deductively:</strong> Work through logical arguments and draw conclusions</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Quick Review -->
+            <section id="quick-review">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Quick Review Checklist</h2>
+                    </header>
+                    <ul>
+                        <li>✓ <strong>Constants</strong> = specific objects (John, 5, Paris)</li>
+                        <li>✓ <strong>Variables</strong> = placeholders (x, y, z)</li>
+                        <li>✓ <strong>Predicates</strong> = properties or relationships (is tall, loves, is a student)</li>
+                        <li>✓ <strong>Functions</strong> = connections between objects (father of, age of)</li>
+                        <li>✓ <strong>For All (∀)</strong> = something is true about EVERY member of a group</li>
+                        <li>✓ <strong>There Exists (∃)</strong> = something is true about AT LEAST ONE member of a group</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Key Takeaways -->
+            <section id="takeaways">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Key Takeaways</h2>
+                    </header>
+                    <ul>
+                        <li>First Order Logic extends propositional logic with variables, predicates, and quantifiers</li>
+                        <li>Quantifiers (for all, there exists) are the most crucial concepts for expressing general knowledge</li>
+                        <li>FOL enables scalable knowledge representation—one rule can apply to many objects</li>
+                        <li>Converting English to logical form is a core skill for reasoning systems</li>
+                        <li>Understanding the difference between universal and existential statements is fundamental</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <section id="navigation">
+                <div class="inner">
+                    <ul class="actions">
+                        <li><a href="intelligent-agents.html" class="button">← Back to Intelligent Agents Module</a></li>
+                        <li><a href="intelligent-agents.html" class="button primary">View Other Seminars →</a></li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                <ul class="icons">
+                    <li><a href="https://github.com/KannaAlmansoori" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; 2025 Kanna AlMansoori</li>
+                    <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
