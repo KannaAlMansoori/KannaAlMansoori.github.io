@@ -1,0 +1,336 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Creating Agent Dialogues - KQML and KIF - Kanna AlMansoori</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo"><strong>Kanna AlMansoori</strong> <span>MSc Artificial Intelligence E-Portfolio</span></a>
+            <nav>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <ul class="links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="intelligent-agents.html">Intelligent Agents</a></li>
+                <li><a href="collaborative-discussion-2.html">CD2: Agent Communication</a></li>
+                <li><a href="unit-6-seminar-preparation-short.html">Unit 6 Seminar Prep</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div id="main" class="alt">
+
+            <section id="one">
+                <div class="inner">
+                    <p><a href="intelligent-agents.html">← Back to Intelligent Agents</a></p>
+                    <header class="major">
+                        <h1>Creating Agent Dialogues</h1>
+                        <p>Alice and Bob: KQML and KIF Communication</p>
+                    </header>
+                    <p><strong>Activity:</strong> Formative | <strong>Type:</strong> Agent Dialogue Creation | <strong>Status:</strong> ✓ Complete</p>
+                </div>
+            </section>
+
+            <!-- Activity Overview -->
+            <section id="overview">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Activity Overview</h2>
+                    </header>
+
+                    <div class="box">
+                        <h4>Task</h4>
+                        <p>Create a KQML dialogue between two agents:</p>
+                        <ul>
+                            <li><strong>Alice:</strong> Stock procurement agent (buyer)</li>
+                            <li><strong>Bob:</strong> Warehouse stock control agent (supplier)</li>
+                        </ul>
+
+                        <h4>Dialogue Requirements</h4>
+                        <ul>
+                            <li>Alice asks Bob about available stock of 50 inch televisions</li>
+                            <li>Alice queries the number of HDMI slots on the televisions</li>
+                            <li>Use KQML performatives for communication</li>
+                            <li>Use KIF (Knowledge Interchange Format) for knowledge representation</li>
+                        </ul>
+
+                        <h4>Learning Connection</h4>
+                        <p>This activity brings together concepts from my Collaborative Discussion 2 where I explored how agents communicate using structured messages with clear intentions. Now I'm creating an actual dialogue to demonstrate this understanding.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- The Dialogue -->
+            <section id="dialogue">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Alice and Bob Dialogue</h2>
+                    </header>
+
+                    <h3>Scenario</h3>
+                    <p>Alice (procurement agent) needs to check warehouse stock levels for 50 inch televisions. She wants to know:</p>
+                    <ul>
+                        <li>How many 50 inch TVs are in stock?</li>
+                        <li>How many HDMI slots do they have?</li>
+                    </ul>
+
+                    <h3>KQML Dialogue: Stock Enquiry</h3>
+
+                    <div class="box">
+                        <h4>Message 1: Alice Asks About Stock Quantity</h4>
+                        <p><strong>Performative:</strong> ask</p>
+                        <p><strong>Sender:</strong> Alice (procurement agent)</p>
+                        <p><strong>Receiver:</strong> Bob (warehouse agent)</p>
+
+                        <pre style="background: #e8f4f8; padding: 15px; border-radius: 5px; border-left: 4px solid #0066cc; color: #000000; font-size: 12px;">
+<code>(ask
+  :sender alice
+  :receiver bob
+  :content (quantity-in-stock ?qty Television-50inch)
+  :reply-with stock-query-1
+)</code>
+                        </pre>
+
+                        <p><strong>Meaning:</strong> Alice is asking Bob: "What is the quantity of 50 inch televisions in stock?"</p>
+                        <p><strong>KIF Knowledge Representation:</strong> The content uses KIF to express what Alice wants to know - a variable ?qty that represents the quantity of Television-50inch items.</p>
+                    </div>
+
+                    <div class="box">
+                        <h4>Message 2: Bob Replies with Stock Quantity</h4>
+                        <p><strong>Performative:</strong> reply</p>
+                        <p><strong>Sender:</strong> Bob (warehouse agent)</p>
+                        <p><strong>Receiver:</strong> Alice (procurement agent)</p>
+
+                        <pre style="background: #e8f8e8; padding: 15px; border-radius: 5px; border-left: 4px solid #00cc33; color: #000000; font-size: 12px;">
+<code>(reply
+  :sender bob
+  :receiver alice
+  :in-reply-to stock-query-1
+  :content (quantity-in-stock 24 Television-50inch)
+)</code>
+                        </pre>
+
+                        <p><strong>Meaning:</strong> Bob is replying: "There are 24 units of 50 inch televisions in stock."</p>
+                        <p><strong>KIF Knowledge Representation:</strong> Bob binds the variable ?qty to the actual value 24, providing the concrete answer to Alice's question.</p>
+                    </div>
+
+                    <div class="box">
+                        <h4>Message 3: Alice Asks About HDMI Slots</h4>
+                        <p><strong>Performative:</strong> ask</p>
+                        <p><strong>Sender:</strong> Alice (procurement agent)</p>
+                        <p><strong>Receiver:</strong> Bob (warehouse agent)</p>
+
+                        <pre style="background: #e8f4f8; padding: 15px; border-radius: 5px; border-left: 4px solid #0066cc; color: #000000; font-size: 12px;">
+<code>(ask
+  :sender alice
+  :receiver bob
+  :content (hdmi-slots ?slots Television-50inch)
+  :reply-with hdmi-query-1
+)</code>
+                        </pre>
+
+                        <p><strong>Meaning:</strong> Alice is asking Bob: "How many HDMI slots do the 50 inch televisions have?"</p>
+                        <p><strong>KIF Knowledge Representation:</strong> The variable ?slots represents the number of HDMI slots that Alice wants to know about.</p>
+                    </div>
+
+                    <div class="box">
+                        <h4>Message 4: Bob Replies with HDMI Information</h4>
+                        <p><strong>Performative:</strong> reply</p>
+                        <p><strong>Sender:</strong> Bob (warehouse agent)</p>
+                        <p><strong>Receiver:</strong> Alice (procurement agent)</p>
+
+                        <pre style="background: #e8f8e8; padding: 15px; border-radius: 5px; border-left: 4px solid #00cc33; color: #000000; font-size: 12px;">
+<code>(reply
+  :sender bob
+  :receiver alice
+  :in-reply-to hdmi-query-1
+  :content (hdmi-slots 3 Television-50inch)
+)</code>
+                        </pre>
+
+                        <p><strong>Meaning:</strong> Bob is replying: "The 50 inch televisions have 3 HDMI slots."</p>
+                        <p><strong>KIF Knowledge Representation:</strong> Bob binds the variable ?slots to 3, providing the specific information about HDMI connectivity.</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Analysis -->
+            <section id="analysis">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Analysis: How This Dialogue Works</h2>
+                    </header>
+
+                    <div class="box">
+                        <h4>Why KQML Performatives?</h4>
+                        <p>From my CD2 discussion, I learned that performatives express intention. In this dialogue:</p>
+                        <ul>
+                            <li><strong>ask:</strong> Alice requests information without commanding. Bob can choose to answer or refuse.</li>
+                            <li><strong>reply:</strong> Bob provides information in response. This shows agent autonomy—Bob decides what information to share.</li>
+                        </ul>
+                    </div>
+
+                    <div class="box">
+                        <h4>Why KIF for Knowledge?</h4>
+                        <p>KIF allows precise representation of what Alice and Bob know:</p>
+                        <ul>
+                            <li><strong>Variables (? notation):</strong> ?qty and ?slots represent unknown values Alice wants to discover</li>
+                            <li><strong>Predicates:</strong> quantity-in-stock and hdmi-slots are facts about the televisions</li>
+                            <li><strong>Clear Semantics:</strong> Unlike raw KQML, KIF removes ambiguity about what "50 inch television" means</li>
+                        </ul>
+                        <p><strong>Connection to CD2:</strong> This addresses the ontology problem I discussed. KIF provides formal semantics so both agents understand exactly what they're talking about.</p>
+                    </div>
+
+                    <div class="box">
+                        <h4>Agent Autonomy in Action</h4>
+                        <p>Notice that Bob could have:</p>
+                        <ul>
+                            <li>Refused to answer (if stock information is confidential)</li>
+                            <li>Asked for clarification (if "50 inch television" was ambiguous)</li>
+                            <li>Negotiated (e.g., "I'll tell you the stock level if you agree to a minimum order")</li>
+                        </ul>
+                        <p>Instead, Bob chose to cooperate and provide honest answers. This demonstrates agent autonomy—they're not blindly executing commands.</p>
+                    </div>
+
+                    <div class="box">
+                        <h4>Practical Application</h4>
+                        <p>This dialogue could represent a real warehouse management system where:</p>
+                        <ul>
+                            <li>Alice is a procurement software module</li>
+                            <li>Bob is an inventory management system</li>
+                            <li>They communicate through KQML to coordinate purchasing decisions</li>
+                            <li>The knowledge is formally represented in KIF so there's no ambiguity</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Learning Points -->
+            <section id="learning">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Learning Outcomes Demonstrated</h2>
+                    </header>
+
+                    <div class="box">
+                        <h4>Outcome 1: Motivations for Agent-Based Computing</h4>
+                        <p>This dialogue shows why agents are useful:</p>
+                        <ul>
+                            <li><strong>Modularity:</strong> Alice and Bob are independent agents that can be updated separately</li>
+                            <li><strong>Autonomy:</strong> Each agent makes decisions based on its own logic</li>
+                            <li><strong>Scalability:</strong> This pattern works for 2 agents or 2000 agents</li>
+                            <li><strong>Flexibility:</strong> Agents can negotiate, refuse, or modify requests</li>
+                        </ul>
+                    </div>
+
+                    <div class="box">
+                        <h4>Outcome 2: Main Agent Models and AI Grounding</h4>
+                        <p>This dialogue demonstrates:</p>
+                        <ul>
+                            <li><strong>Reactive Agents:</strong> Bob responds to Alice's queries (stimulus-response)</li>
+                            <li><strong>Deliberative Agents:</strong> Alice decides what to ask based on her procurement goals</li>
+                            <li><strong>Communication Standards:</strong> KQML is grounded in AI research on agent communication (speech act theory)</li>
+                            <li><strong>Knowledge Representation:</strong> KIF formalizes knowledge in a way AI systems can understand</li>
+                        </ul>
+                    </div>
+
+                    <div class="box">
+                        <h4>Connection to My Learning</h4>
+                        <p>From my CD2 discussion:</p>
+                        <ul>
+                            <li>I understood that agents can refuse or negotiate - this dialogue shows Bob cooperating voluntarily</li>
+                            <li>I identified the ontology problem - KIF solves this by providing formal semantics</li>
+                            <li>I saw KQML performatives as the key difference from method calls - this dialogue shows ask/reply in action</li>
+                            <li>I recognized that distributed problem-solving requires autonomous agents - Alice and Bob solve the inventory question together</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Enhanced Understanding -->
+            <section id="enhanced">
+                <div class="inner">
+                    <header class="major">
+                        <h2>What This Activity Enhanced</h2>
+                    </header>
+
+                    <div class="box">
+                        <h4>From Theory to Practice</h4>
+                        <p>In my seminar preparation, I studied KQML examples. This activity forces me to create one, which deepens understanding of:</p>
+                        <ul>
+                            <li>How to structure messages with sender, receiver, and content</li>
+                            <li>How to use reply-with tags to track conversations</li>
+                            <li>How variables in KIF represent unknowns that agents exchange</li>
+                        </ul>
+                    </div>
+
+                    <div class="box">
+                        <h4>Real-World Thinking</h4>
+                        <p>Creating this dialogue made me think about:</p>
+                        <ul>
+                            <li>What if Bob's warehouse was out of stock? (Agent autonomy in refusal)</li>
+                            <li>What if Alice misunderstood what "50 inch" means? (Ontology clarity with KIF)</li>
+                            <li>What if Bob wanted to negotiate terms? (Multi-turn dialogue complexity)</li>
+                        </ul>
+                    </div>
+
+                    <div class="box">
+                        <h4>Technical Appreciation</h4>
+                        <p>I now understand why KQML and KIF exist:</p>
+                        <ul>
+                            <li>KQML's structure (sender, receiver, performative) enables reliable agent communication</li>
+                            <li>KIF's formal semantics prevent misunderstandings that could cost money in real systems</li>
+                            <li>The combination of KQML (how to communicate) + KIF (what to communicate) is powerful</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <section id="navigation">
+                <div class="inner">
+                    <ul class="actions">
+                        <li><a href="unit-6-seminar-preparation-short.html" class="button">← Seminar Preparation</a></li>
+                        <li><a href="collaborative-discussion-2.html" class="button">CD2: Agent Communication →</a></li>
+                        <li><a href="intelligent-agents.html" class="button primary">Intelligent Agents Module →</a></li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                <ul class="copyright">
+                    <li>&copy; 2025 Kanna AlMansoori</li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
