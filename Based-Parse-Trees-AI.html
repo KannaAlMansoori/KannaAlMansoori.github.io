@@ -1,81 +1,322 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Constituency-based Parse Trees</title>
-  <style>
-    body {
-      font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.7;
-      color: #24292f;
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 2rem 1.25rem 4rem;
-    }
-    h1 { font-size: 1.9rem; border-bottom: 1px solid #d0d7de; padding-bottom: .4rem; }
-    h2 { font-size: 1.35rem; margin-top: 2.2rem; }
-    h3 { font-size: 1.1rem; margin-top: 1.6rem; color: #444; }
-    p { margin: .6rem 0 1rem; }
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: .75rem 0 1rem;
-      border: 1px solid #d0d7de;
-      border-radius: 6px;
-      padding: 6px;
-      background: #fff;
-    }
-    em { font-style: italic; }
-    a { color: #0969da; }
-  </style>
+    <title>Constituency-Based Parse Trees - Understanding AI - Kanna AlMansoori</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
-<body>
+<body class="is-preload">
 
-  <h1>Activity: Constituency-based parse trees</h1>
+    <div id="wrapper">
 
-  <p>The three sentences below were parsed using phrase-structure grammar, in which
-  each sentence (S) divides into a subject noun phrase (NP) and a predicate verb
-  phrase (VP), following the core rule S &rarr; NP VP. The completed parse trees are
-  shown below, with a summary of each.</p>
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo"><strong>Kanna AlMansoori</strong> <span>MSc Artificial Intelligence E-Portfolio</span></a>
+            <nav>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
 
-  <h2>1. The government raised interest rates.</h2>
-  <img src="images/TRee%201.png" alt="Parse tree for 'The government raised interest rates'" />
-  <p>A straightforward S &rarr; NP VP structure. The subject NP is "The government"
-  (Det + N), and the VP is "raised" plus the object NP "interest rates". Because
-  "interest rates" is a compound noun, "interest" sits inside the object NP as a
-  modifier of "rates".</p>
+        <!-- Menu -->
+        <nav id="menu">
+            <ul class="links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="launch-module.html">Launch into Computing</a></li>
+                <li><a href="induction.html">Induction Computing</a></li>
+                <li><a href="ai-module.html">Understanding Artificial Intelligence</a></li>
+                <li><a href="numerical-analysis.html">Numerical Analysis</a></li>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
 
-  <h2>2. The internet gives everyone a voice.</h2>
-  <img src="images/TRee%202.png" alt="Parse tree for 'The internet gives everyone a voice'" />
-  <p>"gives" is a ditransitive verb, so the VP branches into two noun phrases: the
-  indirect object "everyone" and the direct object "a voice". This shows how the
-  structure of the verb phrase depends on the verb's argument requirements.</p>
+        <!-- Main Content -->
+        <div id="main" class="alt">
 
-  <h2>3. The man saw the dog with the telescope.</h2>
-  <p>This sentence is deliberately ambiguous and produces two valid trees:</p>
+            <!-- Breadcrumb Navigation -->
+            <section id="one">
+                <div class="inner">
+                    <p><a href="ai-module.html">← Back to Understanding Artificial Intelligence</a></p>
+                    <header class="major">
+                        <h1>Constituency-Based Parse Trees</h1>
+                    </header>
+                    <p><strong>Title:</strong> Constituency Parsing of Natural Language Sentences | <strong>Module:</strong> Understanding Artificial Intelligence | <strong>Type:</strong> Formative Activity | <strong>Status:</strong> ✓ Complete</p>
+                </div>
+            </section>
 
-  <h3>Reading A &mdash; telescope is the instrument (PP under VP)</h3>
-  <img src="images/TRee%203.png" alt="Parse tree, reading A: the man used the telescope to see the dog" />
-  <p>The prepositional phrase "with the telescope" attaches to the VP &mdash; the man
-  used the telescope to see the dog.</p>
+            <!-- Learning Outcomes -->
+            <section id="learning-outcomes">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Learning Outcomes</h2>
+                    </header>
+                    <ul>
+                        <li>The knowledge and skills required to develop, deploy and evaluate the tools and techniques of intelligent systems to solve real-world problems.</li>
+                        <li>An understanding of contemporary research issues in the area of intelligent agent systems.</li>
+                        <li>Understand how phrase-structure grammar decomposes natural language sentences into hierarchical constituents.</li>
+                        <li>Recognise and analyse structural ambiguity in natural language and its implications for automated parsing.</li>
+                    </ul>
+                </div>
+            </section>
 
-  <h3>Reading B &mdash; the dog has the telescope (PP under NP)</h3>
-  <img src="images/TRee%204.png" alt="Parse tree, reading B: the dog is holding the telescope" />
-  <p>The PP attaches to the NP "the dog" &mdash; the dog is the one holding the
-  telescope. This is a classic example of <em>PP-attachment ambiguity</em>, where a
-  single string of words yields two grammatical structures and two meanings.</p>
+            <!-- Task Overview -->
+            <section id="task-overview">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Activity Overview</h2>
+                    </header>
 
-  <h2>Link to the learning outcomes</h2>
-  <p>Constituency parsing is a fundamental technique in natural language processing,
-  which is how intelligent agents interpret human language &mdash; addressing the
-  outcome on applying the tools and techniques of intelligent systems to real-world
-  problems. Sentence 3's ambiguity connects to contemporary research in intelligent
-  agent systems: a parser cannot resolve "with the telescope" from grammar alone, so
-  modern systems rely on probabilistic parsing and contextual cues to select the most
-  likely structure. Resolving this kind of structural ambiguity remains an active
-  challenge in NLP and language understanding.</p>
+                    <p>This activity focuses on <strong>constituency parsing</strong>, a foundational technique in natural language processing (NLP). A constituency-based parse tree breaks a sentence into nested <em>constituents</em> — groups of words that behave as single grammatical units — using phrase-structure grammar. The core rule is <code>S → NP VP</code>: every sentence (S) divides into a subject noun phrase (NP) and a predicate verb phrase (VP), which are then broken down further until every word is assigned a part of speech.</p>
+
+                    <h3>Task:</h3>
+                    <div class="box">
+                        <p>Create a constituency-based parse tree for each of the following phrases and add the completed trees to the e-Portfolio:</p>
+                        <ol>
+                            <li>The government raised interest rates.</li>
+                            <li>The internet gives everyone a voice.</li>
+                            <li>The man saw the dog with the telescope.</li>
+                        </ol>
+                    </div>
+
+                    <h3>Grammar Labels Used:</h3>
+                    <ul>
+                        <li><strong>S</strong> — Sentence</li>
+                        <li><strong>NP</strong> — Noun Phrase</li>
+                        <li><strong>VP</strong> — Verb Phrase</li>
+                        <li><strong>PP</strong> — Prepositional Phrase</li>
+                        <li><strong>Det</strong> — Determiner, <strong>N</strong> — Noun, <strong>V</strong> — Verb, <strong>P</strong> — Preposition, <strong>Pron</strong> — Pronoun</li>
+                    </ul>
+
+                    <h3>Why Constituency Parsing?</h3>
+                    <div class="box">
+                        <p>Constituency parsing is how intelligent agents move from a flat string of words to a structured representation of meaning. Applications include:</p>
+                        <ul>
+                            <li>Machine translation, where structure must be preserved across languages</li>
+                            <li>Question answering and information extraction</li>
+                            <li>Grammar checking and text-to-speech prosody</li>
+                            <li>Any task where an agent must interpret human language correctly</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tree 1 -->
+            <section id="tree1">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Tree 1: The government raised interest rates.</h2>
+                    </header>
+
+                    <h3>Parse Tree</h3>
+                    <div class="box">
+                        <span class="image fit">
+                            <img src="images/TRee%201.png" alt="Constituency parse tree for 'The government raised interest rates'" />
+                        </span>
+                        <p><em>This figure shows the sentence decomposed into a subject NP ("The government") and a VP ("raised interest rates"), with the object NP "interest rates" nested inside the verb phrase.</em></p>
+                    </div>
+
+                    <h3>Interpretation - Tree 1</h3>
+                    <div class="box">
+                        <p>A straightforward <code>S → NP VP</code> structure. The subject NP "The government" consists of a determiner (Det: "The") and a noun (N: "government"). The VP consists of the verb (V: "raised") and the object NP "interest rates".</p>
+                        <p>Because "interest rates" is a <strong>compound noun</strong>, "interest" sits inside the object NP as a noun modifier of "rates" (N + N), rather than as a separate constituent. This illustrates how phrase-structure grammar handles noun–noun modification without introducing a new phrase type.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tree 2 -->
+            <section id="tree2">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Tree 2: The internet gives everyone a voice.</h2>
+                    </header>
+
+                    <h3>Parse Tree</h3>
+                    <div class="box">
+                        <span class="image fit">
+                            <img src="images/TRee%202.png" alt="Constituency parse tree for 'The internet gives everyone a voice'" />
+                        </span>
+                        <p><em>This figure shows a ditransitive verb phrase in which the VP branches into two noun phrases — the indirect object "everyone" and the direct object "a voice".</em></p>
+                    </div>
+
+                    <h3>Interpretation - Tree 2</h3>
+                    <div class="box">
+                        <p>The subject NP "The internet" (Det + N) combines with the VP "gives everyone a voice". The key feature here is that <strong>"gives" is a ditransitive verb</strong> — it takes two objects. As a result, the VP branches into two noun phrases: the indirect object NP "everyone" (a pronoun) and the direct object NP "a voice" (Det + N).</p>
+                        <p>This shows that the internal structure of a verb phrase depends on the <strong>argument requirements of the verb</strong>. A transitive verb would take one object NP; an intransitive verb would take none; a ditransitive verb such as "gives" takes two.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tree 3 -->
+            <section id="tree3">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Tree 3: The man saw the dog with the telescope.</h2>
+                    </header>
+
+                    <p>This sentence is <strong>deliberately ambiguous</strong> and is a classic example of <em>PP-attachment ambiguity</em>. The prepositional phrase "with the telescope" can attach in two different places in the tree, producing two valid structures and two distinct meanings.</p>
+
+                    <h3>Reading A — Telescope is the Instrument (PP under VP)</h3>
+                    <div class="box">
+                        <span class="image fit">
+                            <img src="images/TRee%203.png" alt="Parse tree, Reading A: the man used the telescope to see the dog" />
+                        </span>
+                        <p><em>Here the prepositional phrase "with the telescope" attaches to the verb phrase, meaning the man used the telescope to see the dog (the telescope is the instrument of seeing).</em></p>
+                    </div>
+
+                    <h3>Reading B — The Dog Has the Telescope (PP under NP)</h3>
+                    <div class="box">
+                        <span class="image fit">
+                            <img src="images/TRee%204.png" alt="Parse tree, Reading B: the dog is the one holding the telescope" />
+                        </span>
+                        <p><em>Here the prepositional phrase attaches to the noun phrase "the dog", meaning the dog is the one holding the telescope (the PP modifies the object noun).</em></p>
+                    </div>
+
+                    <h3>Interpretation - Tree 3</h3>
+                    <div class="box">
+                        <p>Both trees are grammatically correct; the difference lies entirely in <strong>where the PP attaches</strong>:</p>
+                        <ul>
+                            <li><strong>Reading A (PP under VP):</strong> The PP is a sibling of the object NP inside the verb phrase, describing <em>how</em> the seeing happened.</li>
+                            <li><strong>Reading B (PP under NP):</strong> The PP is nested inside the object NP, describing <em>which</em> dog was seen.</li>
+                        </ul>
+                        <p>This ambiguity cannot be resolved by grammar alone — both structures are legal. A human uses world knowledge and context to prefer Reading A (telescopes are more plausibly held by people than dogs). For an intelligent system, this is a genuine challenge, which connects directly to contemporary research in NLP.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Overall Analysis -->
+            <section id="overall-analysis">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Overall Analysis and Key Findings</h2>
+                    </header>
+
+                    <h3>1. Structure Follows Grammatical Rules</h3>
+                    <div class="box">
+                        <p><strong>What I Found:</strong> All three sentences share the same top-level rule <code>S → NP VP</code>, yet their internal structures differ significantly based on the verbs and phrases involved.</p>
+                        <h4>What This Means:</h4>
+                        <p>Phrase-structure grammar provides a small set of recursive rules that generate an enormous variety of sentence structures. The subject–predicate split is universal, but the shape of the verb phrase adapts to the verb's requirements — a single object for "raised", two objects for the ditransitive "gives", and an object plus an optional prepositional phrase for "saw".</p>
+                    </div>
+
+                    <h3>2. Compound Nouns and Verb Arguments</h3>
+                    <div class="box">
+                        <p><strong>What I Found:</strong> "interest rates" behaves as a single compound noun (N + N inside one NP), while "gives" forces two separate object NPs.</p>
+                        <h4>What This Means:</h4>
+                        <p>Correct parsing requires knowledge that goes beyond individual words. A parser must know that "interest" modifies "rates" rather than being a separate object, and that "gives" is ditransitive. This lexical knowledge is exactly what modern statistical and neural parsers learn from large annotated corpora such as the Penn Treebank.</p>
+                    </div>
+
+                    <h3>3. Structural Ambiguity as a Research Problem</h3>
+                    <div class="box">
+                        <p><strong>What I Found:</strong> Sentence 3 produces two equally valid parse trees depending on PP attachment.</p>
+                        <h4>What This Means:</h4>
+                        <p>PP-attachment ambiguity is one of the most studied problems in computational linguistics. Because grammar alone cannot decide between the readings, intelligent systems rely on <strong>probabilistic parsing</strong> (choosing the most likely tree given training data) and <strong>contextual cues</strong> to disambiguate. This is a live area of research, particularly with the rise of neural and transformer-based language models that resolve ambiguity using learned context rather than hand-written rules — directly addressing the learning outcome on contemporary research in intelligent agent systems.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Learning Outcomes Achieved -->
+            <section id="learning-outcomes-achieved">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Learning Outcomes Achieved</h2>
+                    </header>
+                    <ul>
+                        <li><strong>Applied phrase-structure grammar:</strong> Successfully decomposed three natural-language sentences into hierarchical constituency parse trees using the rule <code>S → NP VP</code> and correct part-of-speech tagging.</li>
+                        <li><strong>Identified verb argument structures:</strong> Distinguished transitive, ditransitive, and instrument-taking verbs, and showed how each shapes the verb phrase differently.</li>
+                        <li><strong>Handled compound nouns:</strong> Correctly represented "interest rates" as a compound noun within a single NP rather than as separate constituents.</li>
+                        <li><strong>Analysed structural ambiguity:</strong> Produced two valid parse trees for an ambiguous sentence and explained the meaning associated with each PP-attachment.</li>
+                        <li><strong>Connected theory to intelligent systems:</strong> Related constituency parsing to real-world NLP applications and to the tools and techniques used by intelligent agents to interpret human language.</li>
+                        <li><strong>Engaged with contemporary research:</strong> Recognised PP-attachment ambiguity as an active research problem addressed by probabilistic and neural parsing methods.</li>
+                        <li><strong>Communicated results clearly:</strong> Presented parse trees, summaries, and interpretations in a structured, academic format suitable for an e-Portfolio.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Reflection -->
+            <section id="reflection">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Reflection: Learning, Growth, and Development</h2>
+                    </header>
+
+                    <p>This activity gave me a concrete, hands-on understanding of how natural language can be represented as structured data — a step that is easy to overlook when working with modern language models that hide this structure inside their internal representations. Drawing the parse trees by hand forced me to think carefully about <em>why</em> words group the way they do, rather than accepting a sentence as a flat sequence of tokens.</p>
+
+                    <h3>From Words to Structure</h3>
+                    <p>Before this activity, I understood sentences intuitively but had never formally analysed how they are built. Working through the three examples showed me that every sentence has an underlying hierarchy governed by a small number of recursive rules. The realisation that the single rule <code>S → NP VP</code> underlies such different sentences — a simple statement about interest rates, a ditransitive sentence about the internet, and an ambiguous sentence about a telescope — was genuinely illuminating. It demonstrated the power and economy of phrase-structure grammar.</p>
+
+                    <h3>The Importance of Verb Behaviour</h3>
+                    <p>The second sentence taught me that the verb is the organising centre of the predicate. I initially wanted to attach "everyone" and "a voice" as a single phrase, but recognising that "gives" is ditransitive made it clear they are two distinct objects. This reshaped how I think about parsing: it is not enough to know a word's part of speech; you must know its <strong>argument structure</strong>. This is precisely the kind of lexical knowledge that data-driven parsers must learn from annotated corpora, and it helped me appreciate why large treebanks are so valuable for training intelligent systems.</p>
+
+                    <h3>Ambiguity as the Real Lesson</h3>
+                    <p>The third sentence was the most valuable part of the activity. At first, the idea that one sentence could have two correct trees felt like a flaw. But I came to see that <strong>ambiguity is the central challenge of natural language understanding</strong>, not an edge case. Humans resolve "The man saw the dog with the telescope" effortlessly using world knowledge — we know people are far more likely to hold telescopes than dogs are. An intelligent agent has no such intuition unless it has learned it from data.</p>
+
+                    <p>This connected the activity directly to contemporary research. I learned that classical parsers used probabilistic context-free grammars to assign probabilities to competing trees, while modern transformer-based models resolve attachment ambiguity implicitly through learned contextual representations. Seeing a textbook example map onto an active research problem made the theory feel relevant and current, and it deepened my understanding of why language remains difficult for AI despite recent advances.</p>
+
+                    <h3>Skills Developed</h3>
+                    <p>Technically, I developed the ability to construct constituency parse trees accurately, to reason about part-of-speech tagging, and to represent nested structure clearly. I also learned to use bracket notation as a compact, portable way of writing trees, and to verify my hand-drawn trees against the logic of the grammar. Just as importantly, I practised communicating a technical analysis in a structured, accessible way — separating the tree, its summary, and its interpretation so that a reader can follow my reasoning.</p>
+
+                    <h3>Areas for Growth</h3>
+                    <p>If I were to extend this work, I would generate the same trees automatically using tools such as the Stanford Parser, spaCy, or NLTK, and compare the machine-generated structures with my own. This would let me see how a probabilistic parser resolves the telescope ambiguity in practice and which reading it prefers. I would also like to explore dependency parsing as an alternative representation, since it captures grammatical relationships in a way that is often more directly useful for downstream NLP tasks.</p>
+
+                    <h3>Connecting to My Broader Studies</h3>
+                    <p>This activity reinforced a theme that runs through my MSc: intelligent systems succeed by imposing structure on messy, real-world input. Whether the input is a sentence, an image, or a stream of sensor data, the same principle applies — meaningful structure must be recovered before an agent can reason or act. Understanding how language is parsed has given me a stronger foundation for later work on language models, information extraction, and human–agent interaction, and it has made me more aware of the assumptions and limitations built into the NLP tools I will use in my project.</p>
+                </div>
+            </section>
+
+            <!-- References -->
+            <section id="references">
+                <div class="inner">
+                    <header class="major">
+                        <h2>References</h2>
+                    </header>
+                    <p>Chomsky, N. (1957) <em>Syntactic structures</em>. The Hague: Mouton.</p>
+
+                    <p>Collins, M. (2003) 'Head-driven statistical models for natural language parsing', <em>Computational Linguistics</em>, 29(4), pp. 589-637. doi: 10.1162/089120103322753356.</p>
+
+                    <p>Jurafsky, D. and Martin, J. H. (2023) <em>Speech and language processing</em>. 3rd edn (draft). Available at: https://web.stanford.edu/~jurafsky/slp3/ (Accessed: 11 July 2026).</p>
+
+                    <p>Manning, C. D. and Schütze, H. (1999) <em>Foundations of statistical natural language processing</em>. Cambridge, MA: MIT Press.</p>
+
+                    <p>Marcus, M. P., Santorini, B. and Marcinkiewicz, M. A. (1993) 'Building a large annotated corpus of English: the Penn Treebank', <em>Computational Linguistics</em>, 19(2), pp. 313-330.</p>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <section id="navigation">
+                <div class="inner">
+                    <ul class="actions">
+                        <li><a href="ai-module.html" class="button">← Back to Module Overview</a></li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                <ul class="icons">
+                    <li><a href="https://github.com/KannaAlmansoori" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; 2025 Kanna AlMansoori</li>
+                    <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 
 </body>
 </html>
