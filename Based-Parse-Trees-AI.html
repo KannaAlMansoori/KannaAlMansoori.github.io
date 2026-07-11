@@ -1,334 +1,81 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Constituency-Based Parse Trees - Kanna AlMansoori</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Constituency-based Parse Trees</title>
+  <style>
+    body {
+      font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      color: #24292f;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+    h1 { font-size: 1.9rem; border-bottom: 1px solid #d0d7de; padding-bottom: .4rem; }
+    h2 { font-size: 1.35rem; margin-top: 2.2rem; }
+    h3 { font-size: 1.1rem; margin-top: 1.6rem; color: #444; }
+    p { margin: .6rem 0 1rem; }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: .75rem 0 1rem;
+      border: 1px solid #d0d7de;
+      border-radius: 6px;
+      padding: 6px;
+      background: #fff;
+    }
+    em { font-style: italic; }
+    a { color: #0969da; }
+  </style>
 </head>
-<body class="is-preload">
+<body>
 
-    <div id="wrapper">
+  <h1>Activity: Constituency-based parse trees</h1>
 
-        <!-- Header -->
-        <header id="header">
-            <a href="index.html" class="logo"><strong>Kanna AlMansoori</strong> <span>MSc Artificial Intelligence E-Portfolio</span></a>
-            <nav>
-                <a href="#menu">Menu</a>
-            </nav>
-        </header>
+  <p>The three sentences below were parsed using phrase-structure grammar, in which
+  each sentence (S) divides into a subject noun phrase (NP) and a predicate verb
+  phrase (VP), following the core rule S &rarr; NP VP. The completed parse trees are
+  shown below, with a summary of each.</p>
 
-        <!-- Menu -->
-        <nav id="menu">
-            <ul class="links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="launch-module.html">Launch into Computing</a></li>
-                <li><a href="induction.html">Induction Computing</a></li>
-                <li><a href="ai-module.html">Understanding Artificial Intelligence</a></li>
-                <li><a href="numerical-analysis.html">Numerical Analysis</a></li>
-                <li><a href="intelligent-agents.html">Intelligent Agents</a></li>
-                <li><a href="project.html">Project</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+  <h2>1. The government raised interest rates.</h2>
+  <img src="images/TRee%201.png" alt="Parse tree for 'The government raised interest rates'" />
+  <p>A straightforward S &rarr; NP VP structure. The subject NP is "The government"
+  (Det + N), and the VP is "raised" plus the object NP "interest rates". Because
+  "interest rates" is a compound noun, "interest" sits inside the object NP as a
+  modifier of "rates".</p>
 
-        <!-- Main Content -->
-        <div id="main" class="alt">
+  <h2>2. The internet gives everyone a voice.</h2>
+  <img src="images/TRee%202.png" alt="Parse tree for 'The internet gives everyone a voice'" />
+  <p>"gives" is a ditransitive verb, so the VP branches into two noun phrases: the
+  indirect object "everyone" and the direct object "a voice". This shows how the
+  structure of the verb phrase depends on the verb's argument requirements.</p>
 
-            <!-- Breadcrumb Navigation -->
-            <section id="one">
-                <div class="inner">
-                    <p><a href="intelligent-agents.html">&larr; Back to Intelligent Agents Module</a></p>
-                    <header class="major">
-                        <h1>Constituency-Based Parse Trees</h1>
-                        <p>Natural Language Parsing Activity</p>
-                    </header>
-                    <p><strong>Type:</strong> Formative Activity | <strong>Status:</strong> &#10003; Complete</p>
-                </div>
-            </section>
+  <h2>3. The man saw the dog with the telescope.</h2>
+  <p>This sentence is deliberately ambiguous and produces two valid trees:</p>
 
-            <!-- Task Overview and Learning Outcomes -->
-            <section id="task-overview">
-                <div class="inner">
-                    <header class="major">
-                        <h2>Activity Guidance and Learning Outcomes</h2>
-                    </header>
+  <h3>Reading A &mdash; telescope is the instrument (PP under VP)</h3>
+  <img src="images/TRee%203.png" alt="Parse tree, reading A: the man used the telescope to see the dog" />
+  <p>The prepositional phrase "with the telescope" attaches to the VP &mdash; the man
+  used the telescope to see the dog.</p>
 
-                    <h3>Activity Guidance</h3>
-                    <p>Create a constituency-based parse tree for each of the following phrases and add the completed trees to the e-portfolio:</p>
-                    <ul>
-                        <li>The government raised interest rates.</li>
-                        <li>The internet gives everyone a voice.</li>
-                        <li>The man saw the dog with the telescope.</li>
-                    </ul>
+  <h3>Reading B &mdash; the dog has the telescope (PP under NP)</h3>
+  <img src="images/TRee%204.png" alt="Parse tree, reading B: the dog is holding the telescope" />
+  <p>The PP attaches to the NP "the dog" &mdash; the dog is the one holding the
+  telescope. This is a classic example of <em>PP-attachment ambiguity</em>, where a
+  single string of words yields two grammatical structures and two meanings.</p>
 
-                    <h3>Intended Learning Outcomes</h3>
-                    <ul>
-                        <li>Develop the knowledge and skills required to develop, deploy and evaluate the tools and techniques of intelligent systems to solve real-world problems</li>
-                        <li>Develop an understanding of contemporary research issues in the area of intelligent agent systems</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Method -->
-            <section id="method">
-                <div class="inner">
-                    <header class="major">
-                        <h2>Method: Constituency Parsing</h2>
-                    </header>
-                    <p>Constituency parsing breaks a sentence into nested constituents &mdash; phrases that behave as single grammatical units &mdash; using phrase-structure grammar. The core rule is <strong>S &rarr; NP VP</strong>: every sentence splits into a subject noun phrase and a predicate verb phrase, which are then broken down further until every word is tagged.</p>
-                    <div class="box">
-                        <p><strong>Labels used:</strong> S = sentence &middot; NP = noun phrase &middot; VP = verb phrase &middot; PP = prepositional phrase &middot; Det = determiner &middot; N = noun &middot; V = verb &middot; P = preposition &middot; Pron = pronoun</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Trees -->
-            <section id="trees">
-                <div class="inner">
-                    <header class="major">
-                        <h2>Parse Trees</h2>
-                    </header>
-
-                    <h3>1. The government raised interest rates.</h3>
-                    <div class="box" style="text-align:center;overflow-x:auto;">
-<svg viewBox="0 0 560 362" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Parse tree: The government raised interest rates" style="max-width:100%;height:auto;font-family:Georgia, serif;">
-<rect x="0" y="0" width="560" height="362" fill="none"/>
-<line x1="68.0" y1="182.0" x2="68.0" y2="222.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="164.0" y1="182.0" x2="164.0" y2="222.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="116.0" y1="118.0" x2="68.0" y2="158.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="116.0" y1="118.0" x2="164.0" y2="158.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="260.0" y1="182.0" x2="260.0" y2="222.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="356.0" y1="246.0" x2="356.0" y2="286.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="452.0" y1="246.0" x2="452.0" y2="286.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="404.0" y1="182.0" x2="356.0" y2="222.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="404.0" y1="182.0" x2="452.0" y2="222.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="332.0" y1="118.0" x2="260.0" y2="158.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="332.0" y1="118.0" x2="404.0" y2="158.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="224.0" y1="54.0" x2="116.0" y2="94.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="224.0" y1="54.0" x2="332.0" y2="94.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<text x="68.0" y="238.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a" font-style="italic">The</text>
-<text x="68.0" y="174.0" text-anchor="middle" font-size="14" font-weight="normal" fill="#6a7a8c">Det</text>
-<text x="164.0" y="238.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a" font-style="italic">government</text>
-<text x="164.0" y="174.0" text-anchor="middle" font-size="14" font-weight="normal" fill="#6a7a8c">N</text>
-<text x="116.0" y="110.0" text-anchor="middle" font-size="17" font-weight="bold" fill="#2e5cb8">NP</text>
-<text x="260.0" y="238.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a" font-style="italic">raised</text>
-<text x="260.0" y="174.0" text-anchor="middle" font-size="14" font-weight="normal" fill="#6a7a8c">V</text>
-<text x="356.0" y="302.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a" font-style="italic">interest</text>
-<text x="356.0" y="238.0" text-anchor="middle" font-size="14" font-weight="normal" fill="#6a7a8c">N</text>
-<text x="452.0" y="302.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a" font-style="italic">rates</text>
-<text x="452.0" y="238.0" text-anchor="middle" font-size="14" font-weight="normal" fill="#6a7a8c">N</text>
-<text x="404.0" y="174.0" text-anchor="middle" font-size="17" font-weight="bold" fill="#2e5cb8">NP</text>
-<text x="332.0" y="110.0" text-anchor="middle" font-size="17" font-weight="bold" fill="#2e5cb8">VP</text>
-<text x="224.0" y="46.0" text-anchor="middle" font-size="17" font-weight="bold" fill="#2e5cb8">S</text>
-</svg>
-</div>
-                    <p><em>Figure 1: Constituency parse tree for "The government raised interest rates."</em></p>
-                    <p><strong>Summary:</strong> A straightforward S &rarr; NP VP structure. The subject NP is "the government"; the predicate VP is "raised interest rates". "interest rates" is a compound noun, so "interest" sits inside the object NP as a noun modifier of "rates".</p>
-
-                    <h3>2. The internet gives everyone a voice.</h3>
-                    <div class="box" style="text-align:center;overflow-x:auto;">
-<svg viewBox="0 0 656 362" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Parse tree: The internet gives everyone a voice" style="max-width:100%;height:auto;font-family:Georgia, serif;">
-<rect x="0" y="0" width="656" height="362" fill="none"/>
-<line x1="68.0" y1="182.0" x2="68.0" y2="222.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="164.0" y1="182.0" x2="164.0" y2="222.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="116.0" y1="118.0" x2="68.0" y2="158.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="116.0" y1="118.0" x2="164.0" y2="158.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="260.0" y1="182.0" x2="260.0" y2="222.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="356.0" y1="246.0" x2="356.0" y2="286.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="356.0" y1="182.0" x2="356.0" y2="222.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="452.0" y1="246.0" x2="452.0" y2="286.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="548.0" y1="246.0" x2="548.0" y2="286.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="500.0" y1="182.0" x2="452.0" y2="222.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="500.0" y1="182.0" x2="548.0" y2="222.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="372.0" y1="118.0" x2="260.0" y2="158.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="372.0" y1="118.0" x2="356.0" y2="158.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="372.0" y1="118.0" x2="500.0" y2="158.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="244.0" y1="54.0" x2="116.0" y2="94.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="244.0" y1="54.0" x2="372.0" y2="94.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<text x="68.0" y="238.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a" font-style="italic">The</text>
-<text x="68.0" y="174.0" text-anchor="middle" font-size="14" font-weight="normal" fill="#6a7a8c">Det</text>
-<text x="164.0" y="238.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a" font-style="italic">internet</text>
-<text x="164.0" y="174.0" text-anchor="middle" font-size="14" font-weight="normal" fill="#6a7a8c">N</text>
-<text x="116.0" y="110.0" text-anchor="middle" font-size="17" font-weight="bold" fill="#2e5cb8">NP</text>
-<text x="260.0" y="238.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a" font-style="italic">gives</text>
-<text x="260.0" y="174.0" text-anchor="middle" font-size="14" font-weight="normal" fill="#6a7a8c">V</text>
-<text x="356.0" y="302.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a" font-style="italic">everyone</text>
-<text x="356.0" y="238.0" text-anchor="middle" font-size="14" font-weight="normal" fill="#6a7a8c">Pron</text>
-<text x="356.0" y="174.0" text-anchor="middle" font-size="17" font-weight="bold" fill="#2e5cb8">NP</text>
-<text x="452.0" y="302.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a" font-style="italic">a</text>
-<text x="452.0" y="238.0" text-anchor="middle" font-size="14" font-weight="normal" fill="#6a7a8c">Det</text>
-<text x="548.0" y="302.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a" font-style="italic">voice</text>
-<text x="548.0" y="238.0" text-anchor="middle" font-size="14" font-weight="normal" fill="#6a7a8c">N</text>
-<text x="500.0" y="174.0" text-anchor="middle" font-size="17" font-weight="bold" fill="#2e5cb8">NP</text>
-<text x="372.0" y="110.0" text-anchor="middle" font-size="17" font-weight="bold" fill="#2e5cb8">VP</text>
-<text x="244.0" y="46.0" text-anchor="middle" font-size="17" font-weight="bold" fill="#2e5cb8">S</text>
-</svg>
-</div>
-                    <p><em>Figure 2: Constituency parse tree for "The internet gives everyone a voice."</em></p>
-                    <p><strong>Summary:</strong> The verb "gives" is ditransitive &mdash; it takes two objects &mdash; so the VP branches into two noun phrases: the indirect object "everyone" and the direct object "a voice". This illustrates how the structure of a verb phrase depends on the verb's argument requirements.</p>
-
-                    <h3>3. The man saw the dog with the telescope.</h3>
-                    <p>This sentence is structurally ambiguous &mdash; the prepositional phrase "with the telescope" can attach in two different places, giving two valid trees and two meanings.</p>
-
-                    <h4>Reading A &mdash; the telescope is the instrument (the man used it to see). The PP attaches to the VP:</h4>
-                    <div class="box" style="text-align:center;overflow-x:auto;">
-<svg viewBox="0 0 848 426" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Parse tree reading A: PP attaches to VP" style="max-width:100%;height:auto;font-family:Georgia, serif;">
-<rect x="0" y="0" width="848" height="426" fill="none"/>
-<line x1="68.0" y1="182.0" x2="68.0" y2="222.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="164.0" y1="182.0" x2="164.0" y2="222.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="116.0" y1="118.0" x2="68.0" y2="158.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="116.0" y1="118.0" x2="164.0" y2="158.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="260.0" y1="182.0" x2="260.0" y2="222.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="356.0" y1="246.0" x2="356.0" y2="286.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="452.0" y1="246.0" x2="452.0" y2="286.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="404.0" y1="182.0" x2="356.0" y2="222.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="404.0" y1="182.0" x2="452.0" y2="222.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="548.0" y1="246.0" x2="548.0" y2="286.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="644.0" y1="310.0" x2="644.0" y2="350.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="740.0" y1="310.0" x2="740.0" y2="350.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="692.0" y1="246.0" x2="644.0" y2="286.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="692.0" y1="246.0" x2="740.0" y2="286.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="620.0" y1="182.0" x2="548.0" y2="222.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="620.0" y1="182.0" x2="692.0" y2="222.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="428.0" y1="118.0" x2="260.0" y2="158.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="428.0" y1="118.0" x2="404.0" y2="158.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="428.0" y1="118.0" x2="620.0" y2="158.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="272.0" y1="54.0" x2="116.0" y2="94.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="272.0" y1="54.0" x2="428.0" y2="94.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<text x="68.0" y="238.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a" font-style="italic">The</text>
-<text x="68.0" y="174.0" text-anchor="middle" font-size="14" font-weight="normal" fill="#6a7a8c">Det</text>
-<text x="164.0" y="238.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a" font-style="italic">man</text>
-<text x="164.0" y="174.0" text-anchor="middle" font-size="14" font-weight="normal" fill="#6a7a8c">N</text>
-<text x="116.0" y="110.0" text-anchor="middle" font-size="17" font-weight="bold" fill="#2e5cb8">NP</text>
-<text x="260.0" y="238.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a" font-style="italic">saw</text>
-<text x="260.0" y="174.0" text-anchor="middle" font-size="14" font-weight="normal" fill="#6a7a8c">V</text>
-<text x="356.0" y="302.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a" font-style="italic">the</text>
-<text x="356.0" y="238.0" text-anchor="middle" font-size="14" font-weight="normal" fill="#6a7a8c">Det</text>
-<text x="452.0" y="302.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a" font-style="italic">dog</text>
-<text x="452.0" y="238.0" text-anchor="middle" font-size="14" font-weight="normal" fill="#6a7a8c">N</text>
-<text x="404.0" y="174.0" text-anchor="middle" font-size="17" font-weight="bold" fill="#2e5cb8">NP</text>
-<text x="548.0" y="302.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a" font-style="italic">with</text>
-<text x="548.0" y="238.0" text-anchor="middle" font-size="14" font-weight="normal" fill="#6a7a8c">P</text>
-<text x="644.0" y="366.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a" font-style="italic">the</text>
-<text x="644.0" y="302.0" text-anchor="middle" font-size="14" font-weight="normal" fill="#6a7a8c">Det</text>
-<text x="740.0" y="366.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a" font-style="italic">telescope</text>
-<text x="740.0" y="302.0" text-anchor="middle" font-size="14" font-weight="normal" fill="#6a7a8c">N</text>
-<text x="692.0" y="238.0" text-anchor="middle" font-size="17" font-weight="bold" fill="#2e5cb8">NP</text>
-<text x="620.0" y="174.0" text-anchor="middle" font-size="17" font-weight="bold" fill="#2e5cb8">PP</text>
-<text x="428.0" y="110.0" text-anchor="middle" font-size="17" font-weight="bold" fill="#2e5cb8">VP</text>
-<text x="272.0" y="46.0" text-anchor="middle" font-size="17" font-weight="bold" fill="#2e5cb8">S</text>
-</svg>
-</div>
-                    <p><em>Figure 3: Reading A &mdash; the PP "with the telescope" attaches to the VP (instrument reading).</em></p>
-
-                    <h4>Reading B &mdash; the dog has the telescope. The PP attaches to the NP "the dog":</h4>
-                    <div class="box" style="text-align:center;overflow-x:auto;">
-<svg viewBox="0 0 848 490" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Parse tree reading B: PP attaches to NP" style="max-width:100%;height:auto;font-family:Georgia, serif;">
-<rect x="0" y="0" width="848" height="490" fill="none"/>
-<line x1="68.0" y1="182.0" x2="68.0" y2="222.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="164.0" y1="182.0" x2="164.0" y2="222.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="116.0" y1="118.0" x2="68.0" y2="158.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="116.0" y1="118.0" x2="164.0" y2="158.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="260.0" y1="182.0" x2="260.0" y2="222.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="356.0" y1="246.0" x2="356.0" y2="286.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="452.0" y1="246.0" x2="452.0" y2="286.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="548.0" y1="310.0" x2="548.0" y2="350.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="644.0" y1="374.0" x2="644.0" y2="414.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="740.0" y1="374.0" x2="740.0" y2="414.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="692.0" y1="310.0" x2="644.0" y2="350.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="692.0" y1="310.0" x2="740.0" y2="350.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="620.0" y1="246.0" x2="548.0" y2="286.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="620.0" y1="246.0" x2="692.0" y2="286.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="476.0" y1="182.0" x2="356.0" y2="222.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="476.0" y1="182.0" x2="452.0" y2="222.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="476.0" y1="182.0" x2="620.0" y2="222.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="368.0" y1="118.0" x2="260.0" y2="158.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="368.0" y1="118.0" x2="476.0" y2="158.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="242.0" y1="54.0" x2="116.0" y2="94.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<line x1="242.0" y1="54.0" x2="368.0" y2="94.0" stroke="#8a9bb0" stroke-width="1.4"/>
-<text x="68.0" y="238.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a" font-style="italic">The</text>
-<text x="68.0" y="174.0" text-anchor="middle" font-size="14" font-weight="normal" fill="#6a7a8c">Det</text>
-<text x="164.0" y="238.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a" font-style="italic">man</text>
-<text x="164.0" y="174.0" text-anchor="middle" font-size="14" font-weight="normal" fill="#6a7a8c">N</text>
-<text x="116.0" y="110.0" text-anchor="middle" font-size="17" font-weight="bold" fill="#2e5cb8">NP</text>
-<text x="260.0" y="238.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a" font-style="italic">saw</text>
-<text x="260.0" y="174.0" text-anchor="middle" font-size="14" font-weight="normal" fill="#6a7a8c">V</text>
-<text x="356.0" y="302.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a" font-style="italic">the</text>
-<text x="356.0" y="238.0" text-anchor="middle" font-size="14" font-weight="normal" fill="#6a7a8c">Det</text>
-<text x="452.0" y="302.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a" font-style="italic">dog</text>
-<text x="452.0" y="238.0" text-anchor="middle" font-size="14" font-weight="normal" fill="#6a7a8c">N</text>
-<text x="548.0" y="366.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a" font-style="italic">with</text>
-<text x="548.0" y="302.0" text-anchor="middle" font-size="14" font-weight="normal" fill="#6a7a8c">P</text>
-<text x="644.0" y="430.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a" font-style="italic">the</text>
-<text x="644.0" y="366.0" text-anchor="middle" font-size="14" font-weight="normal" fill="#6a7a8c">Det</text>
-<text x="740.0" y="430.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a" font-style="italic">telescope</text>
-<text x="740.0" y="366.0" text-anchor="middle" font-size="14" font-weight="normal" fill="#6a7a8c">N</text>
-<text x="692.0" y="302.0" text-anchor="middle" font-size="17" font-weight="bold" fill="#2e5cb8">NP</text>
-<text x="620.0" y="238.0" text-anchor="middle" font-size="17" font-weight="bold" fill="#2e5cb8">PP</text>
-<text x="476.0" y="174.0" text-anchor="middle" font-size="17" font-weight="bold" fill="#2e5cb8">NP</text>
-<text x="368.0" y="110.0" text-anchor="middle" font-size="17" font-weight="bold" fill="#2e5cb8">VP</text>
-<text x="242.0" y="46.0" text-anchor="middle" font-size="17" font-weight="bold" fill="#2e5cb8">S</text>
-</svg>
-</div>
-                    <p><em>Figure 4: Reading B &mdash; the PP "with the telescope" attaches to the NP "the dog".</em></p>
-
-                    <p><strong>Summary:</strong> This is a classic case of PP-attachment ambiguity. Grammar alone cannot decide which reading is correct &mdash; both are structurally valid. This is exactly the kind of ambiguity that intelligent systems performing natural language understanding must resolve, typically by combining grammatical rules with context or with statistical/probabilistic parsing.</p>
-                </div>
-            </section>
-
-            <!-- Link to Learning Outcomes -->
-            <section id="learning-outcomes-summary">
-                <div class="inner">
-                    <header class="major">
-                        <h2>Link to the Learning Outcomes</h2>
-                    </header>
-
-                    <h3>Tools and Techniques of Intelligent Systems</h3>
-                    <p>Constituency parsing is a foundational technique in natural language processing &mdash; the component that lets an intelligent agent recover grammatical structure from raw text before it can interpret meaning. Producing these trees manually demonstrates the underlying method that automated parsers (e.g. the Stanford Parser, NLTK, spaCy) implement at scale.</p>
-
-                    <h3>Contemporary Research Issues in Intelligent Agent Systems</h3>
-                    <p>Sentence 3 shows that structural ambiguity is a problem that grammar alone cannot solve. Resolving PP-attachment and similar ambiguities remains an active area of NLP research, and it is central to how conversational and language-understanding agents interpret human input correctly. This connects the exercise directly to the challenges facing modern intelligent agent systems.</p>
-                </div>
-            </section>
-
-            <!-- Navigation -->
-            <section id="navigation">
-                <div class="inner">
-                    <ul class="actions">
-                        <li><a href="intelligent-agents.html" class="button">&larr; Back to Intelligent Agents Module</a></li>
-                        <li><a href="project.html" class="button primary">View Project &rarr;</a></li>
-                    </ul>
-                </div>
-            </section>
-
-        </div>
-
-        <!-- Footer -->
-        <footer id="footer">
-            <div class="inner">
-                <ul class="icons">
-                    <li><a href="https://github.com/KannaAlmansoori" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-                </ul>
-                <ul class="copyright">
-                    <li>&copy; 2025 Kanna AlMansoori</li>
-                    <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-                </ul>
-            </div>
-        </footer>
-
-    </div>
-
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+  <h2>Link to the learning outcomes</h2>
+  <p>Constituency parsing is a fundamental technique in natural language processing,
+  which is how intelligent agents interpret human language &mdash; addressing the
+  outcome on applying the tools and techniques of intelligent systems to real-world
+  problems. Sentence 3's ambiguity connects to contemporary research in intelligent
+  agent systems: a parser cannot resolve "with the telescope" from grammar alone, so
+  modern systems rely on probabilistic parsing and contextual cues to select the most
+  likely structure. Resolving this kind of structural ambiguity remains an active
+  challenge in NLP and language understanding.</p>
 
 </body>
 </html>
