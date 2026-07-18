@@ -3,7 +3,7 @@
 <head>
     <title>Individual Project: Implementation - Intelligent Agents - Kanna AlMansoori</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
@@ -139,57 +139,57 @@
                     <h3>Phase 1 — Environment and dependencies</h3>
                     <p>I began by setting up an isolated virtual environment and installing the dependency stack: LangGraph, Groq, PyMuPDF, Pydantic, sentence-transformers, pytest and supporting libraries.</p>
                     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                        <img src="images/evidence/01-pipeline-execution.png" alt="Terminal showing successful installation of the project dependency stack" style="min-width: 1000px; display: block;" />
+                        <img src="images/01-pipeline-execution.png" alt="Terminal showing successful installation of the project dependency stack" style="min-width: 1000px; display: block;" />
                     </div>
                     <p><em>Figure 1. Dependency installation into the project virtual environment.</em></p>
 
                     <p>I then created a Groq API key so the agents could reach the LLM inference endpoint. Groq was selected in the design phase for its low-latency LPU inference and academic-friendly free tier.</p>
                     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                        <img src="images/evidence/03-create-API.png" alt="Creating a Groq API key named concept-genealogy in the Groq console" style="min-width: 1000px; display: block;" />
+                        <img src="images/03-create-API.png" alt="Creating a Groq API key named concept-genealogy in the Groq console" style="min-width: 1000px; display: block;" />
                     </div>
                     <p><em>Figure 2. Provisioning the Groq API key used for LLM inference.</em></p>
 
                     <h3>Phase 2 — First tests and a stubbed pipeline</h3>
                     <p>Rather than build the whole system and test at the end, I wrote tests alongside each component. The first suite covered graph construction only.</p>
                     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                        <img src="images/evidence/02-unit-tests-passing.png" alt="pytest run collecting 3 items from test_graph.py, all passing" style="min-width: 1000px; display: block;" />
+                        <img src="images/02-unit-tests-passing.png" alt="pytest run collecting 3 items from test_graph.py, all passing" style="min-width: 1000px; display: block;" />
                     </div>
                     <p><em>Figure 3. First passing unit tests — 3 tests covering graph construction.</em></p>
 
                     <p>The first end-to-end run failed on a missing LangGraph module, which I resolved by activating the virtual environment correctly. Once running, the pipeline executed with stubbed Synthesiser and Challenger outputs, which let me verify routing and the HITL gates before spending tokens on real inference.</p>
                     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                        <img src="images/evidence/04-retriever-live-api.png" alt="ModuleNotFoundError for langgraph, then a successful run reaching HITL Gate 1 with stub synthesis output" style="min-width: 1000px; display: block;" />
+                        <img src="images/04-retriever-live-api.png" alt="ModuleNotFoundError for langgraph, then a successful run reaching HITL Gate 1 with stub synthesis output" style="min-width: 1000px; display: block;" />
                     </div>
                     <p><em>Figure 4. Import error resolved, then the retriever returning live results and the pipeline reaching the HITL gates with stubbed synthesis.</em></p>
 
                     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                        <img src="images/evidence/full-pipeline-live.png" alt="Full pipeline run for graph neural network with seed selection and stub outputs at Gate 3" style="min-width: 1000px; display: block;" />
+                        <img src="images/full-pipeline-live.png" alt="Full pipeline run for graph neural network with seed selection and stub outputs at Gate 3" style="min-width: 1000px; display: block;" />
                     </div>
                     <p><em>Figure 5. Full pipeline traversal end to end, with the Orchestrator producing six sub-tasks and the run persisting through all three gates.</em></p>
 
                     <h3>Phase 3 — Growing the test suite</h3>
                     <p>As the extractor, retriever and backoff logic were implemented, the suite grew from 3 to 14 tests.</p>
                     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                        <img src="images/evidence/07-tests-14-passing.png" alt="pytest run collecting 14 items across test_backoff, test_extractor, test_graph and test_retriever, all passing" style="min-width: 1000px; display: block;" />
+                        <img src="images/07-tests-14-passing.png" alt="pytest run collecting 14 items across test_backoff, test_extractor, test_graph and test_retriever, all passing" style="min-width: 1000px; display: block;" />
                     </div>
                     <p><em>Figure 6. 14 tests passing across backoff, extractor, graph and retriever modules.</em></p>
 
                     <h3>Phase 4 — The problem that changed the design</h3>
                     <p>This was the most instructive part of the build. The Semantic Scholar API began returning <code>429 Client Error</code> rate limit responses. A single failed request was enough to end a run: the retriever returned nothing and the pipeline halted at the first gate with "No candidate papers found."</p>
                     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                        <img src="images/evidence/08-error-429-rate-limit.png" alt="429 Client Error from the Semantic Scholar API causing the run to halt with no candidate papers" style="min-width: 1000px; display: block;" />
+                        <img src="images/08-error-429-rate-limit.png" alt="429 Client Error from the Semantic Scholar API causing the run to halt with no candidate papers" style="min-width: 1000px; display: block;" />
                     </div>
                     <p><em>Figure 7. A single 429 response terminating the run — the failure that prompted remediation.</em></p>
 
                     <p>My first remediation was exponential backoff with three retries. The logs show it working as intended, waiting 2s, 4s and 8s. But the underlying limit persisted, so the run still halted.</p>
                     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                        <img src="images/evidence/08-backoff-retry-live-issue.png" alt="Exponential backoff retrying at 2s, 4s and 8s before failing, with the run halting at the gate" style="min-width: 1000px; display: block;" />
+                        <img src="images/08-backoff-retry-live-issue.png" alt="Exponential backoff retrying at 2s, 4s and 8s before failing, with the run halting at the gate" style="min-width: 1000px; display: block;" />
                     </div>
                     <p><em>Figure 8. Backoff behaving correctly but insufficient on its own — retries exhausted, run halted.</em></p>
 
                     <p>Repeated runs confirmed this was not intermittent. Retrying a rate-limited service more politely does not help when the limit itself is the constraint.</p>
                     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                        <img src="images/evidence/many_issue_that_need_to_add_more_tooles.png" alt="Multiple consecutive runs all halting at the gate after exhausting retries against the rate-limited API" style="min-width: 1000px; display: block;" />
+                        <img src="images/many_issue_that_need_to_add_more_tooles.png" alt="Multiple consecutive runs all halting at the gate after exhausting retries against the rate-limited API" style="min-width: 1000px; display: block;" />
                     </div>
                     <p><em>Figure 9. Consecutive failed runs confirming a systemic single-point-of-failure rather than a transient fault.</em></p>
 
@@ -198,7 +198,7 @@
                     <h3>Phase 5 — Remediation verified in a live run</h3>
                     <p>The next full run demonstrates the fix working under exactly the conditions that previously killed the pipeline. Semantic Scholar rate-limits and exhausts its retries, the provider layer falls through, the cache answers, OpenAlex returns 20 results, and the run continues to the seed selection gate.</p>
                     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                        <img src="images/evidence/Test_1.png" alt="Live run where Semantic Scholar rate limits, the provider falls back to OpenAlex which returns 20 results, and the run proceeds through seed selection and claim extraction" style="min-width: 1100px; display: block;" />
+                        <img src="images/Test_1.png" alt="Live run where Semantic Scholar rate limits, the provider falls back to OpenAlex which returns 20 results, and the run proceeds through seed selection and claim extraction" style="min-width: 1100px; display: block;" />
                     </div>
                     <p><em>Figure 10. Graceful degradation in action: rate limit encountered, fallback provider engaged, run continues rather than halting. A 404 on the references endpoint is also absorbed and served by OpenAlex instead.</em></p>
 
@@ -207,29 +207,29 @@
                     <h3>Phase 6 — Real synthesis, critique and drift analysis</h3>
                     <p>With retrieval reliable, I replaced the stubs with real LLM calls. The Synthesiser now produces a grounded account of the concept's origins, and the Challenger critiques it — in the run below it correctly flags that the synthesis overreaches by implying causal links the source material does not evidence.</p>
                     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                        <img src="images/evidence/Test_2.png" alt="HITL Gate 2 synthesis approval followed by Challenger critique and drift analysis at Gate 3" style="min-width: 1100px; display: block;" />
+                        <img src="images/Test_2.png" alt="HITL Gate 2 synthesis approval followed by Challenger critique and drift analysis at Gate 3" style="min-width: 1100px; display: block;" />
                     </div>
                     <p><em>Figure 11. Gate 2 approval, then the Challenger producing critique and drift analysis at Gate 3.</em></p>
 
                     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                        <img src="images/evidence/Test_3.png" alt="Final output approved and provenance graph persisted with 26 nodes and 25 edges" style="min-width: 1100px; display: block;" />
+                        <img src="images/Test_3.png" alt="Final output approved and provenance graph persisted with 26 nodes and 25 edges" style="min-width: 1100px; display: block;" />
                     </div>
                     <p><em>Figure 12. Final approval and persistence — 26 nodes and 25 edges written to the provenance graph, with a JSON graph and a readable Markdown report produced.</em></p>
 
                     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                        <img src="images/evidence/Test_4_output.png" alt="Output folder containing the generated JSON provenance graph and Markdown report" style="min-width: 1000px; display: block;" />
+                        <img src="images/Test_4_output.png" alt="Output folder containing the generated JSON provenance graph and Markdown report" style="min-width: 1000px; display: block;" />
                     </div>
                     <p><em>Figure 13. The stored artefacts, satisfying the success criterion that processed information is saved in a usable format.</em></p>
 
                     <h3>Phase 7 — The refinement loop</h3>
                     <p>Gate 2 allows the user to refine rather than simply accept or reject. Testing this exposed a defect in the refinement cycle, which I traced and fixed before adding tests to cover the corrected behaviour.</p>
                     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                        <img src="images/evidence/05-hitl-refinement-cycle_.png" alt="User requesting refinement at Gate 2 with feedback, and the Synthesiser regenerating on that feedback" style="min-width: 1100px; display: block;" />
+                        <img src="images/05-hitl-refinement-cycle_.png" alt="User requesting refinement at Gate 2 with feedback, and the Synthesiser regenerating on that feedback" style="min-width: 1100px; display: block;" />
                     </div>
                     <p><em>Figure 14. Refinement requested with the instruction to focus on the earliest ancestors; the Synthesiser regenerates from the same validated claims using that feedback.</em></p>
 
                     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                        <img src="images/evidence/solve_the_issue_of_refinement_cycle_that_add_more_passed.png" alt="Refinement cycle resolved, synthesis approved, Challenger critique and drift analysis completed at Gate 3" style="min-width: 1100px; display: block;" />
+                        <img src="images/solve_the_issue_of_refinement_cycle_that_add_more_passed.png" alt="Refinement cycle resolved, synthesis approved, Challenger critique and drift analysis completed at Gate 3" style="min-width: 1100px; display: block;" />
                     </div>
                     <p><em>Figure 15. The corrected refinement cycle completing cleanly through to final output.</em></p>
                 </div>
@@ -288,22 +288,22 @@
                     </div>
 
                     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                        <img src="images/evidence/09-all-tests-19.png" alt="pytest run with 19 tests passing" style="min-width: 1000px; display: block;" />
+                        <img src="images/09-all-tests-19.png" alt="pytest run with 19 tests passing" style="min-width: 1000px; display: block;" />
                     </div>
                     <p><em>Figure 16. 19 tests passing after synthesis was implemented.</em></p>
 
                     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                        <img src="images/evidence/unit-tests-23-passing.png" alt="pytest run with 23 tests passing including test_cache" style="min-width: 1000px; display: block;" />
+                        <img src="images/unit-tests-23-passing.png" alt="pytest run with 23 tests passing including test_cache" style="min-width: 1000px; display: block;" />
                     </div>
                     <p><em>Figure 17. 23 tests passing after the cache layer was added.</em></p>
 
                     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                        <img src="images/evidence/unit-tests-38-passing.png" alt="pytest run with 38 tests passing across nine test modules" style="min-width: 1000px; display: block;" />
+                        <img src="images/unit-tests-38-passing.png" alt="pytest run with 38 tests passing across nine test modules" style="min-width: 1000px; display: block;" />
                     </div>
                     <p><em>Figure 18. 38 tests passing across nine modules, including HITL, provenance and provider fallback.</em></p>
 
                     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                        <img src="images/evidence/unit-tests-40-passing.png" alt="Final pytest run with 40 tests passing" style="min-width: 1000px; display: block;" />
+                        <img src="images/unit-tests-40-passing.png" alt="Final pytest run with 40 tests passing" style="min-width: 1000px; display: block;" />
                     </div>
                     <p><em>Figure 19. Final suite — 40 tests passing.</em></p>
                 </div>
