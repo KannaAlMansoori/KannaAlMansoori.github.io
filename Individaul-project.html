@@ -29,6 +29,7 @@
                 <li><a href="ai-module.html">Understanding Artificial Intelligence</a></li>
                 <li><a href="numerical-analysis.html">Numerical Analysis</a></li>
                 <li><a href="intelligent-agents.html">Intelligent Agents</a></li>
+                <li><a href="project.html">Project</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -189,7 +190,7 @@
 
                     <p>Repeated runs confirmed this was not intermittent. Retrying a rate-limited service more politely does not help when the limit itself is the constraint.</p>
                     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                        <img src="images/many_issue_that_need_to_add_more_tooles.png" alt="Multiple consecutive runs all halting at the gate after exhausting retries against the rate-limited API" style="min-width: 1000px; display: block;" />
+                        <img src="images/09-repeated-failures.png" alt="Multiple consecutive runs all halting at the gate after exhausting retries against the rate-limited API" style="min-width: 1000px; display: block;" />
                     </div>
                     <p><em>Figure 9. Consecutive failed runs confirming a systemic single-point-of-failure rather than a transient fault.</em></p>
 
@@ -198,7 +199,7 @@
                     <h3>Phase 5 — Remediation verified in a live run</h3>
                     <p>The next full run demonstrates the fix working under exactly the conditions that previously killed the pipeline. Semantic Scholar rate-limits and exhausts its retries, the provider layer falls through, the cache answers, OpenAlex returns 20 results, and the run continues to the seed selection gate.</p>
                     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                        <img src="images/Test_1.png" alt="Live run where Semantic Scholar rate limits, the provider falls back to OpenAlex which returns 20 results, and the run proceeds through seed selection and claim extraction" style="min-width: 1100px; display: block;" />
+                        <img src="images/10-fallback-openalex.png" alt="Live run where Semantic Scholar rate limits, the provider falls back to OpenAlex which returns 20 results, and the run proceeds through seed selection and claim extraction" style="min-width: 1100px; display: block;" />
                     </div>
                     <p><em>Figure 10. Graceful degradation in action: rate limit encountered, fallback provider engaged, run continues rather than halting. A 404 on the references endpoint is also absorbed and served by OpenAlex instead.</em></p>
 
@@ -207,29 +208,29 @@
                     <h3>Phase 6 — Real synthesis, critique and drift analysis</h3>
                     <p>With retrieval reliable, I replaced the stubs with real LLM calls. The Synthesiser now produces a grounded account of the concept's origins, and the Challenger critiques it — in the run below it correctly flags that the synthesis overreaches by implying causal links the source material does not evidence.</p>
                     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                        <img src="images/Test_2.png" alt="HITL Gate 2 synthesis approval followed by Challenger critique and drift analysis at Gate 3" style="min-width: 1100px; display: block;" />
+                        <img src="images/11-challenger-critique.png" alt="HITL Gate 2 synthesis approval followed by Challenger critique and drift analysis at Gate 3" style="min-width: 1100px; display: block;" />
                     </div>
                     <p><em>Figure 11. Gate 2 approval, then the Challenger producing critique and drift analysis at Gate 3.</em></p>
 
                     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                        <img src="images/Test_3.png" alt="Final output approved and provenance graph persisted with 26 nodes and 25 edges" style="min-width: 1100px; display: block;" />
+                        <img src="images/12-final-persisted.png" alt="Final output approved and provenance graph persisted with 26 nodes and 25 edges" style="min-width: 1100px; display: block;" />
                     </div>
                     <p><em>Figure 12. Final approval and persistence — 26 nodes and 25 edges written to the provenance graph, with a JSON graph and a readable Markdown report produced.</em></p>
 
                     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                        <img src="images/Test_4_output.png" alt="Output folder containing the generated JSON provenance graph and Markdown report" style="min-width: 1000px; display: block;" />
+                        <img src="images/13-output-files.png" alt="Output folder containing the generated JSON provenance graph and Markdown report" style="min-width: 1000px; display: block;" />
                     </div>
                     <p><em>Figure 13. The stored artefacts, satisfying the success criterion that processed information is saved in a usable format.</em></p>
 
                     <h3>Phase 7 — The refinement loop</h3>
                     <p>Gate 2 allows the user to refine rather than simply accept or reject. Testing this exposed a defect in the refinement cycle, which I traced and fixed before adding tests to cover the corrected behaviour.</p>
                     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                        <img src="images/05-hitl-refinement-cycle_.png" alt="User requesting refinement at Gate 2 with feedback, and the Synthesiser regenerating on that feedback" style="min-width: 1100px; display: block;" />
+                        <img src="images/14-refinement-request.png" alt="User requesting refinement at Gate 2 with feedback, and the Synthesiser regenerating on that feedback" style="min-width: 1100px; display: block;" />
                     </div>
                     <p><em>Figure 14. Refinement requested with the instruction to focus on the earliest ancestors; the Synthesiser regenerates from the same validated claims using that feedback.</em></p>
 
                     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                        <img src="images/solve_the_issue_of_refinement_cycle_that_add_more_passed.png" alt="Refinement cycle resolved, synthesis approved, Challenger critique and drift analysis completed at Gate 3" style="min-width: 1100px; display: block;" />
+                        <img src="images/15-refinement-fixed.png" alt="Refinement cycle resolved, synthesis approved, Challenger critique and drift analysis completed at Gate 3" style="min-width: 1100px; display: block;" />
                     </div>
                     <p><em>Figure 15. The corrected refinement cycle completing cleanly through to final output.</em></p>
                 </div>
