@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Unit 10 Activity - Deep Learning in Action - Kanna AlMansoori</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo"><strong>Kanna AlMansoori</strong> <span>MSc Artificial Intelligence E-Portfolio</span></a>
+            <nav>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <ul class="links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="launch-module.html">Launch into Computing</a></li>
+                <li><a href="induction.html">Induction Computing</a></li>
+                <li><a href="ai-module.html">Understanding Artificial Intelligence</a></li>
+                <li><a href="numerical-analysis.html">Numerical Analysis</a></li>
+                <li><a href="intelligent-agents.html">Intelligent Agents</a></li>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div id="main" class="alt">
+
+            <!-- Breadcrumb Navigation -->
+            <section id="one">
+                <div class="inner">
+                    <p><a href="intelligent-agents.html">← Back to Intelligent Agents Module</a></p>
+                    <header class="major">
+                        <h1>Unit 10 Activity: Deep Learning in Action</h1>
+                        <p>LLM-Based Autonomous Agents</p>
+                    </header>
+                    <p><strong>Unit:</strong> 10 | <strong>Type:</strong> Forum Activity | <strong>Status:</strong> ✓ Complete</p>
+                </div>
+            </section>
+
+            <!-- Task Overview -->
+            <section id="task-overview">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Task Overview</h2>
+                    </header>
+
+                    <h3>Activity Guidance</h3>
+                    <div class="box">
+                        <p><strong>Research an application of deep learning that you think is going to have an impact on society, whether positive or negative, and post on the discussion forum covering:</strong></p>
+                        <ul>
+                            <li>An overview of the technology and what it does</li>
+                            <li>A brief synopsis of how it works</li>
+                            <li>The potential impacts in terms of ethics, privacy, social good, or other socio-technical aspects</li>
+                        </ul>
+                    </div>
+
+                    <h3>Module Learning Outcome Covered</h3>
+                    <ul>
+                        <li><strong>Learning Outcome 1:</strong> Identify and critically analyse agent-based systems, differentiating between architectures and approaches.</li>
+                    </ul>
+
+                    <h3>Why I Chose This Application</h3>
+                    <p>I chose LLM-based autonomous agents because they sit exactly where this module's two halves meet. The questions they raise about autonomy, coordination and responsibility are the same ones agent researchers have worked on for years. What has changed is that the agent's reasoning now comes from a deep learning model rather than from written rules.</p>
+                </div>
+            </section>
+
+            <!-- Forum Post -->
+            <section id="forum-post">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Forum Post</h2>
+                    </header>
+
+                    <div class="box">
+                        <h4>Topic: LLM-Based Autonomous Agents</h4>
+                        <p><strong>References:</strong> 4</p>
+
+                        <h4>Overview</h4>
+                        <p>The application I chose is the LLM-based autonomous agent, often called "agentic AI". This is a system that uses a large language model (LLM) as its "brain", but instead of just answering one question, it works towards a goal on its own. You give it a task, and it breaks it into smaller steps, uses tools such as web search, code or a database to carry them out, checks the result, and tries again if needed, without a person guiding every step (Wang et al., 2024). I picked this topic because it links deep learning with agent-based computing. The problems it raises, like autonomy, coordination and responsibility, are the same ones agent researchers have studied for years. The difference now is that the agent's "brain" is a deep learning model (Dignum and Dignum, 2026). It is also spreading quickly, with Gartner (2025) predicting that agents will make about 15% of routine work decisions by themselves within a few years, up from almost none in 2024.</p>
+
+                        <h4>How It Works</h4>
+                        <p>The deep learning part is the LLM itself, a large neural network trained on huge amounts of text, so it learns to predict language and reason with it. To turn this model into an agent, a few extra parts are added around it (Wang et al., 2024): a memory that keeps track of the conversation and past steps, a planning part that splits the goal into smaller tasks, and an action part that lets the agent use the tools. These parts work in a loop: the agent thinks about what to do, takes an action, looks at the result, and then thinks again, repeating this "think, act, observe" cycle until the job is finished. Larger systems use several agents together, each with its own role, much like how older multi-agent systems were designed.</p>
+
+                        <h4>Potential Impacts</h4>
+                        <p>The good side is clear. Agents can handle full tasks from start to finish, not just single steps, which saves time and gives more people access to skills they may not have. But this has an economic cost too, because if agents take over whole workflows, some jobs made up of those tasks may be reduced or replaced. The biggest risks, though, come from the same thing that makes them useful, which is their freedom to act. Because an agent acts instead of only giving advice, it can cause harm directly: Fang et al. (2024) showed that an agent built on GPT-4 could find and attack weak points in websites on its own, without being told about them first. Responsibility is another problem. When a long chain of steps ends badly, working out where the fault lies is not simple, since the user, the team that built the agent and the model all played a part. In a system with many agents, one mistake can also spread before anyone notices (Dignum and Dignum, 2026). Bias is a further issue, because the LLM is trained on internet text and picks up its unfair patterns, and since an agent acts, this bias can turn into a real decision, such as sorting job applications. Privacy is also a worry, because to be useful these agents are often given access to emails, files and calendars and remember past interactions, which puts a lot of private data in one place.</p>
+
+                        <p>Overall I think the effect will be big, in both good and bad ways, and the answer is not only a technical one. As Dignum and Dignum (2026) argue, giving a system freedom without clear rules for control and responsibility is risky. So the focus should be on being open about how these agents work, keeping humans in control for important decisions, and having proper rules in place. Gartner (2025) also predicts that by the end of 2027, over four in ten of these projects will be dropped, because they cost too much, show no clear benefit, or cannot be controlled safely. So the worries are real in business, not only in theory.</p>
+
+                        <h4>Forum Post Screenshot</h4>
+                        <span class="image fit">
+                            <img src="images/unit10-deep-learning-in-action.png" alt="Screenshot of forum post on LLM-based autonomous agents" />
+                        </span>
+                        <p><em>Figure 1: Forum post on LLM-based autonomous agents, posted 18 July 2026</em></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Learning Outcome Achieved -->
+            <section id="learning-outcomes-summary">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Learning Outcome Achieved</h2>
+                    </header>
+
+                    <div class="box">
+                        <p>This artefact evidences <strong>Learning Outcome 1</strong> (identify and critically analyse agent-based systems, differentiating between architectures and approaches).</p>
+                    </div>
+
+                    <h3>Analysing an Agent-Based Application</h3>
+                    <p><strong>What I did:</strong> I researched LLM-based autonomous agents and explained what they do, how they are built, and what their wider effects are likely to be. I supported the post with four sources, including a survey paper, a security study, an academic position paper, and industry forecasting.</p>
+
+                    <p><strong>Comparing approaches:</strong> Writing this post made me see how much of the classical agent architecture survives in these systems. The think–act–observe loop is a modern version of the sense–decide–act cycle, and the memory, planning and action components map onto parts that earlier agent designs also needed. The difference is where the reasoning comes from. In older architectures it was written by a developer as rules or as an explicit goal model; here it is learned from text and cannot be inspected directly. Multi-agent versions repeat the older multi-agent structure of specialised agents with separate roles, which is why the coordination problems look familiar too.</p>
+
+                    <p><strong>What I concluded:</strong> The property that makes these agents useful, their freedom to act, is also what makes them risky. Fang et al. (2024) demonstrated an agent finding and exploiting website vulnerabilities without being directed to them, which shows the difference between a system that advises and a system that acts. Responsibility becomes hard to assign across a long chain of steps involving the user, the developers and the model. My conclusion was that transparency, human control over important decisions, and clear rules matter as much as capability, and Gartner's (2025) forecast that over 40% of agentic projects will be cancelled by the end of 2027 suggests organisations are already meeting these limits in practice.</p>
+                </div>
+            </section>
+
+            <!-- Reflection -->
+            <section id="comprehensive-reflection">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Reflection</h2>
+                    </header>
+
+                    <div class="box">
+                        <p>The most useful part of this activity was realising that agentic AI is not a break from what we studied earlier in the module. It is the same architecture with a different reasoning engine. That made the older material feel relevant rather than historical.</p>
+                    </div>
+
+                    <div class="box">
+                        <p>Finding sources was harder than writing. This is a fast-moving area, so much of what is available is marketing rather than research. I looked for a peer-reviewed survey for the technical description, an experimental paper for the security claim, and an industry forecast for adoption, so that each type of claim was supported by an appropriate kind of source.</p>
+                    </div>
+
+                    <div class="box">
+                        <p>Coming from statistics, the point that stayed with me is the shift from advice to action. A wrong prediction can be checked before anyone uses it. An agent that acts on a wrong prediction has already done something. That changes what oversight has to mean, and it is a question I want to bring into the Unit 12 seminar.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- References -->
+            <section id="references">
+                <div class="inner">
+                    <header class="major">
+                        <h2>References</h2>
+                    </header>
+
+                    <p>Dignum, V. and Dignum, F. (2026) 'Agentifying agentic AI', <em>WMAC 2026: AAAI 2026 Bridge Program on Advancing LLM-Based Multi-Agent Collaboration</em>. arXiv:2511.17332. Available at: https://arxiv.org/abs/2511.17332 (Accessed: 14 July 2026).</p>
+
+                    <p>Fang, R., Bindu, R., Gupta, A., Zhan, Q. and Kang, D. (2024) 'LLM agents can autonomously hack websites', arXiv:2402.06664. Available at: https://arxiv.org/abs/2402.06664 (Accessed: 13 July 2026).</p>
+
+                    <p>Gartner (2025) <em>Gartner predicts over 40% of agentic AI projects will be canceled by end of 2027</em>. Press release, 25 June. Available at: https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027 (Accessed: 14 July 2026).</p>
+
+                    <p>Wang, L., Ma, C., Feng, X., Zhang, Z., Yang, H., Zhang, J., Chen, Z., Tang, J., Chen, X., Lin, Y., Zhao, W.X., Wei, Z. and Wen, J. (2024) 'A survey on large language model based autonomous agents', <em>Frontiers of Computer Science</em>, 18(6), article 186345. Available at: https://doi.org/10.1007/s11704-024-40231-1 (Accessed: 13 July 2026).</p>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <section id="navigation">
+                <div class="inner">
+                    <ul class="actions">
+                        <li><a href="unit10-seminar-preparation.html" class="button">← Unit 10 Seminar Preparation</a></li>
+                        <li><a href="intelligent-agents.html" class="button primary">Intelligent Agents Module →</a></li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                <ul class="icons">
+                    <li><a href="https://github.com/KannaAlmansoori" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; 2025 Kanna AlMansoori</li>
+                    <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
