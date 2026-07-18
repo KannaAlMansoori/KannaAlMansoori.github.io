@@ -56,11 +56,10 @@
                         <h2>Task Overview and Learning Outcomes</h2>
                     </header>
 
-                    <h3>Intended Learning Outcomes</h3>
+                    <h3>Module Learning Outcomes Covered</h3>
                     <ul>
-                        <li>An understanding of the main agent models in use today and their grounding in artificial intelligence research</li>
-                        <li>The knowledge and skills required to develop, deploy and evaluate the tools and techniques of intelligent systems to solve real-world problems</li>
-                        <li>An understanding of contemporary research issues in the area of intelligent agent systems</li>
+                        <li><strong>Learning Outcome 1:</strong> Identify and critically analyse agent-based systems, differentiating between architectures and approaches.</li>
+                        <li><strong>Learning Outcome 4:</strong> Systematically develop and implement the skills required to be an effective member of a development team in a virtual professional environment, adopting real-life perspectives on team roles and organisation.</li>
                     </ul>
 
                     <h3>Discussion Overview</h3>
@@ -160,7 +159,7 @@
                         </ul>
 
                         <h4>Reference</h4>
-                        <p>Wooldridge, M. (2009) <em>An Introduction to MultiAgent Systems</em>. 2nd edn. Chichester: John Wiley & Sons.</p>
+                        <p>Wooldridge, M. (2009) <em>An Introduction to MultiAgent Systems</em>. 2nd edn. Chichester: John Wiley &amp; Sons.</p>
                     </div>
 
                     <!-- Peer Response 2 -->
@@ -238,10 +237,10 @@
                         </ul>
 
                         <h4>Reference</h4>
-                        <p>Wooldridge, M. (2009) <em>An Introduction to MultiAgent Systems</em>. 2nd edn. Chichester: John Wiley & Sons.</p>
+                        <p>Wooldridge, M. (2009) <em>An Introduction to MultiAgent Systems</em>. 2nd edn. Chichester: John Wiley &amp; Sons.</p>
                     </div>
 
-                   <!-- Summary Post -->
+                    <!-- Summary Post -->
                     <h3>Unit 7 – Summary Post</h3>
                     <div class="box">
                         <h4>Synthesis of Initial Post, Peer Feedback, and Units 5-7 Learning</h4>
@@ -268,7 +267,7 @@
                         </span>
                         <p><em>Figure 5: Summary post synthesizing learning and peer feedback on agent communication languages</em></p>
 
-<h4>Integration of Learning</h4>
+                        <h4>Integration of Learning</h4>
                         <ul>
                             <li><strong>Evolution of Thinking:</strong> From technical advantages focus to integrated understanding of standardisation, scalability, and practical implementation</li>
                             <li><strong>Peer Impact:</strong> Vinod's insights on formal semantics and ontology alignment, Mosweu's discussion of KQML's semantic limitations, and Olusegun's analysis of autonomy and semantic consistency</li>
@@ -276,53 +275,51 @@
                             <li><strong>Refined Answer:</strong> Successful ACL implementation requires concurrent development of standardised semantics, scalable architectures, and formal frameworks</li>
                         </ul>
                     </div>
+                </div>
+            </section>
 
-            <!-- Learning Outcomes Achieved Summary -->
+            <!-- Learning Outcomes Achieved -->
             <section id="learning-outcomes-summary">
                 <div class="inner">
                     <header class="major">
                         <h2>Learning Outcomes Achieved</h2>
                     </header>
 
-                    <h3>1: Understanding Agent Models and AI Foundations</h3>
-                    <p>I explained how KQML and ACLs support autonomous, reasoning-based communication and differ from traditional object-oriented systems. Through peer discussions, I gained a better understanding of formal semantics in FIPA-ACL and how AI theory influences practical agent communication design.</p>
+                    <div class="box">
+                        <p>As a Collaborative Discussion Forum summary, this artefact evidences <strong>Learning Outcome 1</strong> (identify and critically analyse agent-based systems, differentiating between architectures and approaches) and <strong>Learning Outcome 4</strong> (systematically develop and implement the skills required to be an effective member of a development team in a virtual professional environment).</p>
+                    </div>
 
-                    <h3>2: Developing and Evaluating Agent Systems</h3>
-                    <p>I explored key implementation challenges, including semantic alignment, ontology management, and scalability, while discussing solutions such as shared ontologies and hierarchical architectures. This improved my ability to evaluate and design practical agent systems.</p>
+                    <h3>Analysing Agent Communication Approaches</h3>
+                    <p><strong>What I did:</strong> In my initial post I looked at how KQML lets agents talk to each other, and I compared it with method invocation in Python and Java. The difference that stood out to me is choice. When you call a method, the object simply runs it. When you send a KQML message, the agent decides what to do with it.</p>
 
-                    <h3>3: Understanding Contemporary Research Issues</h3>
-                    <p>I examined current challenges, including scalability, standardisation, and the evolution from KQML to FIPA-ACL. I also recognised that modern LLM-based multi-agent systems continue to face similar coordination and communication issues.</p>
+                    <p><strong>Comparing the two approaches:</strong> Method invocation is fast and direct, but it only works well inside one application because the parts are tightly connected. ACLs work differently. Messages are sent between agents that were built separately, sometimes in different languages and on different platforms. This gives more freedom, but it also adds overhead, and agents can understand the same message in different ways. I also looked at why FIPA-ACL came after KQML: it defines the meaning of each message more clearly, so agents are less likely to interpret performatives differently (Finin, Labrou and Mayfield, 1997; Wooldridge, 2009).</p>
 
-                    <h3>4: Collaborative Learning and Peer Engagement</h3>
-                    <p>By providing constructive peer feedback and reflecting on others' perspectives, I strengthened my ability to combine theoretical knowledge with practical insights when analysing agent systems.</p>
+                    <p><strong>What I concluded:</strong> The main problems are not really about speed. They are about shared ontologies, scalability, and the fact that KQML never defined its semantics properly. Reading Guo et al. (2024) and Kakde et al. (2025) showed me that today's LLM-based multi-agent systems still deal with very similar coordination issues. So my conclusion is that neither approach is better in general. It depends on the system you are building.</p>
+
+                    <h3>Working in a Virtual Team</h3>
+                    <p><strong>What I did:</strong> I wrote the initial post, replied to three classmates, and then wrote a summary that brought their ideas together with my own.</p>
+
+                    <p><strong>How I worked with others:</strong> I tried not to only agree with people. Where I could, I added something useful, such as ontology alignment, message authentication, or using a formal standard like FIPA-ACL. I also asked questions at the end of my replies so the discussion could continue. The feedback genuinely changed my thinking. Before reading Mosweu's and Vinod's posts, I did not realise how important formal semantics were. I had focused on ontologies instead. Working this way, testing an idea with other people before deciding I am right, is how I want to work in a professional team.</p>
                 </div>
             </section>
 
-            <!-- Comprehensive Reflection -->
+            <!-- Reflection -->
             <section id="comprehensive-reflection">
                 <div class="inner">
                     <header class="major">
-                        <h2>Reflection: Learning, Growth, and Development</h2>
+                        <h2>Reflection</h2>
                     </header>
 
-                    <h3>Understanding of Agent Communication Languages</h3>
                     <div class="box">
-                        <p>Initially, I focused on KQML's benefits, such as platform-independent communication and agent autonomy. Through discussions, I realised that successful ACL implementation also depends on formal semantics, scalability, standardisation, and effective ontology management.</p>
+                        <p>At the start I was mainly interested in what KQML makes possible, especially platform independence and agent autonomy. By the end of the three units I understood that these benefits only work in practice if the semantics are clear, the standards are agreed, and the ontologies are properly managed.</p>
                     </div>
 
-                    <h3>Challenges and How I Addressed Them</h3>
                     <div class="box">
-                        <p>One challenge was recognising that ACLs and method invocation are complementary rather than competing approaches. Another was moving beyond identifying limitations to proposing practical solutions, supported by peer feedback and research.</p>
+                        <p>The discussion also corrected an assumption I had. I first thought of ACLs and method invocation as two options competing with each other, but they solve different problems. Writing peer replies pushed me further, because it is not enough to point out a limitation. I had to suggest something practical and support it with a source.</p>
                     </div>
 
-                    <h3>Skills Developed</h3>
                     <div class="box">
-                        <p>This discussion improved my technical analysis, critical thinking, and ability to provide constructive academic feedback. It also strengthened my understanding of balancing theoretical concepts with practical engineering considerations.</p>
-                    </div>
-
-                    <h3>Future Application</h3>
-                    <div class="box">
-                        <p>I will apply this knowledge when designing or evaluating agent systems by selecting communication approaches based on the problem context. I will also consider scalability, semantic consistency, and architecture early in the design process to improve the reliability of distributed agent systems.</p>
+                        <p>In future projects I will choose the communication approach based on the problem rather than on habit, and I will think about scalability and semantic consistency early in the design instead of treating them as something to fix later.</p>
                     </div>
                 </div>
             </section>
@@ -340,7 +337,7 @@
 
                     <p>Kakde, A.P., Bhoyar, K.M., Shad, M.A. and Bachwani, S.A. (2025) 'Advancing agentic AI through communication protocols', <em>International Journal of Scientific Research in Science and Technology</em>, 12(5), pp. 299–308.</p>
 
-                    <p>Wooldridge, M. (2009) <em>An introduction to multiagent systems</em>. 2nd edn. Chichester: John Wiley & Sons.</p>
+                    <p>Wooldridge, M. (2009) <em>An introduction to multiagent systems</em>. 2nd edn. Chichester: John Wiley &amp; Sons.</p>
                 </div>
             </section>
 
