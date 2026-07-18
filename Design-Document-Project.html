@@ -1,0 +1,260 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Design Document Project - Intelligent Agents - Kanna AlMansoori</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo"><strong>Kanna AlMansoori</strong> <span>MSc Artificial Intelligence E-Portfolio</span></a>
+            <nav>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <ul class="links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="launch-module.html">Launch into Computing</a></li>
+                <li><a href="induction.html">Induction Computing</a></li>
+                <li><a href="ai-module.html">Understanding Artificial Intelligence</a></li>
+                <li><a href="numerical-analysis.html">Numerical Analysis</a></li>
+                <li><a href="intelligent-agents.html">Intelligent Agents</a></li>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div id="main" class="alt">
+
+            <!-- Breadcrumb Navigation -->
+            <section id="one">
+                <div class="inner">
+                    <p><a href="intelligent-agents.html">← Back to Intelligent Agents Module</a></p>
+                    <header class="major">
+                        <h1>Design Document Project</h1>
+                        <p>An LLM-Powered Planning Agent for Academic Research and Information Gathering</p>
+                    </header>
+                    <p><strong>Type:</strong> Team Assignment | <strong>Weighting:</strong> 20% of module mark | <strong>Word Count:</strong> 1,000 words | <strong>Deadline:</strong> End of Unit 6 | <strong>Status:</strong> ✓ Complete</p>
+                </div>
+            </section>
+
+            <!-- Overview -->
+            <section id="overview">
+                <div class="inner">
+                    <header class="major">
+                        <h2>The Brief</h2>
+                    </header>
+                    <p>For this assignment my team was positioned as a group of software consultants specialising in agent design and development. We were asked to design an LLM-powered planning agent capable of carrying out tasks for an organisation with domain-specific requirements.</p>
+                    <p>The chosen task area was <strong>academic research and information gathering</strong>. In this domain the agent receives a high-level goal, such as a research topic or query, decomposes that goal into subtasks, retrieves relevant information from online sources, processes the retrieved data through filtering, summarisation or ranking, and then stores the results in an offline location for later use.</p>
+                    <p>The system had to be designed so that one or more agents operate according to their own goals, intentions or roles, with the LLM supporting planning, reasoning and task decomposition. Feasibility mattered: the design needed to be implementable using freely available technologies such as Hugging Face models, open-source libraries, or free-tier cloud services.</p>
+                </div>
+            </section>
+
+            <!-- Success Criteria -->
+            <section id="criteria">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Agreed Success Criteria</h2>
+                    </header>
+                    <div class="box">
+                        <ul>
+                            <li>The agent can identify and retrieve relevant data.</li>
+                            <li>The data is processed in some way, for example structured, summarised or filtered.</li>
+                            <li>The processed information is stored, saved or presented in a usable format.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Report Requirements -->
+            <section id="requirements">
+                <div class="inner">
+                    <header class="major">
+                        <h2>What the Design Proposal Had to Cover</h2>
+                    </header>
+
+                    <div class="box">
+                        <h3>1. System Requirements</h3>
+                        <p>The libraries, models, APIs and platforms needed to build the system, including any LLMs or cloud services.</p>
+                    </div>
+
+                    <div class="box">
+                        <h3>2. Design Decisions</h3>
+                        <p>An explanation of why particular agent architectures, planning approaches and technologies were chosen over the alternatives.</p>
+                    </div>
+
+                    <div class="box">
+                        <h3>3. Development Approach</h3>
+                        <p>The methodology adopted to create the system and the agent-oriented techniques being leveraged.</p>
+                    </div>
+
+                    <div class="box">
+                        <h3>4. Academic Rationale</h3>
+                        <p>A clear justification of every choice, supported by academic literature and correctly formatted references.</p>
+                    </div>
+
+                    <div class="box">
+                        <h3>5. Anticipated Challenges</h3>
+                        <p>The difficulties expected during development, together with the paradigms, patterns or practices intended to address them. Examples include task decomposition, unreliable or noisy online data, explainability of LLM-based decisions, and managing cooperation between agents.</p>
+                    </div>
+
+                    <div class="box">
+                        <h3>6. Graphical System Designs</h3>
+                        <p>A minimum of two different diagrams illustrating different views of the system, such as UML class, sequence or activity diagrams.</p>
+                    </div>
+
+                    <div class="box">
+                        <h3>7. Tools and Environments</h3>
+                        <p>A clear statement of all tools, libraries, models, development environments and testing environments intended for the solution.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Grading -->
+            <section id="grading">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Grading Criteria</h2>
+                    </header>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Criterion</th>
+                                    <th>Weighting</th>
+                                    <th>Focus</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Knowledge and Understanding</td>
+                                    <td>25%</td>
+                                    <td>Rationale supported by academic literature</td>
+                                </tr>
+                                <tr>
+                                    <td>Application and Understanding</td>
+                                    <td>25%</td>
+                                    <td>Anticipated challenges and how they will be addressed</td>
+                                </tr>
+                                <tr>
+                                    <td>Criticality</td>
+                                    <td>25%</td>
+                                    <td>Design diagrams, tools, libraries and environments</td>
+                                </tr>
+                                <tr>
+                                    <td>Presentation and Structure</td>
+                                    <td>25%</td>
+                                    <td>Academic writing style, proofreading, citation formatting</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>Appendices could not be used to extend the core report. The document had to stand alone as a complete and concise piece of work, since one aim of the assessment was to demonstrate the ability to express ideas succinctly.</p>
+                </div>
+            </section>
+
+            <!-- Submission Checklist -->
+            <section id="checklist">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Submission Checklist</h2>
+                    </header>
+                    <ul>
+                        <li>✓ A bulleted list of system requirements and assumptions, design decisions and approaches, supported by academic research and references</li>
+                        <li>✓ A bulleted list of anticipated challenges</li>
+                        <li>✓ Graphical system designs using multiple diagrams</li>
+                        <li>✓ A bulleted list of tools, development and testing environments, libraries and models</li>
+                        <li>✓ Evidence of spelling and grammar checking and proofreading</li>
+                        <li>✓ Individual peer assessment submitted alongside the team report</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Learning Outcomes -->
+            <section id="outcomes">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Learning Outcomes Addressed</h2>
+                    </header>
+                    <ol>
+                        <li>Identify and critically analyse agent-based systems, differentiating between architectures and approaches.</li>
+                        <li>Apply and critically evaluate intelligent agent techniques to real-world problems, particularly where technical risk and uncertainty are involved.</li>
+                        <li>Systematically develop and demonstrate the skills required to be an effective member of a development team in a virtual professional environment, adopting real-life perspectives on team roles and organisation.</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- My Contribution -->
+            <section id="contribution">
+                <div class="inner">
+                    <header class="major">
+                        <h2>My Contribution to the Team</h2>
+                    </header>
+                    <div class="box">
+                        <p><em>[Add your own contribution here: the sections you wrote, the diagrams you produced, the research you carried out, the team meetings you attended, and any screenshots of collaboration evidence.]</em></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Documents -->
+            <section id="documents">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Team Design Proposal Document</h2>
+                    </header>
+                    <div class="box">
+                        <p><em>[Link or embed the final submitted design proposal document and the system diagrams here.]</em></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <section id="navigation">
+                <div class="inner">
+                    <ul class="actions">
+                        <li><a href="intelligent-agents.html" class="button">← Back to Intelligent Agents Module</a></li>
+                        <li><a href="CD2.html" class="button primary">View Collaborative Discussion 2 →</a></li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                <ul class="icons">
+                    <li><a href="https://github.com/KannaAlmansoori" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; 2025 Kanna AlMansoori</li>
+                    <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
